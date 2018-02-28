@@ -1,7 +1,17 @@
 doctype html
 html
   head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+      meta(charset="utf-8")
+      meta(http-equiv="X-UA-Compatible", content="IE=edge")
+      meta(name="viewport", content="width=device-width, initial-scale=1")
+      meta(name="description", content="")
+      meta(name="author", content="")
+      title= title
+      link(rel='stylesheet', href='/stylesheets/style.css')
+      link(href="/bootstrap/dist/css/bootstrap.min.css", rel="stylesheet")
+      link(href='//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css', rel='stylesheet')
+      script(src="/jquery/dist/jquery.min.js")
+      script(src="/tether/dist/js/tether.min.js")
+      script(src="/bootstrap/dist/js/bootstrap.min.js")
   body
     block content
