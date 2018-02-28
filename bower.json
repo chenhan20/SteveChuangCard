@@ -1,0 +1,17 @@
+{
+  "name": "myapp",
+  "description": "",
+  "main": "",
+  "authors": [
+    "steve <a0911558945@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
