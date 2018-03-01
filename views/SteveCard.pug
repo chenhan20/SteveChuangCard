@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  link(rel='stylesheet', href='/stylesheets/SteveChuang.css')
+  link(rel='stylesheet', href='/stylesheets/SteveCard.css')
   style.cp-pen-styles.
     @import url("https://fonts.googleapis.com/css?family=Raleway:300,400");
   .container 
@@ -14,7 +14,7 @@ block content
         a(href='mailto:a0911558945@gmail.com') a0911558945@gmail.com 
         a ｜ Taipei ｜
         br
-        a 此為個人網站範例
+        a 此為個人網站範例(使用bootstrap4、nodejs)
         hr
         a ＂WEB designer 菜鳥＂
         f
@@ -25,26 +25,28 @@ block content
     .container 
       .col-sm-6
         hr
-        h2 擅長工具
-        h4 Nodejs
-        h4 Nodejs
-        h4 Nodejs
-        h4 Nodejs
-        h4 Nodejs
-      .col-sm-6
-        hr
         h2 工作技能
-        h4 Java
+        h4 JAVA(Struts、Spring、hibernate、SpringMVC)
         h4 Oracle PL/SQL
         h4 C#
+        h4 git
+      .col-sm-6
+        hr
+        h2 接觸技能
+        h4 HTML(前端-Bootstrap、VueJs、jquery)
+        h4 HTML(後端-Node.js)
     .container.row3
       .col-sm-12
         h2 經歷
-        h3 123
-        h3 123
-        h3 123
-        h3 123
-        h3 123
-        h3 123
-        h3 123
-        h3 123
+        .row
+          .date.col-sm-3.h5 2017/01/26~Now
+          .col-sm-6.p POS
+        .row
+          .date.col-sm-3.h5 2017/10/12~2017/01/26
+          .col-sm-6.p 當兵
+        .row
+          .date.col-sm-3.h5 2016/04/01~2017/10/12
+          .col-sm-6.p 轉換到POS系統(Java Team)
+        .row
+          .date.col-sm-3.h5 2015/07/01~2016/04/01
+          .col-sm-6.p 開始於瑪亞資訊實習，駐點於某電信龍頭的佣金Team123213123123

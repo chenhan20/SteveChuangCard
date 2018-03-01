@@ -1,5 +1,5 @@
 body{
-height: 100vh;
+height: 300vh;
 background: #84e8dc;
 background: -moz-linear-gradient(-45deg, #84e8dc 0%, #f4ed8b 100%);
 background: -webkit-linear-gradient(-45deg, #84e8dc 0%, #f4ed8b 100%);
@@ -40,6 +40,10 @@ hr{
     margin-top: 10px;
     margin-bottom: 15px;
 }
+.date{
+    border-right: #979797 3px solid;
+}
+
 .row3{
     padding-top: 25px;
 }
