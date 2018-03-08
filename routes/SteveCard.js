@@ -6,7 +6,9 @@ router.get('/', function(req, res, next) {
   res.render('SteveCard', { title: 'Express' });
 });
 /* GET home page. */
-
+router.get('/page1', function(req, res, next) {
+  res.render('./Steve_page1');
+});
 
 
 module.exports = router;
