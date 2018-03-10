@@ -1,9 +1,29 @@
-extends layout
+extends common/layout
 
+block buttonPage
+  link(rel='stylesheet', href='/stylesheets/buttonpage.css')
 block content
   link(rel='stylesheet', href='/stylesheets/SteveCard.css')
   style.cp-pen-styles.
     @import url("https://fonts.googleapis.com/css?family=Raleway:300,400");
+  nav.navbar.navbar-toggleable-md.navbar-light.bg-faded
+    button.navbar-toggler.navbar-toggler-right(type='button', data-toggle='collapse', data-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation')
+      span.navbar-toggler-icon
+    a.navbar-brand(href='SteveCard') SteveChuang CV
+    #navbarNav.collapse.navbar-collapse
+      ul.navbar-nav
+        li.nav-item.active
+          a.nav-link(href='SteveCard')
+            | Job
+            span.sr-only (current)
+        li.nav-item
+          a.nav-link(href='SteveCard/Fintness') Fintness
+        li.nav-item
+          a.nav-link.disabled(href='#') Cooking
+        li.nav-item
+          a.nav-link.disabled(href='#') Coffee    
+        li.nav-item
+          a.nav-link.disabled(href='#') Photography    
   .container 
     h1 SteveChuang JOB CV 
     .row
@@ -24,7 +44,7 @@ block content
         a(href='https://github.com/chenhan20',target="_blank")
           i.icon.fab.fa-github-alt(style='font-size:30px')
         br
-        a 此為個人網站範例(使用bootstrap4、nodejs)
+        a 此為個人網站範例(使用bootstrap4、nodejs、PUG)
         hr
         a ＂WEB designer 菜鳥＂
         br
@@ -44,12 +64,12 @@ block content
         h2 接觸技能
         h4 HTML(前端-Bootstrap、VueJs、jquery)
         h4 HTML(後端-Node.js、pug)
-    .container.row3
-      .col-sm-12
+    .container.row3.row_experience
+      .col
         h2 經歷
         .row.RowDate
           .date.col-sm-3.h5 2017/01/26~Now
-          .col-sm-6
+          .col-sm-8
             a 回到POS系統(Struts-Spring-hibernated框架，搭配前端extjs)
             a 重大專案:Struts下架轉換SpringMVC、配合悠遊卡FTP上傳下載
             a 因應Struts2經常出現漏洞，故協助轉換為SpringMVC框架
@@ -58,19 +78,35 @@ block content
             a 讓我了解到SA一職也不是很好當的。
         .row.RowDate
           .date.col-sm-3.h5 2017/10/12~2017/01/26
-          .col-sm-6.p 當兵
+          .col-sm-8.p 當兵
         .row.RowDate
           .date.col-sm-3.h5 2016/04/01~2017/10/12
-          .col-sm-6 
+          .col-sm-8
             a 轉換到POS系統-使用Java語言
             a 當時專案為需要新增三碼的店點，故有些程式碼需要修正
             a 例如:substring-只抓兩碼，與做壓力測試(使用JUnit)
             a 與撰寫測試報告，算是對Java有一個基礎的了解。
         .row.RowDate
           .date.col-sm-3.h5 2015/07/01~2016/04/01
-          .col-sm-6 
+          .col-sm-8
             a 開始於瑪亞資訊實習，駐點某電信業龍頭的佣金Team
             a 當時專案是使用C#與Oracle資料庫，了解各種PL/SQL語法與
             a 資料庫基本觀念要看懂可能有幾百行的PL/SQL並了解裡面排名
             a 、計量等公式，並將他套用到程式裡對當時只有在上課學過
             a mysql的我是一大挑戰。
+    .container.row3
+      .col-sm-12
+        h2 作品
+      .col
+      .col
+    .gotop 
+      i.fas.fa-angle-double-up
+    .goright 
+      i.fas.fa-arrow-circle-right   
+    .goleft 
+      i.fas.fa-arrow-circle-left   
+    script(src='/js/Stevecard.js')
+
+  
+
+

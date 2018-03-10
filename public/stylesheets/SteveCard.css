@@ -4,6 +4,7 @@ background: #84e8dc;
 background: -moz-linear-gradient(-45deg, #84e8dc 0%, #f4ed8b 100%);
 background: -webkit-linear-gradient(-45deg, #84e8dc 0%, #f4ed8b 100%);
 background: linear-gradient(135deg, #84e8dc 0%, #f4ed8b 100%);
+padding:0;
 }
 h1{
     color: white;
@@ -38,6 +39,7 @@ h1{
 	-moz-transform:rotate(360deg);
 	-o-transform:rotate(360deg);
 	-ms-transform:rotate(360deg);
+
 }
 
 
@@ -67,6 +69,16 @@ hr{
     color: black;
 
 }
+/* .icon:hover{
+    
+} */
+
+.row_experience{
+    margin: auto;
+}
 .row3{
     padding-top: 25px;
 }
+
+
+
