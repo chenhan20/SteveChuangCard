@@ -1,7 +1,6 @@
 extends common/layout
 
-block buttonPage
-  link(rel='stylesheet', href='/stylesheets/buttonpage.css')
+block append buttonPage
 block content
   link(rel='stylesheet', href='/stylesheets/SteveCard.css')
   style.cp-pen-styles.
@@ -99,12 +98,6 @@ block content
         h2 作品
       .col
       .col
-    .gotop 
-      i.fas.fa-angle-double-up
-    .goright 
-      i.fas.fa-arrow-circle-right   
-    .goleft 
-      i.fas.fa-arrow-circle-left   
     script(src='/js/Stevecard.js')
 
   
