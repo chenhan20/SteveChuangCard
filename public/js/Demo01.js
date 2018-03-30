@@ -1,4 +1,4 @@
-let create_cards_old = function (){
+let create_cards = function (){
   const cards= [];
   for(let suit of ['M','C','D','S'])
     for(let value=1;value<=13;value++)
@@ -6,7 +6,7 @@ let create_cards_old = function (){
   return cards;
 }
 
-let create_cards = function(){
+let create_cards_new = function(){
   const suit=[];
   /**
    * 紅桃 : \u2665
@@ -34,6 +34,11 @@ let Demo01 = new Vue({
   data: {
     message:cards_filter(create_cards(),'M',10),
     rendom:getRandomValue(create_cards())
+  },
+  methods: {
+    Create:function(event){
+      alert('123123');
+    }
   }
 })
 

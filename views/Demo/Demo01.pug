@@ -1,9 +1,10 @@
 extends ../common/layout
 
+block append CV_Nav
 block buttonPage
 block content
     h1 Demo01
     h3 使用ES6(map、filter)快速產生撲克牌並實現篩選功能
-    .Demo01 {{message}}
-      h2 {{rendom}}
+    .Demo01
+      button.btn.btn-primary(v-on:click='Create') Create Poker
     script(src='/js/Demo01.js')

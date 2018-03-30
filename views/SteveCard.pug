@@ -1,28 +1,10 @@
 extends common/layout
 
 block append buttonPage
+block append CV_Nav
 block content
-  link(rel='stylesheet', href='/stylesheets/SteveCard.css')
   style.cp-pen-styles.
     @import url("https://fonts.googleapis.com/css?family=Raleway:300,400");
-  nav.navbar.navbar-toggleable-md.navbar-light.bg-faded
-    button.navbar-toggler.navbar-toggler-right(type='button', data-toggle='collapse', data-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation')
-      span.navbar-toggler-icon
-    a.navbar-brand(href='SteveCard') SteveChuang CV
-    #navbarNav.collapse.navbar-collapse
-      ul.navbar-nav
-        li.nav-item.active
-          a.nav-link(href='SteveCard')
-            | Job
-            span.sr-only (current)
-        li.nav-item
-          a.nav-link(href='SteveCard/Fintness') Fintness
-        li.nav-item
-          a.nav-link.disabled(href='#') Cooking
-        li.nav-item
-          a.nav-link.disabled(href='#') Coffee    
-        li.nav-item
-          a.nav-link.disabled(href='#') Photography    
   .container 
     h1 SteveChuang JOB CV 
     .row
@@ -106,6 +88,7 @@ block content
       .col-sm-12
         h2 作品
       .col
+        a(href='SteveCard/Demo01') 撲克牌Demo(未完成)
       .col
     script(src='/js/Stevecard.js')
 
