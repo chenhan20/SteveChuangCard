@@ -7,4 +7,11 @@ block content
     h3 使用ES6(map、filter)快速產生撲克牌並實現篩選功能
     .Demo01
       button.btn.btn-primary(v-on:click='Create') Create Poker
+      button.btn.btn-primary(v-on:click='Random1') Random Poker
+      button.btn.btn-primary(v-on:click='Clear') Clear Poker
+      .col
+        p {{title}}
+        p {{message}}
     script(src='/js/Demo01.js')
+    link(rel='stylesheet', href='/stylesheets/Demo01.css')
+
