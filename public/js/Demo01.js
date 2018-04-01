@@ -7,7 +7,11 @@ let create_cards = function (){
 }
 
 let create_cards_new = function(){
-  const suit=[];
+  // const suit={'H':'\u2665','C':'\u2666','D':'\u2663','S':'\u2660'};
+  // const value={'1':'A','11':'J','12':'Q','13':'K'};
+  // for(let i=2;i<=10;i++)
+  //   value[i]=i;
+  // return  value[c.value] + suit[c.suit];
 }
   /**
    * 塞進陣列 
@@ -42,13 +46,18 @@ let getRandomValue= function(cards){
     let randomsuit=getRandomSuit(3);
     return cards.filter(c => c.suit==suitArray[randomsuit] && c.value==randomNum);
   }
+let getWhowin=function(You,Computer){
 
+}
 //==============VueJs渲染=============
 let Demo01 = new Vue({
   el: '.Demo01',
   data: {
     message:'',
-    title:'',
+    title_1:'',
+    title_2:'',
+    You:'',
+    Computer:'',
     rendom:getRandomValue(create_cards())
   },
   methods: {
@@ -60,19 +69,30 @@ let Demo01 = new Vue({
       //   total += (cards[i].suit + cards[i].value);
       // }
       let cards=create_cards();
-      this.title = '產生一副撲克牌';
+      this.title_1 = '產生一副撲克牌';
       this.message = getSuitAndValue(cards);
     },
     Clear:function(event){
       // cards_filter(create_cards(),'M',10)
-      this.title = '';
+      this.title_1 = '';
+      this.title_2 = '';
       this.message = '';
     },
     Random1:function(event){
       // cards_filter(create_cards(),'M',10)
     let cards=create_cards();
-    this.title = '產生隨機一張撲克牌';
+    this.title_1 = '產生隨機一張撲克牌';
     this.message = getSuitAndValue(getRandomValue(cards));
+    },
+    Bigsmall:function(event){
+      let cards=create_cards();
+      let You=getSuitAndValue(getRandomValue(cards));
+      let Computer=getSuitAndValue(getRandomValue(cards));
+      getSuitAndValue(getRandomValue(cards))
+      this.title_2 = '比大小';
+      this.You = '你 : '+ You;
+      this.Computer = '電腦 : '+ Computer;
+      this.Whowin = getWhowin(You,Computer);
     }
   }
 })
