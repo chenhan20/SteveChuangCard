@@ -34,7 +34,6 @@ let getRandomSuit = function (max) {
 
 let getSuitAndValue = function(cards){
   let total = '';
-  debugger;
   for(let add of cards){
     total += (add.suit + add.value);
   }
@@ -46,8 +45,22 @@ let getRandomValue= function(cards){
     let randomsuit=getRandomSuit(3);
     return cards.filter(c => c.suit==suitArray[randomsuit] && c.value==randomNum);
   }
-let getWhowin=function(You,Computer){
-
+/**====================================================================================================
+ * 回傳排組的排序 
+ * @param  Rule 傳入要使用的規則 Ex:比大小(黑桃ace最大)
+ * @param  cards 傳入牌組 回傳此規則排組的value
+ * ====================================================================================================
+ */
+let getPokerRule=function(Rule,cards){
+  if(Rule=='Bigsmall'){
+    debugger;
+  }
+  return '';
+}  
+let getWhowin=function(cards,You,Computer){
+    getPokerRule('Bigsmall',cards)    
+    You.substr(1);
+    return '';
 }
 //==============VueJs渲染=============
 let Demo01 = new Vue({
@@ -58,6 +71,7 @@ let Demo01 = new Vue({
     title_2:'',
     You:'',
     Computer:'',
+    whowin:'',
     rendom:getRandomValue(create_cards())
   },
   methods: {
@@ -88,11 +102,11 @@ let Demo01 = new Vue({
       let cards=create_cards();
       let You=getSuitAndValue(getRandomValue(cards));
       let Computer=getSuitAndValue(getRandomValue(cards));
-      getSuitAndValue(getRandomValue(cards))
+      // getSuitAndValue(getRandomValue(cards))
       this.title_2 = '比大小';
       this.You = '你 : '+ You;
       this.Computer = '電腦 : '+ Computer;
-      this.Whowin = getWhowin(You,Computer);
+      this.Whowin = getWhowin(cards,You,Computer);
     }
   }
 })

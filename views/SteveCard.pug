@@ -1,6 +1,7 @@
 extends common/layout
 
 block append buttonPage
+block append modal
 block append CV_Nav
 block content
   style.cp-pen-styles.
@@ -13,7 +14,7 @@ block content
       .col
         h3 SteveChuang
         i.icon.fas.fa-envelope(style='font-size:30px')
-        a(href='mailto:a0911558945@gmail.com') a0911558945@gmail.com 
+        a.email(href='#') a0911558945@gmail.com 
         a ｜ Taipei ｜
         br
         a(href='https://www.facebook.com/profile.php?id=100000189117019',target="_blank")
@@ -89,7 +90,7 @@ block content
       .col-sm-12
         h2 作品
       .col
-        a(href='SteveCard/Demo01') 撲克牌Demo(未完成)
+        a.Demo(href='SteveCard/Demo01') 撲克牌Demo(未完成)
       .col
     script(src='/js/Stevecard.js')
 

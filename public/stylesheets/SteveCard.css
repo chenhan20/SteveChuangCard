@@ -1,9 +1,7 @@
 body{
 height: 200vh;
-background: #84e8dc;
-background: -moz-linear-gradient(-45deg, #84e8dc 0%, #f4ed8b 100%);
-background: -webkit-linear-gradient(-45deg, #84e8dc 0%, #f4ed8b 100%);
-background: linear-gradient(135deg, #84e8dc 0%, #f4ed8b 100%);
+/* background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898; 
+ background-blend-mode: multiply,multiply; */
 padding:0;
 }
 h1{
@@ -79,6 +77,43 @@ hr{
 .row3{
     padding-top: 25px;
 }
+.Demo{
+    color: #323237;
+    border: 2px solid #323237;
+    line-height: 40px;
+    border-radius: 30px;
+    display: inline-block;
+    font-family: "graphik-bki", "PingFangTC-Semibold", "Noto Sans Bold";
+    font-size: 14px;
+    letter-spacing: 2px;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    padding: 0 27px;
+    transition: background-color 0.5s;
+
+}
+.Demo:hover{
+    background-color: #323237;
+    color: #fff;
+    text-decoration:none;
+}
 
 
+.email{
+    color: #323237;
+    border: 2px solid #323237;
+    line-height: 30px;
+    display: inline-block;
+    font-size: 14px;
+    letter-spacing: 1px;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    padding: 0 27px;
+}
+.email:hover{
+    background-color: #323237;
+    color: #fff;
+    text-decoration:none;
+    /* cursor: pointer; */
+}
 
