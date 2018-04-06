@@ -1,23 +1,15 @@
 {
   "name": "myapp",
   "description": "",
-  "dependencies": {
-    "bootstrap":"4.0.0-alpha.6",
-    "jquery": "3.3.1",  // 指定版本
-    "tether":"1.4.3",
-    "vue": "2.5.16"
-    },
   "main": "",
   "authors": [
-    "steve <a0911558945@gmail.com>"
+    "steve"
   ],
   "license": "MIT",
-  "homepage": "",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ]
+  "homepage": "https://github.com/chenhan20/SteveChuangCard",
+  "private": true,
+  "dependencies": {
+    "vue": "^2.5.16",
+    "bootstrap": "4.0.0-alpha.6"
+  }
 }
