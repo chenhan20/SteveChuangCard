@@ -62,10 +62,13 @@ function PostData() {
         type: "POST",
         url: "/SteveCard/sendmail",
         data : $(".sendmailForm").serialize(),
-        dataType : 'json',
+        // dataType : 'json',
         success: function(msg) {
-            alert('success!!!!!');
-            console.log('success!!!!');
+            $('.sendemailmodal').modal('hide');
+            $('.sucessmailmodal').modal('show');
+        },
+        error:function(msg) {
+            alert('error:' + msg);
         }
     });
     return false;

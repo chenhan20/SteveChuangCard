@@ -25,11 +25,28 @@
       form.sendmailForm(onsubmit="return PostData()")
         .modal-body
           .form-group
-            label.col-form-label(for='recipient-name') YourName:
-            input#recipient-name.form-control(type='text',name='YourName')
+            label.col-form-label(for='recipient-name') Name:
+            input#recipient-name.form-control(type='text',name='YourName',placeholder="Name")
+          .form-group
+            label.col-form-label(for='message-text') Email:
+            input#recipient-name.form-control(type='text',name='YourEmail',placeholder="建議填寫否則無法回覆您")
           .form-group
             label.col-form-label(for='message-text') Message:
-            textarea#message-text.form-control(name='message')
+            textarea#message-text.form-control(name='message',placeholder="Message..")
         .modal-footer
           button.btn.btn-primary(type='submit') Send Message
           button.btn.btn-secondary(type='button', data-dismiss='modal') Close
+
+//- 信件發送成功
+.modal.sucessmailmodal(tabindex='-1', role='dialog')
+  .modal-dialog(role='document')
+    .modal-content
+      //-.modal-header
+        //- h5.modal-title 
+      .modal-body
+        button.close(type='button', data-dismiss='modal', aria-label='Close')
+          span(aria-hidden='true') ×
+        p 已成功發送至Steve的信箱
+    //-   .modal-footer
+        //- button.btn.btn-primary(type='button') Save changes
+        //- button.btn.btn-secondary(type='button', data-dismiss='modal') Close

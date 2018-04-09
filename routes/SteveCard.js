@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+const sendMail = require('./testmail.js');
+
 
 
 /* GET home page. */
@@ -22,7 +24,9 @@ router.get('/Demo01', function(req, res, next) {
 
 router.post('/sendmail', function(req, res,next){
   console.log(req.body.YourName);
+  console.log(req.body.YourEmail);
   console.log(req.body.message);
+  sendMail(['a0911558945@gmail.com']);
   return res.send('success');
   // res.render('SteveCard', { send: sendMail()});
 });
