@@ -23,10 +23,18 @@ router.get('/Demo01', function(req, res, next) {
 });
 
 router.post('/sendmail', function(req, res,next){
-  console.log(req.body.YourName);
-  console.log(req.body.YourEmail);
-  console.log(req.body.message);
-  sendMail(['a0911558945@gmail.com']);
+  let YourName = req.body.YourName;
+  let YourEmail = req.body.YourEmail;
+  let message = req.body.message;
+  console.log(YourName);
+  console.log(YourEmail);
+  console.log(message);
+  let User = {
+    YourName:YourName,
+    YourEmail: YourEmail,
+    message: message
+  };
+  sendMail(User);
   return res.send('success');
   // res.render('SteveCard', { send: sendMail()});
 });
