@@ -1,4 +1,6 @@
-.modal.emailmodal(tabindex='-1', role='dialog')
+
+//- 複製email的modal
+.modal.copyemailmodal(tabindex='-1', role='dialog')
   .modal-dialog(role='document')
     .modal-content
       //-.modal-header
@@ -11,3 +13,23 @@
     //-   .modal-footer
         //- button.btn.btn-primary(type='button') Save changes
         //- button.btn.btn-secondary(type='button', data-dismiss='modal') Close
+
+//- 發送信件的modal
+.modal.sendemailmodal(tabindex='-1', role='dialog')
+  .modal-dialog(role='document')
+    .modal-content
+      .modal-header
+        h5.modal-title 發送信件給SteveChuang
+        button.close(type='button', data-dismiss='modal', aria-label='Close')
+          span(aria-hidden='true') ×
+      form.sendmailForm(onsubmit="return PostData()")
+        .modal-body
+          .form-group
+            label.col-form-label(for='recipient-name') YourName:
+            input#recipient-name.form-control(type='text',name='YourName')
+          .form-group
+            label.col-form-label(for='message-text') Message:
+            textarea#message-text.form-control(name='message')
+        .modal-footer
+          button.btn.btn-primary(type='submit') Send Message
+          button.btn.btn-secondary(type='button', data-dismiss='modal') Close

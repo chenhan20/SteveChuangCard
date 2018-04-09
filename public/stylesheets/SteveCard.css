@@ -100,7 +100,7 @@ hr{
 }
 
 
-.email{
+.Copyemail{
     color: #323237;
     border: 2px solid #323237;
     line-height: 30px;
@@ -111,7 +111,7 @@ hr{
     transition: 0.3s;
     padding: 0 27px;
 }
-.email:hover{
+.Copyemail:hover{
     background-color: #323237;
     color: #fff;
     text-decoration:none;

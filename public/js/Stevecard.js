@@ -1,3 +1,8 @@
+  //bootstrap hover text setting
+  $(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+});
+
 $(".gotop").click(function(){
     jQuery("html,body").animate({
         scrollTop:0
@@ -17,10 +22,18 @@ $('.goleft').click(function(){
     alert('goleft');
 });
 
-$( ".email" ).click(function() {
+
+//email按鈕(複製功能)
+$( ".Copyemail" ).click(function() {
     let email='a0911558945@gmail.com';
     copy(email);
-    $('.emailmodal').modal('show');
+    $('.copyemailmodal').modal('show');
+});
+
+
+//信件按鈕(發送訊息功能)
+$( ".Sendemail" ).click(function() {
+    $('.sendemailmodal').modal('show');
 });
 
 /**
@@ -39,4 +52,22 @@ function copy(s) {
       
     clip_area.remove();
   }
+
+
+/** 
+ * Ajax
+*/
+function PostData() {
+    $.ajax({
+        type: "POST",
+        url: "/SteveCard/sendmail",
+        data : $(".sendmailForm").serialize(),
+        dataType : 'json',
+        success: function(msg) {
+            alert('success!!!!!');
+            console.log('success!!!!');
+        }
+    });
+    return false;
+}
 
