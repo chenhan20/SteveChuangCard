@@ -1,8 +1,9 @@
   /*jshint esversion: 6 */
 
-var express = require('express');
+const express = require('express');
 var router = express.Router();
 const sendMail = require('./testmail.js');
+const reptile = require('./testreptile.js');
 
 
 
@@ -25,9 +26,15 @@ router.get('/Demo01', function(req, res, next) {
 });
 /* GET home page. */
 router.get('/Demo02', function(req, res, next) {
-  res.render('./Demo/Demo02', { title: 'Demo02'});
+  //爬當日nab戰績功能
+  let NbaArray = reptile();
+  console.log('NbaArray' + NbaArray);
+  res.render('./Demo/Demo02', { title: 'Demo02' });
 });
 
+
+
+//寄送mail功能
 router.post('/sendmail', function(req, res,next){
   let YourName = req.body.YourName;
   let YourEmail = req.body.YourEmail;
@@ -48,6 +55,11 @@ router.post('/sendmail', function(req, res,next){
   // res.render('SteveCard', { send: sendMail()});
 });
 
+
+//處理404問題
+router.get('*',function(req,res){
+  res.render('./main/error/error', { URL: req.originalUrl });
+});
 
 // let sendMail = function(){
 //   return 'OK';
