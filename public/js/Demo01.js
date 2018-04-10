@@ -1,10 +1,11 @@
+/*jshint esversion: 6 */
 let create_cards = function (){
   const cards= [];
   for(let suit of ['\u2665','\u2666','\u2663','\u2660'])
     for(let value=1;value<=13;value++)
       cards.push({suit,value});
   return cards;
-}
+};
 
 let create_cards_new = function(){
   // const suit={'H':'\u2665','C':'\u2666','D':'\u2663','S':'\u2660'};
@@ -12,7 +13,7 @@ let create_cards_new = function(){
   // for(let i=2;i<=10;i++)
   //   value[i]=i;
   // return  value[c.value] + suit[c.suit];
-}
+};
   /**
    * 塞進陣列 
    * 紅桃 : \u2665
@@ -20,17 +21,17 @@ let create_cards_new = function(){
    * 梅花 : \u2663
    * 黑桃 : \u2660
    */
-let suitArray=['\u2665','\u2666','\u2663','\u2660']
+let suitArray=['\u2665','\u2666','\u2663','\u2660'];
 
 let cards_filter = function(cards,suit,value){
     return cards.filter(c => c.suit==suit && c.value>value);
-}
+};
 let getRandomInt = function (max) {
   return Math.floor(Math.random() * Math.floor(max))+1;
-}
+};
 let getRandomSuit = function (max) {
   return Math.floor(Math.random() * Math.floor(max));
-}
+};
 
 let getSuitAndValue = function(cards){
   let total = '';
@@ -38,13 +39,13 @@ let getSuitAndValue = function(cards){
     total += (add.suit + add.value);
   }
   return total;
-}
+};
 
 let getRandomValue= function(cards){
     let randomNum=getRandomInt(13);
     let randomsuit=getRandomSuit(3);
     return cards.filter(c => c.suit==suitArray[randomsuit] && c.value==randomNum);
-  }
+  };
 /**====================================================================================================
  * 回傳排組的排序 
  * @param  Rule 傳入要使用的規則 Ex:比大小(黑桃ace最大)
@@ -53,15 +54,15 @@ let getRandomValue= function(cards){
  */
 let getPokerRule=function(Rule,cards){
   if(Rule=='Bigsmall'){
-    debugger;
+    // debugger;
   }
   return '';
-}  
+};  
 let getWhowin=function(cards,You,Computer){
-    getPokerRule('Bigsmall',cards)    
+    getPokerRule('Bigsmall',cards);    
     You.substr(1);
     return '';
-}
+};
 //==============VueJs渲染=============
 let Demo01 = new Vue({
   el: '.Demo01',
@@ -109,5 +110,5 @@ let Demo01 = new Vue({
       this.Whowin = getWhowin(cards,You,Computer);
     }
   }
-})
+});
 

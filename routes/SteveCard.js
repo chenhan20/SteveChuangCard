@@ -1,3 +1,5 @@
+  /*jshint esversion: 6 */
+
 var express = require('express');
 var router = express.Router();
 const sendMail = require('./testmail.js');
@@ -19,7 +21,11 @@ router.get('/Fintness', function(req, res, next) {
 
 /* GET home page. */
 router.get('/Demo01', function(req, res, next) {
-  res.render('./Demo/Demo01');
+  res.render('./Demo/Demo01', { title: 'Demo01'});
+});
+/* GET home page. */
+router.get('/Demo02', function(req, res, next) {
+  res.render('./Demo/Demo02', { title: 'Demo02'});
 });
 
 router.post('/sendmail', function(req, res,next){
@@ -34,8 +40,11 @@ router.post('/sendmail', function(req, res,next){
     YourEmail: YourEmail,
     message: message
   };
-  sendMail(User);
-  return res.send('success');
+  if(sendMail(User)){
+    return res.send('success');
+  }else{
+    return res.send('error');
+  }
   // res.render('SteveCard', { send: sendMail()});
 });
 

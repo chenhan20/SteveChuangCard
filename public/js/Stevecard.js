@@ -1,3 +1,4 @@
+  /*jshint esversion: 6 */
   //bootstrap hover text setting
   $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();   
@@ -64,13 +65,21 @@ function PostData() {
         data : $(".sendmailForm").serialize(),
         // dataType : 'json',
         success: function(msg) {
-            $('.sendemailmodal').modal('hide');
-            $('.sucessmailmodal').modal('show');
+            alert(msg);
+            if(msg=='success'){
+                $('.sendemailmodal').modal('hide');
+                $('.sucessmailmodal').modal('show');
+            }else{
+                $('.sendemailmodal').modal('hide');
+                $('.errormailmodal').modal('show');
+            }
         },
-        error:function(msg) {
-            alert('error:' + msg);
+        error: function(msg) {
+            $('.sendemailmodal').modal('hide');
+            $('.errormailmodal').modal('show');
         }
     });
     return false;
 }
 
+console.log('123123');

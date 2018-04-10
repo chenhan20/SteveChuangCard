@@ -50,3 +50,16 @@
     //-   .modal-footer
         //- button.btn.btn-primary(type='button') Save changes
         //- button.btn.btn-secondary(type='button', data-dismiss='modal') Close
+//- 信件發送成功
+.modal.errormailmodal(tabindex='-1', role='dialog')
+  .modal-dialog(role='document')
+    .modal-content
+      //-.modal-header
+        //- h5.modal-title 
+      .modal-body
+        button.close(type='button', data-dismiss='modal', aria-label='Close')
+          span(aria-hidden='true') ×
+        p 信件發送失敗請洽Steve請他修復此功能
+    //-   .modal-footer
+        //- button.btn.btn-primary(type='button') Save changes
+        //- button.btn.btn-secondary(type='button', data-dismiss='modal') Close
