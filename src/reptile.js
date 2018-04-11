@@ -1,10 +1,11 @@
     /*jshint esversion: 6 */
-    
   const request = require('request');
   const puppeteer = require ('puppeteer');
   const cheerio = require('cheerio');
   // const url = 'https://www.usatoday.com/sports/nba/scores/';
-  const url = 'https://stats.nba.com/scores/04/10/2018';
+   const url = 'https://stats.nba.com/scores/04/10/2018';
+  //const url = 'http://books.toscrape.com';  //測試用網站
+  
   
   let resultMinute = {};
  
@@ -17,34 +18,33 @@
 
   // await/async  JSHint 會出現錯誤 故先讓他ignore掉這一段
   /* jshint ignore:start */
-  let reptile = async () =>{    
-    console.log('12312312');
-    const headless = true;  //是否開啟瀏覽器 false為開
-    const slowMo = 0;
-    const browser = await puppeteer.launch({headless,slowMo}); 
-    const page = await browser.newPage(); // jshint ignore:line
-    await page.goto('https://stats.nba.com/scores/04/10/2018'); 
-    // await page.waitFor(1000);
-    const result = await page.evaluate(() => {
-      let NBA = document.querySelectorAll('.scores__inner .linescores .linescores-table table tr td');
-      let NBAresult = [];
-    console.log(NBA);
-    console.log('length' + NBA.length);
-    for(var element of NBA){
-      let Team = element.innerText;
-      NBAresult.push(Team);
-    };
+let reptile = async () => {
+  const browser = await puppeteer.launch({headless: true});
+  const page = await browser.newPage();
 
-    return NBAresult;
+  await page.goto(url);
+
+  const result = await page.evaluate(() => {
+      let data = []; 
+      let elements = document.querySelectorAll('.scores__inner .linescores .linescores-table table tr td');
+
+      for (var element of elements){ 
+          let score = element.innerText; 
+
+          data.push(score); 
+      }
+
+      return JSON.stringify(data); // 返回数据
   });
-  
-  // console.log(result);
+
   browser.close();
   return result;
-}
-/* jshint ignore:end */
+};
 
-   reptile();
+reptile().then((value) => {
+  console.log(value); // Success!
+});
+/* jshint ignore:end */
 
 
 let reptile_BK = function(){
