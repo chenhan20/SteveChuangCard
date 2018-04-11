@@ -2,8 +2,8 @@
 
 const express = require('express');
 var router = express.Router();
-const sendMail = require('./testmail.js');
-const reptile = require('./testreptile.js');
+const sendMail = require('../src/mail.js');
+const reptile = require('../src/reptile.js');
 
 
 
@@ -20,16 +20,25 @@ router.get('/Fintness', function(req, res, next) {
   res.render('./Fintness', { title: 'Fintness'});
 });
 
-/* GET home page. */
+/* GET Demo01. */
 router.get('/Demo01', function(req, res, next) {
   res.render('./Demo/Demo01', { title: 'Demo01'});
 });
-/* GET home page. */
+/* GET Demo02 */
 router.get('/Demo02', function(req, res, next) {
   //爬當日nab戰績功能
-  let NbaArray = reptile();
-  console.log('NbaArray' + NbaArray);
+  let NbaArray = {aaaa:'123123',bbbbb:'123111111'};
+  // res.json(NbaArray);
+  // console.log('NbaArray' + NbaArray);
   res.render('./Demo/Demo02', { title: 'Demo02' });
+});
+
+/* POST Demo02 */
+router.post('/Demo02', function(req, res, next) {
+  //爬當日nab戰績功能
+  console.log(req.body);
+  let NbaArray = {1:'123123',2:'123111111'};
+  res.send(JSON.stringify(NbaArray));
 });
 
 
