@@ -19,31 +19,32 @@
   // await/async  JSHint 會出現錯誤 故先讓他ignore掉這一段
   /* jshint ignore:start */
 let reptile = async () => {
-  const browser = await puppeteer.launch({headless: true});
+  const browser = await puppeteer.launch({headless: false,slowMo: 3000});
   const page = await browser.newPage();
 
   await page.goto(url);
-
+  //document.querySelectorAll('.scores__inner .linescores .linescores-table table tr td');  取得比分
+  //document.querySelectorAll('.scores__inner .game-body .team') 抓取還沒開打隊伍 
+  //document.querySelectorAll('.scores__inner .linescore__status') 取得開打時間或是目前狀態
+  //document.querySelectorAll('.scores__inner .game-highs table td a') 取得 PTS REB AST 最高球員 一場會有六個 格式 PTS  [0] Name  [1]  Name
   const result = await page.evaluate(() => {
       let data = []; 
-      let elements = document.querySelectorAll('.scores__inner .linescores .linescores-table table tr td');
+      let elements = document.querySelectorAll('.scores__inner .linescores .linescores-table table tr td,.scores__inner .linescore__status,.scores__inner .game-highs table td a,.scores__inner .game-body .team');
 
       for (var element of elements){ 
           let score = element.innerText; 
-
           data.push(score); 
       }
 
-      return JSON.stringify(data); // 返回数据
+      return JSON.stringify(data); 
   });
 
   browser.close();
   return result;
 };
-
-reptile().then((value) => {
-  console.log(value); // Success!
-});
+// reptile().then((value) => {
+//   console.log(value); // Success!
+// });
 /* jshint ignore:end */
 
 

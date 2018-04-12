@@ -15,6 +15,7 @@ $( document ).ready(function() {
             console.log(DemoData);
         },
         error: function(data) {
+            debugger;
             alert('error');
         }
     });

@@ -26,19 +26,19 @@ router.get('/Demo01', function(req, res, next) {
 });
 /* GET Demo02 */
 router.get('/Demo02', function(req, res, next) {
-  //爬當日nab戰績功能
-  let NbaArray = {aaaa:'123123',bbbbb:'123111111'};
-  // res.json(NbaArray);
-  // console.log('NbaArray' + NbaArray);
   res.render('./Demo/Demo02', { title: 'Demo02' });
 });
 
 /* POST Demo02 */
 router.post('/Demo02', function(req, res, next) {
-  //爬當日nab戰績功能
+  //爬當日nab戰績功能   這段有問題
   console.log(req.body);
-  let NbaArray = {1:'123123',2:'123111111'};
-  res.send(JSON.stringify(NbaArray));
+  let NbaArray;
+  reptile().then((value) => {
+    console.log(value);
+    NbaArray =value;
+  });
+  res.send(NbaArray);
 });
 
 
