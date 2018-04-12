@@ -10,13 +10,19 @@ $( document ).ready(function() {
         url: "/SteveCard/Demo02",
         data : TodayDate,
         dataType : 'JSON',
-        success: function(data) {
-            DemoData = data;
+        success: function(Returndata) {
+            DemoData = Returndata;
+        $('.Nba').text(DemoData);
             console.log(DemoData);
         },
-        error: function(data) {
-            debugger;
-            alert('error');
+        error: function(Returndata) {
+            $('.Nba').text('Ajax Error');
+        },
+        beforeSend:function(){
+            $('.sucessmailmodal').modal('show');
+        },
+        complete:function(){
+            $('.sucessmailmodal').modal('hide');
         }
     });
   });

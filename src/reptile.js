@@ -19,7 +19,7 @@
   // await/async  JSHint 會出現錯誤 故先讓他ignore掉這一段
   /* jshint ignore:start */
 let reptile = async () => {
-  const browser = await puppeteer.launch({headless: false,slowMo: 3000});
+  const browser = await puppeteer.launch({headless:false});
   const page = await browser.newPage();
 
   await page.goto(url);
@@ -38,7 +38,6 @@ let reptile = async () => {
 
       return JSON.stringify(data); 
   });
-
   browser.close();
   return result;
 };

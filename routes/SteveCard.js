@@ -32,13 +32,13 @@ router.get('/Demo02', function(req, res, next) {
 /* POST Demo02 */
 router.post('/Demo02', function(req, res, next) {
   //爬當日nab戰績功能   這段有問題
-  console.log(req.body);
-  let NbaArray;
+  // console.log(req.body);
+  // let NbaArray;
   reptile().then((value) => {
     console.log(value);
-    NbaArray =value;
+    res.send(value);
   });
-  res.send(NbaArray);
+  // res.send(NbaArray);
 });
 
 
