@@ -12,7 +12,7 @@ $( document ).ready(function() {
         dataType : 'JSON',
         success: function(Returndata) {
             DemoData = Returndata;
-        $('.Nba').text(DemoData);
+        $('.Nba').text(Returndata);
             console.log(DemoData);
         },
         error: function(Returndata) {
