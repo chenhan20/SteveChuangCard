@@ -36,7 +36,7 @@ router.post('/Demo02', function(req, res, next) {
   // let NbaArray;
   reptile().then((value) => {
     // console.log(value);
-    res.send(JSON.stringify(value));
+    res.send(value);
   });
   // res.send(NbaArray);
 });
