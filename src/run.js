@@ -5,6 +5,8 @@ const reptile = require('./reptile.js');
 // sendMail(['a0911558945@gmail.com','ghostlwj@gmail.com']);
 // sendMail(['111111@gmail.com','123123123@gmail.com']);
 
-reptile().then((value) => {
-  console.log(value); // Success!
-});
+// reptile().then((value) => {
+//   console.log(value); // Success!
+// });
+reptile();
+

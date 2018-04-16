@@ -31,10 +31,9 @@ router.get('/Demo02', function(req, res, next) {
 
 /* POST Demo02 */
 router.post('/Demo02', function(req, res, next) {
-  //爬當日nab戰績功能   這段有問題
   // console.log(req.body);
   // let NbaArray;
-  reptile().then((value) => {
+  reptile(req.body).then((value) => {
     // console.log(value);
     res.send(value);
   });

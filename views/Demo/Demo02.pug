@@ -5,11 +5,12 @@ block append modal
 block buttonPage
 block content
     h1 Demo02爬蟲練習
-    .Demo02
-      .Nba 
-      .qqq {{message}}
-      .aaa {{DemoData}}
-
+    //- .Demo02-1
+    //-   .Nba 
+    //-   .qqq {{message}}
+      //- .aaa {{DemoData}}
+    ul.Demo02-2
+      li(v-for='value in object')  {{ value }}
     script(src='/js/Demo02.js')
     link(rel='stylesheet', href='/stylesheets/Demo02.css')
 
