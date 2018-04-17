@@ -1,6 +1,8 @@
 /*jshint esversion: 6 */
+  /* jshint ignore:start */
 const sendMail = require('./mail.js');
 const reptile = require('./reptile.js');
+const async_await = require('./async_await.js');
 
 // sendMail(['a0911558945@gmail.com','ghostlwj@gmail.com']);
 // sendMail(['111111@gmail.com','123123123@gmail.com']);
@@ -8,5 +10,18 @@ const reptile = require('./reptile.js');
 // reptile().then((value) => {
 //   console.log(value); // Success!
 // });
-reptile();
+
+ wait = async() =>{
+    // console.log('開始');
+    // await async_await();
+    // console.log('結束');
+    console.log('開始');
+    let Data = await reptile();
+    console.log(Data)
+    console.log('結束');
+}
+wait();
+
+
+
 

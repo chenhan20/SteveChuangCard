@@ -9,19 +9,25 @@ $( document ).ready(function() {
     $.ajax({
         type: "POST",
         url: "/SteveCard/Demo02",
-        data : TodayDate,
-        dataType : 'JSON',
+        // data : TodayDate,
+        // dataType : 'JSON',
         success: function(Returndata) {
             DemoData = Returndata;
             // console.log(DemoData);
-            debugger;
-            for(let i=0;i<DemoData.length;i++){
-              console.log(DemoData[i].PTS);
-            }
+            // for(let value of DemoData){
+            //   console.log(value.hTeam);
+            //   console.log(value.vTeam);
+            // }
+            var Demo02_2 = new Vue({
+                el: '.Demo02-2',
+                data: {
+                  object:DemoData
+                }
+              });
         },
         error: function(Returndata) {
-            $('.Nba').text('Ajax Error');
-            alert('Ajax Error');
+            $('.Nba').text('Ajax Error' + Returndata);
+            alert('Ajax Error' + Returndata);
         },
         beforeSend:function(){
             $('.ajaxlaodmodal').modal('show');
@@ -48,9 +54,3 @@ $( document ).ready(function() {
   //   }
   // });
 
-  var Demo02_2 = new Vue({
-    el: '.Demo02-2',
-    data: {
-      object:''
-    }
-  });

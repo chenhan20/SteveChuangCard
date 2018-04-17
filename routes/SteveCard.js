@@ -30,16 +30,18 @@ router.get('/Demo02', function(req, res, next) {
 });
 
 /* POST Demo02 */
-router.post('/Demo02', function(req, res, next) {
-  // console.log(req.body);
-  // let NbaArray;
-  reptile(req.body).then((value) => {
-    // console.log(value);
-    res.send(value);
-  });
-  // res.send(NbaArray);
-});
+  /* jshint ignore:start */
 
+router.post('/Demo02',async function(req, res, next) {
+  // consolAe.log(req.body);
+  // reptile(req.body).then((value) => {
+  //   // console.log(value);
+  //   res.send(value);
+  // });
+    let GameData=await reptile();
+    res.json(GameData);
+  });
+  /* jshint ignore:end */
 
 
 //寄送mail功能
