@@ -1,42 +1,43 @@
 /*jshint esversion: 6 */
-let DemoData;
-let today=new Date();
-let TodayDate = JSON.stringify({yyyy:today.getFullYear(),mm : today.getMonth()+1,dd:today.getDate()});
+// let DemoData;
+let TwDay=new Date();
+let TwdayDate = {yyyy:TwDay.getFullYear(),mm : TwDay.getMonth()+1,dd:TwDay.getDate()};
+let USAday = new Date();
+USAday.setDate(USAday.getDate() - 1);
+let USADate = {yyyy:USAday.getFullYear(),mm : USAday.getMonth()+1,dd:USAday.getDate()};
 
-$( document ).ready(function() {
-    // Handler for .ready() called.
-    // let getData =function(){
-    $.ajax({
-        type: "POST",
-        url: "/SteveCard/Demo02",
-        // data : TodayDate,
-        // dataType : 'JSON',
-        success: function(Returndata) {
-            DemoData = Returndata;
-            // console.log(DemoData);
-            // for(let value of DemoData){
-            //   console.log(value.hTeam);
-            //   console.log(value.vTeam);
-            // }
-            var Demo02_2 = new Vue({
-                el: '.Demo02-2',
-                data: {
-                  object:DemoData
-                }
-              });
-        },
-        error: function(Returndata) {
-            $('.Nba').text('Ajax Error' + Returndata);
-            alert('Ajax Error' + Returndata);
-        },
-        beforeSend:function(){
-            $('.ajaxlaodmodal').modal('show');
-        },
-        complete:function(){
-            $('.ajaxlaodmodal').modal('hide');
-        }
-    });
-  // };
+
+
+// $( document ).ready(function() {
+//   });
+
+
+  let Demo02_2 = new Vue({
+    el: '.Demo02-2',
+    data: {
+        object:{},Date:TwdayDate
+    },
+    mounted:function(){
+        var self = this;
+        $.ajax({
+            type: "POST",
+            url: "/SteveCard/Demo02",
+            data : USADate,
+            // dataType : 'JSON',
+            success: function(Returndata) {
+                self.object = Returndata;
+            },
+            error: function(Returndata) {
+                self.object={Error:'Error'};
+            },
+            beforeSend:function(){
+                $('.ajaxlaodmodal').modal('show');
+            },
+            complete:function(){
+                $('.ajaxlaodmodal').modal('hide');
+            }
+        });
+    }
   });
 
 

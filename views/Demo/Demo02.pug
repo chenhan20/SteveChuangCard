@@ -5,12 +5,19 @@ block append modal
 block buttonPage
 block content
     h1 Demo02爬蟲練習
-    //- .Demo02-1
-    //-   .Nba 
-    //-   .qqq {{message}}
-      //- .aaa {{DemoData}}
     ul.Demo02-2
-      li(v-for='value in object')  {{ value }}
+      h4 {{Date.yyyy}}/{{Date.mm}}/{{Date.dd}}  共有 {{object.length}} 場比賽
+      li.Nba(v-for='value in object') {{value.status}}  {{value.status=='1'}}
+        h4(v-if="value.status=='1'") 尚未開打  
+        h4(v-elseif="value.status=='2'") Live  
+        h4(v-else) 已結束 
+        .hTeam 主場隊伍 : {{value.hTeam.name}} 
+        .hScore 分數 {{value.hTeam.score}}
+        .vTeam 客場隊伍 : {{value.vTeam.name}}
+        .vScore 分數 {{value.vTeam.score}}
+      
+
+
     script(src='/js/Demo02.js')
     link(rel='stylesheet', href='/stylesheets/Demo02.css')
 

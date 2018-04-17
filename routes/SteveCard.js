@@ -33,12 +33,10 @@ router.get('/Demo02', function(req, res, next) {
   /* jshint ignore:start */
 
 router.post('/Demo02',async function(req, res, next) {
-  // consolAe.log(req.body);
-  // reptile(req.body).then((value) => {
-  //   // console.log(value);
-  //   res.send(value);
-  // });
-    let GameData=await reptile();
+    //解析日期
+    const postDate = req.body.yyyy + (req.body.mm<10 ? '0' : '') + req.body.mm + req.body.dd;
+    
+    let GameData=await reptile(postDate);
     res.json(GameData);
   });
   /* jshint ignore:end */

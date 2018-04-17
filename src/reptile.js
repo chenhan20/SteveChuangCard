@@ -2,13 +2,6 @@
   const request = require('request');
   const puppeteer = require ('puppeteer');
   const cheerio = require('cheerio');
-  // const url = 'https://www.usatoday.com/sports/nba/scores/';
-  let url = 'https://stats.nba.com/scores/';
-  let date = '20180409';
-  //const url = 'http://books.toscrape.com';  //測試用網站
-  
-  
-  let resultMinute = {};
  
   // const splitResult = function(value){
     //還不確定要篩選掉什麼 先放著
@@ -52,94 +45,49 @@
 
 
 //使用request 因為直接呼叫json就可以取得資訊了
-let reptile=async()=>{
-// Promise.all([
-//   getTeamMappingArray(),
-//   getScoreboard()
-// ]).then((results)=>{
-//   var teams = results[0];
-//   var games = results[1];
-//   console.log(games.map((game )=>{
-//     return {
-//       hTeam: {
-//         name: teams[game.hTeam.triCode].nickname,
-//         score: game.hTeam.score,
-//       },
-//       vTeam: {
-//         name: teams[game.vTeam.triCode].nickname,
-//         score: game.vTeam.score,
-//       },
-//     };
-//   }));
-// });
-  // console.log('start');
+let reptile=async(date)=>{
+  console.log('抓取Nba資訊開始  抓取日期(美國日期):'+date);
   let Team =  await getTeamMappingArray();
   let Scoreboard =  await getScoreboard();
-  // console.log('end');
+  console.log('抓取完畢' + date + '共有' + Scoreboard.length + '場比賽');
   return Scoreboard.map((game )=>{
-    console.log(game.hTeam.triCode);
     return {
+      status:game.statusNum,
       hTeam:{name:Team[game.hTeam.triCode].fullName,score:game.hTeam.score},
-      vTeam:{name:Team[game.vTeam.triCode].fullName,score:game.vTeam.score}};
+      vTeam:{name:Team[game.vTeam.triCode].fullName,score:game.vTeam.score,status:game.statusNum}};
     })
-    console.log('end');
-//抓隊伍對應
-function getScoreboard(){
-  return new Promise((resolve, reject)=>{
-    request('https://data.nba.net/prod/v2/'+ date +'/scoreboard.json', (err, res, body)=>{
-     if(!err && res.statusCode == 200) {
-      var scoreboard = JSON.parse(body);
-      resolve(scoreboard.games);
-    }else{
-      reject('取得分數失敗'+error.massage);
-    }
-    });
-  });
-}
-//取分數
-function getTeamMappingArray(){
-  return new Promise((resolve, reject)=>{
-    request('https://data.nba.net/prod/v1/2017/teams.json', (err, res, body)=>{
+  //抓隊伍對應
+  function getScoreboard(){
+    // date = '20180416';
+    return new Promise((resolve, reject)=>{
+      request('https://data.nba.net/prod/v2/'+ date +'/scoreboard.json', (err, res, body)=>{
       if(!err && res.statusCode == 200) {
-      var teams = JSON.parse(body);
-      var mapping = [];
-      teams.league.standard.forEach((obj)=>{
-        mapping[obj.tricode] = obj;
+        var scoreboard = JSON.parse(body);
+        resolve(scoreboard.games);
+      }else{
+        reject('取得分數失敗'+error.massage);
+      }
       });
-      resolve(mapping)
-    }else{
-      reject('取得隊伍資訊失敗' + err.message);
-    }
     });
-  });
+  }
+  //取分數
+  function getTeamMappingArray(){
+    return new Promise((resolve, reject)=>{
+      request('https://data.nba.net/prod/v1/2017/teams.json', (err, res, body)=>{
+        if(!err && res.statusCode == 200) {
+        var teams = JSON.parse(body);
+        var mapping = [];
+        teams.league.standard.forEach((obj)=>{
+          mapping[obj.tricode] = obj;
+        });
+        resolve(mapping)
+      }else{
+        reject('取得隊伍資訊失敗' + err.message);
+      }
+      });
+    });
+  }
 }
-}
-
-
-
-
-// //抓隊伍對應
-// function getScoreboard(){
-//   return new Promise(done=>{
-//     request('https://data.nba.net/prod/v2/'+ date +'/scoreboard.json', (err, res, body)=>{
-//       var scoreboard = JSON.parse(body);
-//       done(scoreboard.games);
-//     });
-//   });
-// }
-// //取分數
-// function getTeamMappingArray(){
-//   return new Promise(done=>{
-//     request('https://data.nba.net/prod/v1/2017/teams.json', (err, res, body)=>{
-//       var teams = JSON.parse(body);
-//       var mapping = [];
-//       teams.league.standard.forEach((obj)=>{
-//         mapping[obj.tricode] = obj;
-//       });
-//       done(mapping)
-//     });
-//   });
-// }
 
 /* jshint ignore:end */
 
