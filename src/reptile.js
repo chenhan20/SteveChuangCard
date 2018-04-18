@@ -52,10 +52,10 @@ let reptile=async(date)=>{
   console.log('抓取完畢' + date + '共有' + Scoreboard.length + '場比賽');
   return Scoreboard.map((game )=>{
     return {
-      status:game.statusNum,
-      playoffs:game.playoffs,
-      hTeam:{name:Team[game.hTeam.triCode].fullName,score:game.hTeam.score},
-      vTeam:{name:Team[game.vTeam.triCode].fullName,score:game.vTeam.score}};
+      status:game.statusNum,//比賽狀態 1:尚未開打 ,2:Live,3:結束
+      playoffs:game.playoffs,//若此物件有值 代表為季後賽模式
+      hTeam:{name:Team[game.hTeam.triCode].fullName,score:game.hTeam.score,logo:'https://stats.nba.com/media/img/teams/logos/' + game.hTeam.triCode +'_logo.svg'},
+      vTeam:{name:Team[game.vTeam.triCode].fullName,score:game.vTeam.score,logo:'https://stats.nba.com/media/img/teams/logos/' + game.vTeam.triCode +'_logo.svg'}};
     })
   //抓隊伍對應
   function getScoreboard(){

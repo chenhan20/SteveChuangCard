@@ -41,7 +41,12 @@ h1{
 
 }
 
-
+a ,h5,h4,h3{
+    font-family: Raleway;
+    font-weight: 600;
+    /* line-height: 0px; */
+    letter-spacing: 4.5px;
+}
 hr{
     display: block;
     unicode-bidi: isolate;
@@ -84,7 +89,7 @@ hr{
     line-height: 40px;
     border-radius: 30px;
     display: inline-block;
-    font-family: "graphik-bki", "PingFangTC-Semibold", "Noto Sans Bold";
+    /* font-family: "graphik-bki", "PingFangTC-Semibold", "Noto Sans Bold"; */
     font-size: 14px;
     letter-spacing: 2px;
     -webkit-transition: 0.3s;

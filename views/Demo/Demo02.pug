@@ -8,24 +8,34 @@ block content
     .container-fluid
       ul.Demo02-2
         .iconDate.col-ms-12.col-xl-4
-          a(href='#',data-toggle="tooltip" ,title='Previous Day',v-on:click='LessDate')
+          a(href='#',data-toggle="tooltip" ,title='Previous Day',data-placement="bottom",v-on:click='LessDate')
             i.icon.fas.fa-angle-left(style='font-size:30px')  
           h4.NBAdate {{Date.yyyy}}年{{Date.mm}}月{{Date.dd}}
           a(href='#',data-toggle="tooltip" ,title='Next Day',v-on:click='AddDate')
             i.icon.fas.fa-angle-right(style='font-size:30px')
           h4  共有 {{object.length}} 場比賽  
-          h4(v-if='object[0].playoffs!=null') Playoffs
-          h4(v-else) Regular season
+          //- 他會出現問題 感覺是不能這樣取object裡面的東西 待解決 2018/04/19
+          //- h4(v-if="object[0]!=null") Playoffs
+          //- h4(v-else) Regular season
         li.Nba.col-sm-12.col-xl-5(v-for='value in object') 
           h3(v-if="value.status=='1'") 尚未開打  
           h3(v-else-if="value.status=='2'") Live  
           h3(v-else) 已結束 
-          .Game 
-            a.hTeam.col-xl-3 主場 : {{value.hTeam.name}} 
-            a.hScore.col-xl-3  {{value.hTeam.score=="" ? 0 :value.hTeam.score}}
-            br
-            a.vTeam.col-xl-12 客場 : {{value.vTeam.name}}
-            a.vScore.col-xl-3  {{value.vTeam.score=="" ? 0 :value.vTeam.score}}
+          .Game(v-on:click='GameDetail',data-toggle="tooltip" ,title='Box Score',data-placement="bottom")
+            .row
+              img.team-img.col-2(v-bind:src="value.hTeam.logo")
+              a.hTeam.col-8  {{value.hTeam.name}}
+              a.no.col-1(v-if="value.status=='1' || value.status=='2'") 
+              a.win.col-1(v-else-if='value.hTeam.score>value.vTeam.score') W 
+              a.lose.col-1(v-else) L
+              a.hScore.col-1  {{value.hTeam.score=="" ? 0 :value.hTeam.score}}
+            .row
+              img.team-img.col-2(v-bind:src="value.vTeam.logo")
+              a.vTeam.col-8 {{value.vTeam.name}}
+              a.no.col-1(v-if="value.status=='1' || value.status=='2'")  
+              a.win.col-1(v-else-if='value.hTeam.score<value.vTeam.score') W
+              a.lose.col-1(v-else) L
+              a.vScore.col-1  {{value.vTeam.score=="" ? 0 :value.vTeam.score}}
       
 
 

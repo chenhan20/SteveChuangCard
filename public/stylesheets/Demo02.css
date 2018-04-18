@@ -24,10 +24,17 @@ h4,a{
     -webkit-margin-before: 0;
     -webkit-margin-after: 0; */
 }
+.team-img{
+    width: 50px;
+    height: 50px; 
+}
 .hScore , .vScore{
     text-align:right;
     /* font-size: 50px */
 
+}
+.Game{
+    cursor: pointer;
 }
 /* .iconDate{
 

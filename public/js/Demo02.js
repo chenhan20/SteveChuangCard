@@ -40,7 +40,7 @@ $(document).ready(function(){
                 complete:function(){
                     $('.ajaxlaodmodal').modal('hide');
                 }
-            });        
+            });       
         },
         LessDate:function(event){
             let self = this;
@@ -67,8 +67,14 @@ $(document).ready(function(){
                     $('.ajaxlaodmodal').modal('hide');
                 }
             });
-        }
-    },
+        },
+        //比賽詳細資訊
+        GameDetail:function(event){
+            //取得點選比賽主場的隊伍(查詢比賽資訊用)
+            // alert(event.currentTarget.querySelectorAll(".hTeam")[0].innerText); 
+            
+        } 
+},
     mounted:function(){
         var self = this;
         $.ajax({
