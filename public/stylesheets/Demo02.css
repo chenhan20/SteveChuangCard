@@ -1,8 +1,37 @@
-button{
+
+/* button{
     margin-top: 10px;
-}
+} */
 .Nba{
-    border:0px black solid;
+    /* border-right:1px black solid; */
     float:left;
     margin: 20px;
+    border-bottom: rgb(163, 163, 163) 3px solid;
+    list-style-type:none;
+}
+.Nba:hover{
+    border-bottom: black 3px solid;
+}
+h4,a{
+    font-family: Raleway;
+    /* font-size: 18px; */
+    font-weight: 300;
+    line-height: 40px;
+    letter-spacing: 4.5px;
+    color: #3f4e64;
+    /* vertical-align: baseline;
+    text-transform: uppercase;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0; */
+}
+.hScore , .vScore{
+    text-align:right;
+    /* font-size: 50px */
+
+}
+/* .iconDate{
+
+} */
+.NBAdate{
+    display: inline;
 }

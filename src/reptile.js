@@ -53,8 +53,9 @@ let reptile=async(date)=>{
   return Scoreboard.map((game )=>{
     return {
       status:game.statusNum,
+      playoffs:game.playoffs,
       hTeam:{name:Team[game.hTeam.triCode].fullName,score:game.hTeam.score},
-      vTeam:{name:Team[game.vTeam.triCode].fullName,score:game.vTeam.score,status:game.statusNum}};
+      vTeam:{name:Team[game.vTeam.triCode].fullName,score:game.vTeam.score}};
     })
   //抓隊伍對應
   function getScoreboard(){
