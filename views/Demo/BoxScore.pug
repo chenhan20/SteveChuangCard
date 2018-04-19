@@ -1,0 +1,15 @@
+extends ../common/layout
+
+block append CV_Nav
+block modal
+block buttonPage
+block content
+    h1 #{title}
+    
+    .BoxScore
+      .GameId(v-show="true") #{GameId}
+      h4 {{message}}
+    
+    
+    script(src='/js/BoxScore.js')
+

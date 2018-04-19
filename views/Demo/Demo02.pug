@@ -4,7 +4,7 @@ block append CV_Nav
 block append modal
 block buttonPage
 block content
-    h1 Demo02爬蟲練習
+    h1 Demo02 NBA Score
     .container-fluid
       ul.Demo02-2
         .iconDate.col-ms-12.col-xl-4
@@ -14,14 +14,16 @@ block content
           a(href='#',data-toggle="tooltip" ,title='Next Day',v-on:click='AddDate')
             i.icon.fas.fa-angle-right(style='font-size:30px')
           h4  共有 {{object.length}} 場比賽  
-          //- 他會出現問題 感覺是不能這樣取object裡面的東西 待解決 2018/04/19
-          //- h4(v-if="object[0]!=null") Playoffs
-          //- h4(v-else) Regular season
+          //- 他會出現問題 感覺是不能這樣取object裡面的東西 待解決 2018/04/19  在另一台電腦又成功==
+          h4(v-if="object.length==0") No games on this date.
+          h4(v-else-if="object[0]!=null") Playoffs
+          h4(v-else) Regular season
         li.Nba.col-sm-12.col-xl-5(v-for='value in object') 
           h3(v-if="value.status=='1'") 尚未開打  
           h3(v-else-if="value.status=='2'") Live  
           h3(v-else) 已結束 
-          .Game(v-on:click='GameDetail',data-toggle="tooltip" ,title='Box Score',data-placement="bottom")
+          .Game(v-on:click='GameDetail')
+            .gameId(v-show="false") {{value.gameId}}
             .row
               img.team-img.col-2(v-bind:src="value.hTeam.logo")
               a.hTeam.col-8  {{value.hTeam.name}}

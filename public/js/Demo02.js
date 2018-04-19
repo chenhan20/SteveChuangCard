@@ -7,7 +7,6 @@ USAday.setDate(USAday.getDate() - 1);
 let USADate = {yyyy:USAday.getFullYear(),mm : USAday.getMonth()+1,dd:USAday.getDate()};
 //bootstrap hover text setting
 $(document).ready(function(){
-    $('[data-toggle="tooltip"]').tooltip();   
 });
 
   let Demo02_2 = new Vue({
@@ -72,11 +71,14 @@ $(document).ready(function(){
         GameDetail:function(event){
             //取得點選比賽主場的隊伍(查詢比賽資訊用)
             // alert(event.currentTarget.querySelectorAll(".hTeam")[0].innerText); 
-            
+            let GameId =  event.currentTarget.querySelectorAll(".gameId")[0].innerText;
+            // $.get( "/SteveCard/BoxScore/"+hTeam);
+            window.location = "/SteveCard/BoxScore/"+GameId;
         } 
 },
     mounted:function(){
         var self = this;
+        $('[data-toggle="tooltip"]').tooltip();   
         $.ajax({
             type: "POST",
             url: "/SteveCard/Demo02",

@@ -39,6 +39,23 @@ router.post('/Demo02',async function(req, res, next) {
     let GameData=await reptile(postDate);
     res.json(GameData);
   });
+
+router.get('/BoxScore/*',function(req, res, next) {
+    //解析日期
+    const GameId=req.path.substr(10);
+    res.render('./Demo/BoxScore', { title: 'BoxScore',GameId:GameId });
+  });
+router.post('/BoxScore/',function(req, res, next) {
+    //解析日期
+    console.log('GameID : ' + req.body.GameId);
+    //爬出這場比賽數據 根據gameId(未完成)
+
+
+    res.json('./Demo/BoxScore', { title: 'BoxScore',GameId:GameId });
+  });
+
+
+
   /* jshint ignore:end */
 
 
