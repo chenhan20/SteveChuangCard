@@ -72,8 +72,12 @@ $(document).ready(function(){
             //取得點選比賽主場的隊伍(查詢比賽資訊用)
             // alert(event.currentTarget.querySelectorAll(".hTeam")[0].innerText); 
             let GameId =  event.currentTarget.querySelectorAll(".gameId")[0].innerText;
+            let VtriCode =  event.currentTarget.querySelectorAll(".vTeamtriCode")[0].innerText;
+            let HtriCode =  event.currentTarget.querySelectorAll(".hTeamtriCode")[0].innerText;
             // $.get( "/SteveCard/BoxScore/"+hTeam);
-            window.location = "/SteveCard/BoxScore/"+GameId;
+            // console.log(VtriCode);
+            // console.log(HtriCode);
+            window.location = "/SteveCard/Demo02/BoxScore/"+VtriCode+HtriCode+GameId;
         } 
 },
     mounted:function(){

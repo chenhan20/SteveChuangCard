@@ -55,10 +55,10 @@ let reptile=async(date)=>{
       status:game.statusNum,//比賽狀態 1:尚未開打 ,2:Live,3:結束
       playoffs:game.playoffs,//若此物件有值 代表為季後賽模式
       gameId:game.gameId,//唯一值
-      hTeam:{name:Team[game.hTeam.triCode].nickname,score:game.hTeam.score,logo:'https://stats.nba.com/media/img/teams/logos/' + game.hTeam.triCode +'_logo.svg'},
-      vTeam:{name:Team[game.vTeam.triCode].nickname,score:game.vTeam.score,logo:'https://stats.nba.com/media/img/teams/logos/' + game.vTeam.triCode +'_logo.svg'}};
+      hTeam:{name:Team[game.hTeam.triCode].nickname,triCode:game.hTeam.triCode,score:game.hTeam.score,logo:'https://stats.nba.com/media/img/teams/logos/' + game.hTeam.triCode +'_logo.svg'},
+      vTeam:{name:Team[game.vTeam.triCode].nickname,triCode:game.vTeam.triCode,score:game.vTeam.score,logo:'https://stats.nba.com/media/img/teams/logos/' + game.vTeam.triCode +'_logo.svg'}};
     })
-  //抓隊伍對應
+  //抓日期分數
   function getScoreboard(){
     // date = '20180416';
     return new Promise((resolve, reject)=>{
@@ -72,7 +72,7 @@ let reptile=async(date)=>{
       });
     });
   }
-  //取分數
+  //取對應隊伍
   function getTeamMappingArray(){
     return new Promise((resolve, reject)=>{
       request('https://data.nba.net/prod/v1/2017/teams.json', (err, res, body)=>{

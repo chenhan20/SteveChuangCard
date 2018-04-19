@@ -25,6 +25,7 @@ block content
           .Game(v-on:click='GameDetail')
             .gameId(v-show="false") {{value.gameId}}
             .row
+              .hTeamtriCode(v-show="false") {{value.hTeam.triCode}}
               img.team-img.col-2(v-bind:src="value.hTeam.logo")
               a.hTeam.col-8  {{value.hTeam.name}}
               a.no.col-1(v-if="value.status=='1' || value.status=='2'") 
@@ -32,6 +33,7 @@ block content
               a.lose.col-1(v-else) L
               a.hScore.col-1  {{value.hTeam.score=="" ? 0 :value.hTeam.score}}
             .row
+              .vTeamtriCode(v-show="false") {{value.vTeam.triCode}}
               img.team-img.col-2(v-bind:src="value.vTeam.logo")
               a.vTeam.col-8 {{value.vTeam.name}}
               a.no.col-1(v-if="value.status=='1' || value.status=='2'")  

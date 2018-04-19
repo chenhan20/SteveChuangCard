@@ -1,14 +1,37 @@
 extends ../common/layout
 
 block append CV_Nav
-block modal
+block append modal
 block buttonPage
 block content
     h1 #{title}
     
     .BoxScore
       .GameId(v-show="true") #{GameId}
-      h4 {{message}}
+      .VtriCode(v-show="true") #{VtriCode}
+      .HtriCode(v-show="true") #{HtriCode}
+      //- h4 {{message}}
+      .Box
+        table
+          tbody
+            tr Name
+            tr Name
+            tr Name
+            tr Name
+            tr Name
+            tr Name
+            tr Name
+            td(v-for='value in object.HomeBoxData')  {{value}} 
+        table
+          tbody
+            tr Name
+            tr Name
+            tr Name
+            tr Name
+            tr Name
+            tr Name
+            tr Name
+            td(v-for='value in object.AwayBoxData')  {{value}} 
     
     
     script(src='/js/BoxScore.js')

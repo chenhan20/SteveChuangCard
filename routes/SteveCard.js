@@ -4,6 +4,7 @@ const express = require('express');
 var router = express.Router();
 const sendMail = require('../src/mail.js');
 const reptile = require('../src/reptile.js');
+const reptileBox = require('../src/reptileBox.js');
 
 
 
@@ -40,18 +41,21 @@ router.post('/Demo02',async function(req, res, next) {
     res.json(GameData);
   });
 
-router.get('/BoxScore/*',function(req, res, next) {
-    //解析日期
-    const GameId=req.path.substr(10);
-    res.render('./Demo/BoxScore', { title: 'BoxScore',GameId:GameId });
+router.get('/Demo02/BoxScore/*',function(req, res, next) {
+    const GameId=req.path.substr(23);
+    const VtriCode=req.path.substr(17,3);
+    const HtriCode=req.path.substr(20,3);
+    res.render('./Demo/BoxScore', { title: 'BoxScore',GameId:GameId,'VtriCode':VtriCode,'HtriCode':HtriCode });
   });
-router.post('/BoxScore/',function(req, res, next) {
-    //解析日期
+router.post('/Demo02/BoxScore/',async function(req, res, next) {
     console.log('GameID : ' + req.body.GameId);
+    console.log('VtriCode : ' + req.body.VtriCode);
+    console.log('HtriCode : ' + req.body.HtriCode);
+    
     //爬出這場比賽數據 根據gameId(未完成)
 
-
-    res.json('./Demo/BoxScore', { title: 'BoxScore',GameId:GameId });
+    let BoxData=await reptileBox('20180418');
+    res.send(BoxData);
   });
 
 
