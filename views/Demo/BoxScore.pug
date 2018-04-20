@@ -14,25 +14,38 @@ block content
       .Box
         table
           tbody
-            tr Name
-            tr Name
-            tr Name
-            tr Name
-            tr Name
-            tr Name
-            tr Name
-            td(v-for='value in object.HomeBoxData')  {{value}} 
+            tr 
+              th Name
+              th Name
+              th Name
+              th Name
+              th Name
+              th Name
+              th Name
+              th Name
+              th Name
+              th Name
+              th Name
+              th Name   
+              th Name
+              th Name
+              th Name
+              th Name
+            tr
+              td(v-for='value in object.HomeBoxData')  {{value}} 
         table
           tbody
-            tr Name
-            tr Name
-            tr Name
-            tr Name
-            tr Name
-            tr Name
-            tr Name
-            td(v-for='value in object.AwayBoxData')  {{value}} 
+            tr 
+              th Name
+              th Name
+              th Name
+              th Name
+              th Name
+              th Name
+            tr
+              td(v-for='value in object.AwayBoxData')  {{value}} 
     
     
     script(src='/js/BoxScore.js')
+    link(rel='stylesheet', href='/stylesheets/BoxScore.css')
 
