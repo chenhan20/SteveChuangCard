@@ -78,7 +78,10 @@ $(document).ready(function(){
             // console.log(VtriCode);
             // console.log(HtriCode);
             window.location = "/SteveCard/Demo02/BoxScore/"+VtriCode+HtriCode+GameId;
-        } 
+        },
+        bg_css:function(Logo){
+            return {'background-image': `url(${Logo})`};
+        }
 },
     mounted:function(){
         var self = this;

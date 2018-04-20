@@ -14,7 +14,6 @@ block content
           a(href='#',data-toggle="tooltip" ,title='Next Day',v-on:click='AddDate')
             i.icon.fas.fa-angle-right(style='font-size:30px')
           h4  共有 {{object.length}} 場比賽  
-          //- 他會出現問題 感覺是不能這樣取object裡面的東西 待解決 2018/04/19  在另一台電腦又成功==
           h4(v-if="object.length==0") No games on this date.
           h4(v-else-if="object[0]!=null") Playoffs
           h4(v-else) Regular season
@@ -26,22 +25,23 @@ block content
             .gameId(v-show="false") {{value.gameId}}
             .row
               .hTeamtriCode(v-show="false") {{value.hTeam.triCode}}
-              img.team-img.col-2(v-bind:src="value.hTeam.logo")
-              a.hTeam.col-8  {{value.hTeam.name}}
+              //- img.team-img.col-2(v-bind:src="value.hTeam.logo")
+              .TeamLogo.col-1(:style="bg_css(value.hTeam.logo)")
+              a.hTeam.col-9  {{value.hTeam.name}}
               a.no.col-1(v-if="value.status=='1' || value.status=='2'") 
               a.win.col-1(v-else-if='value.hTeam.score>value.vTeam.score') W 
               a.lose.col-1(v-else) L
               a.hScore.col-1  {{value.hTeam.score=="" ? 0 :value.hTeam.score}}
             .row
               .vTeamtriCode(v-show="false") {{value.vTeam.triCode}}
-              img.team-img.col-2(v-bind:src="value.vTeam.logo")
-              a.vTeam.col-8 {{value.vTeam.name}}
+              //- img.team-img.col-2(v-bind:src="value.vTeam.logo")
+              .TeamLogo.col-1(:style="bg_css(value.vTeam.logo)")
+              a.vTeam.col-9 {{value.vTeam.name}}
               a.no.col-1(v-if="value.status=='1' || value.status=='2'")  
               a.win.col-1(v-else-if='value.hTeam.score<value.vTeam.score') W
               a.lose.col-1(v-else) L
               a.vScore.col-1  {{value.vTeam.score=="" ? 0 :value.vTeam.score}}
       
-
 
     script(src='/js/Demo02.js')
     link(rel='stylesheet', href='/stylesheets/Demo02.css')

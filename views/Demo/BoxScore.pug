@@ -5,7 +5,11 @@ block append modal
 block buttonPage
 block content
     h1 #{title}
-    
+    script(type='text/javascript').
+        const GameId='#{GameId}';
+        const HtriCode='#{VtriCode}';
+        const VtriCode='#{HtriCode}';
+
     .BoxScore
       .GameId(v-show="true") #{GameId}
       .VtriCode(v-show="true") #{VtriCode}
