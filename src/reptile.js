@@ -55,8 +55,8 @@ let reptile=async(date)=>{
       status:game.statusNum,//比賽狀態 1:尚未開打 ,2:Live,3:結束
       playoffs:game.playoffs,//若此物件有值 代表為季後賽模式
       gameId:game.gameId,//唯一值
-      hTeam:{name:Team[game.hTeam.triCode].nickname,triCode:game.hTeam.triCode,score:game.hTeam.score,logo:'https://stats.nba.com/media/img/teams/logos/' + game.hTeam.triCode +'_logo.svg'},
-      vTeam:{name:Team[game.vTeam.triCode].nickname,triCode:game.vTeam.triCode,score:game.vTeam.score,logo:'https://stats.nba.com/media/img/teams/logos/' + game.vTeam.triCode +'_logo.svg'}};
+      hTeam:{name:Team[game.hTeam.triCode].nickname,triCode:game.hTeam.triCode,score:game.hTeam.score,logo:'https://stats.nba.com/media/img/teams/logos/' + game.hTeam.triCode +'_logo.svg',win:parseInt(game.hTeam.score)>parseInt(game.vTeam.score)},
+      vTeam:{name:Team[game.vTeam.triCode].nickname,triCode:game.vTeam.triCode,score:game.vTeam.score,logo:'https://stats.nba.com/media/img/teams/logos/' + game.vTeam.triCode +'_logo.svg',win:parseInt(game.vTeam.score)>parseInt(game.hTeam.score)}};
     })
   //抓日期分數
   function getScoreboard(){

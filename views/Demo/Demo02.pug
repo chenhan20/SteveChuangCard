@@ -29,16 +29,16 @@ block content
               .TeamLogo.col-1(:style="bg_css(value.hTeam.logo)")
               a.hTeam.col-9  {{value.hTeam.name}}
               a.no.col-1(v-if="value.status=='1' || value.status=='2'") 
-              a.win.col-1(v-else-if='value.hTeam.score>value.vTeam.score') W 
+              a.win.col-1(v-else-if='value.hTeam.win') W 
               a.lose.col-1(v-else) L
               a.hScore.col-1  {{value.hTeam.score=="" ? 0 :value.hTeam.score}}
             .row
               .vTeamtriCode(v-show="false") {{value.vTeam.triCode}}
               //- img.team-img.col-2(v-bind:src="value.vTeam.logo")
-              .TeamLogo.col-1(:style="bg_css(value.vTeam.logo)")
-              a.vTeam.col-9 {{value.vTeam.name}}
-              a.no.col-1(v-if="value.status=='1' || value.status=='2'")  
-              a.win.col-1(v-else-if='value.hTeam.score<value.vTeam.score') W
+              .TeamLogo.col-1(:style="bg_css(value.vTeam.logo)") 
+              a.vTeam.col-9 {{value.vTeam.name}} 
+              a.no.col-1(v-if="value.status=='1' || value.status=='2'")
+              a.win.col-1(v-else-if='value.vTeam.win') W
               a.lose.col-1(v-else) L
               a.vScore.col-1  {{value.vTeam.score=="" ? 0 :value.vTeam.score}}
       
