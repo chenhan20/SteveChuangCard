@@ -41,8 +41,15 @@ let reptileBox=async(date)=>{
           .each(function(i,elem){
             AwayBoxData.push($(this).text());
         })
-        
-        let totalData = {HomeBoxData,AwayBoxData}
+        // let TestData = HomeBoxData.map(function(item,index,array){
+        //   console.log(item);
+        // })
+        let Homenum = (HomeBoxData.length/16);
+        let TestData = [];
+        for(let i=0;i<Homenum;i++){
+          TestData.push(HomeBoxData.slice(i*16,(i+1)*16));
+        }
+        let totalData = {HomeBoxData,AwayBoxData,TestData};
 
         resolve(totalData);
       }else{
