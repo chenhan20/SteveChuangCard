@@ -4,6 +4,7 @@ let BoxScore = new Vue({
     data:{message:'hello vue',object:{}},
     mounted:function(){
         console.log(GameId);
+        console.log(GameDate);
         console.log(HtriCode);
         console.log(VtriCode);
         self=this;
@@ -13,7 +14,7 @@ let BoxScore = new Vue({
         $.ajax({
             type: "POST",
             url: "/SteveCard/Demo02/BoxScore/",
-            data : {'GameId':GameId,'HtriCode':HtriCode,'VtriCode':VtriCode},
+            data : {'GameId':GameId,GameDate:'','HtriCode':HtriCode,'VtriCode':VtriCode},
             // dataType : 'JSON',
             success: function(Returndata) {
                 // debugger;

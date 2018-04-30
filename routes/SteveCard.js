@@ -42,10 +42,11 @@ router.post('/Demo02',async function(req, res, next) {
   });
 
 router.get('/Demo02/BoxScore/*',function(req, res, next) {
-    const GameId=req.path.substr(23);
+    const GameId=req.path.substr(23,10);
     const VtriCode=req.path.substr(17,3);
     const HtriCode=req.path.substr(20,3);
-    res.render('./Demo/BoxScore', { title: 'BoxScore',GameId:GameId,'VtriCode':VtriCode,'HtriCode':HtriCode });
+    const GameDate=req.path.substr(33,8);
+    res.render('./Demo/BoxScore', { title: 'BoxScore',GameId:GameId,'VtriCode':VtriCode,'HtriCode':HtriCode,GameDate:GameDate});
   });
 router.post('/Demo02/BoxScore/',async function(req, res, next) {
     console.log('GameID : ' + req.body.GameId);

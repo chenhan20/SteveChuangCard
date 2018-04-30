@@ -22,10 +22,11 @@ let reptileBox=async(date)=>{
   //   })
   //抓box資訊
   function getScoreboard(){
-    let BoxUrl = 'http://stats.nba.com/stats/boxscoretraditionalv2?EndPeriod=10&EndRange=28800&GameID=0041700132&RangeType=0&Season=2017-18&SeasonType=Playoffs&StartPeriod=1&StartRange=0';
+    // let BoxUrl = 'http://stats.nba.com/stats/boxscoretraditionalv2?EndPeriod=10&EndRange=28800&GameID=0041700132&RangeType=0&Season=2017-18&SeasonType=Playoffs&StartPeriod=1&StartRange=0';
+    let BoxUrl = 'https://www.cbssports.com/nba/gametracker/boxscore/NBA_';
     // date = '20180416';
     return new Promise((resolve, reject)=>{
-      request('https://www.cbssports.com/nba/gametracker/boxscore/NBA_20180429_IND@CLE/', (err, res, body)=>{
+      request(BoxUrl+'20180429_IND@CLE', (err, res, body)=>{
       if(!err && res.statusCode == 200) {
         // var scoreboard = JSON.parse(body);
         const $ = cheerio.load(body);
