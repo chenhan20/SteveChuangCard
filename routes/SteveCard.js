@@ -46,16 +46,20 @@ router.get('/Demo02/BoxScore/*',function(req, res, next) {
     const VtriCode=req.path.substr(17,3);
     const HtriCode=req.path.substr(20,3);
     const GameDate=req.path.substr(33,8);
-    res.render('./Demo/BoxScore', { title: 'BoxScore',GameId:GameId,'VtriCode':VtriCode,'HtriCode':HtriCode,GameDate:GameDate});
+    res.render('./Demo/BoxScore', { title: 'BoxScore','GameDate':GameDate,'GameId':GameId,'VtriCode':VtriCode,'HtriCode':HtriCode});
   });
 router.post('/Demo02/BoxScore/',async function(req, res, next) {
-    console.log('GameID : ' + req.body.GameId);
-    console.log('VtriCode : ' + req.body.VtriCode);
-    console.log('HtriCode : ' + req.body.HtriCode);
-    
+  const GameId=req.body.GameId;
+  const VtriCode=req.body.VtriCode;
+  const HtriCode=req.body.HtriCode;
+  const GameDate=req.body.GameDate;
+  console.log('GameID : ' + GameId);
+  console.log('GameDate : ' + GameDate);
+  console.log('VtriCode : ' + VtriCode);
+  console.log('HtriCode : ' + HtriCode);
     //爬出這場比賽數據 根據gameId(未完成)
 
-    let BoxData=await reptileBox('20180418');
+    let BoxData=await reptileBox(GameDate,VtriCode,HtriCode);
     res.send(BoxData);
   });
 

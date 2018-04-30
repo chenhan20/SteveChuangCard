@@ -10,10 +10,12 @@
 
 
 //使用request 因為直接呼叫json就可以取得資訊了
-let reptileBox=async(date)=>{
-  console.log('抓取Nba資訊開始  抓取日期(美國日期):'+date);
+let reptileBox=async(GameDate,VtriCode,HtriCode)=>{
+  console.log('抓取Nba資訊開始  抓取日期(美國日期):'+GameDate);
+  console.log('主場'+HtriCode);
+  console.log('客場'+VtriCode);
   let Team =  await getTeamMappingArray();
-  let BoxScore =  await getScoreboard();
+  let BoxScore =  await getScoreboard(GameDate,HtriCode,VtriCode);
   console.log('抓取完畢');
   return BoxScore;
   
@@ -21,12 +23,12 @@ let reptileBox=async(date)=>{
   //   hTeam:game.hteam
   //   })
   //抓box資訊
-  function getScoreboard(){
+  function getScoreboard(GameDate,HtriCode,VtriCode){
     // let BoxUrl = 'http://stats.nba.com/stats/boxscoretraditionalv2?EndPeriod=10&EndRange=28800&GameID=0041700132&RangeType=0&Season=2017-18&SeasonType=Playoffs&StartPeriod=1&StartRange=0';
-    let BoxUrl = 'https://www.cbssports.com/nba/gametracker/boxscore/NBA_';
+    let BoxUrl = 'https://www.cbssports.com/nba/gametracker/boxscore/NBA_'+GameDate+'_'+VtriCode+'@'+HtriCode;
     // date = '20180416';
     return new Promise((resolve, reject)=>{
-      request(BoxUrl+'20180429_IND@CLE', (err, res, body)=>{
+      request(BoxUrl, (err, res, body)=>{
       if(!err && res.statusCode == 200) {
         // var scoreboard = JSON.parse(body);
         const $ = cheerio.load(body);

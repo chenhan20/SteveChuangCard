@@ -74,7 +74,7 @@ $(document).ready(function(){
             let GameId =  event.currentTarget.querySelectorAll(".gameId")[0].innerText;
             let VtriCode =  event.currentTarget.querySelectorAll(".vTeamtriCode")[0].innerText;
             let HtriCode =  event.currentTarget.querySelectorAll(".hTeamtriCode")[0].innerText;
-            let GameDate = ''.concat(USADate.yyyy,(USADate.mm<10 ? '0' : ''),USADate.dd);
+            let GameDate = ''.concat(USADate.yyyy,(USADate.mm<10 ? '0' : ''),USADate.mm,USADate.dd);
             // $.get( "/SteveCard/BoxScore/"+hTeam);
             // console.log(VtriCode);
             // console.log(HtriCode);

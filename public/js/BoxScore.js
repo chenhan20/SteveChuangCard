@@ -14,7 +14,7 @@ let BoxScore = new Vue({
         $.ajax({
             type: "POST",
             url: "/SteveCard/Demo02/BoxScore/",
-            data : {'GameId':GameId,GameDate:'','HtriCode':HtriCode,'VtriCode':VtriCode},
+            data : {'GameId':GameId,GameDate:GameDate,'HtriCode':HtriCode,'VtriCode':VtriCode},
             // dataType : 'JSON',
             success: function(Returndata) {
                 // debugger;
@@ -37,6 +37,7 @@ let BoxScore = new Vue({
      methods:{
         selectitem:function(event){
             console.log(event.toElement.classList.value);
+            // $('.'+event.toElement.classList.value).toggleClass( "newClass", 1000 );
             if(event.toElement.classList.value=='Hselectitem'){
                 $('.Htable').show();
                 $('.Vtable').hide();
