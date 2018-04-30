@@ -27,6 +27,7 @@ let reptileBox=async(GameDate,VtriCode,HtriCode)=>{
     // let BoxUrl = 'http://stats.nba.com/stats/boxscoretraditionalv2?EndPeriod=10&EndRange=28800&GameID=0041700132&RangeType=0&Season=2017-18&SeasonType=Playoffs&StartPeriod=1&StartRange=0';
     let BoxUrl = 'https://www.cbssports.com/nba/gametracker/boxscore/NBA_'+GameDate+'_'+VtriCode+'@'+HtriCode;
     // date = '20180416';
+    console.log('url:'+BoxUrl);
     return new Promise((resolve, reject)=>{
       request(BoxUrl, (err, res, body)=>{
       if(!err && res.statusCode == 200) {

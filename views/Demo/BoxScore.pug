@@ -17,13 +17,13 @@ block content
         //- .HtriCode(v-show="true") #{HtriCode}
         //- h4 {{message}}
         .Box
-          .segment-control(v-on:click='selectitem')
-            .Vselectitem #{VtriCode}
-            .Hselectitem #{HtriCode}
-          table.Htable.table
+          .segment-control
+            .Vselectitem(v-on:click='selectitem') #{VtriCode}
+            .Hselectitem(v-on:click='selectitem') #{HtriCode}
+          table.Htable.table-hover
             tbody
               tr 
-                th Name
+                th.name Name
                 th MIN
                 th PTS
                 th REB
@@ -40,7 +40,7 @@ block content
                 th FPTS
                 th +/-
               tr(v-for='value in object.HomeData') 
-                td {{value[0]}} 
+                td.name {{value[0]}} 
                 td {{value[1]}} 
                 td {{value[2]}} 
                 td {{value[3]}}
@@ -56,10 +56,10 @@ block content
                 td {{value[11]}} 
                 td {{value[14]}} 
                 td {{value[15]}} 
-          table.Vtable.table
+          table.Vtable.table-hover
             tbody
               tr 
-                th Name
+                th.name Name
                 th MIN
                 th PTS
                 th REB
@@ -76,7 +76,7 @@ block content
                 th FPTS
                 th +/-
               tr(v-for='value in object.AwayData')
-                td {{value[0]}} 
+                td.name {{value[0]}} 
                 td {{value[1]}} 
                 td {{value[2]}} 
                 td {{value[3]}}
@@ -92,7 +92,8 @@ block content
                 td {{value[11]}} 
                 td {{value[14]}} 
                 td {{value[15]}} 
-    
+        //- .Box(v-else) 查無此場比賽資訊 請確認是否結束 (v-if='object.HomeData!=null')
+
     
     script(src='/js/BoxScore.js')
     link(rel='stylesheet', href='/stylesheets/BoxScore.css')

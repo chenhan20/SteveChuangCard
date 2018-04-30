@@ -17,7 +17,6 @@ let BoxScore = new Vue({
             data : {'GameId':GameId,GameDate:GameDate,'HtriCode':HtriCode,'VtriCode':VtriCode},
             // dataType : 'JSON',
             success: function(Returndata) {
-                // debugger;
                 self.object = Returndata;
             },
             error: function(Returndata) {
@@ -33,15 +32,21 @@ let BoxScore = new Vue({
         });
         $('.Htable').show();
         $('.Vtable').hide();
+        $('.Hselectitem').addClass( "SelectClass" );
+
     },   
      methods:{
         selectitem:function(event){
             console.log(event.toElement.classList.value);
-            // $('.'+event.toElement.classList.value).toggleClass( "newClass", 1000 );
+            // $('.'+event.toElement.classList.value).toggleClass( "newClass" );
             if(event.toElement.classList.value=='Hselectitem'){
+                $('.Hselectitem').addClass( "SelectClass" );
+                $('.Vselectitem').removeClass( "SelectClass" );
                 $('.Htable').show();
                 $('.Vtable').hide();
             }else{
+                $('.Hselectitem').removeClass( "SelectClass" );
+                $('.Vselectitem').addClass( "SelectClass" );
                 $('.Htable').hide();
                 $('.Vtable').show();            
             }

@@ -2,7 +2,6 @@
 /* button{
     margin-top: 10px;
 } */
-
 .Nba{
     /* border-right:1px black solid; */
     float:left;
@@ -59,7 +58,7 @@ h4,a{
 
 .Vselectitem{
     display: inline-block;
-    font-family: 'Roboto-bold', sans-serif;
+    font-family:Raleway;
     font-size: 12px;
     height: 30px;
     line-height: 26px;
@@ -71,7 +70,7 @@ h4,a{
 }
 .Hselectitem{
     display: inline-block;
-    font-family: 'Roboto-bold', sans-serif;
+    font-family: Raleway;
     font-size: 12px;
     height: 30px;
     line-height: 26px;
@@ -81,7 +80,36 @@ h4,a{
     background-color: #fff;
     cursor: pointer;
 }
-.newClass{
-    border: 4px solid #006ab4;
 
+
+table th{
+    color: #fff;
+    background-color: #002f50;
+    height: 40px;
+    font-size: 16px;
+    font-family: Raleway;
+    text-transform: uppercase;
+    width: 180px;
+    text-align: left;
+    padding: 0 10px;
+    text-align: center;
+}
+
+table td{
+    height: 40px;
+    font-size: 16px;
+    font-family: Raleway;
+    text-transform: uppercase;
+    width: 180px;
+    text-align: left;
+    padding: 0 10px;
+    text-align: center;
+}
+.name{
+    text-align: left;
+    font-weight:bold;
+}
+.SelectClass{
+    color: #fff;
+    background-color: #006ab4;
 }
