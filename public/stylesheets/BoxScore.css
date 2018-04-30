@@ -67,6 +67,8 @@ h4,a{
     color: #006ab4;
     background-color: #fff;
     cursor: pointer;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
 }
 .Hselectitem{
     display: inline-block;
@@ -79,6 +81,8 @@ h4,a{
     color: #006ab4;
     background-color: #fff;
     cursor: pointer;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
 }
 
 

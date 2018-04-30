@@ -74,10 +74,10 @@ $(document).ready(function(){
             let GameId =  event.currentTarget.querySelectorAll(".gameId")[0].innerText;
             let VtriCode =  event.currentTarget.querySelectorAll(".vTeamtriCode")[0].innerText;
             let HtriCode =  event.currentTarget.querySelectorAll(".hTeamtriCode")[0].innerText;
-            let GameDate = ''.concat(USADate.yyyy,(USADate.mm<10 ? '0' : ''),USADate.mm,USADate.dd);
+            let GameDate = ''.concat(USADate.yyyy,(USADate.mm<10 ? '0' : ''),USADate.mm,(USADate.dd<10 ? '0' : ''),USADate.dd);
             // $.get( "/SteveCard/BoxScore/"+hTeam);
             // console.log(VtriCode);
-            // console.log(HtriCode);
+            // console.log(HtriCode);  
             window.location = "/SteveCard/Demo02/BoxScore/"+VtriCode+HtriCode+GameId+GameDate;
         },
         bg_css:function(Logo){

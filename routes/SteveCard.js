@@ -35,7 +35,7 @@ router.get('/Demo02', function(req, res, next) {
 
 router.post('/Demo02',async function(req, res, next) {
     //解析日期
-    const postDate = req.body.yyyy + (req.body.mm<10 ? '0' : '') + req.body.mm + req.body.dd;
+    const postDate = req.body.yyyy + (req.body.mm<10 ? '0' : '') + req.body.mm + (req.body.dd<10 ? '0' : '') + req.body.dd;
     
     let GameData=await reptile(postDate);
     res.json(GameData);
