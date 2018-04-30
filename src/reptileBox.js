@@ -25,31 +25,36 @@ let reptileBox=async(date)=>{
     let BoxUrl = 'http://stats.nba.com/stats/boxscoretraditionalv2?EndPeriod=10&EndRange=28800&GameID=0041700132&RangeType=0&Season=2017-18&SeasonType=Playoffs&StartPeriod=1&StartRange=0';
     // date = '20180416';
     return new Promise((resolve, reject)=>{
-      request('https://www.cbssports.com/nba/gametracker/boxscore/NBA_20180418_IND@CLE/', (err, res, body)=>{
+      request('https://www.cbssports.com/nba/gametracker/boxscore/NBA_20180429_IND@CLE/', (err, res, body)=>{
       if(!err && res.statusCode == 200) {
         // var scoreboard = JSON.parse(body);
         const $ = cheerio.load(body);
         let HomeBoxData = []; //player-stats-home
         let AwayBoxData = []; //player-stats-away
         
+        let HomeData = []; //player-stats-home
+        let AwayData = []; //player-stats-away
+
         //爬出得分  差異為  先發:.starters-stats 替補:.bench-stats  
         $('#player-stats-away .starters-stats .stats-viewable-area .stats-rows .stats-table td,#player-stats-away .bench-stats .stats-viewable-area .stats-rows .stats-table td')
           .each(function(i,elem){
-            HomeBoxData.push($(this).text());
+            AwayBoxData.push($(this).text());
         })
         $('#player-stats-home .starters-stats .stats-viewable-area .stats-rows .stats-table td,#player-stats-home .bench-stats .stats-viewable-area .stats-rows .stats-table td')
           .each(function(i,elem){
-            AwayBoxData.push($(this).text());
+            HomeBoxData.push($(this).text());
         })
-        // let TestData = HomeBoxData.map(function(item,index,array){
-        //   console.log(item);
-        // })
+
+        //登陸球員數量
         let Homenum = (HomeBoxData.length/16);
-        let TestData = [];
+        let Awaynum = (AwayBoxData.length/16); 
         for(let i=0;i<Homenum;i++){
-          TestData.push(HomeBoxData.slice(i*16,(i+1)*16));
+          HomeData.push(HomeBoxData.slice(i*16,(i+1)*16));
         }
-        let totalData = {HomeBoxData,AwayBoxData,TestData};
+        for(let i=0;i<Awaynum;i++){
+          AwayData.push(AwayBoxData.slice(i*16,(i+1)*16));
+        }
+        let totalData = {HomeData,AwayData};
 
         resolve(totalData);
       }else{

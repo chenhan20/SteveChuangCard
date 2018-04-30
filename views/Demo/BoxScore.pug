@@ -9,55 +9,88 @@ block content
         const GameId='#{GameId}';
         const HtriCode='#{VtriCode}';
         const VtriCode='#{HtriCode}';
-
-    .BoxScore
-      .GameId(v-show="true") #{GameId}
-      .VtriCode(v-show="true") #{VtriCode}
-      .HtriCode(v-show="true") #{HtriCode}
-      //- h4 {{message}}
-      .Box
-        table
-          tbody
-            tr 
-              th Name
-              th Name
-              th Name
-              th Name
-              th Name
-              th Name
-              th Name
-              th Name
-              th Name
-              th Name
-              th Name
-              th Name   
-              th Name
-              th Name
-              th Name
-              th Name
-            tr
-              td(v-for='value in object.TestData')  {{value}} 
-        table
-          tbody
-            tr 
-              th Name
-              th Name
-              th Name
-              th Name
-              th Name
-              th Name
-              th Name
-              th Name
-              th Name
-              th Name
-              th Name
-              th Name   
-              th Name
-              th Name
-              th Name
-              th Name
-            tr
-              td(v-for='value in object.AwayBoxData')  {{value}} 
+    .container-fluid
+      .BoxScore
+        .GameId(v-show="true") #{GameId}
+        //- .VtriCode(v-show="true") #{VtriCode}
+        //- .HtriCode(v-show="true") #{HtriCode}
+        //- h4 {{message}}
+        .Box
+          .segment-control(v-on:click='selectitem')
+            .Vselectitem #{VtriCode}
+            .Hselectitem #{HtriCode}
+          table.Htable.table
+            tbody
+              tr 
+                th Name
+                th MIN
+                th PTS
+                th REB
+                th OREB
+                th DREB
+                th AST
+                th STL
+                th BLK
+                th TO
+                th PF
+                th FG
+                th 3PT
+                th FT   
+                th FPTS
+                th +/-
+              tr(v-for='value in object.HomeData') 
+                td {{value[0]}} 
+                td {{value[1]}} 
+                td {{value[2]}} 
+                td {{value[3]}}
+                td {{value[12]}} 
+                td {{value[13]}}  
+                td {{value[4]}} 
+                td {{value[5]}} 
+                td {{value[6]}} 
+                td {{value[7]}} 
+                td {{value[8]}} 
+                td {{value[9]}} 
+                td {{value[10]}} 
+                td {{value[11]}} 
+                td {{value[14]}} 
+                td {{value[15]}} 
+          table.Vtable.table
+            tbody
+              tr 
+                th Name
+                th MIN
+                th PTS
+                th REB
+                th OREB
+                th DREB
+                th AST
+                th STL
+                th BLK
+                th TO
+                th PF
+                th FG
+                th 3PT
+                th FT   
+                th FPTS
+                th +/-
+              tr(v-for='value in object.AwayData')
+                td {{value[0]}} 
+                td {{value[1]}} 
+                td {{value[2]}} 
+                td {{value[3]}}
+                td {{value[12]}} 
+                td {{value[13]}}  
+                td {{value[4]}} 
+                td {{value[5]}} 
+                td {{value[6]}} 
+                td {{value[7]}} 
+                td {{value[8]}} 
+                td {{value[9]}} 
+                td {{value[10]}} 
+                td {{value[11]}} 
+                td {{value[14]}} 
+                td {{value[15]}} 
     
     
     script(src='/js/BoxScore.js')

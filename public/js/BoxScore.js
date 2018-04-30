@@ -30,6 +30,20 @@ let BoxScore = new Vue({
                 $('.ajaxlaodmodal').modal('hide');
             }
         });
+        $('.Htable').show();
+        $('.Vtable').hide();
+    },   
+     methods:{
+        selectitem:function(event){
+            console.log(event.toElement.classList.value);
+            if(event.toElement.classList.value=='Hselectitem'){
+                $('.Htable').show();
+                $('.Vtable').hide();
+            }else{
+                $('.Htable').hide();
+                $('.Vtable').show();            
+            }
+        }
     }
 });
 
