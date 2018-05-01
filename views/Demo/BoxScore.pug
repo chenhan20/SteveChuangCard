@@ -45,7 +45,7 @@ block content
                 th +/-
               tr(v-for='value in object.HomeData') 
                 td.row.name
-                  .col-4(:style="image_css(value[1])")
+                  .playersimg.col-4(:style="image_css(value[1])")
                   .col-8.name {{value[0]}} 
                 td {{value[2]}} 
                 td {{value[3]}} 
@@ -83,7 +83,7 @@ block content
                 th +/-
               tr(v-for='value in object.AwayData')
                 td.row.name
-                  .col-4(:style="image_css(value[1])")
+                  .playersimg.col-4(:style="image_css(value[1])")
                   .col-8.name {{value[0]}} 
                 td {{value[2]}} 
                 td {{value[3]}} 

@@ -1,19 +1,6 @@
 
-/* button{
-    margin-top: 10px;
-} */
-.Nba{
-    /* border-right:1px black solid; */
-    float:left;
-    margin: 20px;
-    border-bottom: rgb(163, 163, 163) 3px solid;
-    list-style-type:none;
-}
-.Nba:hover{
-    border-bottom: black 3px solid;
-}
 table td {
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid black;
  };
 h4,a{
     font-family: Raleway;
@@ -27,28 +14,7 @@ h4,a{
     -webkit-margin-before: 0;
     -webkit-margin-after: 0; */
 }
-.team-img{
-    width: 50px;
-    height: 50px; 
-}
-.hScore , .vScore{
-    text-align:right;
-    /* font-size: 50px */
 
-}
-.Game{
-    /* box-shadow: 0 2px 0 0 rgba(230,230,230,0.5);
-    transition: box-shadow .5s ease;
-    background-color: #fff;
-    position: relative; */
-    cursor: pointer;
-}
-/* .iconDate{
-
-} */
-.NBAdate{
-    display: inline;
-}
 .segment-control{
     font-size: 0;
     text-align: center;
@@ -100,7 +66,7 @@ table th{
 }
 
 table td{
-    height: 65px;
+    height: 55px;
     font-size: 16px;
     font-family: Raleway;
     text-transform: uppercase;
@@ -140,3 +106,7 @@ table td{
     background-color: #1d428a;
 
 } */
+
+.playersimg{
+    border-radius: 20px;
+}

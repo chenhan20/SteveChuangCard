@@ -40,7 +40,8 @@ let reptileBox=async(GameDate,VtriCode,HtriCode)=>{
         let AwayData = []; //player-stats-away
 
         //爬出得分  差異為  先發:.starters-stats 替補:.bench-stats  
-        $('#player-stats-away .stats-viewable-area .stats-rows .stats-table td,#player-stats-away .stats-viewable-area .stats-rows .stats-table td a')
+        // $('#player-stats-away .stats-viewable-area .stats-rows .stats-table td,#player-stats-away .stats-viewable-area .stats-rows .stats-table td a')
+        $('#player-stats-away .starters-stats .stats-viewable-area .stats-rows .stats-table td,#player-stats-away .starters-stats .stats-viewable-area .stats-rows .stats-table td a,#player-stats-away .bench-stats .stats-viewable-area .stats-rows .stats-table td,#player-stats-away .bench-stats .stats-viewable-area .stats-rows .stats-table td a')
           .each(function(i,elem){
             if($(this).attr('href')!=undefined){
               let img = 'https://sports.cbsimg.net/images/basketball/nba/players/60x80/' + $(this).attr('href').substring(48,55) + '.jpg';
@@ -49,10 +50,10 @@ let reptileBox=async(GameDate,VtriCode,HtriCode)=>{
               AwayBoxData.push($(this).text());
             }
         });
-        $('#player-stats-home .stats-viewable-area .stats-rows .stats-table td,#player-stats-home .stats-viewable-area .stats-rows .stats-table td a')
+        $('#player-stats-home .starters-stats .stats-viewable-area .stats-rows .stats-table td,#player-stats-home .starters-stats .stats-viewable-area .stats-rows .stats-table td a,#player-stats-home .bench-stats .stats-viewable-area .stats-rows .stats-table td,#player-stats-home .bench-stats .stats-viewable-area .stats-rows .stats-table td a')
           .each(function(i,elem){
             if($(this).attr('href')!=undefined){
-              let img = 'https://sports.cbsimg.net/images/basketball/nba/players/60x80/' + $(this).attr('href').substring(48,55) + '.jpg';
+              let img = 'https://sports.cbsimg.net/images/basketball/nba/players/60x80/' + $(this).attr('href').substring(48,48+$(this).attr('href').substring(48).indexOf('/')) + '.jpg';
               HomeBoxData.push(img);
             }else{
               HomeBoxData.push($(this).text());
