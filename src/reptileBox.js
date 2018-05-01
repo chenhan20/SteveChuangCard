@@ -40,23 +40,43 @@ let reptileBox=async(GameDate,VtriCode,HtriCode)=>{
         let AwayData = []; //player-stats-away
 
         //爬出得分  差異為  先發:.starters-stats 替補:.bench-stats  
-        $('#player-stats-away .starters-stats .stats-viewable-area .stats-rows .stats-table td,#player-stats-away .bench-stats .stats-viewable-area .stats-rows .stats-table td')
+        $('#player-stats-away .stats-viewable-area .stats-rows .stats-table td,#player-stats-away .stats-viewable-area .stats-rows .stats-table td a')
           .each(function(i,elem){
-            AwayBoxData.push($(this).text());
-        })
-        $('#player-stats-home .starters-stats .stats-viewable-area .stats-rows .stats-table td,#player-stats-home .bench-stats .stats-viewable-area .stats-rows .stats-table td')
+            if($(this).attr('href')!=undefined){
+              let img = 'https://sports.cbsimg.net/images/basketball/nba/players/60x80/' + $(this).attr('href').substring(48,55) + '.jpg';
+              AwayBoxData.push(img);
+            }else{
+              AwayBoxData.push($(this).text());
+            }
+        });
+        $('#player-stats-home .stats-viewable-area .stats-rows .stats-table td,#player-stats-home .stats-viewable-area .stats-rows .stats-table td a')
           .each(function(i,elem){
-            HomeBoxData.push($(this).text());
-        })
+            if($(this).attr('href')!=undefined){
+              let img = 'https://sports.cbsimg.net/images/basketball/nba/players/60x80/' + $(this).attr('href').substring(48,55) + '.jpg';
+              HomeBoxData.push(img);
+            }else{
+              HomeBoxData.push($(this).text());
+            }
+        });
+
+      //   $('#player-stats-away .starters-stats .stats-viewable-area .stats-rows .stats-table td a,#player-stats-away .bench-stats .stats-viewable-area .stats-rows .stats-table td a')
+      //   .each(function(i,elem){
+      //     imageData.push($(this).attr('href'));
+      //   });
+      //   $('#player-stats-home .starters-stats .stats-viewable-area .stats-rows .stats-table td a,#player-stats-home .bench-stats .stats-viewable-area .stats-rows .stats-table td a')
+      //   .each(function(i,elem){
+      //     imageData.push($(this).attr('href'));
+      //  });
+
 
         //登陸球員數量
-        let Homenum = (HomeBoxData.length/16);
-        let Awaynum = (AwayBoxData.length/16); 
+        let Homenum = (HomeBoxData.length/17);
+        let Awaynum = (AwayBoxData.length/17); 
         for(let i=0;i<Homenum;i++){
-          HomeData.push(HomeBoxData.slice(i*16,(i+1)*16));
+          HomeData.push(HomeBoxData.slice(i*17,(i+1)*17));
         }
         for(let i=0;i<Awaynum;i++){
-          AwayData.push(AwayBoxData.slice(i*16,(i+1)*16));
+          AwayData.push(AwayBoxData.slice(i*17,(i+1)*17));
         }
         let totalData = {HomeData,AwayData};
 

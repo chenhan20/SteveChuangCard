@@ -12,14 +12,18 @@ block content
         const VtriCode='#{VtriCode}';
     .container-fluid
       .BoxScore
-        .GameId(v-show="true") #{GameId}
+        .Scoreitem.item(v-on:click='selectitem')
+          span.itemspan Score
+        .Boxitem.item(v-on:click='selectitem') 
+          span.itemspan Box
+        .GameId(v-show="false") #{GameId}
         //- .VtriCode(v-show="true") #{VtriCode}
         //- .HtriCode(v-show="true") #{HtriCode}
         //- h4 {{message}}
         .Box
           .segment-control
-            .Vselectitem(v-on:click='selectitem') #{VtriCode}
-            .Hselectitem(v-on:click='selectitem') #{HtriCode}
+            .Vselectitem(v-on:click='selectBoxItem') #{VtriCode}
+            .Hselectitem(v-on:click='selectBoxItem') #{HtriCode}
           table.Htable.table-hover
             tbody
               tr 
@@ -40,13 +44,14 @@ block content
                 th FPTS
                 th +/-
               tr(v-for='value in object.HomeData') 
-                td.name {{value[0]}} 
-                td {{value[1]}} 
+                td.row.name
+                  .col-4(:style="image_css(value[1])")
+                  .col-8.name {{value[0]}} 
                 td {{value[2]}} 
-                td {{value[3]}}
-                td {{value[12]}} 
-                td {{value[13]}}  
-                td {{value[4]}} 
+                td {{value[3]}} 
+                td {{value[4]}}
+                td {{value[13]}} 
+                td {{value[14]}}  
                 td {{value[5]}} 
                 td {{value[6]}} 
                 td {{value[7]}} 
@@ -54,8 +59,9 @@ block content
                 td {{value[9]}} 
                 td {{value[10]}} 
                 td {{value[11]}} 
+                td {{value[12]}} 
+                td {{value[13]}} 
                 td {{value[14]}} 
-                td {{value[15]}} 
           table.Vtable.table-hover
             tbody
               tr 
@@ -76,13 +82,14 @@ block content
                 th FPTS
                 th +/-
               tr(v-for='value in object.AwayData')
-                td.name {{value[0]}} 
-                td {{value[1]}} 
+                td.row.name
+                  .col-4(:style="image_css(value[1])")
+                  .col-8.name {{value[0]}} 
                 td {{value[2]}} 
-                td {{value[3]}}
-                td {{value[12]}} 
-                td {{value[13]}}  
-                td {{value[4]}} 
+                td {{value[3]}} 
+                td {{value[4]}}
+                td {{value[13]}} 
+                td {{value[14]}}  
                 td {{value[5]}} 
                 td {{value[6]}} 
                 td {{value[7]}} 
@@ -90,8 +97,9 @@ block content
                 td {{value[9]}} 
                 td {{value[10]}} 
                 td {{value[11]}} 
+                td {{value[12]}} 
+                td {{value[13]}} 
                 td {{value[14]}} 
-                td {{value[15]}} 
         //- .Box(v-else) 查無此場比賽資訊 請確認是否結束 (v-if='object.HomeData!=null')
 
     

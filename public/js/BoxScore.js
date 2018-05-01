@@ -33,10 +33,9 @@ let BoxScore = new Vue({
         $('.Htable').show();
         $('.Vtable').hide();
         $('.Hselectitem').addClass( "SelectClass" );
-
     },   
      methods:{
-        selectitem:function(event){
+        selectBoxItem:function(event){
             console.log(event.toElement.classList.value);
             // $('.'+event.toElement.classList.value).toggleClass( "newClass" );
             if(event.toElement.classList.value=='Hselectitem'){
@@ -50,6 +49,20 @@ let BoxScore = new Vue({
                 $('.Htable').hide();
                 $('.Vtable').show();            
             }
+        },
+        selectitem:function(event){
+            console.log(event.toElement.classList[0]);
+            // debugger;
+            // if(event.toElement.classList[0]=='Scoreitem'){
+            //     $('.selectItemScore').addClass( "selectItem" );
+            //     $('.selectItemBox').removeClass( "selectItem" );
+            // }else{
+            //     $('.selectItemScore').removeClass( "selectItem" );
+            //     $('.selectItemBox').addClass( "selectItem" );
+            // }
+        },
+        image_css:function(Logo){
+            return {'background-image': `url(${Logo})`};
         }
     }
 });
