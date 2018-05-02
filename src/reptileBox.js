@@ -3,11 +3,24 @@
   const puppeteer = require ('puppeteer');
   const cheerio = require('cheerio');
  
-
+  
   // await/async  JSHint 會出現錯誤 故先讓他ignore掉這一段
   /* jshint ignore:start */
+  //目前已知四隊會取兩碼
+  const TwoTeamArray = ['GSW','SAS','NOP','NYC'];
 
-
+//有些隊伍會用兩碼當代號 還不知道規則
+let chkTeamNum=(TameName)=>{
+  let TwoTeamTF = false;
+  for(let value of TwoTeamArray){
+     if(TameName==value){
+      TwoTeamTF=true;
+     }else{
+      //  nothing
+     }
+  };
+  return TwoTeamTF;
+};
 
 //使用request 因為直接呼叫json就可以取得資訊了
 let reptileBox=async(GameDate,VtriCode,HtriCode)=>{
@@ -15,6 +28,12 @@ let reptileBox=async(GameDate,VtriCode,HtriCode)=>{
   console.log('主場'+HtriCode);
   console.log('客場'+VtriCode);
   let Team =  await getTeamMappingArray();
+  if(chkTeamNum(HtriCode)){
+    HtriCode = HtriCode.substring(0,2);
+  }
+  if(chkTeamNum(VtriCode)){
+    VtriCode = VtriCode.substring(0,2);
+  }
   let BoxScore =  await getScoreboard(GameDate,HtriCode,VtriCode);
   console.log('抓取完畢');
   return BoxScore;

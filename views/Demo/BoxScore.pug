@@ -102,7 +102,7 @@ block content
                 td {{value[14]}} 
         //- .Box(v-else) 查無此場比賽資訊 請確認是否結束 (v-if='object.HomeData!=null')
         .Score 
-          table.col-10
+          table.table-hover.col-5
             tr
               th Team
               th 1st
@@ -115,7 +115,7 @@ block content
               th Total
             tr(v-for='value in object.ScoreDetailData')
               td 
-                a {{value[0]}} 
+                a.teamName {{value[0]}} 
                 small {{value[1]}} 
               td {{value[2]}}
               td {{value[3]}}

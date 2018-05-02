@@ -11,7 +11,10 @@ h4,a{
     -webkit-margin-before: 0;
     -webkit-margin-after: 0; */
 }
+.teamName{
+    font-weight: 100;
 
+}
 .segment-control{
     font-size: 0;
     text-align: center;
