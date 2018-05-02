@@ -12,10 +12,10 @@ block content
         const VtriCode='#{VtriCode}';
     .container-fluid
       .BoxScore
-        .Scoreitem.item(v-on:click='selectitem')
-          span.itemspan Score
-        .Boxitem.item(v-on:click='selectitem') 
-          span.itemspan Box
+        .item.borderYtoX 
+          a(v-on:click='selectBox') Box
+          a(v-on:click='selectScore') Score
+
         .GameId(v-show="false") #{GameId}
         //- .VtriCode(v-show="true") #{VtriCode}
         //- .HtriCode(v-show="true") #{HtriCode}
@@ -101,6 +101,30 @@ block content
                 td {{value[13]}} 
                 td {{value[14]}} 
         //- .Box(v-else) 查無此場比賽資訊 請確認是否結束 (v-if='object.HomeData!=null')
+        .Score 
+          table.col-10
+            tr
+              th Team
+              th 1st
+              th 2st
+              th 3st
+              th 4st  
+              th(v-if="object.ScoreDetailData && object.ScoreDetailData[0].length=='8'") ot
+              th(v-if="object.ScoreDetailData && object.ScoreDetailData[0].length=='9'") 2ot
+              th(v-if="object.ScoreDetailData && object.ScoreDetailData[0].length=='10'") 3ot
+              th Total
+            tr(v-for='value in object.ScoreDetailData')
+              td 
+                a {{value[0]}} 
+                small {{value[1]}} 
+              td {{value[2]}}
+              td {{value[3]}}
+              td {{value[4]}}
+              td {{value[5]}}
+              td(v-if="value.length=='8'") {{value[6]}}
+              td(v-if="value.length=='9'") {{value[7]}}
+              td(v-if="value.length=='10'") {{value[8]}}
+              td {{value[value.length-1]}}
 
     
     script(src='/js/BoxScore.js')

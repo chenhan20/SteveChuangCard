@@ -32,12 +32,15 @@ let reptileBox=async(GameDate,VtriCode,HtriCode)=>{
       request(BoxUrl, (err, res, body)=>{
       if(!err && res.statusCode == 200) {
         // var scoreboard = JSON.parse(body);
+        let ScoreDetail = [];
+        
         const $ = cheerio.load(body);
         let HomeBoxData = []; //player-stats-home
         let AwayBoxData = []; //player-stats-away
         
         let HomeData = []; //player-stats-home
         let AwayData = []; //player-stats-away
+        let ScoreDetailData = []; //
 
         //爬出得分  差異為  先發:.starters-stats 替補:.bench-stats  
         // $('#player-stats-away .stats-viewable-area .stats-rows .stats-table td,#player-stats-away .stats-viewable-area .stats-rows .stats-table td a')
@@ -60,6 +63,12 @@ let reptileBox=async(GameDate,VtriCode,HtriCode)=>{
             }
         });
 
+        $('.linescore-gameinfo-container table .team .name,.linescore-gameinfo-container table .team .record,.linescore-gameinfo-container table .score,.linescore-gameinfo-container table .total-score')
+          .each(function(i,elem){
+            ScoreDetail.push($(this).text());
+          });
+
+
       //   $('#player-stats-away .starters-stats .stats-viewable-area .stats-rows .stats-table td a,#player-stats-away .bench-stats .stats-viewable-area .stats-rows .stats-table td a')
       //   .each(function(i,elem){
       //     imageData.push($(this).attr('href'));
@@ -73,13 +82,18 @@ let reptileBox=async(GameDate,VtriCode,HtriCode)=>{
         //登陸球員數量
         let Homenum = (HomeBoxData.length/17);
         let Awaynum = (AwayBoxData.length/17); 
+        let ScoreDetailnum = (ScoreDetail.length/2); 
         for(let i=0;i<Homenum;i++){
           HomeData.push(HomeBoxData.slice(i*17,(i+1)*17));
-        }
+        };
         for(let i=0;i<Awaynum;i++){
           AwayData.push(AwayBoxData.slice(i*17,(i+1)*17));
-        }
-        let totalData = {HomeData,AwayData};
+        };
+        for(let i=0;i<2;i++){
+          ScoreDetailData.push(ScoreDetail.slice(i*ScoreDetailnum,(i+1)*ScoreDetailnum));
+        };
+
+        let totalData = {HomeData,AwayData,ScoreDetailData};
 
         resolve(totalData);
       }else{

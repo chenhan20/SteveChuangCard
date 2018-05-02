@@ -6,8 +6,7 @@ let USAday = new Date();
 USAday.setDate(USAday.getDate() - 1);
 let USADate = {yyyy:USAday.getFullYear(),mm : USAday.getMonth()+1,dd:USAday.getDate()};
 //bootstrap hover text setting
-$(document).ready(function(){
-});
+
 
   let Demo02_2 = new Vue({
     el: '.Demo02-2',
@@ -83,7 +82,7 @@ $(document).ready(function(){
         bg_css:function(Logo){
             return {'background-image': `url(${Logo})`};
         }
-},
+    },
     mounted:function(){
         var self = this;
         $('[data-toggle="tooltip"]').tooltip();   

@@ -1,7 +1,7 @@
 /*jshint esversion: 6 */
 let BoxScore = new Vue({
     el: '.BoxScore',
-    data:{message:'hello vue',object:{}},
+    data:{object:{}},
     mounted:function(){
         console.log(GameId);
         console.log(GameDate);
@@ -20,7 +20,6 @@ let BoxScore = new Vue({
                 self.object = Returndata;
             },
             error: function(Returndata) {
-                // debugger;
                 self.object={Error:'Error'};
             },
             beforeSend:function(){
@@ -30,7 +29,9 @@ let BoxScore = new Vue({
                 $('.ajaxlaodmodal').modal('hide');
             }
         });
-        $('.Htable').show();
+        $('.Box').show(500);
+        $('.Score').hide();
+        $('.Htable').show(500);
         $('.Vtable').hide();
         $('.Hselectitem').addClass( "SelectClass" );
     },   
@@ -41,29 +42,32 @@ let BoxScore = new Vue({
             if(event.toElement.classList.value=='Hselectitem'){
                 $('.Hselectitem').addClass( "SelectClass" );
                 $('.Vselectitem').removeClass( "SelectClass" );
-                $('.Htable').show();
-                $('.Vtable').hide();
+                $('.Htable').show(500);
+                $('.Vtable').hide(500);
             }else{
                 $('.Hselectitem').removeClass( "SelectClass" );
                 $('.Vselectitem').addClass( "SelectClass" );
-                $('.Htable').hide();
-                $('.Vtable').show();            
+                $('.Htable').hide(500);
+                $('.Vtable').show(500);            
             }
         },
-        selectitem:function(event){
-            console.log(event.toElement.classList[0]);
-            // debugger;
-            // if(event.toElement.classList[0]=='Scoreitem'){
-            //     $('.selectItemScore').addClass( "selectItem" );
-            //     $('.selectItemBox').removeClass( "selectItem" );
-            // }else{
-            //     $('.selectItemScore').removeClass( "selectItem" );
-            //     $('.selectItemBox').addClass( "selectItem" );
-            // }
+        selectBox:function(event){
+            $('.Box').show(500);
+            $('.Score').hide(500);
+        },
+        selectScore:function(event){
+            $('.Box').hide(500);
+            $('.Score').show(500);
         },
         image_css:function(Logo){
             return {'background-image': `url(${Logo})`};
         }
+    },
+    computed: {
+        // cmpDetailNum:function(){
+        //     debugger;
+        //   return this.object.ScoreDetailData[0].length;
+        // }
     }
 });
 
