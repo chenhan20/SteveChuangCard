@@ -44,7 +44,7 @@ let reptileBox=async(GameDate,VtriCode,HtriCode)=>{
         $('#player-stats-away .starters-stats .stats-viewable-area .stats-rows .stats-table td,#player-stats-away .starters-stats .stats-viewable-area .stats-rows .stats-table td a,#player-stats-away .bench-stats .stats-viewable-area .stats-rows .stats-table td,#player-stats-away .bench-stats .stats-viewable-area .stats-rows .stats-table td a')
           .each(function(i,elem){
             if($(this).attr('href')!=undefined){
-              let img = 'https://sports.cbsimg.net/images/basketball/nba/players/60x80/' + $(this).attr('href').substring(48,55) + '.jpg';
+              let img = 'https://sports.cbsimg.net/images/basketball/nba/players/60x80/' + $(this).attr('href').substring(48,48+$(this).attr('href').substring(48).indexOf('/')) + '.jpg';
               AwayBoxData.push(img);
             }else{
               AwayBoxData.push($(this).text());
