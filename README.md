@@ -47,16 +47,16 @@
 原本以為這樣就可以成功了，th部分不能用value的原因為沒有在`v-for`裡面  
 但是會出現`TypeError: Cannot read property '0' of undefined`的錯誤  
 應該是因為 object還沒從ajax娶回來 他就取它的值 所以出現的錯誤  
-解決方法為先判斷是不是有抓回來資料了!
+解決方法為先判斷是不是有抓回來資料了!  
 ~~th(v-if="object.ScoreDetailData[0].length=='8'") ot~~  
 **th(v-if="object.ScoreDetailData && object.ScoreDetailData[0].length=='8'") ot**
 
 2. 有些隊伍詳細資訊 爬蟲網址會是隊伍兩碼 例如勇士 會是GS 不知道規則 
-已知兩碼
+已知兩碼  
 勇士 GS  
-鵜鶘 NO
-馬刺 SA
-尼克 NY
+鵜鶘 NO  
+馬刺 SA  
+尼克 NY  
 
 
 
