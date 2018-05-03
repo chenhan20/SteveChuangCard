@@ -12,6 +12,12 @@ block content
         const VtriCode='#{VtriCode}';
     .container-fluid
       .BoxScore
+        //- h3.odometer.odometerAway.offset-md-4.col-1 999
+        //- h3.odometer.odometerHome.offset-md-4.col-1 999
+        .TeamImage.row
+          .AwayImage.offset-md-3.col-2(:style="image_css(object.TeamImageData.AwayImage)") 
+          .col-2
+          .HomeImage.col-2(:style="image_css(object.TeamImageData.HomeImage)") 
         .item.borderYtoX 
           a(v-on:click='selectBox') Box
           a(v-on:click='selectScore') Score
@@ -102,7 +108,7 @@ block content
                 td {{value[14]}} 
         //- .Box(v-else) 查無此場比賽資訊 請確認是否結束 (v-if='object.HomeData!=null')
         .Score 
-          table.table-hover.col-5
+          table.table-hover.offset-md-3.col-6
             tr
               th Team
               th 1st
@@ -128,5 +134,7 @@ block content
 
     
     script(src='/js/BoxScore.js')
+    script(src='http://github.hubspot.com/odometer/odometer.js')
     link(rel='stylesheet', href='/stylesheets/BoxScore.css')
+    link(rel='stylesheet', href='/stylesheets/odometer-theme-digital.css')
 

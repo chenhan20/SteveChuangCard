@@ -1,7 +1,7 @@
 /*jshint esversion: 6 */
 let BoxScore = new Vue({
     el: '.BoxScore',
-    data:{object:{}},
+    data:{object:{TeamImageData:{AwayImage:'',HomeImage:''}}},
     mounted:function(){
         console.log(GameId);
         console.log(GameDate);
@@ -18,6 +18,12 @@ let BoxScore = new Vue({
             // dataType : 'JSON',
             success: function(Returndata) {
                 self.object = Returndata;
+                // setTimeout(function(){
+                //     $('.odometerAway').html(Returndata.PointData.AwayPoint);
+                //   }, 1000);        
+                // setTimeout(function(){
+                //     $('.odometerHome').html(Returndata.PointData.HomePoint);
+                //   }, 1000);
             },
             error: function(Returndata) {
                 self.object={Error:'Error'};

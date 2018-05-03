@@ -141,3 +141,11 @@ div.borderYtoX a:hover:before, div.borderYtoX a:hover:after
     height: 2px;
     width: 100%;
 }
+.AwayImage,.HomeImage{
+    height: 200px;
+    display: block;
+    text-indent: -9999px;
+    background-size: contain;
+    background-repeat:no-repeat;
+
+}

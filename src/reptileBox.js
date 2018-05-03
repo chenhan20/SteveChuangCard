@@ -86,16 +86,14 @@ let reptileBox=async(GameDate,VtriCode,HtriCode)=>{
           .each(function(i,elem){
             ScoreDetail.push($(this).text());
           });
+        
+        let TeamImageData = {'AwayImage':$('.team-logo-container a img')[0].attribs.src,'HomeImage':$('.team-logo-container a img')[1].attribs.src};
+        // console.log(TeamImageData.AwayImage);
+        // console.log(TeamImageData.HomeImage);
 
+        let PointData = {'AwayPoint':$('.team-score-container .score-text')[0].innerText,'HomePoint':$('.team-score-container .score-text')[0].innerText};
 
-      //   $('#player-stats-away .starters-stats .stats-viewable-area .stats-rows .stats-table td a,#player-stats-away .bench-stats .stats-viewable-area .stats-rows .stats-table td a')
-      //   .each(function(i,elem){
-      //     imageData.push($(this).attr('href'));
-      //   });
-      //   $('#player-stats-home .starters-stats .stats-viewable-area .stats-rows .stats-table td a,#player-stats-home .bench-stats .stats-viewable-area .stats-rows .stats-table td a')
-      //   .each(function(i,elem){
-      //     imageData.push($(this).attr('href'));
-      //  });
+        
 
 
         //登陸球員數量
@@ -112,7 +110,7 @@ let reptileBox=async(GameDate,VtriCode,HtriCode)=>{
           ScoreDetailData.push(ScoreDetail.slice(i*ScoreDetailnum,(i+1)*ScoreDetailnum));
         };
 
-        let totalData = {HomeData,AwayData,ScoreDetailData};
+        let totalData = {HomeData,AwayData,ScoreDetailData,TeamImageData,PointData};
 
         resolve(totalData);
       }else{
