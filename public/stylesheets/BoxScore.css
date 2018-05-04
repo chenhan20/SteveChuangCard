@@ -198,4 +198,7 @@ div.borderYtoX a:hover:before, div.borderYtoX a:hover:after
     filter: blur(2px);
 }
 
+.Alltable{
+    overflow-x:auto;
+}
 
