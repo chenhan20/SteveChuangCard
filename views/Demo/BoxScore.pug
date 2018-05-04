@@ -16,9 +16,9 @@ block content
         //- h3.odometer.odometerAway.offset-md-4.col-1 999
         //- h3.odometer.odometerHome.offset-md-4.col-1 999
         .TeamImage.row
-          .AwayImage.offset-md-3.col-2(:style="image_css(object.TeamImageData.AwayImage)") 
+          .AwayImage.offset-xl-3.col-xl-2.col-5(:style="image_css(object.TeamImageData.AwayImage)") 
           .col-2
-          .HomeImage.col-2(:style="image_css(object.TeamImageData.HomeImage)") 
+          .HomeImage.col-xl-2.col-5(:style="image_css(object.TeamImageData.HomeImage)") 
         .item.borderYtoX 
           a(v-on:click='selectBox') Box
           a(v-on:click='selectScore') Score
@@ -132,6 +132,7 @@ block content
               td(v-if="value.length=='9'") {{value[7]}}
               td(v-if="value.length=='10'") {{value[8]}}
               td {{value[value.length-1]}}
+
 
     script(src='/js/BoxScore.js')
     script(src='http://github.hubspot.com/odometer/odometer.js')

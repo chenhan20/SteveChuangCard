@@ -91,12 +91,12 @@ let reptileBox=async(GameDate,VtriCode,HtriCode)=>{
         // console.log(TeamImageData.AwayImage);
         // console.log(TeamImageData.HomeImage);
 
-        let PointData = {'AwayPoint':$('.team-score-container .score-text')[0].innerText,'HomePoint':$('.team-score-container .score-text')[0].innerText};
+        // let PointData = {'AwayPoint':$('.team-score-container .score-text')[0].innerText,'HomePoint':$('.team-score-container .score-text')[0].innerText};
 
 
-        $('.center-content-container ').each(function(i,elem){
-          console.log($(this).text());
-        })
+        // $('.center-content-container ').each(function(i,elem){
+        //   console.log($(this).text());
+        // })
 
         // const GameFinal =[0].innerText =='FINAL' ;
         // console.log('打玩了' + GameFinal);
@@ -115,7 +115,7 @@ let reptileBox=async(GameDate,VtriCode,HtriCode)=>{
           ScoreDetailData.push(ScoreDetail.slice(i*ScoreDetailnum,(i+1)*ScoreDetailnum));
         };
 
-        let totalData = {HomeData,AwayData,ScoreDetailData,TeamImageData,PointData};
+        let totalData = {HomeData,AwayData,ScoreDetailData,TeamImageData};
 
         resolve(totalData);
       }else{

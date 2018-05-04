@@ -10,11 +10,11 @@ block content
   .container 
     h1 SteveChuang JOB CV 
     .row
-      .col
+      .col-10.col-xl.offset-2.offset-xl-0
         img.image_1.rounded-circle(src='/images/Steve/IMG_01.JPG')
       .col
         h3 SteveChuang
-        a.Sendemail(href='#',data-toggle="tooltip" ,data-placement="left",title='發信給我')
+        a.col-12.Sendemail(href='#',data-toggle="tooltip" ,data-placement="left",title='發信給我')
           i.icon.fas.fa-envelope(style='font-size:30px')
         a.Copyemail(href='#',data-toggle="tooltip" ,data-placement="top",title='複製信箱') a0911558945@gmail.com 
         a ｜ Taipei ｜
@@ -97,9 +97,10 @@ block content
     .container.row3
       .col-sm-12
         h2 作品
-      .col
-        a.Demo(href='SteveCard/Demo01') 撲克牌Demo(未完成)
-        a.Demo(href='SteveCard/Demo02') NBA比賽資訊(大致完成)
+      .col-sm-12
+        a.Demo(href='/SteveCard/Demo01') 撲克牌Demo(未完成)
+      .col-sm-12
+        a.Demo(href='/SteveCard/Demo02') NBA比賽資訊(大致完成)
         //- a.Demo(href='SteveCard/Demo01') Demo(空)
         //- a.Demo(href='SteveCard/Demo01') Demo(空)
         //- a.Demo(href='SteveCard/Demo01') Demo(空)
