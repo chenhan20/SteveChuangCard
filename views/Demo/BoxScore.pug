@@ -3,6 +3,7 @@ extends ../common/layout
 block append CV_Nav
 block append modal
 block buttonPage
+block append footer
 block content
     h1 #{title}
     script(type='text/javascript').
@@ -132,7 +133,6 @@ block content
               td(v-if="value.length=='10'") {{value[8]}}
               td {{value[value.length-1]}}
 
-    
     script(src='/js/BoxScore.js')
     script(src='http://github.hubspot.com/odometer/odometer.js')
     link(rel='stylesheet', href='/stylesheets/BoxScore.css')

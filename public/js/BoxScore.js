@@ -49,20 +49,20 @@ let BoxScore = new Vue({
                 $('.Hselectitem').addClass( "SelectClass" );
                 $('.Vselectitem').removeClass( "SelectClass" );
                 $('.Htable').show(500);
-                $('.Vtable').hide(500);
+                $('.Vtable').hide();
             }else{
                 $('.Hselectitem').removeClass( "SelectClass" );
                 $('.Vselectitem').addClass( "SelectClass" );
-                $('.Htable').hide(500);
+                $('.Htable').hide();
                 $('.Vtable').show(500);            
             }
         },
         selectBox:function(event){
             $('.Box').show(500);
-            $('.Score').hide(500);
+            $('.Score').hide();
         },
         selectScore:function(event){
-            $('.Box').hide(500);
+            $('.Box').hide();
             $('.Score').show(500);
         },
         image_css:function(Logo){

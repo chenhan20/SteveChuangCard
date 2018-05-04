@@ -93,8 +93,13 @@ let reptileBox=async(GameDate,VtriCode,HtriCode)=>{
 
         let PointData = {'AwayPoint':$('.team-score-container .score-text')[0].innerText,'HomePoint':$('.team-score-container .score-text')[0].innerText};
 
-        
 
+        $('.center-content-container ').each(function(i,elem){
+          console.log($(this).text());
+        })
+
+        // const GameFinal =[0].innerText =='FINAL' ;
+        // console.log('打玩了' + GameFinal);
 
         //登陸球員數量
         let Homenum = (HomeBoxData.length/17);

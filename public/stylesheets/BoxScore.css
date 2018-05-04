@@ -141,11 +141,61 @@ div.borderYtoX a:hover:before, div.borderYtoX a:hover:after
     height: 2px;
     width: 100%;
 }
-.AwayImage,.HomeImage{
+.AwayImage{
     height: 200px;
     display: block;
     text-indent: -9999px;
     background-size: contain;
     background-repeat:no-repeat;
-
+    -webkit-animation: Awaymove 3s infinite; /* Safari 4.0 - 8.0 */
+    animation: Awaymove 3s infinite;
 }
+.HomeImage{
+    height: 200px;
+    display: block;
+    text-indent: -9999px;
+    background-size: contain;
+    background-repeat:no-repeat;
+    -webkit-animation: Homemove 3s infinite; /* Safari 4.0 - 8.0 */
+    animation: Homemove 3s infinite;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes Awaymove {
+    0%   {top: 0px;}
+    25%  {top: 100px;}
+    50%  {top: 50px;}
+    75%  {top: 100px;}
+    100% {top: 0px;}
+}
+
+/* Standard syntax */
+@keyframes Awaymove {
+    0%   {top: 0px;}
+    25%  {top: 100px;}
+    50%  {top: 50px;}
+    75%  {top: 100px;}
+    100% {top: 0px;}
+}
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes Homemove {
+    0%   {top: 100px;}
+    25%  {top: 0px;}
+    50%  {top: 50px;}
+    75%  {top: 0px;}
+    100% {top: 100px;}
+}
+
+/* Standard syntax */
+@keyframes Homemove {
+    0%   {top: 100px;}
+    25%  {top: 0px;}
+    50%  {top: 50px;}
+    75%  {top: 0px;}
+    100% {top: 100px;}
+}
+.AwayImage:hover, .HomeImage:hover{
+    filter: blur(2px);
+}
+
+
