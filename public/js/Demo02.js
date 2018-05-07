@@ -84,6 +84,8 @@ let USADate = {yyyy:USAday.getFullYear(),mm : USAday.getMonth()+1,dd:USAday.getD
         }
     },
     mounted:function(){
+        // $('.bouncing-loader').hide();
+
         var self = this;
         $('[data-toggle="tooltip"]').tooltip();   
         $.ajax({
@@ -98,10 +100,12 @@ let USADate = {yyyy:USAday.getFullYear(),mm : USAday.getMonth()+1,dd:USAday.getD
                 self.object={Error:'Error'};
             },
             beforeSend:function(){
-                $('.ajaxlaodmodal').modal('show');
+                // $('.ajaxlaodmodal').modal('show');
+                $('.bouncing-loader').show();
             },
             complete:function(){
-                $('.ajaxlaodmodal').modal('hide');
+                // $('.ajaxlaodmodal').modal('hide');
+                $('.bouncing-loader').hide();
             }
         });
     }

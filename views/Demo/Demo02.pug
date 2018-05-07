@@ -42,6 +42,10 @@ block content
               a.win.col-1(v-else-if='value.vTeam.win') W
               a.lose.col-1(v-else) L
               a.vScore.col-1  {{value.vTeam.score=="" ? 0 :value.vTeam.score}}
+      .bouncing-loader
+        div
+        div
+        div
       
 
     script(src='/js/Demo02.js')

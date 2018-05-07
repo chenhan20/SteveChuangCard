@@ -90,6 +90,13 @@ router.post('/sendmail', function(req, res,next){
 });
 
 
+
+/* GET Demo02 */
+router.get('/Demo03', function(req, res, next) {
+  res.render('./Demo/Demo03', { title: 'Demo02' });
+});
+
+
 //處理404問題
 router.get('*',function(req,res){
   res.render('./main/error/error', { URL: req.originalUrl });
