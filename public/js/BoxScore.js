@@ -29,10 +29,18 @@ let BoxScore = new Vue({
                 self.object={Error:'Error'};
             },
             beforeSend:function(){
-                $('.ajaxlaodmodal').modal('show');
+                // $('.ajaxlaodmodal').modal('show');
+                $('.bouncing-loader').show();
+                $('.TeamImage').hide();
+                
+
             },
             complete:function(){
-                $('.ajaxlaodmodal').modal('hide');
+                // $('.ajaxlaodmodal').modal('hide');
+                $('.bouncing-loader').hide();
+                $('.TeamImage').show();
+
+
             }
         });
         $('.Box').show(500);

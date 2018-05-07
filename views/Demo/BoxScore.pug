@@ -12,6 +12,10 @@ block content
         const HtriCode='#{HtriCode}';
         const VtriCode='#{VtriCode}';
     .container-fluid
+      .bouncing-loader
+        div
+        div
+        div
       .BoxScore
         //- h3.odometer.odometerAway.offset-md-4.col-1 999
         //- h3.odometer.odometerHome.offset-md-4.col-1 999
@@ -133,7 +137,6 @@ block content
               td(v-if="value.length=='9'") {{value[7]}}
               td(v-if="value.length=='10'") {{value[8]}}
               td {{value[value.length-1]}}
-
 
     script(src='/js/BoxScore.js')
     script(src='http://github.hubspot.com/odometer/odometer.js')

@@ -86,7 +86,7 @@
 
 ## 參考網站
 * [使用puppeteer教學](https://itw01.com/VYNGESV.html)
-
+* [css load資料時的動畫](https://atomiks.github.io/30-seconds-of-css/)
 ## 爬蟲網站
 
 __***此爬蟲網站無任何收益，僅供練習使用 若有侵權敬請告知 馬上移除***__

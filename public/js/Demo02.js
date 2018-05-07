@@ -33,10 +33,14 @@ let USADate = {yyyy:USAday.getFullYear(),mm : USAday.getMonth()+1,dd:USAday.getD
                     self.object={Error:'Error'};
                 },
                 beforeSend:function(){
-                    $('.ajaxlaodmodal').modal('show');
+                    // $('.ajaxlaodmodal').modal('show');
+                    $('.bouncing-loader').show();
+                    $('.Nba').hide();
                 },
                 complete:function(){
-                    $('.ajaxlaodmodal').modal('hide');
+                    // $('.ajaxlaodmodal').modal('hide');
+                    $('.bouncing-loader').hide();
+                    $('.Nba').show();
                 }
             });       
         },
@@ -59,10 +63,15 @@ let USADate = {yyyy:USAday.getFullYear(),mm : USAday.getMonth()+1,dd:USAday.getD
                     self.object={Error:'Error'};
                 },
                 beforeSend:function(){
-                    $('.ajaxlaodmodal').modal('show');
+                    // $('.ajaxlaodmodal').modal('show');
+                    $('.bouncing-loader').show();
+                    $('.Nba').hide();
+
                 },
                 complete:function(){
-                    $('.ajaxlaodmodal').modal('hide');
+                    $('.bouncing-loader').hide();
+                    $('.Nba').show();
+                    // $('.ajaxlaodmodal').modal('hide');
                 }
             });
         },
