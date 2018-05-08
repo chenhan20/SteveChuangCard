@@ -72,6 +72,7 @@
 - [x] express
 - [x] nodemailer
 - [x] puppeteer
+- [x] socket.io
 
 ***
 
@@ -99,4 +100,5 @@ __***此爬蟲網站無任何收益，僅供練習使用 若有侵權敬請告�
 **傳入隊伍資訊簡寫 得出完整隊伍名稱**
 * [NBA那一場比賽詳細資訊](https://www.cbssports.com/nba/gametracker/boxscore/NBA_20180501_NO@GS)
 **傳入日期 & 客場隊伍@主場隊伍 得到比賽資訊 有使用cheerio 因為是爬蟲 不是爬json**
+
 
