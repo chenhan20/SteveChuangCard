@@ -11,9 +11,10 @@ $(".gotop").click(function(){
 });
 $(window).scroll(function() {
     if ( $(this).scrollTop() > 300){
-        $('.gotop').fadeIn("fast");
+        // $('.gotop').fadeIn("fast");
+        $('.gotop').addClass('is-visible');
     } else {
-        $('.gotop').stop().fadeOut("fast");
+        // $('.gotop').stop().fadeOut("fast");
     }
 });
 $('.goright').click(function(){
