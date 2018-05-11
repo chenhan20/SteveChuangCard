@@ -10,7 +10,25 @@ var users = require('./routes/users');
 var SteveCard = require('./routes/SteveCard');
 
 
+
 var app = express();
+var server = require('http').createServer(app);
+var io = require('socket.io').listen(server);
+nicknames = [];
+
+
+server.listen(3000);
+  io.sockets.on('connection', function (socket) {
+    socket.on('nickBoxName', function (data) {
+      if(nicknames.indexOf(data)!=-1){
+
+      }else{
+        nicknames.push(data);
+        socket.emit('OnlineUser',nicknames);
+        console.log('nickName :'+ nicknames);
+      }
+    });
+  });
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

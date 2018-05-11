@@ -88,6 +88,7 @@
 ## 參考網站
 * [使用puppeteer教學](https://itw01.com/VYNGESV.html)
 * [css load資料時的動畫](https://atomiks.github.io/30-seconds-of-css/)
+* [socket.io製作聊天室](https://ithelp.ithome.com.tw/articles/10158724)
 ## 爬蟲網站
 
 __***此爬蟲網站無任何收益，僅供練習使用 若有侵權敬請告知 馬上移除***__

@@ -6,10 +6,28 @@ block buttonPage
 block footer
 block content
     h1 Demo03-聊天
-    
-      
+    .container
+        .Demo03
+            .send.row
+                .form-inline.nickboxsenddiv(v-show='sendNamechk')
+                    label YourName:
+                    input.nickBox.form-control(type='text') 
+                    button.btn.btn-success(type='button',v-on:click='nickboxsend') Send
+            .Start
+                .YourName.form-inline(v-show='!sendNamechk') ID:{{yourName}} 
+                    input.nickBox.form-control(type='text') 
+                    button.btn.btn-success(type='button',v-on:click='nickboxsend') Send
 
+            .OnlineUser(v-for='value in onlineUser')
+                div {{value}}
+                
+
+
+
+
+  
+
+    script(src='/socket.io/socket.io.js')
     script(src='/js/Demo03.js')
-    script(src="/socket.io/test/socket.io.js")
     link(rel='stylesheet', href='/stylesheets/Demo03.css')
 

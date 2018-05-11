@@ -10,7 +10,6 @@
   "private": true,
   "dependencies": {
     "vue": "^2.5.16",
-    "bootstrap": "4.0.0-alpha.6",
-    "socket.io":"2.1.0"
+    "bootstrap": "4.0.0-alpha.6"
   }
 }

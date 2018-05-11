@@ -94,7 +94,7 @@ let USADate = {yyyy:USAday.getFullYear(),mm : USAday.getMonth()+1,dd:USAday.getD
     },
     mounted:function(){
         // $('.bouncing-loader').hide();
-
+        
         var self = this;
         $('[data-toggle="tooltip"]').tooltip();   
         $.ajax({
