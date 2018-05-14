@@ -10,17 +10,18 @@ block content
         .Demo03
             .send.row
                 .form-inline.nickboxsenddiv(v-show='sendNamechk')
-                    label YourName:
+                    label YourName:{{OnlineUser}}
                     input.nickBox.form-control(type='text') 
                     button.btn.btn-success(type='button',v-on:click='nickboxsend') Send
             .Start
                 .YourName.form-inline(v-show='!sendNamechk') ID:{{yourName}} 
                     input.nickBox.form-control(type='text') 
                     button.btn.btn-success(type='button',v-on:click='nickboxsend') Send
-
-            .OnlineUser(v-for='value in onlineUser')
-                div {{value}}
                 
+            .OnlineUser(v-for='value in OnlineUser') 
+                div Online:{{value}}
+
+
 
 
 

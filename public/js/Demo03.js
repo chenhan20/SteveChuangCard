@@ -13,7 +13,7 @@ let yourName;
 let Demo03 = new Vue({
     el: '.Demo03',
     data: {
-        onlineUser:[],yourName,sendNamechk:true
+        OnlineUser:[],yourName,sendNamechk:true
     },
     methods:{
         nickboxsend:function(){
@@ -39,6 +39,7 @@ let Demo03 = new Vue({
         self=this;
         socket.on('OnlineUser', function (data) {
             console.log('OnlineUser' + data);
+            this.OnlineUser=data;
             // onlineUser.push(data);
         });
     }
