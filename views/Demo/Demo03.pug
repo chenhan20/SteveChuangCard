@@ -8,18 +8,20 @@ block content
     h1 Demo03-聊天
     .container
         .Demo03
-            .send.row
-                .form-inline.nickboxsenddiv(v-show='sendNamechk')
-                    label YourName:{{OnlineUser}}
-                    input.nickBox.form-control(type='text') 
-                    button.btn.btn-success(type='button',v-on:click='nickboxsend') Send
-            .Start
-                .YourName.form-inline(v-show='!sendNamechk') ID:{{yourName}} 
-                    input.nickBox.form-control(type='text') 
-                    button.btn.btn-success(type='button',v-on:click='nickboxsend') Send
-                
-            .OnlineUser(v-for='value in OnlineUser') 
-                div Online:{{value}}
+            .form-group.UserAdd
+                label(for="exampleInputEmail1") YourName
+                input.form-control.nickBox(type="email", placeholder="123")
+                a.Btn_addroom AddRoom
+            .OnlineUser
+            .ChatRoom
+                h1 Welcome Steve Chatroom
+                ul.Msgcontainer
+                .sendMsg.row   
+                    input#msg_content.msg_content.col-lg-9(type='text', name='msg_content', autocomplete='off', placeholder='Type your message...', autofocus='')
+                    .Btn_sendMsg Send
+
+            
+
 
 
 

@@ -14,21 +14,33 @@ var SteveCard = require('./routes/SteveCard');
 var app = express();
 var server = require('http').createServer(app);
 var io = require('socket.io').listen(server);
-nicknames = [];
 
+
+//線上使用者
+nicknames = [];
 
 server.listen(3000);
   io.sockets.on('connection', function (socket) {
-    socket.on('nickBoxName', function (data) {
-      if(nicknames.indexOf(data)!=-1){
-
-      }else{
+    socket.on('add user', function (data) {
+        socket.username = data;
         nicknames.push(data);
-        socket.emit('OnlineUser',nicknames);
-        console.log('nickName :'+ nicknames);
-      }
+        socket.emit('add user',{
+          username: socket.username
+        });
+        console.log('OnlineUser :'+ nicknames);
     });
-  });
+	//監聽新訊息事件
+	socket.on('chat message', function(msg){
+
+		console.log(socket.username+":"+msg);
+
+  		//發佈新訊息
+		io.emit('chat message', {
+			username:socket.username,
+			msg:msg
+		});
+	});
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

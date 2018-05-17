@@ -1,3 +1,70 @@
 .send{
     margin-top:10%
 }
+ul,li{list-style:none;}
+.sendmsg{
+    border-top: 1px solid #d7d7d7;
+}
+.Btn_addroom{
+    color: #323237;
+    border: 2px solid #323237;
+    line-height: 30px;
+    border-radius: 30px;
+    display: inline-block;
+    /* font-family: "graphik-bki", "PingFangTC-Semibold", "Noto Sans Bold"; */
+    font-size: 18px;
+    letter-spacing: 2px;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    padding: 0 27px;
+    transition: background-color 0.5s;
+    margin:10%;
+    cursor: pointer;
+}
+.Btn_addroom:hover{
+    background-color: #323237;
+    color: #fff;
+    text-decoration:none;
+    
+}
+
+.Btn_sendMsg{
+    color: #323237;
+    border: 2px solid #323237;
+    line-height: 30px;
+    border-radius: 20px;
+    display: inline-block;
+    /* font-family: "graphik-bki", "PingFangTC-Semibold", "Noto Sans Bold"; */
+    font-size: 14px;
+    letter-spacing: 2px;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    padding: 0 27px;
+    transition: background-color 0.5s;
+    cursor: pointer;
+}
+
+
+.msg_content{
+    display: inline;
+    border: none;
+    box-shadow: none;
+    background-color: #F0BBC3;
+
+}
+
+.msg_content:focus { 
+    outline: none !important;
+    border-bottom:1px solid black;
+    /* box-shadow: 0 0 10px #719ECE; */
+    background-color: #F0BBC3;
+
+}
+
+
+.Msgcontainer{
+    max-height: 350px;
+    min-height: 315px;
+    overflow-y: auto;
+    margin-bottom: 30px;
+}
