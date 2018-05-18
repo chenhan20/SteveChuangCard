@@ -98,7 +98,7 @@ function onListening() {
 //線上使用者
 nicknames = [];
 
-server.listen(3000);
+
   io.on('connection', function (socket) {
     socket.on('add user', function (data) {
         socket.username = data;
@@ -118,5 +118,17 @@ server.listen(3000);
 			username:socket.username,
 			msg:msg
 		});
+  });
+  	//left
+	socket.on('disconnect',function(){
+    console.log(socket.username+" left.");
+    nicknames.slice(nicknames.indexOf(socket.username),1);
+		io.emit('user left',{
+			username:socket.username,nicknamesArray:nicknames
+		});
 	});
+
+
+
+
 });

@@ -18,15 +18,39 @@ socket.on('chat message', function (data) {
 
     // $('.OnlineUser').append(data);
 });
+
+let appendMessage =(msg) =>{
+    $('.Msgcontainer').append($('<li>').text(msg));
+    var scrollHeight = $('.ChatRoom').prop("scrollHeight");
+    // $('.ChatRoom').animate({scrollTop:scrollHeight}, 400);
+
+    // $('.ChatRoom').scrollIntoView(400);
+}
+//送出聊天訊息
+let sendMsg =()=>{
+    let Msg=$('.msg_content').val();
+    if(Msg==""){
+        alert('請輸入內容');
+        return;
+    }
+    socket.emit('chat message' ,Msg);
+    $('.msg_content').val('');
+};
+
 socket.on('add user',function(data){
     appendMessage(data.username+"已加入");
 });
 
+socket.on('user left',function(data){
+    // data.nicknamesArray可收到onlineUser了
+    appendMessage(data.username+"已離開");
+  });
 
 
 $( document ).ready(function() {
     $('.ChatRoom').hide();
 });
+
 
 $('.Btn_addroom').click(function() {
     let nickBox=$('.nickBox').val();
@@ -41,22 +65,16 @@ $('.Btn_addroom').click(function() {
 
 });
 $('.Btn_sendMsg').click(function() {
-    let Msg=$('.msg_content').val();
-    if(Msg==""){
-        alert('請輸入內容');
-        return;
+    sendMsg();
+});
+//enter 送出聊天訊息
+$('.msg_content').keypress(function(e){
+    if(e.keyCode==13){
+        sendMsg();
     }
-    socket.emit('chat message' ,Msg);
-    $('.msg_content').val('');
 });
 
 
-function appendMessage(msg){
-    $('.Msgcontainer').append($('<li>').text(msg));
-    // var message = document.getElementsByClassName("ChatRoom");
-    // message.scrollTop = message.scrollHeight;
-
-  }
 
 // let Demo03 = new Vue({
 //     el: '.Demo03',

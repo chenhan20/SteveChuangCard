@@ -6,19 +6,24 @@ block buttonPage
 block footer
 block content
     h1 Demo03-聊天
-    .container
+    .container-fulid.offset-xl-1.col-xl-10
         .Demo03
-            .form-group.UserAdd
-                label(for="exampleInputEmail1") YourName
-                input.form-control.nickBox(type="email", placeholder="Name")
-                a.Btn_addroom AddRoom
-            .OnlineUser
-            .ChatRoom
-                h1 Welcome Steve Chatroom
-                ul.Msgcontainer
-                .sendMsg.row   
-                    input#msg_content.msg_content.col-lg-9(type='text', name='msg_content', autocomplete='off', placeholder='Type your message...', autofocus='')
-                    .Btn_sendMsg Send
+            h1 Welcome Steve Chatroom
+            .row
+                .onlineUser.col-xl-3
+                    ul
+                        li 線上User
+                        li Steve
+                        li ssss
+                .form-group.UserAdd.col-xl-4
+                    label(for="exampleInputEmail1") YourName
+                    input.form-control.nickBox(type="email", placeholder="Name")
+                    a.Btn_addroom AddRoom
+                .ChatRoom.col-xl-9
+                    ul.Msgcontainer.col
+                    .sendMsg.row   
+                        input#msg_content.msg_content.col-lg-9(type='text', name='msg_content', autocomplete='off', placeholder='Type your message...', autofocus='')
+                        .Btn_sendMsg Send
 
             
 
