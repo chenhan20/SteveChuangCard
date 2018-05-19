@@ -100,6 +100,12 @@ nicknames = [];
 
 
   io.on('connection', function (socket) {
+    socket.on('ready', function () {
+      io.emit('ready',{
+        nicknamesArray:nicknames
+      });
+      console.log('OnlineUser :'+ nicknames);
+  });
     socket.on('add user', function (data) {
         socket.username = data;
         nicknames.push(data);

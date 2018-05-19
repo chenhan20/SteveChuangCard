@@ -52,12 +52,19 @@ socket.on('add user',function(data){
 
 socket.on('user left',function(data){
     // data.nicknamesArray可收到onlineUser了
+    if(data.username!=undefined){
+        UpdateOnlineUser(data.nicknamesArray);
+        appendMessage(data.username+"已離開");
+    }
+  });
+socket.on('ready',function(data){
+    // data.nicknamesArray可收到onlineUser了
     UpdateOnlineUser(data.nicknamesArray);
-    appendMessage(data.username+"已離開");
   });
 
 
 $( document ).ready(function() {
+    socket.emit('ready');
     $('.ChatRoom').hide();
 });
 

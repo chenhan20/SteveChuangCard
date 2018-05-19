@@ -76,10 +76,12 @@ ul.Msgcontainer li{
     position: relative;
     clear: both;
     display: inline-block;
-    padding: 16px 40px 16px 20px;
+    padding: 10px 40px 10px 20px;
     margin: 0 0 20px 0;
     font: 16px/20px 'Noto Sans', sans-serif;
-    border-radius: 20px;
+    border-radius: 30px;
     float: left;
-    background-color: rgba(25, 147, 147, 0.2);
+    color: #fff;
+    text-shadow: none;
+    background-color: #4080FF;
 } 
