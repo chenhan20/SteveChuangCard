@@ -11,10 +11,8 @@ block content
             h1 Welcome Steve Chatroom
             .row
                 .onlineUser.col-xl-3
-                    ul
-                        li 線上User
-                        li Steve
-                        li ssss
+                    ul.OnlineUserList
+                        h4 線上名單
                 .form-group.UserAdd.col-xl-4
                     label(for="exampleInputEmail1") YourName
                     input.form-control.nickBox(type="email", placeholder="Name")
@@ -28,12 +26,6 @@ block content
             
 
 
-
-
-
-
-
-  
 
     script(src='/socket.io/socket.io.js')
     script(src='/js/Demo03.js')

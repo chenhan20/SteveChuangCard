@@ -104,7 +104,7 @@ nicknames = [];
         socket.username = data;
         nicknames.push(data);
         io.emit('add user',{
-          username: socket.username
+          username: socket.username,nicknamesArray:nicknames
         });
         console.log('OnlineUser :'+ nicknames);
     });
@@ -122,7 +122,13 @@ nicknames = [];
   	//left
 	socket.on('disconnect',function(){
     console.log(socket.username+" left.");
-    nicknames.slice(nicknames.indexOf(socket.username),1);
+
+    //處理離開時 刪除陣列 
+    var index = nicknames.indexOf(socket.username);
+    if (index > -1) {
+      nicknames.splice(index, 1);
+    }
+    console.log(nicknames);
 		io.emit('user left',{
 			username:socket.username,nicknamesArray:nicknames
 		});

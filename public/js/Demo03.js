@@ -21,11 +21,18 @@ socket.on('chat message', function (data) {
 
 let appendMessage =(msg) =>{
     $('.Msgcontainer').append($('<li>').text(msg));
-    var scrollHeight = $('.ChatRoom').prop("scrollHeight");
+    // var scrollHeight = $('.ChatRoom').prop("scrollHeight");
     // $('.ChatRoom').animate({scrollTop:scrollHeight}, 400);
 
     // $('.ChatRoom').scrollIntoView(400);
-}
+};
+let UpdateOnlineUser =(nicknamesArray) => {
+    $('.OnlineUserList li').remove();
+    for(let value of nicknamesArray){
+        $('.OnlineUserList').append($('<li>').text(value));
+    }
+};
+
 //送出聊天訊息
 let sendMsg =()=>{
     let Msg=$('.msg_content').val();
@@ -38,11 +45,13 @@ let sendMsg =()=>{
 };
 
 socket.on('add user',function(data){
+    UpdateOnlineUser(data.nicknamesArray);
     appendMessage(data.username+"已加入");
 });
 
 socket.on('user left',function(data){
     // data.nicknamesArray可收到onlineUser了
+    UpdateOnlineUser(data.nicknamesArray);
     appendMessage(data.username+"已離開");
   });
 
