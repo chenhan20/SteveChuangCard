@@ -63,8 +63,8 @@ ul,li{list-style:none;}
 
 
 .Msgcontainer{
-    max-height: 340px;
-    min-height: 315px;
+    max-height: 450px;
+    min-height: 420px;
     overflow-y: auto;
     margin-bottom: 30px;
 }

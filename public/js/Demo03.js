@@ -21,8 +21,7 @@ socket.on('chat message', function (data) {
 
 let appendMessage =(msg) =>{
     $('.Msgcontainer').append($('<li>').text(msg));
-    $('.Msgcontainer').scrollTop(10000);
-
+    $('.Msgcontainer').scrollTop($('.ChatRoom').height())
     // var scrollHeight = $('.ChatRoom').prop("scrollHeight");
     // $('.ChatRoom').animate({scrollTop:scrollHeight}, 400);
 
