@@ -49,7 +49,7 @@ ul,li{list-style:none;}
     display: inline;
     border: none;
     box-shadow: none;
-    background-color: #F0BBC3;
+    background-color: #E6C9DC;
 
 }
 
@@ -57,31 +57,110 @@ ul,li{list-style:none;}
     outline: none !important;
     border-bottom:1px solid black;
     /* box-shadow: 0 0 10px #719ECE; */
-    background-color: #F0BBC3;
+    background-color: #EDBFCA;
+
+}
+.nickBox{
+    display: inline;
+    border: none;
+    box-shadow: none;
+    background-color: #EDBFCA;
+
+}
+
+.nickBox:focus { 
+    outline: none !important;
+    border-bottom:1px solid black;
+    /* box-shadow: 0 0 10px #719ECE; */
+    background-color: #E6C9DC;
 
 }
 
 
 .Msgcontainer{
-    max-height: 450px;
+    max-height: 420px;
     min-height: 420px;
     overflow-y: auto;
     margin-bottom: 30px;
+    border-bottom: #000000 solid 1px;
+    margin-right: -15px;
 }
 
-ul.Msgcontainer li{
+
+
+ul.Msgcontainer .other{
     /* margin: 0.6em; */
     /* border: 1px solid black; */
 
     position: relative;
     clear: both;
     display: inline-block;
-    padding: 10px 40px 10px 20px;
+    padding: 10px 20px 10px 20px;
     margin: 0 0 20px 0;
     font: 16px/20px 'Noto Sans', sans-serif;
     border-radius: 30px;
     float: left;
+    color: #4B4F56;
+    text-shadow: none;
+    background-color: #F1F0F0;
+} 
+ul.Msgcontainer .OtherName{
+    /* margin: 0.6em; */
+    /* border: 1px solid black; */
+
+    position: relative;
+    clear: both;
+    display: inline-block;
+    padding: 0px 0px 0px 0px;
+    margin: 0px;
+    font: 16px/20px 'Noto Sans', sans-serif;
+    /* border-radius: 30px; */
+    float: left;
+    color: #4B4F56;
+    /* text-shadow: none; */
+    /* background-color: #F1F0F0; */
+} 
+ul.Msgcontainer .Me{
+    /* margin: 0.6em; */
+    /* border: 1px solid black; */
+
+    position: relative;
+    clear: both;
+    display: inline-block;
+    padding: 10px 20px 10px 20px;
+    margin: 0 0 20px 0;
+    font: 16px/20px 'Noto Sans', sans-serif;
+    border-radius: 30px;
+    float: right;
     color: #fff;
     text-shadow: none;
     background-color: #4080FF;
 } 
+ul.Msgcontainer .User{
+    /* margin: 0.6em; */
+    /* border: 1px solid black; */
+
+    position: relative;
+    clear: both;
+    display: inline-block;
+    padding: 10px 20px 10px 20px;
+    margin: 0 0 20px 0;
+    font: 16px/20px 'Noto Sans', sans-serif;
+    /* border-radius: 30px; */
+    float: left;
+    left: 40%;
+    color: #fff;
+    text-shadow: none;
+    background-color: #5b5b5b;
+} 
+.ChatRoom{
+    border: #000000 solid 1px;
+}
+
+body{
+    height: 100vh;
+    /* background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898; 
+     background-blend-mode: multiply,multiply; */
+     background-image: linear-gradient(-20deg, #ddd6f3 0%, #faaca8 100%, #faaca8 100%);
+      padding:0;
+    }

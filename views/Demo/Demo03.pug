@@ -5,7 +5,6 @@ block append modal
 block buttonPage
 block footer
 block content
-    h1 Demo03-聊天
     .container-fulid.offset-xl-1.col-xl-10
         svg#logo.col(version='1.1', xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', x='0px', y='0px', width='145px', height='32px', viewbox='0 0 337.5 72.6', style='enable-background:new 0 0 337.5 72.6;', xml:space='preserve')
           g
@@ -89,17 +88,18 @@ block content
         .Demo03
             h1 Welcome Steve Chatroom
             .row
-                .onlineUser.col-xl-3
+                .onlineUser.col-xl-4
                     ul.OnlineUserList
                         h4 線上名單
                 .form-group.UserAdd.col-xl-4
                     label(for="exampleInputEmail1") YourName
                     input.form-control.nickBox(type="email", placeholder="Name")
                     a.Btn_addroom AddRoom
-                .ChatRoom.col-xl-9
-                    ul.Msgcontainer.col
+                .ChatRoom.col-xl-7
+                    .height
+                    ul.Msgcontainer
                     .sendMsg.row   
-                        input#msg_content.msg_content.col-lg-9(type='text', name='msg_content', autocomplete='off', placeholder='Type your message...', autofocus='')
+                        input#msg_content.msg_content.col-lg-10(type='text', name='msg_content', autocomplete='off', placeholder='Type your message...', autofocus='')
                         .Btn_sendMsg Send
 
             
