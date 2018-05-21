@@ -78,12 +78,13 @@ ul,li{list-style:none;}
 
 
 .Msgcontainer{
-    max-height: 420px;
-    min-height: 420px;
+    max-height: 400px;
+    min-height: 400px;
     overflow-y: auto;
     margin-bottom: 30px;
     border-bottom: #000000 solid 1px;
     margin-right: -15px;
+    
 }
 
 
@@ -148,7 +149,7 @@ ul.Msgcontainer .User{
     font: 16px/20px 'Noto Sans', sans-serif;
     /* border-radius: 30px; */
     float: left;
-    left: 40%;
+    left: 35%;
     color: #fff;
     text-shadow: none;
     background-color: #5b5b5b;
@@ -164,3 +165,14 @@ body{
      background-image: linear-gradient(-20deg, #ddd6f3 0%, #faaca8 100%, #faaca8 100%);
       padding:0;
     }
+
+
+.Msgcontainer::-webkit-scrollbar{
+        width: 12px;
+        background-color: #F5F5F5;
+    }
+.Msgcontainer::-webkit-scrollbar-thumb{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #555;
+}

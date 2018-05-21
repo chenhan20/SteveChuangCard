@@ -15,15 +15,19 @@ let onlineUser=[];
 let appendMessageUser =(msg) =>{
     $('.Msgcontainer').append($('<li class="User">').text(msg));
     $('.Msgcontainer').scrollTop($('.ChatRoom').height());
+    $('.Msgcontainer').scrollTop(999999);
 };
 let appendMessageOther =(user,msg) =>{
     $('.Msgcontainer').append($('<li class="OtherName">').text(user));
     $('.Msgcontainer').append($('<li class="other">').text(msg));
     $('.Msgcontainer').scrollTop($('.ChatRoom').height());
+    $('.Msgcontainer').scrollTop(999999);
 };
 let appendMessageMe =(msg) =>{
     $('.Msgcontainer').append($('<li class="Me">').text(msg));
     $('.Msgcontainer').scrollTop($('.ChatRoom').height());
+    $('.Msgcontainer').scrollTop(999999);
+
 };
 let UpdateOnlineUser =(nicknamesArray) => {
     $('.OnlineUserList li').remove();
