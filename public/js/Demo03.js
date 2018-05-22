@@ -45,6 +45,7 @@ let appendLikeMe =() =>{
     $('.Msgcontainer').scrollTop(999999);
 };
 let appendLikeOther =(user) =>{
+    $('.Msgcontainer').append($('<li class="OtherImage">'));
     $('.Msgcontainer').append($('<li class="OtherName">').text(user));
     $('.Msgcontainer').append($('<li class="LikeOther"><i class="icon fas fa-thumbs-up" style="font-size:30px">'));
     $('.Msgcontainer').scrollTop($('.ChatRoom').height());
