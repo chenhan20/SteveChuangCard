@@ -5,6 +5,7 @@ var router = express.Router();
 const sendMail = require('../src/mail.js');
 const reptile = require('../src/reptile.js');
 const reptileBox = require('../src/reptileBox.js');
+const reptileIG = require('../src/reptileIG.js');
 // const io = require('socket.io');
 
 
@@ -61,6 +62,15 @@ router.post('/Demo02/BoxScore/',async function(req, res, next) {
     //爬出這場比賽數據 根據gameId(未完成)
 
     let BoxData=await reptileBox(GameDate,VtriCode,HtriCode);
+    res.send(BoxData);
+  });
+router.post('/Demo03/IG',async function(req, res, next) {
+  const IGId=req.body.IGid;
+
+  console.log('IGId : ' + IGId);
+
+
+    let IG=await reptileIG(IGId);
     res.send(BoxData);
   });
 

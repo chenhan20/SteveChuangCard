@@ -18,23 +18,39 @@ let appendMessageUser =(msg) =>{
     $('.Msgcontainer').scrollTop(999999);
 };
 let appendMessageOther =(user,msg) =>{
+    $('.Msgcontainer').append($('<li class="OtherImage">'));
     $('.Msgcontainer').append($('<li class="OtherName">').text(user));
     $('.Msgcontainer').append($('<li class="other">').text(msg));
     $('.Msgcontainer').scrollTop($('.ChatRoom').height());
     $('.Msgcontainer').scrollTop(999999);
 };
+
 let appendMessageMe =(msg) =>{
     $('.Msgcontainer').append($('<li class="Me">').text(msg));
     $('.Msgcontainer').scrollTop($('.ChatRoom').height());
     $('.Msgcontainer').scrollTop(999999);
 
 };
+
 let UpdateOnlineUser =(nicknamesArray) => {
     $('.OnlineUserList li').remove();
     for(let value of nicknamesArray){
         $('.OnlineUserList').append($('<li>').text(value));
     }
 };
+
+let appendLikeMe =() =>{
+    $('.Msgcontainer').append($('<li class="LikeMe"><i class="icon fas fa-thumbs-up" style="font-size:30px">'));
+    $('.Msgcontainer').scrollTop($('.ChatRoom').height());
+    $('.Msgcontainer').scrollTop(999999);
+};
+let appendLikeOther =(user) =>{
+    $('.Msgcontainer').append($('<li class="OtherName">').text(user));
+    $('.Msgcontainer').append($('<li class="LikeOther"><i class="icon fas fa-thumbs-up" style="font-size:30px">'));
+    $('.Msgcontainer').scrollTop($('.ChatRoom').height());
+    $('.Msgcontainer').scrollTop(999999);
+};
+
 socket.on('chat message', function (data) {
     if(yourName!=data.username){
         appendMessageOther(data.username,data.msg);
@@ -42,7 +58,14 @@ socket.on('chat message', function (data) {
         appendMessageMe(data.msg);
     }
 });
-
+socket.on('send like',function(data){
+    if(yourName!=data.username){
+        appendLikeOther(data.username);
+    }else{
+        appendLikeMe();
+    }
+    $('.msg_content').focus();
+});
 
 //送出聊天訊息
 let sendMsg =()=>{
@@ -55,6 +78,12 @@ let sendMsg =()=>{
         return;
     }
     socket.emit('chat message' ,Msg);
+    $('.msg_content').val('');
+    $('.msg_content').focus();
+};
+//送出讚
+let sendlike =()=>{
+    socket.emit('send like');
     $('.msg_content').focus();
     $('.msg_content').val('');
 };
@@ -73,6 +102,7 @@ socket.on('user left',function(data){
         appendMessageUser(data.username+"已離開");
     }
   });
+
 socket.on('ready',function(data){
     // data.nicknamesArray可收到onlineUser了
     onlineUser=data.nicknamesArray;
@@ -111,7 +141,26 @@ let chkName=(Name)=>{
 
 $('.Btn_addroom').click(function() {
     let nickBox=$('.nickBox').val();
+    console.log('帳號:'+nickBox);
     if(chkName(nickBox)){
+        // $.ajax({
+        //     type: "POST",
+        //     url: "/SteveCard/Demo03/IG/",
+        //     data : {'IGid':nickBox},
+        //     // dataType : 'JSON',
+        //     success: function(Returndata) {
+        //         alert('success');
+        //     },
+        //     error: function(Returndata) {
+        //         alert('error');
+        //     },
+        //     beforeSend:function(){
+        //         $('.bouncing-loader').show();
+        //     },
+        //     complete:function(){
+        //         $('.bouncing-loader').hide();
+        //     }
+        // });
         yourName=nickBox;
         socket.emit('add user' ,nickBox);
     
@@ -125,6 +174,9 @@ $('.Btn_addroom').click(function() {
 });
 $('.Btn_sendMsg').click(function() {
     sendMsg();
+});
+$('.Btn_like').click(function() {
+    sendlike();
 });
 //enter 送出聊天訊息
 $('.msg_content').keypress(function(e){
