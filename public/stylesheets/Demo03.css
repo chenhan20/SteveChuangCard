@@ -156,11 +156,14 @@ ul.Msgcontainer .OtherImage{
     /* margin-left:  */
     /* color: #4B4F56; */
     /* text-shadow: none; */
-    background-color: #F1F0F0;
+    background-image: url(https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-0/p370x247/12742249_1111095285577100_5059840437179925226_n.jpg?_nc_cat=0&_nc_eui2=AeG1R_zzlpFn_2cr2JvziuUUXmVEqXudcgSb0-aj7bk7kiQIVo6LbERG6jL-JaOM7sB8bUhzVfgl4LOOUSDLkoXTWOXjTlPfy-mA0gbk7hWw6Q&oh=c64a3aedd4607b79b8a02787109f8ee9&oe=5B87AD9E);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 } 
 ul.Msgcontainer .Me{
     /* margin: 0.6em; */
-    /* border: 1px solid black; */
+    /* border: 1px solid black; */  
 
     position: relative;
     clear: both;
