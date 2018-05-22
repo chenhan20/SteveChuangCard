@@ -28,22 +28,6 @@ ul,li{list-style:none;}
     
 }
 
-.Btn_sendMsg{
-    color: #323237;
-    border: 2px solid #323237;
-    line-height: 30px;
-    border-radius: 20px;
-    display: inline-block;
-    /* font-family: "graphik-bki", "PingFangTC-Semibold", "Noto Sans Bold"; */
-    font-size: 14px;
-    letter-spacing: 2px;
-    -webkit-transition: 0.3s;
-    transition: 0.3s;
-    padding: 0 27px;
-    transition: background-color 0.5s;
-    cursor: pointer;
-}
-
 
 .msg_content{
     display: inline;

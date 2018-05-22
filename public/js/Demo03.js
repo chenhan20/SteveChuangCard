@@ -84,6 +84,10 @@ $( document ).ready(function() {
     $('.nickBox').focus();
     socket.emit('ready');
     $('.ChatRoom').hide();
+    $('.Btn_sendMsg').hide();
+    $('.Btn_like').show();
+
+    
 });
 
 let chkName=(Name)=>{
@@ -126,6 +130,17 @@ $('.Btn_sendMsg').click(function() {
 $('.msg_content').keypress(function(e){
     if(e.keyCode==13){
         sendMsg();
+    }
+});
+
+$('.msg_content').keyup(function(e){
+    let Msg_length = $('.msg_content').val().length;
+    if(Msg_length>0){
+        $('.Btn_sendMsg').show();
+        $('.Btn_like').hide();
+    }else{
+        $('.Btn_like').show();
+        $('.Btn_sendMsg').hide();
     }
 });
 

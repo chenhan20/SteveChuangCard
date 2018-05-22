@@ -86,7 +86,6 @@ block content
                 c0,11.7,10.7,12,10.7,12s28.1,0,33,0c4.6,0,4.4-4.6,4.4-4.6s0-18.5,0-25.3c0-6.8-5.9-6.4-5.9-6.4l-32.9,0c0,0-2.9,0.1-2.9,3.7\
                 C185.2,15.7,188.2,15.6,188.2,15.6z')
         .Demo03
-            h1 Welcome Steve Chatroom
             .row
                 .onlineUser.col-xl-4
                     ul.OnlineUserList
@@ -95,11 +94,16 @@ block content
                     label(for="exampleInputEmail1") YourName
                     input.form-control.nickBox(type="email", placeholder="Name")
                     a.Btn_addroom AddRoom
-                .ChatRoom.col-xl-7
+                .ChatRoom.col-xl-6
                     ul.Msgcontainer
                     .sendMsg.row   
-                        input#msg_content.col-xs-5.msg_content.col-lg-9(type='text', name='msg_content', autocomplete='off', placeholder='Type your message...', autofocus='')
-                        .Btn_sendMsg.col-xs-3 Send
+                        input#msg_content.col-xs-5.msg_content.col-lg-11(type='text', name='msg_content', autocomplete='off', placeholder='Type your message...', autofocus='')
+                        //- .Btn_sendMsg Send
+                        a.Btn_sendMsg
+                            i.icon.fas.fa-location-arrow(style='font-size:30px')
+                        a.Btn_like
+                            i.icon.fas.fa-thumbs-up(style='font-size:30px')
+
 
             
 
