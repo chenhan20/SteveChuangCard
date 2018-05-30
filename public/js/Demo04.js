@@ -21,7 +21,31 @@ let Demo04 = new Vue({
         }
     },
     mounted:function(){
-        self=this;
-
+        // $('.bouncing-loader').hide();
+        
+        var self = this;
+        $('[data-toggle="tooltip"]').tooltip();   
+        $.ajax({
+            type: "POST",
+            url: "/SteveCard/Demo04",
+            data : {},
+            // dataType : 'JSON',
+            success: function(Returndata) {
+                console.log('success');
+                // self.object = Returndata;
+            },
+            error: function(Returndata) {
+                console.log('error');
+                // self.object={Error:'Error'};
+            },
+            beforeSend:function(){
+                // $('.ajaxlaodmodal').modal('show');
+                $('.bouncing-loader').show();
+            },
+            complete:function(){
+                // $('.ajaxlaodmodal').modal('hide');
+                $('.bouncing-loader').hide();
+            }
+        });
     }
   });
