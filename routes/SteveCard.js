@@ -102,9 +102,13 @@ router.post('/sendmail', function(req, res,next){
 
 
 
-/* GET Demo02 */
+/* GET Demo03 */
 router.get('/Demo03', function(req, res, next) {
-  res.render('./Demo/Demo03', { title: 'Demo02' });
+  res.render('./Demo/Demo03', { title: 'Steve聊天室' });
+});
+/* GET Demo03 */
+router.get('/Demo04', function(req, res, next) {
+  res.render('./Demo/Demo04', { title: 'Demo04' });
 });
 
 

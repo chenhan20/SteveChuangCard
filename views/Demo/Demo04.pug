@@ -1,0 +1,30 @@
+extends ../common/layout
+
+block append CV_Nav
+block append modal
+block buttonPage
+block footer
+block content
+    .container-fulid
+        .Demo04-1
+            img.logo(src="http://tw.melaleuca.com/Images/logo.png")
+            .shopbody.offset-xl-1.col-xl-10
+                h3 優惠點數計算
+                ul
+                    li(v-for="value in shoplistName")  
+                        p {{value}}
+                .disclaimer
+                hr
+                p 此頁面為提供計算最優惠點數與產生商品列表，無任何商業利益與販售商品，若有侵犯美樂家權益敬請告知，馬上下架。
+                hr
+
+
+
+
+            
+
+
+
+    script(src='/js/Demo04.js')
+    link(rel='stylesheet', href='/stylesheets/Demo04.css')
+
