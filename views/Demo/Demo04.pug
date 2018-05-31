@@ -7,9 +7,10 @@ block footer
 block content
     .container-fulid
         .Demo04-1
-            img.logo(src="http://tw.melaleuca.com/Images/logo.png")
+            .nav
+                img.logo(src="http://tw.melaleuca.com/Images/logo.png")
             .shopbody.offset-xl-1.col-xl-10
-                h3 優惠點數計算
+                //- h3 優惠點數計算
                 ul.shoplist.col-2
                     li(v-for="value in shoplistName")  
                         p {{value}}

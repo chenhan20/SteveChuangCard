@@ -6,7 +6,9 @@ body{
      padding:0;
      
     }
-
+.nav{
+    background-color: #101424;
+}
 .shopbody{
     background-color: wheat;
     height: 100vh;
@@ -32,8 +34,11 @@ body{
     display: block;
     list-style: none;
     text-transform: uppercase;
-    background-color: black;
-    color:white;
+    background-color: #C4BF78;
+    color:#343434;
     font-size:18px;
+    font-weight:bold;
+    text-align: left;
+    
 }
 
