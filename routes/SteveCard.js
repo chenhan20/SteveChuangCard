@@ -6,6 +6,7 @@ const sendMail = require('../src/mail.js');
 const reptile = require('../src/reptile.js');
 const reptileBox = require('../src/reptileBox.js');
 const reptilemelaleuca = require('../src/reptilemelaleuca.js');
+const config = require ('../src/config');
 // const io = require('socket.io');
 
 
@@ -113,6 +114,7 @@ router.get('/Demo03', function(req, res, next) {
 });
 /* GET Demo03 */
 router.get('/Demo04', function(req, res, next) {
+  console.log(config.fb.account);
   res.render('./Demo/Demo04', { title: 'Demo04' });
 });
 
