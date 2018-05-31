@@ -3,4 +3,4 @@
 /.vscode/*
 
 # config.js
-/src/config.js
+.config.js
