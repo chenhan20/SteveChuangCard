@@ -1,9 +1,10 @@
 /*jshint esversion: 6 */
 
 
-let shoplistName=['營養','居家必備護理','肌膚美容保養系列','家庭','優植生活身體保養系列','美樂家純質精油','新品/特惠專區'];
+// let shoplistName=['營養','居家必備護理','肌膚美容保養系列','家庭','優植生活身體保養系列','美樂家純質精油','新品/特惠專區'];
 
 
+let shoplistName=[];
 
 
 let Demo04 = new Vue({
@@ -30,9 +31,9 @@ let Demo04 = new Vue({
             url: "/SteveCard/Demo04",
             data : {},
             // dataType : 'JSON',
-            success: function(Returndata) {
+            success: function(shoplistName) {
                 console.log('success');
-                // self.object = Returndata;
+                self.shoplistName = shoplistName;
             },
             error: function(Returndata) {
                 console.log('error');

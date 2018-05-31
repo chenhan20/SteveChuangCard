@@ -75,11 +75,11 @@ router.post('/Demo03/IG',async function(req, res, next) {
   });
 
 
-  // router.post('/Demo04',async function(req, res, next) {
-  //   let ShopList=await reptilemelaleuca();
+  router.post('/Demo04',async function(req, res, next) {
+    let ShopList=await reptilemelaleuca();
 
-  //     res.send(BoxData);
-  //   });
+      res.send(ShopList);
+    });
 
 
   /* jshint ignore:end */
@@ -114,7 +114,6 @@ router.get('/Demo03', function(req, res, next) {
 });
 /* GET Demo03 */
 router.get('/Demo04', function(req, res, next) {
-  console.log(config.fb.account);
   res.render('./Demo/Demo04', { title: 'Demo04' });
 });
 
