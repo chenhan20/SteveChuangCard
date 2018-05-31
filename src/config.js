@@ -1,6 +1,6 @@
 module.exports = {
     fb: {
-      account: '123',
+      account: '<YOUR ACCOUNT>',
       password: '<YOUR PASSWORD>'
     },
     mysql: {
