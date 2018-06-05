@@ -7,16 +7,6 @@ block footer
 block content
     .container-fulid
         .Demo04-1
-            header.header(role='banner')
-                h1.logo
-                    a(href='#')
-                    | Terence 
-                    span Devine
-                .nav-wrap
-                    nav.main-nav(role='navigation')
-                    ul.unstyled.list-hover-slide
-                        li(v-for="value in shoplistName")  
-                            a(href='#') {{value}}
             //- .nav
             //-     img.logo(src="http://tw.melaleuca.com/Images/logo.png")
             .shopbody.offset-xl-2.col-xl-10
@@ -26,8 +16,8 @@ block content
                     div
                     div
                 ul.shoplist.col-3
-                    //- li(v-for="value in shoplistName")  
-                    //-     p {{value}}
+                    li(v-for="value in shoplistName")  
+                        p {{value}}
                 .disclaimer
                 hr
                 p 此頁面為提供計算最優惠點數與產生商品列表，無任何商業利益與販售商品，若有侵犯美樂家權益敬請告知，馬上下架。
