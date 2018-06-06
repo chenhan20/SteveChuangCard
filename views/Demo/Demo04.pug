@@ -8,7 +8,7 @@ block content
     link(href='https://fonts.googleapis.com/css?family=Nothing+You+Could+Do', rel='stylesheet')
     link(href='https://fonts.googleapis.com/css?family=Nosifer', rel='stylesheet')
     .container-fulid
-        .video_container
+        .video_container.page1
             video(loop='', muted='',autoplay='')
                 source(src='https://www.tesla.com/ns_videos/homepage-video-summer-2017.mp4?20170808', type='video/mp4',media="(min-width: 640px)")
            
@@ -25,13 +25,22 @@ block content
                         li MODEL 3
                         li ROADSTER
                         li ENERGY
+        .page2
+            h1 Ferrari
+        .page3
+            h1 Porsche
+        .page4
+            h1 Benz
+        .page5
+            h1 Bmw
+        
         .onepagebar
             ul
-                li asd
-                li asd
-                li asd
-                li sasd
-                li asd
+                li Tesla
+                li Ferrari
+                li Porsche
+                li Benz
+                li Bmw
         //- .Demo04-1
         //-     //- .nav
         //-     //-     img.logo(src="http://tw.melaleuca.com/Images/logo.png")
@@ -56,6 +65,6 @@ block content
 
 
 
-    script(src='/js/Demo04.js')
+    script(src='/build/js/Demo04.js')
     link(rel='stylesheet', href='/build/css/Demo04.css')
 
