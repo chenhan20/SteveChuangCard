@@ -6,6 +6,13 @@ block buttonPage
 block footer
 block content
     .container-fulid
+        .video_container
+            video(loop='', muted='',autoplay='')
+                source(src='https://www.tesla.com/ns_videos/homepage-video-summer-2017.mp4?20170808', type='video/mp4',media="(min-width: 640px)")
+            .overlay-desc
+                .titleMsg
+                    h1 IS IT POSSIBLE TO ENGINEER A FEELING?
+                    h1 JamieDornan SAY YES!
         .Demo04-1
             //- .nav
             //-     img.logo(src="http://tw.melaleuca.com/Images/logo.png")

@@ -17,7 +17,6 @@ gulp.task('sass', function () {
       .pipe(sass({                  // 編譯 Scss
         outputStyle: 'compressed'   // 壓縮編譯過後的css需加入此段
     }).on('error', sass.logError))
-    //   .pipe(uglifycss())
       .pipe(gulp.dest('public/build/css'));
   });
 
