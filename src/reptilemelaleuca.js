@@ -2,24 +2,24 @@
   const request = require('request');
   const puppeteer = require ('puppeteer');
   const cheerio = require('cheerio');
-  const config = require ('./config');
+  // const config = require ('./config');
   var querystring = require('querystring');
 
   
   // await/async  JSHint 會出現錯誤 故先讓他ignore掉這一段
   /* jshint ignore:start */
- let form ={
-   UserName:config.M.UserName,
-   Password:config.M.Password
- }
+//  let form ={
+//    UserName:config.M.UserName,
+//    Password:config.M.Password
+//  }
 
 // let url = 'https://tw.melaleuca.com/Account/SignIn';
 let url = 'http://tw.melaleuca.com/ProductStore/Home/ProductStoreLanding';
 let cookie = '20DA36C39C2DCC59D4987757AF6152B149E6CD6DB650DE5B0DAFF487399AF1738A4C7C017127AD919E750226147C41F0928C41B0348837E401613BBB11074DB49D0473368BCCECDA8670CDC42FCCA46455769E39F8A0C8E8C02EAB003DA7F976EB0CD2BB894756D3760C99C920418D218BA3A688';
-formData = querystring.stringify(form);
+// formData = querystring.stringify(form);
 
 let reptilemelaleuca=async()=>{
-  console.log('======使用者帳號:'+config.M.UserName);
+  // console.log('======使用者帳號:'+config.M.UserName);
   let Shop =  await getshop();
 
 
