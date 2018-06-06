@@ -1,7 +1,30 @@
+$pageheight: 100vh
+$liColor: #343434
+$liBGColor: #C4BF78
+$titlecolor: #FFFFFF
+$hoverColor: #000000
+$pc-media: 960px
+$pcs-media: 959px
+$pad-media: 760px
+$pads-media: 759px
+$phone-media: 480px
+$phones-media: 479px
+//電腦
+@mixin pc-width() 
+  @media all and (min-width: $pc-media) 
+    @content
+//手機
+@mixin phone-width() 
+  @media all and (max-width: $phones-media) 
+    @content
+
+  
+
 body
-  height: 100vh
+  height: $pageheight
   // background-image: url('')
   padding: 0
+  overflow-y: hidden
 
 .nav
   background-color: #101424
@@ -27,16 +50,18 @@ body
     display: block
     list-style: none
     text-transform: uppercase
-    background-color: #C4BF78
-    color: #343434
+    background-color: $liBGColor
+    color: $liColor
     font-size: 18px
     font-weight: bold
     text-align: left
 
 
 .video_container
-  position: relative
-
+  @include pc-width
+    position: relative
+  @include phone-width
+    display: none
 
 video
   height: auto
@@ -48,16 +73,75 @@ video
   position: absolute
   top: 0 
   right: 0 
-  bottom: 0
+  bottom: 50%
   left: 0
   display: flex
   align-items: center
   justify-content: center
+  .titleMsg
+    // margin-bottom: 30%
+    color: $titlecolor
+    font-family: 'Nothing You Could Do', cursive;
+    font-size: 3vw
+    text-align: center
+    font-weight: bold
 
-.titleMsg
-  // margin:20%
-  color: white
-  font-family: 'Nobile', sans-serif
-  font-size: 3vw
-  text-align: center
-  font-weight: bold
+.overlay-nav
+  @include pc-width
+    position: absolute
+    top: 0 
+    right: 0 
+    bottom: 0
+    left: 0
+    text-align: center
+    justify-content: center
+    font-family: 'Nothing You Could Do', cursive
+    #menu_div
+      display: none
+    li 
+      color: $titlecolor
+      display: inline
+      margin: 0 10px
+    li:hover  
+      color: $hoverColor
+      font-weight: bold
+      cursor: pointer
+  @include phone-width
+    position: absolute
+    top: 0 
+    right: 0 
+    bottom: 0
+    left: 0
+    text-align: center
+    justify-content: center
+    font-family: 'Nothing You Could Do', cursive
+    #menu_div
+      top: 0
+      display: block
+    li 
+      color: $hoverColor
+      display: flex
+      text-align: center
+      // margin: 0 10px
+    ul
+      columns: 1
+      display: none
+
+
+.onepagebar
+  position: absolute
+  top: 40% 
+  right: 0 
+  bottom: 0
+  left: 0
+  display: flex
+  ul
+    li
+      font-family: 'Nothing You Could Do', cursive
+      margin: 0.7em 0
+      color: $titlecolor
+      cursor: pointer
+      display: block
+    li:hover 
+      font-weight: bold
+      color: $hoverColor

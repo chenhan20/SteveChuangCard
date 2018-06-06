@@ -28,4 +28,9 @@ gulp.task('js', function () {
         .pipe(gulp.dest('public/build/js'));
 });
 
-gulp.task('default',['sass','js']);
+gulp.task('watch', function() {
+    gulp.watch('sass/*.sass', ['sass']);
+    gulp.watch('js/*.js', ['js']);
+});
+
+gulp.task('default',['watch']);
