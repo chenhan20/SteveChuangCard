@@ -10,15 +10,10 @@ let shoplistName=[];
 $('.onepagebar li').click(function(){
     let which =$(this)[0].innerText;
     let $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
-    if(which=='Tesla'){
         $body.animate({
-			scrollTop: 0
+			scrollTop: $('.'+which).offset().top
 		}, 600);
-    }else{
-        $body.animate({
-			scrollTop: 770
-		}, 600);
-    }
+
 });
 
 let Demo04 = new Vue({

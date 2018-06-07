@@ -9,6 +9,15 @@ $pad-media: 760px
 $pads-media: 759px
 $phone-media: 480px
 $phones-media: 479px
+$ferrari-url: 'http://www.carlogos.org/logo/Ferrari-text-logo-1920x1080.png'
+
+// 各個頁面標語高度
+$TeslaHeight: 0vh
+$FerrariHeight: 170vh
+$PorscheHeight: 293vh
+$MazdaHeight: 570vh
+
+
 //電腦
 @mixin pc-width() 
   @media all and (min-width: $pc-media) 
@@ -27,8 +36,7 @@ body
 
   overflow-y: hidden
 
-.nav
-  background-color: #101424
+
 
 .shopbody
   margin-top: 1.2em
@@ -58,34 +66,144 @@ body
     text-align: left
 
 
-.video_container
-  @include pc-width
-    position: relative
-  @include phone-width
-    display: none
+
+
 
 video
   height: auto
-  vertical-align: middle
-  width: 100%
-
-.overlay-desc
-  background: rgba(0,0,0,0)
-  position: absolute
-  top: 0 
-  right: 0 
-  bottom: 50%
-  left: 0
-  display: flex
-  align-items: center
-  justify-content: center
-  .titleMsg
-    // margin-bottom: 30%
-    color: $titlecolor
-    font-family: 'Nothing You Could Do', cursive;
-    font-size: 3vw
+  // vertical-align: middle
+  width: 100vw
+  // height: 100vh
+.Tesla
+  .Teslaoverlay-desc
+    background: rgba(0,0,0,0)
+    position: absolute
+    top: $TeslaHeight 
+    right: 0 
+    bottom: 50%
+    left: 0
+    display: flex
+    align-items: center
+    justify-content: center
+    .titleMsg
+      // margin-bottom: 30%
+      color: $titlecolor
+      font-family: 'Nothing You Could Do', cursive;
+      font-size: 3vw
+      text-align: center
+      font-weight: bold
+.Ferrari
+  .Ferrarioverlay-desc
+    background: rgba(0,0,0,0)
+    position: absolute
+    top: $FerrariHeight
+    right: 0 
+    bottom: 0
+    left: 0
+    display: flex
+    align-items: center
+    justify-content: center    
+    .titleMsg
+      // margin-bottom: 30%
+      color: $titlecolor
+      font-family: 'Cinzel', serif;
+      font-size: 3.0vw
+      text-align: center
+      font-weight: bold
+.Porsche
+  .nav
+    background-color: #ffffff
     text-align: center
-    font-weight: bold
+    .logo-img
+      height: 15vh
+      // margin-left: -23vw
+    ul 
+      margin: auto 10vw
+      // margin-left: -10vw
+      li
+        cursor: pointer
+        margin: 10vh
+        display: inline
+        color: $hoverColor
+        font-size: 1.5vw
+        padding-bottom: 1vw
+      li:hover
+        border-bottom: 2px solid red;
+        font-weight: bold
+        // font-size: 1.5vw
+
+  img
+    // height: 100vh
+    // margin-top: 10vh
+    width: 100vw
+  .Porscheoverlay-desc
+    background: rgba(0,0,0,0)
+    position: absolute
+    top: $PorscheHeight
+    right: 90vh 
+    bottom: 0
+    left: 40vh
+    display: inline
+    align-items: center
+    justify-content: center    
+    .titleMsg
+      // margin-bottom: 30%
+      color: $hoverColor
+      font-family: 'Cormorant Upright', serif
+      font-size: 3.5vw
+      text-align: center
+      font-weight: bold
+    .titleName
+      // margin-bottom: 30%
+      color: $hoverColor
+      font-family: 'Miss Fajardose', cursive
+      // font-style: oblique
+      margin-top: -4vh
+      font-size: 2.8vw
+      text-align: center
+      font-weight: bold
+.Ferrari
+  .Ferrarioverlay-desc
+    background: rgba(0,0,0,0)
+    position: absolute
+    top: $FerrariHeight
+    right: 0 
+    bottom: 0
+    left: 0
+    display: flex
+    align-items: center
+    justify-content: center    
+    .titleMsg
+      // margin-bottom: 30%
+      color: $titlecolor
+      font-family: 'Cinzel', serif;
+      font-size: 3.0vw
+      text-align: center
+      font-weight: bold
+.Mazda
+  .mazda-logo
+    position: absolute
+    top: 525vh
+    width: 7vw 
+  .Mazdaoverlay-desc
+    background: rgba(0,0,0,0)
+    position: absolute
+    top: $MazdaHeight
+    right: 0 
+    bottom: 0
+    left: 0
+    display: flex
+    align-items: center
+    justify-content: center    
+    .titleMsg
+      // margin-bottom: 30%
+      color: $titlecolor
+      font-family: 'Cinzel', serif;
+      font-size: 3.0vw
+      text-align: center
+      font-weight: bold
+
+
 
 .overlay-nav
   @include pc-width
@@ -117,8 +235,7 @@ video
     justify-content: center
     font-family: 'Nothing You Could Do', cursive
     #menu_div
-      top: 0
-      display: block
+      display: none
     li 
       color: $hoverColor
       display: flex
@@ -138,23 +255,33 @@ video
   display: flex
   ul
     li
-      font-family: 'Nothing You Could Do', cursive
+      font-family: 'Raleway', sans-serif
       margin: 0.7em 0
       color: $titlecolor
       cursor: pointer
       display: block
-      font-size: 18px
+      font-size: 22px
+      @include phone-width
+        margin: 0em 0
     li:hover 
       font-weight: bold
       color: $hoverColor
+    
 
-// .page1
-//   height: 100vh
-.page2
+
+
+.Tesla
+  @include pc-width
+    position: relative
+    height: 105vh
+.Ferrari
+  margin-top: 20vh
   height: 100vh
-.page3
+.Porsche
   height: 100vh
-.page4
+.Benz
   height: 100vh
-.page5
+.Bmw
+  height: 100vh
+.Mazda
   height: 100vh
