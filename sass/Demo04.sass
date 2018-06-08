@@ -14,7 +14,7 @@ $ferrari-url: 'http://www.carlogos.org/logo/Ferrari-text-logo-1920x1080.png'
 // 各個頁面標語高度
 $TeslaHeight: 0vh
 $FerrariHeight: 170vh
-$PorscheHeight: 293vh
+$PorscheHeight: 301vh
 $MazdaHeight: 570vh
 
 
@@ -65,16 +65,24 @@ body
     font-weight: bold
     text-align: left
 
-
-
-
-
 video
-  height: auto
-  // vertical-align: middle
-  width: 100vw
-  // height: 100vh
+  @include pc-width
+    height: auto
+    // vertical-align: middle
+    width: 100vw
+    // height: 100vh
+  @include phone-width
+    display: none
+    height: auto
+    // vertical-align: middle
+    width: 100vw
+    // height: 100vh
+
+
+
+
 .Tesla
+  @include pc-width
   .Teslaoverlay-desc
     background: rgba(0,0,0,0)
     position: absolute
@@ -114,12 +122,16 @@ video
   .nav
     background-color: #ffffff
     text-align: center
-    .logo-img
-      height: 15vh
-      // margin-left: -23vw
+    height: 17vh
     ul 
-      margin: auto 10vw
-      // margin-left: -10vw
+      margin: auto
+      .logo-img
+        font-family: 'Cinzel', serif
+        padding: 2vh 0
+        font-size: 3.0vw
+        font-weight: bold
+        letter-spacing: 1vw
+        cursor: context-menu
       li
         cursor: pointer
         margin: 10vh
@@ -131,7 +143,6 @@ video
         border-bottom: 2px solid red;
         font-weight: bold
         // font-size: 1.5vw
-
   img
     // height: 100vh
     // margin-top: 10vh
@@ -176,7 +187,7 @@ video
     .titleMsg
       // margin-bottom: 30%
       color: $titlecolor
-      font-family: 'Cinzel', serif;
+      font-family: 'Cinzel', serif
       font-size: 3.0vw
       text-align: center
       font-weight: bold
@@ -284,4 +295,6 @@ video
 .Bmw
   height: 100vh
 .Mazda
+  height: 100vh
+.Honda
   height: 100vh

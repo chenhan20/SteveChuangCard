@@ -5,15 +5,56 @@
 
 
 let shoplistName=[];
+let pagelocationArray = ['Tesla','Ferrari','Porsche','Benz','Bmw','Mazda','Honda'];
+let pagelocationNum=0;  //預設第一頁
+let lockChange=true;   //防止快速轉換
+
+let pageChange = (which)=>{
+    lockChange=false;
+    let $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
+    $body.animate({
+        scrollTop: $('.'+which).offset().top
+    }, 2000, function() {
+        lockChange=true;
+    });
+};
 
 
 $('.onepagebar li').click(function(){
-    let which =$(this)[0].innerText;
-    let $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
-        $body.animate({
-			scrollTop: $('.'+which).offset().top
-		}, 600);
+    if(lockChange){
+        pagelocation =$(this)[0].innerText;
+        pageChange(pagelocation);
+    }
+});
 
+
+$(window).mousewheel(function(e) {
+    pagelocationNum = pagelocationArray.indexOf(pagelocation);
+    if(lockChange){
+        if(e.deltaY==1){
+            if(pagelocationNum==0){
+                pagelocation = pagelocationArray[pagelocationArray.length-1];
+                pageChange(pagelocation);
+            }else{
+                pagelocation = pagelocationArray[pagelocationNum-1];
+                pageChange(pagelocation);
+            }
+        }else{
+            if(pagelocationNum==pagelocationArray.length-1){
+                pagelocation = pagelocationArray[0];
+                pageChange(pagelocation);
+            }else{
+                pagelocation = pagelocationArray[pagelocationNum+1];
+                pageChange(pagelocation);
+            }
+        }
+    }
+});
+
+$(window).ready(function(){
+    pagelocation = pagelocationArray[0];
+    pageChange(pagelocationArray[0]);
+    lockChange=true;
 });
 
 let Demo04 = new Vue({
