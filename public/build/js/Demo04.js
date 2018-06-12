@@ -14,14 +14,14 @@ let pageChange = (which)=>{
     let $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
     $body.animate({
         scrollTop: $('.'+which).offset().top
-    }, 2000, function() {
+    }, 1700, function() {
         lockChange=true;
     });
 };
 
 
 $('.onepagebar li').click(function(){
-    if(lockChange){
+    if(lockChange && pagelocation != $(this)[0].innerText){
         pagelocation =$(this)[0].innerText;
         pageChange(pagelocation);
     }

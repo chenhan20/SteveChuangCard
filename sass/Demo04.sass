@@ -80,8 +80,47 @@ video
 
 
 
-
+// ===========================Tesla===========================
 .Tesla
+  .overlay-nav
+    @include pc-width
+      position: absolute
+      top: 0 
+      right: 0 
+      bottom: 0
+      left: 0
+      text-align: center
+      justify-content: center
+      font-size: 1.5vw
+      font-family: 'Nothing You Could Do', cursive
+    li 
+      color: $titlecolor
+      display: inline
+      margin: 0 10px
+    li:hover  
+      color: $hoverColor
+      font-weight: bold
+      cursor: pointer
+  @include phone-width
+    position: absolute
+    top: 0 
+    right: 0 
+    bottom: 0
+    left: 0
+    text-align: center
+    justify-content: center
+    font-family: 'Nothing You Could Do', cursive
+    #menu_div
+      display: none
+    li 
+      color: $hoverColor
+      display: flex
+      text-align: center
+      // margin: 0 10px
+    ul
+      columns: 1
+      display: none
+
   @include pc-width
   .Teslaoverlay-desc
     background: rgba(0,0,0,0)
@@ -118,6 +157,9 @@ video
       font-size: 3.0vw
       text-align: center
       font-weight: bold
+
+
+// ===========================Porsche===========================
 .Porsche
   .nav
     background-color: #ffffff
@@ -173,6 +215,9 @@ video
       font-size: 2.8vw
       text-align: center
       font-weight: bold
+
+
+// ===========================Ferrari===========================
 .Ferrari
   .Ferrarioverlay-desc
     background: rgba(0,0,0,0)
@@ -191,6 +236,7 @@ video
       font-size: 3.0vw
       text-align: center
       font-weight: bold
+// ===========================Mazda===========================
 .Mazda
   .mazda-logo
     position: absolute
@@ -216,45 +262,6 @@ video
 
 
 
-.overlay-nav
-  @include pc-width
-    position: absolute
-    top: 0 
-    right: 0 
-    bottom: 0
-    left: 0
-    text-align: center
-    justify-content: center
-    font-family: 'Nothing You Could Do', cursive
-    #menu_div
-      display: none
-    li 
-      color: $titlecolor
-      display: inline
-      margin: 0 10px
-    li:hover  
-      color: $hoverColor
-      font-weight: bold
-      cursor: pointer
-  @include phone-width
-    position: absolute
-    top: 0 
-    right: 0 
-    bottom: 0
-    left: 0
-    text-align: center
-    justify-content: center
-    font-family: 'Nothing You Could Do', cursive
-    #menu_div
-      display: none
-    li 
-      color: $hoverColor
-      display: flex
-      text-align: center
-      // margin: 0 10px
-    ul
-      columns: 1
-      display: none
 
 
 .onepagebar
@@ -274,10 +281,24 @@ video
       font-size: 22px
       @include phone-width
         margin: 0em 0
+    li
+      .current
+        transform: translateX(15px)
+        color: tomato
+    li:before 
+      content: ''
+      position: fixed
+      top: 50%
+      left: 0
+      height: 20px; width: 20px
+      background-color: tomato
+      transform: rotate(45deg) translateY(-50%)
+      transition: all 400ms ease
     li:hover 
       font-weight: bold
       color: $hoverColor
     
+// ===========================Honda===========================
 
 
 

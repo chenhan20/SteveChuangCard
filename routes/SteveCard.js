@@ -32,6 +32,10 @@ router.get('/Demo01', function(req, res, next) {
 router.get('/Demo02', function(req, res, next) {
   res.render('./Demo/Demo02', { title: 'Demo02' });
 });
+/* GET Demo02 */
+router.get('/Demo05', function(req, res, next) {
+  res.render('./Demo/Demo05', { title: 'Demo05' });
+});
 
 /* POST Demo02 */
   /* jshint ignore:start */
