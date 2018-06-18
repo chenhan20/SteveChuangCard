@@ -2,33 +2,35 @@
 $singlepagecolor: #222
 $Doublepagecolor: #ffffff
 
+  
 body
+  h1
+    font-family: 'Cormorant Upright', serif
+    font-size: 5vw
+    font-style: italic 
   .page1
     height: 100vh
-    background-color: $Doublepagecolor
+    background-color: $singlepagecolor
+    .moneyImg
+      height: 70vh
+      margin-left: 5vw
+      
   .page2
     height: 100vh
-    background-color: $singlepagecolor
+    background-color: $Doublepagecolor
   .page3
     height: 100vh
-    background-color: $Doublepagecolor
+    background-color: $singlepagecolor
   .page4
     height: 100vh
-    background-color: $singlepagecolor
+    background-color: $Doublepagecolor
 
-.node 
-    cursor: pointer
+circle 
+  stroke-width: 1.5px
 
-.node circle 
-    fill: #fff
-    stroke: steelblue
-    stroke-width: 1.5px
 
-.node text 
-    font: 10px sans-serif
+line 
+  stroke: #999
+  stroke-width: 1.5px
 
-.link 
-    fill: none
-    stroke: #ccc
-    stroke-width: 1.5px
-
+  

@@ -32,6 +32,11 @@ h1{
 
     width: 70%;
 }
+
+.img02{
+    
+    height: 50vh;   
+}
 .image_1:hover {
 	transform:rotate(360deg);
 	-webkit-transform:rotate(360deg);
