@@ -9,7 +9,7 @@ const row7 =['總監7','42,000','100%','100%'];
 const row8 =['總監8','48,000','100%','100%'];
 const row9 =['總監9','66,000','100%','100%'];
 const row10 =['資深總監','132,000','100%','100%'];
-const total =['total','414,000','414,000','207,000'];
+const total =['Total','414,000','414,000','207,000'];
 const tabledata = {row1,row2,row3,row4,row5,row6,row7,row8,row9,row10,total};
 let melaApp = new Vue({
     el: '.melaApp',
