@@ -6,10 +6,47 @@ block buttonPage
 block footer
 block content
     link(href='https://fonts.googleapis.com/css?family=Nothing+You+Could+Do|Cinzel|Miss+Fajardose|Cormorant+Upright', rel='stylesheet')
-    .container-fulid
+    .container-fulid.melaApp
         .page1
             h1 melaleuca
-            img.moneyImg(src='/images/Steve/money.jpg')
+            .item.borderYtoX 
+                a(v-on:click='money') 獎金
+                a(v-on:click='one') 首月
+                a(v-on:click='two') 第二月
+                a(v-on:click='three') 第三月
+                a(v-on:click='four') 第四月
+                a(v-on:click='five') 第五月
+            .listStart(v-if="page=='Start'") 
+                h1 初始
+            .listmoney(v-if="page=='Money'") 
+                h1 獎金
+                table.rwd-table
+                    tr
+                        th 階銜
+                        th 快速進階獎金
+                        th 親推輔導獎金
+                        th 焦點輔導獎金
+                    tr(v-for='value in tabledata')
+                        td {{value[0]}}
+                        td {{value[1]}}
+                        td {{value[2]}}
+                        td {{value[3]}}
+            .listOne(v-if="page=='One'") 
+                h1 第一月
+            .listTwo(v-if="page=='Two'") 
+                h1 第二月
+            .listThree(v-if="page=='Three'") 
+                h1 第三月
+            .listFour(v-if="page=='Four'") 
+                h1 第四月
+            .listFive(v-if="page=='Five'") 
+                h1 第五月
+            //- img.moneyImg(src='/images/Steve/money.jpg')
+        //-     span.dot
+        //-     span.dot
+        //-     span.dot
+        //-     span.dot
+        //-     span.dot
         //- .page2
         //- .page3
         //- .page4

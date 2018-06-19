@@ -1,23 +1,78 @@
 
 $singlepagecolor: #222
 $Doublepagecolor: #ffffff
+$blue: rgba(118, 162, 210, 1)
+$green: rgba(62, 185, 54, 1)
+$white: rgba(255, 255, 255, 1)
+$gray: rgba(150, 150, 150, 1)
 
-  
 body
+  background-image: linear-gradient( 135deg, #81FBB8 10%, #28C76F 100%)    
   h1
     font-family: 'Cormorant Upright', serif
     font-size: 5vw
     font-style: italic 
   .page1
     height: 100vh
-    background-color: $singlepagecolor
     .moneyImg
-      height: 70vh
+      height: 80vh
       margin-left: 5vw
-      
+    .dot
+        margin: 5vh
+        height: 10vh
+        width: 10vh
+        background-color: $white
+        border-radius: 50%
+        display: inline-block
+    .item
+      font-family: 'Cormorant Upright', serif
+      margin: 0 auto
+      padding: 1em 3em
+      text-align: center
+      a
+        color: #FFF
+        text-decoration: none
+        font: 2em Raleway
+        margin: 0px 10px
+        padding: 10px 10px
+        position: relative
+        z-index: 0
+        cursor: pointer
+    div.borderYtoX a
+      &:before, &:after
+        position: absolute
+        opacity: 0.5
+        height: 100%
+        width: 2px
+        content: ''
+        background: #FFF
+        transition: all 0.3s
+      &:before
+        left: 0px
+        top: 0px
+      &:after
+        right: 0px
+        bottom: 0px
+      &:hover
+        &:before, &:after
+          opacity: 1
+          height: 2px
+          width: 100%
+    .rwd-table 
+      margin-left: 6vw
+      width: 30%
+      font-size: 1.4em
+      th
+        text-align: right
+        border-bottom: 1px solid black
+      td
+        text-align: right
+        height: 4vh
+        border-bottom: 1px solid black
+    
   .page2
     height: 100vh
-    background-color: $Doublepagecolor
+    background-color: $singlepagecolor
   .page3
     height: 100vh
     background-color: $singlepagecolor
@@ -25,12 +80,3 @@ body
     height: 100vh
     background-color: $Doublepagecolor
 
-circle 
-  stroke-width: 1.5px
-
-
-line 
-  stroke: #999
-  stroke-width: 1.5px
-
-  
