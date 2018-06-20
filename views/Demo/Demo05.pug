@@ -5,12 +5,13 @@ block modal
 block buttonPage
 block footer
 block content
-    link(href='https://fonts.googleapis.com/css?family=Nothing+You+Could+Do|Cinzel|Miss+Fajardose|Cormorant+Upright', rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Nothing+You+Could+Do|Cinzel|Miss+Fajardose|Cormorant+Upright|Orbitron', rel='stylesheet')
     .container-fulid.melaApp
         .page1
             h1 melaleuca
             .item.borderYtoX 
                 a(v-on:click='money') 獎金
+                a(v-on:click='team') Team
                 a(v-on:click='one') 首月
                 a(v-on:click='two') 第二月
                 a(v-on:click='three') 第三月
@@ -19,10 +20,10 @@ block content
             .listStart(v-if="page=='Start'") 
                 h1 初始
             .listmoney(v-if="page=='Money'") 
-                h1 主要獎金
                 table.rwd-table.table-hover
                     tr
                         th 階銜
+                        th 所需組織點數
                         th 快速進階獎金
                         th 親推輔導獎金
                         th 焦點輔導獎金
@@ -31,6 +32,24 @@ block content
                         td {{value[1]}}
                         td {{value[2]}}
                         td {{value[3]}}
+                        td {{value[4]}}
+                table.total
+                    tr(v-for='value in totaldata')
+                        td {{value[0]}}
+                        td {{value[1]}}
+                        td {{value[2]}}
+                        td {{value[3]}}
+                        td {{value[4]}}
+            .listOne(v-if="page=='Team'") 
+                transition.month(name='fade')
+                .circle
+                    span.dot.no1
+                    span.dot.no2
+                    span.dot.no3
+                    span.dot.no4
+                    span.dot.no5
+                    span.dot.no6
+
             .listOne(v-if="page=='One'") 
                 h1 第一月
             .listTwo(v-if="page=='Two'") 

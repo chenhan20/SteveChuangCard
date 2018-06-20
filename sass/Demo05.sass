@@ -13,17 +13,44 @@ body
     font-size: 5vw
     font-style: italic 
   .page1
+    .circle
+      position: absolute
+      top: 50%
+      left: 40vw
+      border-radius: 50%
+      background: transparent
+      z-index: 10
+      width: 340px
+      height: 240px
+      margin: -120px 0 0 -120px
+      animation: animatedEight 3s ease forwards
+      animation-delay: 6s
+      span.dot
+        position: absolute
+        top: 0
+        left: 50%
+        margin-left: -8px
+        content: ''
+        left: 0
+        top: 0
+        display: block
+        width: 3vw
+        height: 3vw
+        background-color: #ffffff
+        border-radius: 50%
+        
+
     height: 100vh
     .moneyImg
-      height: 80vh
+      height: 80vh  
       margin-left: 5vw
-    .dot
-        margin: 5vh
-        height: 10vh
-        width: 10vh
-        background-color: $white
-        border-radius: 50%
-        display: inline-block
+    // .dot
+    //     margin: 5vh
+    //     height: 10vh
+    //     width: 10vh
+    //     background-color: $white
+    //     border-radius: 50%
+    //     display: inline-block
     .item
       font-family: 'Cormorant Upright', serif
       margin: 0 auto
@@ -59,9 +86,11 @@ body
           height: 2px
           width: 100%
     .rwd-table 
-      margin-left: 6vw
+      margin: auto
       width: 40%
       font-size: 1.4em
+      font-family: 'Orbitron', sans-serif
+      font-weight: 500
       th
         text-align: right
         border-bottom: 1px solid black
@@ -69,7 +98,21 @@ body
         text-align: right
         height: 4vh
         border-bottom: 1px solid black
-    
+    .total
+      font-weight: 700
+      font-family: 'Orbitron', sans-serif
+      margin: auto
+      width: 40%
+      font-size: 1.6em
+      color: red
+      td
+        text-align: right
+        height: 10vh
+        border-botton: 1px solid red
+    .month
+      height: 40vh
+      background-color: white
+      opacity: 0
   .page2
     height: 100vh
     background-color: $singlepagecolor
@@ -79,4 +122,83 @@ body
   .page4
     height: 100vh
     background-color: $Doublepagecolor
+
+
+
+// 移動
+span.dot
+  &.no1
+    animation: animatedDotOne 3s ease forwards
+  &.no2
+    animation: animatedDotTwo 3s ease forwards
+  &.no3
+    animation: animatedDotThree 6s ease forwards
+    animation-delay: 3s
+  &.no4
+    animation: animatedDotFour 6s ease forwards
+    animation-delay: 3s
+  &.no5
+    animation: animatedDotFive 6s ease forwards
+    animation-delay: 9s
+  &.no6
+    animation: animatedDotSix 6s ease forwards
+    animation-delay: 9s
+
+
+@keyframes animatedEight
+  0%
+    transform: translate(0 ,0)
+  100%
+    transform: translate(0, -10vh)
+@keyframes animatedDotOne
+  0%
+    transform: translate(0 ,0)
+  100%
+    transform: translate(0, 0)
+@keyframes animatedDotTwo
+  0%
+    transform: translate(0,0)
+  100%
+    transform: translate(10vw, 0)
+@keyframes animatedDotThree
+  0%
+    transform: translate(0, 0)
+  50%
+    transform: translate(-5vw, 15vh)
+    width: 5vw
+    height: 5vw
+    background-color: black
+  100%
+    transform: translate(-10vw, 5vh)
+    background-color: black
+    width: 5vw
+    height: 5vw
+@keyframes animatedDotFour
+  0%
+    transform: translate(10vw, 0)
+  50%
+    transform: translate(15vw, 15vh)
+    width: 5vw
+    height: 5vw
+    background-color: black
+  100%
+    transform: translate(20vw, 5vh)
+    background-color: black
+    width: 5vw
+    height: 5vw
+@keyframes animatedDotFive
+  0%
+    transform: translate(0vw, 0)
+  100%
+    transform: translate(0vw, 20vh)
+    background-color: red
+@keyframes animatedDotSix
+  0%
+    transform: translate(10vw, 0)
+  100%
+    transform: translate(10vw, 20vh)
+    background-color: red
+
+
+
 
