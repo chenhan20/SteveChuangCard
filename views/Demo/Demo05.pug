@@ -9,17 +9,17 @@ block content
     .container-fulid.melaApp
         .page1
             h1 melaleuca
-            .item.borderYtoX 
+            .item.borderYtoX(name='list')
                 a(v-on:click='money') 獎金
                 a(v-on:click='team') Team
-                a(v-on:click='one') 首月
-                a(v-on:click='two') 第二月
-                a(v-on:click='three') 第三月
-                a(v-on:click='four') 第四月
-                a(v-on:click='five') 第五月
+                a(v-if="page!='Money'",v-on:click='one') 首月
+                a(v-if="page!='Money'",v-on:click='two') 第二月
+                a(v-if="page!='Money'",v-on:click='three') 第三月
+                a(v-if="page!='Money'",v-on:click='four') 第四月
+                a(v-if="page!='Money'",v-on:click='five') 第五月
             .listStart(v-if="page=='Start'") 
                 h1 初始
-            .listmoney(v-if="page=='Money'") 
+            transition.listmoney(v-if="page=='Money'",name='money')
                 table.rwd-table.table-hover
                     tr
                         th 階銜
@@ -33,33 +33,59 @@ block content
                         td {{value[2]}}
                         td {{value[3]}}
                         td {{value[4]}}
-                table.total
-                    tr(v-for='value in totaldata')
+                    tr.total(v-for='value in totaldata')
                         td {{value[0]}}
                         td {{value[1]}}
                         td {{value[2]}}
                         td {{value[3]}}
                         td {{value[4]}}
-            .listOne(v-if="page=='Team'") 
-                transition.month(name='fade')
+            transition.listOne(v-if="page!='Money'",name='team') 
                 .circle
-                    span.dot.no1
-                    span.dot.no2
-                    span.dot.no3
-                    span.dot.no4
-                    span.dot.no5
-                    span.dot.no6
+                    span.dot.no1(v-if="page=='Team' || page=='One' || page=='Two'|| page=='Two'|| page=='Three'|| page=='Four'|| page=='Five'")
+                      h1 正
+                    span.dot.no2(v-if="page=='Team' || page=='One' || page=='Two'|| page=='Two'|| page=='Three'|| page=='Four'|| page=='Five'")
+                      h1 副
+                    span.dot.no3(v-if="page=='Team' || page=='One' || page=='Two'|| page=='Two'|| page=='Three'|| page=='Four'|| page=='Five'")
+                      p 10愛用者
+                    span.dot.no4(v-if="page=='Team' || page=='One' || page=='Two'|| page=='Two'|| page=='Three'|| page=='Four'|| page=='Five'")
+                      p 10愛用者
+                    span.dot.no5(v-if="page=='Team' || page=='Two'|| page=='Three'|| page=='Four'|| page=='Five'")
+                      p.TwoP 1經營者
+                    span.dot.no6(v-if="page=='Team' || page=='Two'|| page=='Three'|| page=='Four'|| page=='Five'")
+                      p.TwoP 1經營者
+                    span.dot.no7(v-if="page=='Team' ||page=='Three'|| page=='Four'|| page=='Five'")
+                      p 1愛用者
+                    span.dot.no8(v-if="page=='Team' ||page=='Three'|| page=='Four'|| page=='Five'")
+                      p 1愛用者
+                    span.dot.no9(v-if="page=='Team' || page=='Four'|| page=='Five'")
+                      p 1經營者
+                    span.dot.no10(v-if="page=='Team' || page=='Four'|| page=='Five'")
+                      p 1經營者
+                    span.dot.no11(v-if="page=='Team' || page=='Five'")
+                      p 1愛用者
+                    span.dot.no12(v-if="page=='Team' || page=='Five'")
+                      p 1愛用者
+            .OneMonth(v-if="page=='Team' || page=='One' || page=='Two'|| page=='Two'|| page=='Three'|| page=='Four'|| page=='Five'")
+                h1 One
+                p 找尋1位適合的副手(各找10位愛用者)
+            .TwoMonth(v-if="page=='Team' || page=='Two'|| page=='Three'|| page=='Four'|| page=='Five'")
+                h1 Two
+                p 與副手各找1位經營者(跟你第一個月做一模一樣的事情)
+            .ThreeMonth(v-if="page=='Team' ||page=='Three'|| page=='Four'|| page=='Five'")
+                h1 Three
+                p 與副手各找1位愛用者(輔佐你團隊的2位經營者)
+            .FourMonth(v-if="page=='Team' || page=='Four'|| page=='Five'")
+                h1 Four
+                p 與副手各找1位經營者(持續輔佐你團隊的2位經營者)
+            .FiveMonth(v-if="page=='Team' || page=='Five'")
+                h1 Five
+                p 與副手各找1位愛用者(持續輔佐你團隊的2位經營者)
+                    //- span.dot.no3
+                    //- span.dot.no4
+                    //- span.dot.no5
+                    //- span.dot.no6
 
-            .listOne(v-if="page=='One'") 
-                h1 第一月
-            .listTwo(v-if="page=='Two'") 
-                h1 第二月
-            .listThree(v-if="page=='Three'") 
-                h1 第三月
-            .listFour(v-if="page=='Four'") 
-                h1 第四月
-            .listFive(v-if="page=='Five'") 
-                h1 第五月
+
             //- img.moneyImg(src='/images/Steve/money.jpg')
         //-     span.dot
         //-     span.dot

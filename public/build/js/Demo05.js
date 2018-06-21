@@ -9,7 +9,7 @@ const row7 =['總監7','12,500','$42,000','100%','100%'];
 const row8 =['總監8','15,000','$48,000','100%','100%'];
 const row9 =['總監9','17,500','$66,000','100%','100%'];
 const row10 =['資深總監1','20,000','$132,000','100%','100%'];
-const total =['Total','$414,000','$414,000','$207,000'];
+const total =['Total','---------','$414,000','$414,000','$207,000'];
 const tabledata = {row1,row2,row3,row4,row5,row6,row7,row8,row9,row10};
 const totaldata = {total};
 
@@ -24,6 +24,12 @@ let melaApp = new Vue({
         team:function(event){
             self=this;
             self.page='Team';
+            let $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
+            $body.animate({
+                scrollTop: $('.item').offset().top
+            }, 1000, function() {
+                // lockChange=true;
+            });
           },
         one:function(event){
             self=this;
