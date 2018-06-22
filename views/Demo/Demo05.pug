@@ -12,11 +12,11 @@ block content
             .item.borderYtoX(name='list')
                 a(v-on:click='money') 獎金
                 a(v-on:click='team') Team
-                a(v-if="page!='Money'",v-on:click='one') 首月
-                a(v-if="page!='Money'",v-on:click='two') 第二月
-                a(v-if="page!='Money'",v-on:click='three') 第三月
-                a(v-if="page!='Money'",v-on:click='four') 第四月
-                a(v-if="page!='Money'",v-on:click='five') 第五月
+                a(v-if="page!='Money'",v-on:click='one') 一月
+                a(v-if="page!='Money'",v-on:click='two') 二月
+                a(v-if="page!='Money'",v-on:click='three') 三月
+                a(v-if="page!='Money'",v-on:click='four') 四月
+                a(v-if="page!='Money'",v-on:click='five') 五月
             .listStart(v-if="page=='Start'") 
                 h1 初始
             transition.listmoney(v-if="page=='Money'",name='money')
@@ -65,19 +65,19 @@ block content
                       p 1愛用者
                     span.dot.no12(v-if="page=='Team' || page=='Five'")
                       p 1愛用者
-            .OneMonth(v-if="page=='Team' || page=='One' || page=='Two'|| page=='Two'|| page=='Three'|| page=='Four'|| page=='Five'")
+            .OneMonth(v-if="page=='Team' || page=='One' || page=='Two'|| page=='Two'|| page=='Three'|| page=='Four'|| page=='Five'",v-on:click='one')
                 h1 One
                 p 找尋1位適合的副手(各找10位愛用者)
-            .TwoMonth(v-if="page=='Team' || page=='Two'|| page=='Three'|| page=='Four'|| page=='Five'")
+            .TwoMonth(v-if="page=='Team' || page=='Two'|| page=='Three'|| page=='Four'|| page=='Five'",v-on:click='two')
                 h1 Two
                 p 與副手各找1位經營者(跟你第一個月做一模一樣的事情)
-            .ThreeMonth(v-if="page=='Team' ||page=='Three'|| page=='Four'|| page=='Five'")
+            .ThreeMonth(v-if="page=='Team' ||page=='Three'|| page=='Four'|| page=='Five'",v-on:click='three')
                 h1 Three
                 p 與副手各找1位愛用者(輔佐你團隊的2位經營者)
-            .FourMonth(v-if="page=='Team' || page=='Four'|| page=='Five'")
+            .FourMonth(v-if="page=='Team' || page=='Four'|| page=='Five'",v-on:click='four')
                 h1 Four
                 p 與副手各找1位經營者(持續輔佐你團隊的2位經營者)
-            .FiveMonth(v-if="page=='Team' || page=='Five'")
+            .FiveMonth(v-if="page=='Team' || page=='Five'",v-on:click='five')
                 h1 Five
                 p 與副手各找1位愛用者(持續輔佐你團隊的2位經營者)
                     //- span.dot.no3

@@ -5,12 +5,34 @@ $blue: rgba(118, 162, 210, 1)
 $green: rgba(62, 185, 54, 1)
 $white: rgba(255, 255, 255, 1)
 $gray: rgba(150, 150, 150, 1)
+$pc-media: 960px
+$phones-media: 480px
+// 各個頁面標語高度
+$TeslaHeight: 0vh
+$FerrariHeight: 170vh
+$PorscheHeight: 301vh
+$MazdaHeight: 570vh
 
+
+//電腦
+@mixin pc-width() 
+  @media all and (min-width: $pc-media) 
+    @content
+//手機
+@mixin phone-width() 
+  @media all and (max-width: $phones-media) 
+    @content
+
+
+
+//各個月顏色
 $OneMonthColor: #003D73
 $TwoMonthColor: #0878A4
 $ThreeMonthColor: #1ECFD6
 $FourMonthColor: #C05640
 $FiveMonthColor: #EDD170
+
+@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css)
 
 body
   // background-image: linear-gradient( 135deg, #81FBB8 10%, #28C76F 100%)    
@@ -32,21 +54,20 @@ body
       span.dot
         position: absolute
         top: 0
-        left: 50%
         margin-left: -8px
         content: ''
         left: 0
         top: 0
         display: block
-        width: 3vw
-        height: 3vw
+        width: 3vh
+        height: 3vh
         background-color: #ffffff
         border-radius: 50%
         opacity: 0
         float: left
         h1
           width: 100px
-          padding: 60%
+          padding: 70%
           font-size: 3vw
         p
           text-align: center
@@ -68,38 +89,49 @@ body
     //     border-radius: 50%
     //     display: inline-block
     .item
+      // display: inline
       font-family: 'Cormorant Upright', serif
-      margin: 0 auto
-      padding: 1em 3em
+      margin: 0 
       text-align: center
+      @include pc-width
+        padding: 1em 3em
+
+      @include phone-width
+        padding: 20% 10% 0% 10% 
       a
         color: #FFF
         text-decoration: none
-        font: 2em Raleway
-        margin: 0px 10px
-        padding: 10px 10px
+        @include pc-width
+          font: 1.5em Raleway
+          padding: 10px 10px
+          margin: 0px 10px
+        @include phone-width
+          padding: 0px 5px
+          font: 1.2em Raleway
+          margin: 0 15px 0 15px
         position: relative
         z-index: 0
         cursor: pointer
     div.borderYtoX a
       &:before, &:after
-        position: absolute
-        opacity: 0.5
-        height: 100%
-        width: 2px
-        content: ''
-        background: #FFF
-        transition: all 0.3s
+          width: 1px
+          position: absolute
+          opacity: 0.5
+          height: 100%
+          content: ''
+          background: #FFF
+          transition: all 0.3s
       &:before
         left: 0px
         top: 0px
       &:after
         right: 0px
         bottom: 0px
+    @include pc-width       
       &:hover
         &:before, &:after
           opacity: 1
-          height: 2px
+          height: 2%
           width: 100%
     .rwd-table 
       margin: auto
@@ -137,12 +169,16 @@ body
       background-color: $OneMonthColor
       animation: animatedOneText 3s ease forwards
       p
+        // font-style: bold
         font-size: 100%
         text-align: center
         color: #ffffff
       h1
         color: #ffffff
 
+    .OneMonth:hover
+      z-index: 2
+      box-shadow: 0px 0px 150px #000000
     .TwoMonth
       opacity: 0
       position: absolute
@@ -161,6 +197,9 @@ body
         text-align: center
       h1
         color: #ffffff
+    .TwoMonth:hover
+      z-index: 2
+      box-shadow: 0px 0px 150px #000000
     .ThreeMonth
       opacity: 0
       position: absolute
@@ -179,6 +218,9 @@ body
         color: #ffffff
       h1
         color: #ffffff
+    .ThreeMonth:hover
+      z-index: 2
+      box-shadow: 0px 0px 150px #000000
 
     .FourMonth
       opacity: 0
@@ -198,6 +240,10 @@ body
         color: #ffffff
       h1
         color: #ffffff
+    .FourMonth:hover
+      z-index: 2
+      box-shadow: 0px 0px 150px #000000
+
     .FiveMonth
       opacity: 0
       position: absolute
@@ -209,13 +255,16 @@ body
       content: ''
       background-color: $FiveMonthColor
       animation: animatedFiveText 3s ease forwards
-      animation-delay: 18s
+      animation-delay: 17s
       p
         font-size: 100%
         text-align: center
         color: #ffffff
       h1
         color: #ffffff
+    .FiveMonth:hover
+      z-index: 2
+      box-shadow: 0px 0px 150px #000000
 
   .page2
     height: 100vh
@@ -261,10 +310,10 @@ span.dot
     animation-delay: 14s
   &.no11
     animation: animatedDotEleven 4s ease forwards
-    animation-delay: 18s
+    animation-delay: 17s
   &.no12
     animation: animatedDotTwelve 4s ease forwards
-    animation-delay: 18s
+    animation-delay: 17s
 
 
 @keyframes animatedEight
@@ -279,11 +328,15 @@ span.dot
   100%
     transform: translate(0, 0)
     opacity: 1
+    width: 4vw
+    height: 4vw
 @keyframes animatedDotTwo
   0%
     transform: translate(0,0)
   100%
     transform: translate(10vw, 0)
+    width: 4vw
+    height: 4vw
     opacity: 1
 @keyframes animatedDotThree
   0%
@@ -448,22 +501,22 @@ span.dot
 //滑動Text動畫
 @keyframes animatedOneText
   0%
-    transform: translate(0, 0)
+    transform: translate(0, 0) rotate(130deg) Scale(0.1)
   100%
-    transform: translate(38%, -35%)
+    transform: translate(38%, -35%) 
     opacity: 1
     // background-color: red
 
 @keyframes animatedTwoText
   0%
-    transform: translate(0, 0)
+    transform: translate(0, 400%) rotate(189deg)
   100%
     transform: translate(38%, 10%)
     opacity: 1
 
 @keyframes animatedThreeText
   0%
-    transform: translate(0, 0)
+    transform: translate(0, 200%) Scale(0.4)
   100%
     transform: translate(38%, 55%)
     opacity: 1
@@ -471,7 +524,7 @@ span.dot
 
 @keyframes animatedFourText
   0%
-    transform: translate(0, 0)
+    transform: translate(0, 300%) skew(-32deg, -18deg)
   100%
     transform: translate(38%, 100%)
     opacity: 1
@@ -479,7 +532,7 @@ span.dot
     // background-color: red
 @keyframes animatedFiveText
   0%
-    transform: translate(0, 0)
+    transform: translate(0, 50%)
   100%
     transform: translate(38%, 145%)
     opacity: 1
