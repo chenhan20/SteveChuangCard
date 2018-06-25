@@ -12,11 +12,6 @@ block content
             .item.borderYtoX(name='list')
                 a(v-on:click='money') 獎金
                 a(v-on:click='team') Team
-                a(v-if="page!='Money'",v-on:click='one') 一月
-                a(v-if="page!='Money'",v-on:click='two') 二月
-                a(v-if="page!='Money'",v-on:click='three') 三月
-                a(v-if="page!='Money'",v-on:click='four') 四月
-                a(v-if="page!='Money'",v-on:click='five') 五月
             .listStart(v-if="page=='Start'") 
                 h1 初始
             transition.listmoney(v-if="page=='Money'",name='money')
@@ -40,31 +35,41 @@ block content
                         td {{value[3]}}
                         td {{value[4]}}
             transition.listOne(v-if="page!='Money'",name='team') 
-                .circle
-                    span.dot.no1(v-if="page=='Team' || page=='One' || page=='Two'|| page=='Two'|| page=='Three'|| page=='Four'|| page=='Five'")
-                      h1 正
-                    span.dot.no2(v-if="page=='Team' || page=='One' || page=='Two'|| page=='Two'|| page=='Three'|| page=='Four'|| page=='Five'")
-                      h1 副
-                    span.dot.no3(v-if="page=='Team' || page=='One' || page=='Two'|| page=='Two'|| page=='Three'|| page=='Four'|| page=='Five'")
-                      p 10愛用者
-                    span.dot.no4(v-if="page=='Team' || page=='One' || page=='Two'|| page=='Two'|| page=='Three'|| page=='Four'|| page=='Five'")
-                      p 10愛用者
-                    span.dot.no5(v-if="page=='Team' || page=='Two'|| page=='Three'|| page=='Four'|| page=='Five'")
-                      p.TwoP 1經營者
-                    span.dot.no6(v-if="page=='Team' || page=='Two'|| page=='Three'|| page=='Four'|| page=='Five'")
-                      p.TwoP 1經營者
-                    span.dot.no7(v-if="page=='Team' ||page=='Three'|| page=='Four'|| page=='Five'")
-                      p 1愛用者
-                    span.dot.no8(v-if="page=='Team' ||page=='Three'|| page=='Four'|| page=='Five'")
-                      p 1愛用者
-                    span.dot.no9(v-if="page=='Team' || page=='Four'|| page=='Five'")
-                      p 1經營者
-                    span.dot.no10(v-if="page=='Team' || page=='Four'|| page=='Five'")
-                      p 1經營者
-                    span.dot.no11(v-if="page=='Team' || page=='Five'")
-                      p 1愛用者
-                    span.dot.no12(v-if="page=='Team' || page=='Five'")
-                      p 1愛用者
+                .simpsons
+                    .first
+                      img.s_money1(src='/images/Steve/simpsons_05.png')
+                      img.s_money2(src='/images/Steve/simpsons_05.png')
+                      img.s_01(src='/images/Steve/simpsons_03.png')
+                      img.s_02(src='/images/Steve/simpsons_03.png')
+                      img.s_03(src='/images/Steve/simpsons_02.png')
+                      img.s_04(src='/images/Steve/simpsons_02.png')
+                      img.s_05(src='/images/Steve/simpsons_02.png')
+                      img.s_06(src='/images/Steve/simpsons_02.png')
+                      img.s_07(src='/images/Steve/simpsons_02.png')
+                      img.s_08(src='/images/Steve/simpsons_02.png')
+                      img.s_09(src='/images/Steve/simpsons_02.png')
+                      img.s_10(src='/images/Steve/simpsons_02.png')
+                      img.s_11(src='/images/Steve/simpsons_02.png')
+                      img.s_12(src='/images/Steve/simpsons_02.png')
+                      img.s_13(src='/images/Steve/simpsons_02.png')
+                      img.s_14(src='/images/Steve/simpsons_02.png')
+                      img.s_15(src='/images/Steve/simpsons_02.png')
+                      img.s_16(src='/images/Steve/simpsons_02.png')
+                      img.s_17(src='/images/Steve/simpsons_02.png')
+                      img.s_18(src='/images/Steve/simpsons_02.png')
+                      img.s_19(src='/images/Steve/simpsons_02.png')
+                      img.s_20(src='/images/Steve/simpsons_02.png')
+                      img.s_21(src='/images/Steve/simpsons_02.png')
+                      img.s_22(src='/images/Steve/simpsons_02.png')
+                    .two
+                        //- h1 Know How
+                        img.s_02_01(src='/images/Steve/simpsons_01.png')
+                        img.s_02_02(src='/images/Steve/simpsons_01.png')
+                    .four
+                        img.s_04_01(src='/images/Steve/simpsons_04.png')
+                        img.s_04_02(src='/images/Steve/simpsons_04.png')
+                    //- img(src='/images/Steve/simpsons_02.png')
+ 
             .OneMonth(v-if="page=='Team' || page=='One' || page=='Two'|| page=='Two'|| page=='Three'|| page=='Four'|| page=='Five'",v-on:click='one')
                 h1 One
                 p 找尋1位適合的副手(各找10位愛用者)

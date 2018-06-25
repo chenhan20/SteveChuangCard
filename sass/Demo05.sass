@@ -29,20 +29,194 @@ $MazdaHeight: 570vh
 $OneMonthColor: #003D73
 $TwoMonthColor: #0878A4
 $ThreeMonthColor: #1ECFD6
-$FourMonthColor: #C05640
-$FiveMonthColor: #EDD170
+$FourMonthColor: #EDD170
+$FiveMonthColor: #C05640
 
 @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css)
 
 body
   // background-image: linear-gradient( 135deg, #81FBB8 10%, #28C76F 100%)    
   background-image: linear-gradient( 90deg, #1e130c 10%, #9a8478 100%)    
-  height: 150vh
+  height: 130vh
   h1
     font-family: 'Cormorant Upright', serif
     font-size: 5vw
     font-style: italic 
   .page1
+    .simpsons
+      h1
+        position: absolute
+        top: 0
+        left: 0
+        z-index: 15
+      position: absolute
+      // width: 100%
+      top: 40vh
+      left: 18vw
+      .s_money1
+        position: absolute
+        z-index: 15
+        height: 6vw
+        opacity: 0
+        animation: animatedSmoney1 1.5s ease forwards
+        animation-delay: 2s
+      .s_money2
+        position: absolute
+        z-index: 15
+        height: 6vw
+        opacity: 0
+        animation: animatedSmoney2 1.5s ease forwards
+        animation-delay: 2s
+      .s_01
+        height: 15vw
+        animation: animatedS01 1s ease forwards
+      .s_02
+        height: 15vw
+        opacity: 0
+        animation: animatedS02 2s ease forwards
+      .s_03
+        opacity: 0
+        animation: animatedS03 2s ease forwards
+        animation-delay: 2s
+        transform: translate(4vw, 10vh)
+        height: 8vw
+      .s_04
+        opacity: 0
+        animation: animatedS03 2s ease forwards
+        animation-delay: 2s
+        transform: translate(1vw, 10vh) 
+        height: 8vw
+      .s_05
+        opacity: 0
+        animation: animatedS03 2s ease forwards
+        animation-delay: 2s
+        transform: translate(-2vw, 10vh) 
+        height: 8vw
+      .s_06
+        opacity: 0
+        animation: animatedS03 2s ease forwards
+        animation-delay: 2s
+        transform: translate(-5vw, 10vh) 
+        height: 8vw
+      .s_07
+        opacity: 0
+        animation: animatedS03 2s ease forwards
+        animation-delay: 2s
+        transform: translate(-8vw, 10vh) 
+        height: 8vw
+      .s_08
+        opacity: 0
+        animation: animatedS03 2s ease forwards
+        animation-delay: 2s
+        transform: translate(-11vw, 15vh)
+        height: 8vw
+      .s_09
+        opacity: 0
+        animation: animatedS03 2s ease forwards
+        animation-delay: 2s
+        transform: translate(-14vw, 15vh) 
+        height: 8vw
+      .s_10
+        opacity: 0
+        animation: animatedS03 2s ease forwards
+        animation-delay: 2s
+        transform: translate(-17vw, 15vh) 
+        height: 8vw
+      .s_11
+        opacity: 0
+        animation: animatedS03 2s ease forwards
+        animation-delay: 2s
+        transform: translate(-20vw, 15vh) 
+        height: 8vw
+      .s_12
+        opacity: 0
+        animation: animatedS03 2s ease forwards
+        animation-delay: 2s
+        transform: translate(-23vw, 15vh) 
+        height: 8vw
+      .s_13
+        opacity: 0
+        animation: animatedS03 2s ease forwards
+        animation-delay: 2s
+        transform: translate(-80.5vw, 10vh)
+        height: 8vw
+      .s_14
+        opacity: 0
+        animation: animatedS03 2s ease forwards
+        animation-delay: 2s
+        transform: translate(-83.5vw, 10vh) 
+        height: 8vw
+      .s_15
+        opacity: 0
+        animation: animatedS03 2s ease forwards
+        animation-delay: 2s
+        transform: translate(-86.5vw, 10vh) 
+        height: 8vw
+      .s_16
+        opacity: 0
+        animation: animatedS03 2s ease forwards
+        animation-delay: 2s
+        transform: translate(-11.5vw, -15vh) 
+        height: 8vw
+      .s_17
+        opacity: 0
+        animation: animatedS03 2s ease forwards
+        animation-delay: 2s
+        transform: translate(-14.5vw, -15vh) 
+        height: 8vw
+      .s_18
+        opacity: 0
+        animation: animatedS03 2s ease forwards
+        animation-delay: 2s
+        transform: translate(-17.5vw, -10vh) 
+        height: 8vw
+      .s_19
+        opacity: 0
+        animation: animatedS03 2s ease forwards
+        animation-delay: 2s
+        transform: translate(-20.5vw, -10vh) 
+        height: 8vw
+      .s_20
+        opacity: 0
+        animation: animatedS03 2s ease forwards
+        animation-delay: 2s
+        transform: translate(-23.5vw, -10vh) 
+        height: 8vw
+      .s_21
+        opacity: 0
+        animation: animatedS03 2s ease forwards
+        animation-delay: 2s
+        transform: translate(-26.5vw, -10vh) 
+        height: 8vw
+      .s_22
+        opacity: 0
+        animation: animatedS03 2s ease forwards
+        animation-delay: 2s
+        transform: translate(-29.5vw, -10vh) 
+        height: 8vw
+      .s_02_01
+        height: 12vw
+        opacity: 0
+        animation: animatedS0201 1.5s ease forwards
+        animation-delay: 3.5s
+      .s_02_02
+        height: 12vw
+        opacity: 0
+        animation: animatedS0202 1.5s ease forwards
+        animation-delay: 3.5s
+        
+      .s_04_01
+        height: 12vw
+        opacity: 0
+        animation: animatedS0401 1.5s ease forwards
+        animation-delay: 5s
+      .s_04_02
+        height: 12vw
+        transform: translate(-0%, -250%)
+        opacity: 0
+        animation: animatedS0402 1.5s ease forwards
+        animation-delay: 5s
+        
     .circle
       position: absolute
       top: 30%
@@ -81,34 +255,19 @@ body
     .moneyImg
       height: 80vh  
       margin-left: 5vw
-    // .dot
-    //     margin: 5vh
-    //     height: 10vh
-    //     width: 10vh
-    //     background-color: $white
-    //     border-radius: 50%
-    //     display: inline-block
+
     .item
       // display: inline
       font-family: 'Cormorant Upright', serif
       margin: 0 
       text-align: center
-      @include pc-width
-        padding: 1em 3em
-
-      @include phone-width
-        padding: 20% 10% 0% 10% 
+      padding: 1em 3em
       a
         color: #FFF
         text-decoration: none
-        @include pc-width
-          font: 1.5em Raleway
-          padding: 10px 10px
-          margin: 0px 10px
-        @include phone-width
-          padding: 0px 5px
-          font: 1.2em Raleway
-          margin: 0 15px 0 15px
+        font: 1.5em Raleway
+        padding: 10px 10px
+        margin: 0px 10px
         position: relative
         z-index: 0
         cursor: pointer
@@ -160,14 +319,14 @@ body
     .OneMonth
       opacity: 0.2
       position: absolute
-      width: 50vw
+      width: 30vw
       height: 18vh
       top: 30%
       left: 30%
       margin-left: -8px
       content: ''
       background-color: $OneMonthColor
-      animation: animatedOneText 3s ease forwards
+      animation: animatedOneText 1s ease forwards
       p
         // font-style: bold
         font-size: 100%
@@ -178,19 +337,18 @@ body
 
     .OneMonth:hover
       z-index: 2
-      box-shadow: 0px 0px 150px #000000
+      box-shadow: 0px 0px 35px 5px #000000
     .TwoMonth
       opacity: 0
       position: absolute
-      width: 50vw
+      width: 30vw
       height: 18vh
       top: 40%
       left: 30%
       margin-left: -8px
       content: ''
       background-color: $TwoMonthColor
-      animation: animatedTwoText 3s ease forwards
-      animation-delay: 6s
+      animation: animatedTwoText 1s ease forwards
       p
         font-size: 100%
         color: #ffffff
@@ -199,19 +357,18 @@ body
         color: #ffffff
     .TwoMonth:hover
       z-index: 2
-      box-shadow: 0px 0px 150px #000000
+      box-shadow: 0px 0px 35px 5px #000000
     .ThreeMonth
       opacity: 0
       position: absolute
-      width: 50vw
+      width: 30vw
       height: 18vh
       top: 50%
       left: 30%
       margin-left: -8px
       content: ''
       background-color: $ThreeMonthColor
-      animation: animatedThreeText 3s ease forwards
-      animation-delay: 10s
+      animation: animatedThreeText 1s ease forwards
       p
         font-size: 100%
         text-align: center
@@ -220,20 +377,19 @@ body
         color: #ffffff
     .ThreeMonth:hover
       z-index: 2
-      box-shadow: 0px 0px 150px #000000
+      box-shadow: 0px 0px 35px 5px #000000
 
     .FourMonth
       opacity: 0
       position: absolute
-      width: 50vw
+      width: 30vw
       height: 18vh
       top: 60%
       left: 30%
       margin-left: -8px
       content: ''
       background-color: $FourMonthColor
-      animation: animatedFourText 3s ease forwards
-      animation-delay: 14s
+      animation: animatedFourText 1s ease forwards
       p
         font-size: 100%
         text-align: center
@@ -242,20 +398,19 @@ body
         color: #ffffff
     .FourMonth:hover
       z-index: 2
-      box-shadow: 0px 0px 150px #000000
+      box-shadow: 0px 0px 35px 5px #000000
 
     .FiveMonth
       opacity: 0
       position: absolute
-      width: 50vw
+      width: 30vw
       height: 18vh
       top: 70%
       left: 30%
       margin-left: -8px
       content: ''
       background-color: $FiveMonthColor
-      animation: animatedFiveText 3s ease forwards
-      animation-delay: 17s
+      animation: animatedFiveText 1s ease forwards
       p
         font-size: 100%
         text-align: center
@@ -264,7 +419,7 @@ body
         color: #ffffff
     .FiveMonth:hover
       z-index: 2
-      box-shadow: 0px 0px 150px #000000
+      box-shadow: 0px 0px 35px 5px #000000
 
   .page2
     height: 100vh
@@ -278,263 +433,110 @@ body
 
 
 
-// 移動
-span.dot
-  &.no1
-    animation: animatedDotOne 3s ease forwards
-  &.no2
-    animation: animatedDotTwo 3s ease forwards
-  &.no3
-    animation: animatedDotThree 6s ease forwards
-    animation-delay: 3s
-  &.no4
-    animation: animatedDotFour 6s ease forwards
-    animation-delay: 3s
-  &.no5
-    animation: animatedDotFive 6s ease forwards
-    animation-delay: 6s
-  &.no6
-    animation: animatedDotSix 6s ease forwards
-    animation-delay: 6s
-  &.no7
-    animation: animatedDotSeven 4s ease forwards
-    animation-delay: 10s
-  &.no8
-    animation: animatedDotEight 4s ease forwards
-    animation-delay: 10s
-  &.no9
-    animation: animatedDotNine 4s ease forwards
-    animation-delay: 14s
-  &.no10
-    animation: animatedDotTen 4s ease forwards
-    animation-delay: 14s
-  &.no11
-    animation: animatedDotEleven 4s ease forwards
-    animation-delay: 17s
-  &.no12
-    animation: animatedDotTwelve 4s ease forwards
-    animation-delay: 17s
 
 
-@keyframes animatedEight
+@keyframes animatedSmoney1
   0%
-    transform: translate(0 ,0)
-  100%
-    transform: translate(-5vw, -5vh)
-@keyframes animatedDotOne
-  0%
-    transform: translate(0 ,0)
-    opacity: 1
-  100%
-    transform: translate(0, 0)
-    opacity: 1
-    width: 4vw
-    height: 4vw
-@keyframes animatedDotTwo
-  0%
-    transform: translate(0,0)
-  100%
-    transform: translate(10vw, 0)
-    width: 4vw
-    height: 4vw
-    opacity: 1
-@keyframes animatedDotThree
-  0%
-    transform: translate(0, 0)
-  20%
-    opacity: 1
-  50%
-    transform: translate(-5vw, 30vh)
-    opacity: 1
-  100%
-    transform: translate(-10vw, 0)
-    background-color: $OneMonthColor
-    width: 8vw
-    height: 8vw
-    opacity: 1
-@keyframes animatedDotFour
-  0%
-    transform: translate(10vw, 0)
-  20%
-    opacity: 1
-  50%
-    transform: translate(15vw, 30vh)
-    opacity: 1
-  100%
-    transform: translate(17vw, 0)
-    background-color: $OneMonthColor
-    width: 8vw
-    height: 8vw
-    opacity: 1
-@keyframes animatedDotFive
-  0%
-    transform: translate(0, 0)
-  10%
-    opacity: 1
+    transform: translate(6vw, 10vh) scaleX(1)
   70%
-    width: 6vw
-    height: 6vw
-    transform: translate(-3vw, 35vh)
+    transform: translate(-8vw, -1vh) scaleX(-1) scale(2)
     opacity: 1
   100%
-    width: 6vw
-    height: 6vw
-    transform: translate(-3vw, 20vh)
-    background-color: $TwoMonthColor
-    opacity: 1
-@keyframes animatedDotSix
+    transform: translate(-8vw, 20vh) scaleX(1)
+    opacity: 0.7
+@keyframes animatedSmoney2
   0%
-    transform: translate(10vw, 0)
-  10%
-    opacity: 1
+    transform: translate(6vw, 10vh) scaleX(1)
   70%
-    width: 6vw
-    height: 6vw
-    transform: translate(10vw, 35vh)
+    transform: translate(30vw, -1vh) scaleX(-1) scale(2)
     opacity: 1
   100%
-    width: 6vw
-    height: 6vw
-    transform: translate(10vw, 20vh)
-    background-color: $TwoMonthColor
-    opacity: 1
-@keyframes animatedDotSeven
+    transform: translate(30vw, 20vh) scaleX(1)
+    opacity: 0.7
+@keyframes animatedS01
   0%
-    transform: translate(0, 0)
-  10%
-    opacity: 1
-  70%
-    width: 6vw
-    height: 6vw
-    transform: translate(-3vw, 35vh)
-    opacity: 1
+    transform: translate(0vw, 0vh) scaleX(0)
   100%
-    width: 6vw
-    height: 6vw
-    transform: translate(-10vw, 37vh)
-    background-color: $ThreeMonthColor
-    opacity: 1
-@keyframes animatedDotEight
-  0%
-    transform: translate(10vw, 0)
-  10%
-    opacity: 1
-  70%
-    width: 6vw
-    height: 6vw
-    transform: translate(10vw, 35vh)
-    opacity: 1
-  100%
-    width: 6vw
-    height: 6vw
-    transform: translate(17vw, 37vh)
-    background-color: $ThreeMonthColor
-    opacity: 1
-@keyframes animatedDotNine
-  0%
-    transform: translate(0, 0)
-  10%
-    opacity: 1
-  70%
-    width: 6vw
-    height: 6vw
-    transform: translate(-3vw, 60vh)
-    opacity: 1
-  100%
-    width: 6vw
-    height: 6vw
-    transform: translate(-3vw, 55vh)
-    background-color: $FourMonthColor
-    opacity: 1
-@keyframes animatedDotTen
-  0%
-    transform: translate(10vw, 0)
-  10%
-    opacity: 1
-  70%
-    width: 6vw
-    height: 6vw
-    transform: translate(10vw, 60vh)
-    opacity: 1
-  100%
-    width: 6vw
-    height: 6vw
-    transform: translate(10vw, 55vh)
-    background-color: $FourMonthColor
-    opacity: 1
+    transform: translate(6vw, 10vh) scaleX(-1)
 
-@keyframes animatedDotEleven
+@keyframes animatedS02
   0%
-    transform: translate(0, 0)
-  10%
-    opacity: 1
-  70%
-    width: 6vw
-    height: 6vw
-    transform: translate(-3vw, 35vh)
-    opacity: 1
+    transform: translate(-3vw, 10vh) 
   100%
-    width: 6vw
-    height: 6vw
-    transform: translate(-10vw, 73vh)
-    background-color: $FiveMonthColor
     opacity: 1
-@keyframes animatedDotTwelve
+    transform: translate(4vw, 10vh) 
+@keyframes animatedS03
   0%
-    transform: translate(10vw, 0)
-  10%
-    opacity: 1
-  70%
-    width: 6vw
-    height: 6vw
-    transform: translate(10vw, 35vh)
-    opacity: 1
+    // transform: translate(-3vw, 10vh)
   100%
-    width: 6vw
-    height: 6vw
-    transform: translate(17vw, 73vh)
-    background-color: $FiveMonthColor
     opacity: 1
+    // transform: translate(4vw, 10vh) 
+@keyframes animatedS0201
+  0%
+    transform: translate(0, -100%)
+  100%
+    opacity: 1
+    transform: translate(-50%, -250%) 
+@keyframes animatedS0202
+  0%
+    transform: translate(0, -100%)
+  100%
+    opacity: 1
+    transform: translate(150%, -250%) 
+@keyframes animatedS0401
+  0%
+    transform: translate(50%, -250%)
+  100%
+    opacity: 1
+    transform: translate(-50%, -120%) 
+@keyframes animatedS0402
+  0%
+    transform: translate(-0%, -250%)
+  100%
+    opacity: 1
+    transform: translate(50%, -120%) 
 
+
+    
 
 
 //滑動Text動畫
 @keyframes animatedOneText
   0%
-    transform: translate(0, 0) rotate(130deg) Scale(0.1)
+    transform: translate(130%, 100%) rotate(130deg) Scale(0.1)
   100%
-    transform: translate(38%, -35%) 
+    transform: translate(130%, -35%) 
     opacity: 1
     // background-color: red
 
 @keyframes animatedTwoText
   0%
-    transform: translate(0, 400%) rotate(189deg)
+    transform: translate(100%, 100%) rotate(100deg)
   100%
-    transform: translate(38%, 10%)
+    transform: translate(130%, 10%)
     opacity: 1
 
 @keyframes animatedThreeText
   0%
-    transform: translate(0, 200%) Scale(0.4)
+    transform: translate(100%, 200%) Scale(0.4)
   100%
-    transform: translate(38%, 55%)
+    transform: translate(130%, 55%)
     opacity: 1
     // background-color: red
 
 @keyframes animatedFourText
   0%
-    transform: translate(0, 300%) skew(-32deg, -18deg)
+    transform: translate(100%, 300%) skew(-32deg, -18deg)
   100%
-    transform: translate(38%, 100%)
+    transform: translate(130%, 100%)
     opacity: 1
     
     // background-color: red
 @keyframes animatedFiveText
   0%
-    transform: translate(0, 50%)
+    transform: translate(100%, 50%)
   100%
-    transform: translate(38%, 145%)
+    transform: translate(130%, 145%)
     opacity: 1
     
     // background-color: red
