@@ -13,9 +13,10 @@ const total =['Total','---------','$414,000','$414,000','$207,000'];
 const tabledata = {row1,row2,row3,row4,row5,row6,row7,row8,row9,row10};
 const totaldata = {total};
 
+
 let melaApp = new Vue({
     el: '.melaApp',
-    data:{page:'Money',tabledata:tabledata,totaldata:totaldata},
+    data:{page:'Money',tabledata:tabledata,totaldata:totaldata,showBox:false},
     methods:{
         money:function(event){
             self=this;
@@ -50,6 +51,15 @@ let melaApp = new Vue({
         five:function(event){
             self=this;
             self.page='Five';
+        },
+        showBoxClick:function(event){
+            self=this;
+            self.showBox=true;
+
+        },
+        cancelBox:function(event){
+            self=this;
+            self.showBox=false;
         }
     }
 });

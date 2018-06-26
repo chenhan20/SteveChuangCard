@@ -35,6 +35,7 @@ $FiveMonthColor: #C05640
 @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css)
 
 body
+  overflow-x: hidden
   // background-image: linear-gradient( 135deg, #81FBB8 10%, #28C76F 100%)    
   background-image: linear-gradient( 90deg, #1e130c 10%, #9a8478 100%)    
   height: 130vh
@@ -43,6 +44,16 @@ body
     font-size: 5vw
     font-style: italic 
   .page1
+    .filterBackground
+      height: 130vh
+      width: 100vw
+      position: absolute
+      top: 0
+      left: 0
+      z-index: 17
+      background-color: black
+      filter: blur(102px)
+      opacity: 0.8
     .simpsons
       h1
         position: absolute
@@ -53,19 +64,67 @@ body
       // width: 100%
       top: 40vh
       left: 18vw
+      .fa-calendar-check
+        color: #ffffff
+        position: absolute
+        top: 60vh
+        cursor: pointer
+        @include pc-width  
+          font-size: 12vh
+          left: 43vw
+        @include phone-width
+          left: 30vw
+          font-size: 10vh
+      .TestBox
+        width: 70vw
+        height: 50vh
+        position: absolute
+        border-radius: 50px
+        top: 0vh
+        // opacity: 0
+        z-index: 18
+        background-color: #ffffff
+        .row1
+          position: absolute
+          width: 100vw
+          top: 5%
+          left: 0%
+          // display: inline
+          .name
+            // background-color: black
+            text-align: center
+            // position: absolute
+            // left: 30%
+          .Textbody
+            // background-color: black
+            position: absolute
+            left: 20%
+            top: 10%
+            font-family: 'Indie Flower', cursive
+          .boss
+            @include pc-width  
+              width: 18vw
+            @include phone-width
+              width: 40vw
+        .row3
+          position: absolute
+          top: 75%
+          left: 85%
+          .btn-danger
+            font-family: 'Cinzel', serif
       .s_money1
         position: absolute
         z-index: 15
         height: 6vw
         opacity: 0
-        animation: animatedSmoney1 1.5s ease forwards
+        animation: animatedSmoney1 2s ease forwards
         animation-delay: 2s
       .s_money2
         position: absolute
         z-index: 15
         height: 6vw
         opacity: 0
-        animation: animatedSmoney2 1.5s ease forwards
+        animation: animatedSmoney2 2s ease forwards
         animation-delay: 2s
       .s_01
         height: 15vw
@@ -199,6 +258,9 @@ body
         opacity: 0
         animation: animatedS0201 1.5s ease forwards
         animation-delay: 3.5s
+      .s_02_01:hover
+        cursor: pointer
+        filter: contrast(200%)
       .s_02_02
         height: 12vw
         opacity: 0
@@ -212,7 +274,7 @@ body
         animation-delay: 5s
       .s_04_02
         height: 12vw
-        transform: translate(-0%, -250%)
+        transform: translate(-0%, -250%) 
         opacity: 0
         animation: animatedS0402 1.5s ease forwards
         animation-delay: 5s
@@ -473,28 +535,28 @@ body
     // transform: translate(4vw, 10vh) 
 @keyframes animatedS0201
   0%
-    transform: translate(0, -100%)
+    transform: translate(0, -100%) scaleX(1) 
   100%
     opacity: 1
-    transform: translate(-50%, -250%) 
+    transform: translate(-50%, -250%) scaleX(-1)
 @keyframes animatedS0202
   0%
-    transform: translate(0, -100%)
+    transform: translate(0, -100%) scaleX(-1)
   100%
     opacity: 1
-    transform: translate(150%, -250%) 
+    transform: translate(150%, -250%) scaleX(1)
 @keyframes animatedS0401
   0%
-    transform: translate(50%, -250%)
+    transform: translate(50%, -250%)  scaleX(1)
   100%
     opacity: 1
-    transform: translate(-50%, -120%) 
+    transform: translate(-50%, -120%) scaleX(-1)
 @keyframes animatedS0402
   0%
-    transform: translate(-0%, -250%)
+    transform: translate(-0%, -250%) scaleX(-1)
   100%
     opacity: 1
-    transform: translate(50%, -120%) 
+    transform: translate(50%, -120%) scaleX(1)
 
 
     
@@ -560,6 +622,16 @@ body
 .money-enter,
 .money-leave-to 
   opacity: 0
+
+.showBox-enter-active 
+  transition: opacity 1s
+.showBox-leave-active 
+  transition: opacity 1s
+
+.showBox-enter,
+.showBox-leave-to 
+  opacity: 0
+
 
 .list-enter-active 
   transition: opacity 1.8s
