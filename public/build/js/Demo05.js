@@ -60,6 +60,10 @@ let melaApp = new Vue({
         cancelBox:function(event){
             self=this;
             self.showBox=false;
+        },
+        NextBox:function(event){
+            self=this;
+            self.showBox=false;
         }
     }
 });

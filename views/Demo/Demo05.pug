@@ -76,13 +76,15 @@ block content
                             i.icon.fas.fa-calendar-check
                     .TestBox(v-if="showBox")
                         .row1
-                            img.boss.col-2(src='/images/Steve/boss.png')
+                            img.boss(src='/images/Steve/boss.png')
                             .Textbody
                                 h2 Fuck You direct selling Dog
+                                h2 接收任務嗎?直銷狗!
                             .name.col-2
                                 h2 Boss
                         .row3
-                            button.btn.btn-danger(v-on:click="cancelBox") Cancel
+                            button.btn-lg.btn-danger(v-on:click="cancelBox") No
+                            button.btn-lg.btn-warning(v-on:click="NextBox") Yes
             .OneMonth(v-if="page!='Money'",v-on:click='one')
                 h1 One
                 p 找尋1位適合的副手(各找10位愛用者)
