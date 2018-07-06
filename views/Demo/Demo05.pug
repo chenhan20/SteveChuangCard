@@ -5,10 +5,9 @@ block modal
 block buttonPage
 block footer
 block content
-    link(href='https://fonts.googleapis.com/css?family=Nothing+You+Could+Do|Cinzel|Miss+Fajardose|Cormorant+Upright|Orbitron|Cinzel|Indie+Flower', rel='stylesheet')
     .container-fulid.melaApp
         .page1
-            .filterBackground(v-if="showBox")
+            .filterBackground(v-if="showBox!='Nopage'")
             h1 melaleuca
             .item.borderYtoX(name='list')
                 a(v-on:click='money') 獎金
@@ -72,19 +71,36 @@ block content
                         img.s_04_02(src='/images/Steve/simpsons_04.png')
                     //- img(src='/images/Steve/simpsons_02.png')
                     .iconDiv
-                        a(v-on:click="showBoxClick")
+                        a(v-on:click="showBoxP1Click")
                             i.icon.fas.fa-calendar-check
-                    .TestBox(v-if="showBox")
+                    .TextBox(v-if="showBox=='P1'")
                         .row1
                             img.boss(src='/images/Steve/boss.png')
                             .Textbody
-                                h2 Fuck You direct selling Dog
-                                h2 接收任務嗎?直銷狗!
+                                h2.firstText Fuck You direct selling Dog
+                                h2.twoText 接收任務嗎?直銷狗!
                             .name.col-2
                                 h2 Boss
                         .row3
                             button.btn-lg.btn-danger(v-on:click="cancelBox") No
                             button.btn-lg.btn-warning(v-on:click="NextBox") Yes
+                    .TextBox(v-if="showBox=='P2'")
+                        .col-sm-12.text-right
+                           a(v-on:click="cancelBox")
+                                i.fas.fa-window-close
+                        .col-sm-3
+                            input#box-1(type='checkbox')
+                            label(for='box-1') 20愛用者
+                            input#box-2(type='checkbox')
+                            label(for='box-2') 1號經營者
+                            input#box-3(type='checkbox')
+                            label(for='box-3') 2號經營者
+                            input#box-4(type='checkbox')
+                            label(for='box-4') 3號經營者
+                            input#box-5(type='checkbox')
+                            label(for='box-5') 4號經營者
+                        .col
+                            h3.TotalMoney $30,000
             .OneMonth(v-if="page!='Money'",v-on:click='one')
                 h1 One
                 p 找尋1位適合的副手(各找10位愛用者)
@@ -100,21 +116,6 @@ block content
             .FiveMonth(v-if="page!='Money'",v-on:click='five')
                 h1 Five
                 p 與副手各找1位愛用者(持續輔佐你團隊的2位經營者)
-                    //- span.dot.no3
-                    //- span.dot.no4
-                    //- span.dot.no5
-                    //- span.dot.no6
-
-
-            //- img.moneyImg(src='/images/Steve/money.jpg')
-        //-     span.dot
-        //-     span.dot
-        //-     span.dot
-        //-     span.dot
-        //-     span.dot
-        //- .page2
-        //- .page3
-        //- .page4
 
 
             

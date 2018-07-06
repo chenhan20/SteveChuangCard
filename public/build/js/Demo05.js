@@ -16,7 +16,7 @@ const totaldata = {total};
 
 let melaApp = new Vue({
     el: '.melaApp',
-    data:{page:'Money',tabledata:tabledata,totaldata:totaldata,showBox:false},
+    data:{page:'Money',tabledata:tabledata,totaldata:totaldata,showBox:'Nopage'},
     methods:{
         money:function(event){
             self=this;
@@ -52,18 +52,18 @@ let melaApp = new Vue({
             self=this;
             self.page='Five';
         },
-        showBoxClick:function(event){
+        showBoxP1Click:function(event){
             self=this;
-            self.showBox=true;
+            self.showBox='P1';
 
         },
         cancelBox:function(event){
             self=this;
-            self.showBox=false;
+            self.showBox='Nopage';
         },
         NextBox:function(event){
             self=this;
-            self.showBox=false;
+            self.showBox='P2';
         }
     }
 });

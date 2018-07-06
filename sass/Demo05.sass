@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css?family=Nothing+You+Could+Do|Cinzel|Miss+Fajardose|Cormorant+Upright|Orbitron|Cinzel|Indie+Flower|Architects+Daughter')
 $singlepagecolor: #222
 $Doublepagecolor: #ffffff
 $blue: rgba(118, 162, 210, 1)
@@ -43,7 +43,10 @@ body
     font-family: 'Cormorant Upright', serif
     font-size: 5vw
     font-style: italic 
+
   .page1
+    table
+      overflow-x: auto
     .filterBackground
       height: 130vh
       width: 100vw
@@ -75,15 +78,31 @@ body
         @include phone-width
           left: 30vw
           font-size: 10vh
-      .TestBox
+      .fa-window-close
+        cursor: pointer
+      .TextBox
         width: 70vw
         height: 50vh
+        padding: 0 0 0 100px
+        @include phone-width
+          padding: 0 0 0 30px
+        margin-top: 50px
         position: absolute
         border-radius: 50px
         top: 0vh
+        animation: TextBoxshow 1s ease forwards
         // opacity: 0
         z-index: 18
         background-color: #ffffff
+        h3.TotalMoney
+          padding-left: 75%
+          @include phone-width
+            padding: 15% 0 0 10%
+
+          font-family: 'Architects Daughter', cursive
+        .fa-window-close
+          font-size: 50px
+          padding-right: 1vw
         .row1
           // position: absolute
           width: 100vw
@@ -112,10 +131,17 @@ body
               left: 20%
               top: 50%
             font-family: 'Indie Flower', cursive
-            h2  
+            h2
               @include phone-width
                 font-size: 18px
-              
+            .firstText
+              overflow: hidden
+              white-space: nowrap
+              animation: typingFirst 3s steps(32) 
+            .twoText
+              overflow: hidden
+              white-space: nowrap
+              animation: typingTwo 3s steps(30)  
           .boss
             position: absolute
             @include pc-width  
@@ -125,10 +151,12 @@ body
               width: 40vw
               left: 25%
         .row3
+          .btn-warning
+            animation: btnMove 1s infinite
           position: absolute
           @include pc-width  
-            left: 80%
-            top: 75%
+            left: 50%
+            top: 50%
           @include phone-width
             top: 65%
             left: 20%
@@ -384,6 +412,8 @@ body
       font-family: 'Orbitron', sans-serif
       font-weight: 500
       color: white
+      @include phone-width
+        font-size: 0.9em
       th
         text-align: right
         border-bottom: 1px solid black
@@ -582,7 +612,7 @@ body
     transform: translate(50%, -120%) scaleX(1)
 
 
-    
+
 
 
 //滑動Text動畫
@@ -626,6 +656,36 @@ body
     
     // background-color: red
 
+@keyframes TextBoxshow
+  0%
+    transform: rotate(0deg)
+  50%
+    transform: rotate(10deg)
+  100%
+    transform: rotate(0deg)
+
+
+//文字動畫
+@keyframes typingFirst 
+  from 
+    width: 0% 
+  to
+    width: 100%
+
+@keyframes typingTwo
+  from 
+    width: 0%
+  to
+    width: 100%
+
+@keyframes btnMove
+  0% 
+    transform: rotate(-15deg)
+  50%
+    transform: rotate(15deg)
+  100%
+    transform: rotate(-15deg)
+
 
 //VueJs動畫  淡入淡出
 .team-enter-active 
@@ -664,3 +724,45 @@ body
 .list-enter,
 .list-leave-to 
   opacity: 0
+
+
+
+
+  // checkBox樣式
+input[type="checkbox"]
+  display: none
+  + label
+    display: block
+    position: relative
+    padding-left: 35px
+    @include phone-width
+      padding-left: 50px
+    margin-bottom: 20px
+    font: 20px/26px 'Open Sans', Arial, sans-serif
+    color: #000000
+    cursor: pointer
+    -webkit-user-select: none
+    -moz-user-select: none
+    -ms-user-select: none
+    &:last-child
+      margin-bottom: 0
+    &:before
+      content: ''
+      display: block
+      width: 20px
+      height: 20px
+      border: 1px solid #6cc0e5
+      position: absolute
+      left: 0
+      top: 0
+      opacity: .6
+      transition: all .4s, border-color .3s
+  &:checked + label:before
+    width: 10px
+    top: -5px
+    left: 5px
+    border-radius: 0
+    opacity: 1
+    border-top-color: transparent
+    border-left-color: transparent
+    transform: rotate(45deg)
