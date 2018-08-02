@@ -28,9 +28,20 @@ let melaApp = new Vue({
             let $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
             $body.animate({
                 scrollTop: $('.item').offset().top
-            }, 1000, function() {
+            }, 500, function() {
                 // lockChange=true;
-            });
+                $('.OneMonth').animate({
+                    left: '70%',top:'20%'}, {duration: 1000});
+                $('.TwoMonth').animate({
+                    left: '70%',top:'35%'}, {duration: 1000});
+                $('.ThreeMonth').animate({
+                    left: '70%',top:'50%'}, {duration: 1000});
+                $('.FourMonth').animate({
+                    left: '70%',top:'65%'}, {duration: 1000});
+                $('.FiveMonth').animate({
+                    left: '70%',top:'80%'}, {duration: 1000});
+});
+ 
           },
         one:function(event){
             self=this;
