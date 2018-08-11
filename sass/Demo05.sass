@@ -70,7 +70,8 @@ body
       .fa-calendar-check
         color: #ffffff
         position: absolute
-        top: 60vh
+        top: 0vh
+        left: 0vw
         cursor: pointer
         @include pc-width  
           font-size: 12vh
@@ -94,11 +95,15 @@ body
         // opacity: 0
         z-index: 18
         background-color: #ffffff
-        h3.TotalMoney
-          padding-left: 75%
+        h2.TotalMoney
+          padding-left: 55%
           @include phone-width
             padding: 15% 0 0 10%
-
+          font-family: 'Orbitron', sans-serif;
+        h2.TotalClass
+          padding-left: 55%
+          @include phone-width
+            padding: 15% 0 0 10%
           font-family: 'Architects Daughter', cursive
         .fa-window-close
           font-size: 50px
@@ -308,7 +313,7 @@ body
         height: 12vw
         opacity: 0
         animation: animatedS0201 1.5s ease forwards
-        animation-delay: 3.5s
+        animation-delay: 2s
       .s_02_01:hover
         cursor: pointer
         filter: contrast(200%)
@@ -316,19 +321,19 @@ body
         height: 12vw
         opacity: 0
         animation: animatedS0202 1.5s ease forwards
-        animation-delay: 3.5s
+        animation-delay: 2s
         
       .s_04_01
         height: 12vw
         opacity: 0
         animation: animatedS0401 1.5s ease forwards
-        animation-delay: 5s
+        animation-delay: 2s
       .s_04_02
         height: 12vw
         transform: translate(-0%, -250%) 
         opacity: 0
         animation: animatedS0402 1.5s ease forwards
-        animation-delay: 5s
+        animation-delay: 2s
         
     .circle
       position: absolute
@@ -337,7 +342,7 @@ body
       border-radius: 50%
       z-index: 10
       animation: animatedEight 3s ease forwards
-      animation-delay: 3s
+      animation-delay: 2s
       span.dot
         position: absolute
         top: 0
@@ -549,66 +554,66 @@ body
 
 
 
-// @keyframes animatedSmoney1
-//   0%
-//     transform: translate(6vw, 10vh) scaleX(1)
-//   70%
-//     transform: translate(-8vw, -1vh) scaleX(-1) scale(2)
-//     opacity: 1
-//   100%
-//     transform: translate(-8vw, 20vh) scaleX(1)
-//     opacity: 0.7
-// @keyframes animatedSmoney2
-//   0%
-//     transform: translate(6vw, 10vh) scaleX(1)
-//   70%
-//     transform: translate(30vw, -1vh) scaleX(-1) scale(2)
-//     opacity: 1
-//   100%
-//     transform: translate(30vw, 20vh) scaleX(1)
-//     opacity: 0.7
-// @keyframes animatedS01
-//   0%
-//     transform: translate(0vw, 0vh) scaleX(0)
-//   100%
-//     transform: translate(6vw, 10vh) scaleX(-1)
+@keyframes animatedSmoney1
+  0%
+    transform: translate(6vw, 10vh) scaleX(1)
+  70%
+    transform: translate(-8vw, -1vh) scaleX(-1) scale(2)
+    opacity: 1
+  100%
+    transform: translate(-8vw, 20vh) scaleX(1)
+    opacity: 0.7
+@keyframes animatedSmoney2
+  0%
+    transform: translate(6vw, 10vh) scaleX(1)
+  70%
+    transform: translate(30vw, -1vh) scaleX(-1) scale(2)
+    opacity: 1
+  100%
+    transform: translate(30vw, 20vh) scaleX(1)
+    opacity: 0.7
+@keyframes animatedS01
+  0%
+    transform: translate(0vw, 0vh) scaleX(0)
+  100%
+    transform: translate(6vw, 10vh) scaleX(-1)
 
-// @keyframes animatedS02
-//   0%
-//     transform: translate(-3vw, 10vh) 
-//   100%
-//     opacity: 1
-//     transform: translate(4vw, 10vh) 
-// @keyframes animatedS03
-//   0%
-//     // transform: translate(-3vw, 10vh)
-//   100%
-//     opacity: 1
-//     // transform: translate(4vw, 10vh) 
-// @keyframes animatedS0201
-//   0%
-//     transform: translate(0, -100%) scaleX(1) 
-//   100%
-//     opacity: 1
-//     transform: translate(-50%, -250%) scaleX(-1)
-// @keyframes animatedS0202
-//   0%
-//     transform: translate(0, -100%) scaleX(-1)
-//   100%
-//     opacity: 1
-//     transform: translate(150%, -250%) scaleX(1)
-// @keyframes animatedS0401
-//   0%
-//     transform: translate(50%, -250%)  scaleX(1)
-//   100%
-//     opacity: 1
-//     transform: translate(-50%, -120%) scaleX(-1)
-// @keyframes animatedS0402
-//   0%
-//     transform: translate(-0%, -250%) scaleX(-1)
-//   100%
-//     opacity: 1
-//     transform: translate(50%, -120%) scaleX(1)
+@keyframes animatedS02
+  0%
+    transform: translate(-3vw, 10vh) 
+  100%
+    opacity: 1
+    transform: translate(4vw, 10vh) 
+@keyframes animatedS03
+  0%
+    // transform: translate(-3vw, 10vh)
+  100%
+    opacity: 1
+    // transform: translate(4vw, 10vh) 
+@keyframes animatedS0201
+  0%
+    transform: translate(0, -100%) scaleX(1) 
+  100%
+    opacity: 1
+    transform: translate(-50%, -250%) scaleX(-1)
+@keyframes animatedS0202
+  0%
+    transform: translate(0, -100%) scaleX(-1)
+  100%
+    opacity: 1
+    transform: translate(150%, -250%) scaleX(1)
+@keyframes animatedS0401
+  0%
+    transform: translate(50%, -250%)  scaleX(1)
+  100%
+    opacity: 1
+    transform: translate(-50%, -120%) scaleX(-1)
+@keyframes animatedS0402
+  0%
+    transform: translate(-0%, -250%) scaleX(-1)
+  100%
+    opacity: 1
+    transform: translate(50%, -120%) scaleX(1)
 
 
 

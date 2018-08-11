@@ -78,7 +78,7 @@ block content
                             img.boss(src='/images/Steve/boss.png')
                             .Textbody
                                 h2.firstText Fuck You direct selling Dog
-                                h2.twoText 接收任務嗎?
+                                h2.twoText 接收任務嗎????
                             .name.col-2
                                 h2 Boss
                         .row3
@@ -89,18 +89,19 @@ block content
                            a(v-on:click="cancelBox")
                                 i.fas.fa-window-close
                         .col-sm-3
-                            input#box-1(type='checkbox')
-                            label(for='box-1') 20愛用者
-                            input#box-2(type='checkbox')
-                            label(for='box-2') 1號經營者
-                            input#box-3(type='checkbox')
-                            label(for='box-3') 2號經營者
-                            input#box-4(type='checkbox')
-                            label(for='box-4') 3號經營者
-                            input#box-5(type='checkbox')
-                            label(for='box-5') 4號經營者
+                            input#20consumer(type='checkbox',v-on:click="boxSelect")
+                            label(for='20consumer') 20愛用者
+                            input#Operators_1(type='checkbox',v-on:click="boxSelect")
+                            label(for='Operators_1') 1號經營者
+                            input#Operators_2(type='checkbox',v-on:click="boxSelect")
+                            label(for='Operators_2') 2號經營者
+                            input#Operators_3(type='checkbox',v-on:click="boxSelect")
+                            label(for='Operators_3') 3號經營者
+                            input#Operators_4(type='checkbox',v-on:click="boxSelect")
+                            label(for='Operators_4') 4號經營者
                         .col
-                            h3.TotalMoney $30,000
+                            h2.TotalClass {{TotalClass}}
+                            h2.TotalMoney {{TotalMoney}}
             .OneMonth(v-if="page!='Money'",v-on:click='one')
                 h1 One
                 p 找尋1位適合的副手(各找10位愛用者)
