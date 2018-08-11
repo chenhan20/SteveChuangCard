@@ -83,6 +83,10 @@ let melaApp = new Vue({
         cancelBox:function(event){
             self=this;
             self.showBox='Nopage';
+            self.TotalClass = '';
+            self.TotalMoney = '';
+            SelectTotal =[];
+
         },
         NextBox:function(event){
             self=this;
