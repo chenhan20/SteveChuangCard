@@ -25,6 +25,8 @@ let melaApp = new Vue({
         showBox:'Nopage',
         TotalMoney:'',
         TotalMoneyNumber:0,
+        TotalOperator:0,
+        Totalconsumer:0,
         TotalClass:''},
     methods:{
         money:function(event){
@@ -78,15 +80,16 @@ let melaApp = new Vue({
         showBoxP1Click:function(event){
             self=this;
             self.showBox='P1';
-
+            //重製這些值 否則會殘留
+            self.TotalClass = '';
+            self.TotalMoney = '';
+            self.TotalOperator = 0;
+            self.Totalconsumer = 0;
+            SelectTotal =[];
         },
         cancelBox:function(event){
             self=this;
             self.showBox='Nopage';
-            self.TotalClass = '';
-            self.TotalMoney = '';
-            SelectTotal =[];
-
         },
         NextBox:function(event){
             self=this;
@@ -118,33 +121,31 @@ let Calculation = (self,SelectTotal) =>{
         }
         switch(value) {
             case '20consumer':
-                self.TotalClass = '總監3';
+                self.Totalconsumer +=20; 
                 self.TotalMoneyNumber += 46666;
                 break;
             case 'Operators_1':
-                self.TotalClass = '總監5';
-                self.TotalMoneyNumber += 91434;
+                self.TotalOperator +=1;
                 break;
             case 'Operators_2':
-                self.TotalClass = '總監7';
-                self.TotalMoneyNumber += 166712;
+                self.TotalOperator +=1;
+                // self.TotalMoneyNumber += 166712;
                 break;
             case 'Operators_3':
-                self.TotalClass = '總監9';
-                self.TotalMoneyNumber += 329994;
+                self.TotalOperator +=1;
+                // self.TotalMoneyNumber += 329994;
                 break;
             case 'Operators_4':
-                self.TotalClass = '資深總監1';
-                self.TotalMoneyNumber += 550072;
+                self.TotalOperator +=1;
+                // self.TotalMoneyNumber += 550072;
                 break;
-                
         }
-        
     }
+
+    computeClass(self);
 
     // self.TotalClass = '總監3';
     // self.TotalMoneyNumber = 43333;
-    self.TotalMoney = MoneyFormat(self.TotalMoneyNumber);
 };
 
 //格式化金額
@@ -152,4 +153,18 @@ let MoneyFormat = (Money) =>{
     let Format;
     Format = '$' + parseInt(Money).toLocaleString('en-US'); 
     return Format;
+};
+
+
+//計算可升到的階級
+let  computeClass= (self) =>{
+
+    /**
+     * 升階條件   依據兩個大標準去計算
+     * 1.親推人數
+     * 2.組織點數(七代PEG)    
+     */
+    
+
+    self.TotalMoney = MoneyFormat(self.TotalMoneyNumber);
 };
