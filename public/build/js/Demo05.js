@@ -164,7 +164,7 @@ let  computeClass= (self) =>{
      * 1.親推人數
      * 2.組織點數(七代PEG)    
      */
-
+    
 
     self.TotalMoney = MoneyFormat(self.TotalMoneyNumber);
 };

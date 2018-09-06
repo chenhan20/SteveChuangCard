@@ -32,9 +32,13 @@ router.get('/Demo01', function(req, res, next) {
 router.get('/Demo02', function(req, res, next) {
   res.render('./Demo/Demo02', { title: 'Demo02' });
 });
-/* GET Demo02 */
+/* GET Demo05 */
 router.get('/Demo05', function(req, res, next) {
   res.render('./Demo/Demo05', { title: 'Demo05' });
+});
+/* GET Steve01 */
+router.get('/Steve01', function(req, res, next) {
+  res.render('./Demo/Steve01', { title: 'Steve01' });
 });
 
 /* POST Demo02 */
