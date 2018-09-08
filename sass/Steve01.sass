@@ -1,22 +1,28 @@
-
-
-
+  /**
+    flex 無法配合position去固定位置 會跑版，解決方法為使用disaplay flex 
+      參考資料:https://stackoverflow.com/questions/29036231/how-can-i-have-a-position-fixed-behaviour-for-a-flexbox-sized-element
+  **/
+  
 body
-  background: #FFFFFF
+  background: #FAFAFA
   // background-image: url(https://images.unsplash.com/photo-1490194490614-689f9bf126b0?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1459102e9351064561fb8cd7746201cb&auto=format&fit=crop&w=634&q=80)
   .cursor
     cursor: pointer
   div.title
-    // position: fixed
-    margin-top: 1%
-    padding-bottom: 12px
-    border-bottom: 1px solid black
+    background: #ffffff
+    display: flex
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    padding: 12px 0 12px 0px
+    border-bottom: 1px solid rgba(0,0,0,.0975)
     h2.title
       font-family: 'Cabin Sketch', cursive
       font-size: 2.2em
-      margin: 0 100px 0 30px
+      margin: 0 0px 0 30px
     .search
-      margin: 0 100px 0 100px
+      margin: 0 150px 0 150px
       // vertical-align: middle
       white-space: nowrap
       position: relative
