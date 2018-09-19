@@ -67,22 +67,25 @@ body
       flex-direction: column
   div.imgcontent
     display: flex
-    padding: 2vw
-    margin-left: 20% 
-    margin-right: 10% 
+    @include pc-width
+      padding: 2vw
+      margin-left: 20% 
+      margin-right: 10% 
     div.imglist
       width: 100%
-
       .image
         height: 300px
         width: 300px
-        display: inline-flex
+        @include phone-width
+          width: 100%
+        @include pc-width
+          display: inline-flex
+          clip-path: polygon(15% 0, 100% 0%, 85% 100%, 0% 100%)
         background-size: cover
         background-repeat: no-repeat
         // background-position: center
         cursor: pointer
         margin: 2vw
-        clip-path: polygon(15% 0, 100% 0%, 85% 100%, 0% 100%)
       .image:hover
          transition: 0.5s
          transform: scale(1.2)
