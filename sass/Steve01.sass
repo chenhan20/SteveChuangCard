@@ -23,19 +23,20 @@ body
   div.topTitle
     background: #ffffff
     display: flex
-    // position: fixed
-    // top: 0
-    // left: 0
-    // right: 0
-    padding: 12px 0 12px 0px
+    padding: 12px 0px 12px 0px
+    width: 100%
     border-bottom: 1px solid rgba(0,0,0,.0975)
+    @include pc-width
+      margin: 0 30% 0 30%
+    @include phone-width
+      margin: 0 0% 0 0%
     h2.title
       font-family: 'Cabin Sketch', cursive
       font-size: 2.2em
       margin: 0 0px 0 30px
     .search
       @include pc-width
-        margin: 0 150px 0 150px
+        margin: 0 75px 0 75px
         // vertical-align: middle
         white-space: nowrap
         position: relative
