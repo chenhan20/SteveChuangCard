@@ -7,7 +7,7 @@
     service: 'gmail',
     auth: {
       user: adminEmail,
-      pass: 'slnmnbricciizhqw'
+      pass: 'sxicmbyzrdrmezwi'
     }
   });
 
@@ -41,13 +41,13 @@ let  checkEmail = function(email){
   let sendMail = function(User){
       console.log('收件者 : ' + myEmail);
       if(checkEmail(myEmail)){
-        // transporter.sendMail(MailTo(User.YourName,User.YourEmail,User.message), function(error, info){
-        //   if (error) {
-        //     console.log(error);
-        //   } else {
-        //     console.log('Email sent: ' + info.response);
-        //   }
-        // });
+        transporter.sendMail(MailTo(User.YourName,User.YourEmail,User.message), function(error, info){
+          if (error) {
+            console.log(error);
+          } else {
+            console.log('Email sent: ' + info.response);
+          }
+        });
         console.log('Email發送成功 ');
         return true;
       }else{
