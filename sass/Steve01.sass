@@ -23,11 +23,12 @@ body
   div.topTitle
     background: #ffffff
     display: flex
-    padding: 12px 0px 12px 0px
+    position: fixed
+    left: 0
     width: 100%
     border-bottom: 1px solid rgba(0,0,0,.0975)
     @include pc-width
-      margin: 0 30% 0 30%
+      padding: 12px 20% 12px 20%
     @include phone-width
       margin: 0 0% 0 0%
     h2.title
@@ -69,18 +70,20 @@ body
     display: flex
     @include pc-width
       padding: 2vw
-      margin-left: 20% 
-      margin-right: 10% 
+      // margin-left: 10% 
+      // margin-right: 10% 
+      margin: 0 auto 30px
+      max-width: 1200px
     div.imglist
       width: 100%
       .image
-        height: 300px
-        width: 300px
+        height: 293px
+        width: 293px
         @include phone-width
           width: 100%
         @include pc-width
           display: inline-flex
-          clip-path: polygon(15% 0, 100% 0%, 85% 100%, 0% 100%)
+          // clip-path: polygon(15% 0, 100% 0%, 85% 100%, 0% 100%)
         background-size: cover
         background-repeat: no-repeat
         // background-position: center
