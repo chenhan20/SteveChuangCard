@@ -1,3 +1,5 @@
+"use strict";
+
 /*jshint esversion: 6 */
 //bootstrap hover text setting
 $(document).ready(function () {
@@ -26,7 +28,7 @@ $('.goleft').click(function () {
 
 //email按鈕(複製功能)
 $(".Copyemail").click(function () {
-    let email = 'a0911558945@gmail.com';
+    var email = 'a0911558945@gmail.com';
     copy(email);
     $('.copyemailmodal').modal('show');
 });
@@ -62,7 +64,7 @@ function PostData() {
         url: "/SteveCard/sendmail",
         data: $(".sendmailForm").serialize(),
         // dataType : 'json',
-        success: function (msg) {
+        success: function success(msg) {
             alert(msg);
             if (msg == 'success') {
                 $('.sendemailmodal').modal('hide');
@@ -72,7 +74,7 @@ function PostData() {
                 $('.errormailmodal').modal('show');
             }
         },
-        error: function (msg) {
+        error: function error(msg) {
             $('.sendemailmodal').modal('hide');
             $('.errormailmodal').modal('show');
         }

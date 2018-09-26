@@ -1,21 +1,23 @@
+"use strict";
+
 /*jshint esversion: 6 */
 // let DemoData;
-let TwDay = new Date();
-let TwdayDate = { yyyy: TwDay.getFullYear(), mm: TwDay.getMonth() + 1, dd: TwDay.getDate() };
-let USAday = new Date();
+var TwDay = new Date();
+var TwdayDate = { yyyy: TwDay.getFullYear(), mm: TwDay.getMonth() + 1, dd: TwDay.getDate() };
+var USAday = new Date();
 USAday.setDate(USAday.getDate() - 1);
-let USADate = { yyyy: USAday.getFullYear(), mm: USAday.getMonth() + 1, dd: USAday.getDate() };
+var USADate = { yyyy: USAday.getFullYear(), mm: USAday.getMonth() + 1, dd: USAday.getDate() };
 //bootstrap hover text setting
 
 
-let Demo02_2 = new Vue({
+var Demo02_2 = new Vue({
     el: '.Demo02-2',
     data: {
         object: {}, Date: TwdayDate
     },
     methods: {
-        AddDate: function (event) {
-            let self = this;
+        AddDate: function AddDate(event) {
+            var self = this;
             USAday.setDate(USAday.getDate() + 1);
             USADate = { yyyy: USAday.getFullYear(), mm: USAday.getMonth() + 1, dd: USAday.getDate() };
             TwDay.setDate(TwDay.getDate() + 1);
@@ -26,26 +28,26 @@ let Demo02_2 = new Vue({
                 url: "/SteveCard/Demo02",
                 data: USADate,
                 // dataType : 'JSON',
-                success: function (Returndata) {
+                success: function success(Returndata) {
                     self.object = Returndata;
                 },
-                error: function (Returndata) {
+                error: function error(Returndata) {
                     self.object = { Error: 'Error' };
                 },
-                beforeSend: function () {
+                beforeSend: function beforeSend() {
                     // $('.ajaxlaodmodal').modal('show');
                     $('.bouncing-loader').show();
                     $('.Nba').hide();
                 },
-                complete: function () {
+                complete: function complete() {
                     // $('.ajaxlaodmodal').modal('hide');
                     $('.bouncing-loader').hide();
                     $('.Nba').show();
                 }
             });
         },
-        LessDate: function (event) {
-            let self = this;
+        LessDate: function LessDate(event) {
+            var self = this;
             USAday.setDate(USAday.getDate() - 1);
             USADate = { yyyy: USAday.getFullYear(), mm: USAday.getMonth() + 1, dd: USAday.getDate() };
             TwDay.setDate(TwDay.getDate() - 1);
@@ -56,18 +58,18 @@ let Demo02_2 = new Vue({
                 url: "/SteveCard/Demo02",
                 data: USADate,
                 // dataType : 'JSON',
-                success: function (Returndata) {
+                success: function success(Returndata) {
                     self.object = Returndata;
                 },
-                error: function (Returndata) {
+                error: function error(Returndata) {
                     self.object = { Error: 'Error' };
                 },
-                beforeSend: function () {
+                beforeSend: function beforeSend() {
                     // $('.ajaxlaodmodal').modal('show');
                     $('.bouncing-loader').show();
                     $('.Nba').hide();
                 },
-                complete: function () {
+                complete: function complete() {
                     $('.bouncing-loader').hide();
                     $('.Nba').show();
                     // $('.ajaxlaodmodal').modal('hide');
@@ -75,23 +77,23 @@ let Demo02_2 = new Vue({
             });
         },
         //比賽詳細資訊
-        GameDetail: function (event) {
+        GameDetail: function GameDetail(event) {
             //取得點選比賽主場的隊伍(查詢比賽資訊用)
             // alert(event.currentTarget.querySelectorAll(".hTeam")[0].innerText); 
-            let GameId = event.currentTarget.querySelectorAll(".gameId")[0].innerText;
-            let VtriCode = event.currentTarget.querySelectorAll(".vTeamtriCode")[0].innerText;
-            let HtriCode = event.currentTarget.querySelectorAll(".hTeamtriCode")[0].innerText;
-            let GameDate = ''.concat(USADate.yyyy, USADate.mm < 10 ? '0' : '', USADate.mm, USADate.dd < 10 ? '0' : '', USADate.dd);
+            var GameId = event.currentTarget.querySelectorAll(".gameId")[0].innerText;
+            var VtriCode = event.currentTarget.querySelectorAll(".vTeamtriCode")[0].innerText;
+            var HtriCode = event.currentTarget.querySelectorAll(".hTeamtriCode")[0].innerText;
+            var GameDate = ''.concat(USADate.yyyy, USADate.mm < 10 ? '0' : '', USADate.mm, USADate.dd < 10 ? '0' : '', USADate.dd);
             // $.get( "/SteveCard/BoxScore/"+hTeam);
             // console.log(VtriCode);
             // console.log(HtriCode);  
             window.location = "/SteveCard/Demo02/BoxScore/" + VtriCode + HtriCode + GameId + GameDate;
         },
-        bg_css: function (Logo) {
-            return { 'background-image': `url(${Logo})` };
+        bg_css: function bg_css(Logo) {
+            return { 'background-image': "url(" + Logo + ")" };
         }
     },
-    mounted: function () {
+    mounted: function mounted() {
         // $('.bouncing-loader').hide();
 
         var self = this;
@@ -101,17 +103,17 @@ let Demo02_2 = new Vue({
             url: "/SteveCard/Demo02",
             data: USADate,
             // dataType : 'JSON',
-            success: function (Returndata) {
+            success: function success(Returndata) {
                 self.object = Returndata;
             },
-            error: function (Returndata) {
+            error: function error(Returndata) {
                 self.object = { Error: 'Error' };
             },
-            beforeSend: function () {
+            beforeSend: function beforeSend() {
                 // $('.ajaxlaodmodal').modal('show');
                 $('.bouncing-loader').show();
             },
-            complete: function () {
+            complete: function complete() {
                 // $('.ajaxlaodmodal').modal('hide');
                 $('.bouncing-loader').hide();
             }

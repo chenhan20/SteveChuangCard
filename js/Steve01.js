@@ -1,1 +1,1 @@
-let aaaa;
+const square = n => n * n;

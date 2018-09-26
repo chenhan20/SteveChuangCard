@@ -1,3 +1,5 @@
+'use strict';
+
 /*jshint esversion: 6 */
 
 // socket.on('news', function (data) {
@@ -6,16 +8,16 @@
 // });
 
 
-let socket = io.connect();
-let yourName;
-let onlineUser = [];
+var socket = io.connect();
+var yourName = void 0;
+var onlineUser = [];
 
-let appendMessageUser = msg => {
+var appendMessageUser = function appendMessageUser(msg) {
     $('.Msgcontainer').append($('<li class="User">').text(msg));
     $('.Msgcontainer').scrollTop($('.ChatRoom').height());
     $('.Msgcontainer').scrollTop(999999);
 };
-let appendMessageOther = (user, msg) => {
+var appendMessageOther = function appendMessageOther(user, msg) {
     $('.Msgcontainer').append($('<li class="OtherImage">'));
     $('.Msgcontainer').append($('<li class="OtherName">').text(user));
     $('.Msgcontainer').append($('<li class="other">').text(msg));
@@ -23,25 +25,46 @@ let appendMessageOther = (user, msg) => {
     $('.Msgcontainer').scrollTop(999999);
 };
 
-let appendMessageMe = msg => {
+var appendMessageMe = function appendMessageMe(msg) {
     $('.Msgcontainer').append($('<li class="Me">').text(msg));
     $('.Msgcontainer').scrollTop($('.ChatRoom').height());
     $('.Msgcontainer').scrollTop(999999);
 };
 
-let UpdateOnlineUser = nicknamesArray => {
+var UpdateOnlineUser = function UpdateOnlineUser(nicknamesArray) {
     $('.OnlineUserList li').remove();
-    for (let value of nicknamesArray) {
-        $('.OnlineUserList').append($('<li>').text(value));
+    var _iteratorNormalCompletion = true;
+    var _didIteratorError = false;
+    var _iteratorError = undefined;
+
+    try {
+        for (var _iterator = nicknamesArray[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+            var value = _step.value;
+
+            $('.OnlineUserList').append($('<li>').text(value));
+        }
+    } catch (err) {
+        _didIteratorError = true;
+        _iteratorError = err;
+    } finally {
+        try {
+            if (!_iteratorNormalCompletion && _iterator.return) {
+                _iterator.return();
+            }
+        } finally {
+            if (_didIteratorError) {
+                throw _iteratorError;
+            }
+        }
     }
 };
 
-let appendLikeMe = () => {
+var appendLikeMe = function appendLikeMe() {
     $('.Msgcontainer').append($('<li class="LikeMe"><i class="icon fas fa-thumbs-up" style="font-size:30px">'));
     $('.Msgcontainer').scrollTop($('.ChatRoom').height());
     $('.Msgcontainer').scrollTop(999999);
 };
-let appendLikeOther = user => {
+var appendLikeOther = function appendLikeOther(user) {
     $('.Msgcontainer').append($('<li class="OtherImage">'));
     $('.Msgcontainer').append($('<li class="OtherName">').text(user));
     $('.Msgcontainer').append($('<li class="LikeOther"><i class="icon fas fa-thumbs-up" style="font-size:30px">'));
@@ -66,8 +89,8 @@ socket.on('send like', function (data) {
 });
 
 //送出聊天訊息
-let sendMsg = () => {
-    let Msg = $('.msg_content').val();
+var sendMsg = function sendMsg() {
+    var Msg = $('.msg_content').val();
     if (Msg == "") {
         alert('請輸入內容');
         return;
@@ -80,7 +103,7 @@ let sendMsg = () => {
     $('.msg_content').focus();
 };
 //送出讚
-let sendlike = () => {
+var sendlike = function sendlike() {
     socket.emit('send like');
     $('.msg_content').focus();
     $('.msg_content').val('');
@@ -115,7 +138,7 @@ $(document).ready(function () {
     $('.Btn_like').show();
 });
 
-let chkName = Name => {
+var chkName = function chkName(Name) {
     if (Name == "") {
         alert('請輸入名稱');
         $('.nickBox').focus();
@@ -135,7 +158,7 @@ let chkName = Name => {
 };
 
 $('.Btn_addroom').click(function () {
-    let nickBox = $('.nickBox').val();
+    var nickBox = $('.nickBox').val();
     console.log('帳號:' + nickBox);
     if (chkName(nickBox)) {
         // $.ajax({
@@ -179,7 +202,7 @@ $('.msg_content').keypress(function (e) {
 });
 
 $('.msg_content').keyup(function (e) {
-    let Msg_length = $('.msg_content').val().length;
+    var Msg_length = $('.msg_content').val().length;
     if (Msg_length > 0) {
         $('.Btn_sendMsg').show();
         $('.Btn_like').hide();

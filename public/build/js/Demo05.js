@@ -1,21 +1,23 @@
+'use strict';
+
 /*jshint esversion: 6 */
-const row1 = ['總監1', '0', '$6,000', '100%', '50%'];
-const row2 = ['總監2', '1,000', '$12,000', '100%', '50%'];
-const row3 = ['總監3', '2,500', '$18,000', '100%', '50%'];
-const row4 = ['總監4', '5,000', '$24,000', '100%', '100%'];
-const row5 = ['總監5', '7,500', '$30,000', '100%', '100%'];
-const row6 = ['總監6', '10,000', '$36,000', '100%', '100%'];
-const row7 = ['總監7', '12,500', '$42,000', '100%', '100%'];
-const row8 = ['總監8', '15,000', '$48,000', '100%', '100%'];
-const row9 = ['總監9', '17,500', '$66,000', '100%', '100%'];
-const row10 = ['資深總監1', '20,000', '$132,000', '100%', '100%'];
-const total = ['Total', '---------', '$414,000', '$414,000', '$207,000'];
-const tabledata = { row1, row2, row3, row4, row5, row6, row7, row8, row9, row10 };
-const totaldata = { total };
+var row1 = ['總監1', '0', '$6,000', '100%', '50%'];
+var row2 = ['總監2', '1,000', '$12,000', '100%', '50%'];
+var row3 = ['總監3', '2,500', '$18,000', '100%', '50%'];
+var row4 = ['總監4', '5,000', '$24,000', '100%', '100%'];
+var row5 = ['總監5', '7,500', '$30,000', '100%', '100%'];
+var row6 = ['總監6', '10,000', '$36,000', '100%', '100%'];
+var row7 = ['總監7', '12,500', '$42,000', '100%', '100%'];
+var row8 = ['總監8', '15,000', '$48,000', '100%', '100%'];
+var row9 = ['總監9', '17,500', '$66,000', '100%', '100%'];
+var row10 = ['資深總監1', '20,000', '$132,000', '100%', '100%'];
+var total = ['Total', '---------', '$414,000', '$414,000', '$207,000'];
+var tabledata = { row1: row1, row2: row2, row3: row3, row4: row4, row5: row5, row6: row6, row7: row7, row8: row8, row9: row9, row10: row10 };
+var totaldata = { total: total };
 
-let SelectTotal = [];
+var SelectTotal = [];
 
-let melaApp = new Vue({
+var melaApp = new Vue({
     el: '.melaApp',
     data: {
         page: 'Money',
@@ -28,14 +30,14 @@ let melaApp = new Vue({
         Totalconsumer: 0,
         TotalClass: '' },
     methods: {
-        money: function (event) {
+        money: function money(event) {
             self = this;
             self.page = 'Money';
         },
-        team: function (event) {
+        team: function team(event) {
             self = this;
             self.page = 'Team';
-            let $body = window.opera ? document.compatMode == "CSS1Compat" ? $('html') : $('body') : $('html,body');
+            var $body = window.opera ? document.compatMode == "CSS1Compat" ? $('html') : $('body') : $('html,body');
             $body.animate({
                 scrollTop: $('.item').offset().top
             }, 500, function () {
@@ -55,27 +57,27 @@ let melaApp = new Vue({
                     left: '55%', top: '50%' }, { duration: 1000 });
             });
         },
-        one: function (event) {
+        one: function one(event) {
             self = this;
             self.page = 'One';
         },
-        two: function (event) {
+        two: function two(event) {
             self = this;
             self.page = 'Two';
         },
-        three: function (event) {
+        three: function three(event) {
             self = this;
             self.page = 'Three';
         },
-        four: function (event) {
+        four: function four(event) {
             self = this;
             self.page = 'Four';
         },
-        five: function (event) {
+        five: function five(event) {
             self = this;
             self.page = 'Five';
         },
-        showBoxP1Click: function (event) {
+        showBoxP1Click: function showBoxP1Click(event) {
             self = this;
             self.showBox = 'P1';
             //重製這些值 否則會殘留
@@ -85,18 +87,18 @@ let melaApp = new Vue({
             self.Totalconsumer = 0;
             SelectTotal = [];
         },
-        cancelBox: function (event) {
+        cancelBox: function cancelBox(event) {
             self = this;
             self.showBox = 'Nopage';
         },
-        NextBox: function (event) {
+        NextBox: function NextBox(event) {
             self = this;
             self.showBox = 'P2';
         },
-        boxSelect: function (event) {
+        boxSelect: function boxSelect(event) {
             self = this;
-            let checked = event.toElement.checked;
-            let selectText = event.currentTarget.id;
+            var checked = event.toElement.checked;
+            var selectText = event.currentTarget.id;
             if (checked) {
                 SelectTotal.push(selectText);
             } else {
@@ -107,35 +109,56 @@ let melaApp = new Vue({
     }
 });
 
-let Calculation = (self, SelectTotal) => {
+var Calculation = function Calculation(self, SelectTotal) {
     self.TotalMoneyNumber = 0;
 
-    for (let value of SelectTotal) {
-        if (SelectTotal.length == 1 && value != '20consumer') {
-            self.TotalClass = '請先勾選消費者 否則無法達成目標';
-            self.TotalMoney = '';
-            return;
+    var _iteratorNormalCompletion = true;
+    var _didIteratorError = false;
+    var _iteratorError = undefined;
+
+    try {
+        for (var _iterator = SelectTotal[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+            var value = _step.value;
+
+            if (SelectTotal.length == 1 && value != '20consumer') {
+                self.TotalClass = '請先勾選消費者 否則無法達成目標';
+                self.TotalMoney = '';
+                return;
+            }
+            switch (value) {
+                case '20consumer':
+                    self.Totalconsumer += 20;
+                    self.TotalMoneyNumber += 46666;
+                    break;
+                case 'Operators_1':
+                    self.TotalOperator += 1;
+                    break;
+                case 'Operators_2':
+                    self.TotalOperator += 1;
+                    // self.TotalMoneyNumber += 166712;
+                    break;
+                case 'Operators_3':
+                    self.TotalOperator += 1;
+                    // self.TotalMoneyNumber += 329994;
+                    break;
+                case 'Operators_4':
+                    self.TotalOperator += 1;
+                    // self.TotalMoneyNumber += 550072;
+                    break;
+            }
         }
-        switch (value) {
-            case '20consumer':
-                self.Totalconsumer += 20;
-                self.TotalMoneyNumber += 46666;
-                break;
-            case 'Operators_1':
-                self.TotalOperator += 1;
-                break;
-            case 'Operators_2':
-                self.TotalOperator += 1;
-                // self.TotalMoneyNumber += 166712;
-                break;
-            case 'Operators_3':
-                self.TotalOperator += 1;
-                // self.TotalMoneyNumber += 329994;
-                break;
-            case 'Operators_4':
-                self.TotalOperator += 1;
-                // self.TotalMoneyNumber += 550072;
-                break;
+    } catch (err) {
+        _didIteratorError = true;
+        _iteratorError = err;
+    } finally {
+        try {
+            if (!_iteratorNormalCompletion && _iterator.return) {
+                _iterator.return();
+            }
+        } finally {
+            if (_didIteratorError) {
+                throw _iteratorError;
+            }
         }
     }
 
@@ -146,14 +169,14 @@ let Calculation = (self, SelectTotal) => {
 };
 
 //格式化金額
-let MoneyFormat = Money => {
-    let Format;
+var MoneyFormat = function MoneyFormat(Money) {
+    var Format = void 0;
     Format = '$' + parseInt(Money).toLocaleString('en-US');
     return Format;
 };
 
 //計算可升到的階級
-let computeClass = self => {
+var computeClass = function computeClass(self) {
 
     /**
      * 升階條件   依據兩個大標準去計算

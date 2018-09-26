@@ -1,8 +1,10 @@
+'use strict';
+
 /*jshint esversion: 6 */
-let BoxScore = new Vue({
+var BoxScore = new Vue({
     el: '.BoxScore',
     data: { object: { TeamImageData: { AwayImage: '', HomeImage: '' } } },
-    mounted: function () {
+    mounted: function mounted() {
         console.log(GameId);
         console.log(GameDate);
         console.log(HtriCode);
@@ -16,7 +18,7 @@ let BoxScore = new Vue({
             url: "/SteveCard/Demo02/BoxScore/",
             data: { 'GameId': GameId, GameDate: GameDate, 'HtriCode': HtriCode, 'VtriCode': VtriCode },
             // dataType : 'JSON',
-            success: function (Returndata) {
+            success: function success(Returndata) {
                 self.object = Returndata;
                 // setTimeout(function(){
                 //     $('.odometerAway').html(Returndata.PointData.AwayPoint);
@@ -25,15 +27,15 @@ let BoxScore = new Vue({
                 //     $('.odometerHome').html(Returndata.PointData.HomePoint);
                 //   }, 1000);
             },
-            error: function (Returndata) {
+            error: function error(Returndata) {
                 self.object = { Error: 'Error' };
             },
-            beforeSend: function () {
+            beforeSend: function beforeSend() {
                 // $('.ajaxlaodmodal').modal('show');
                 $('.bouncing-loader').show();
                 $('.TeamImage').hide();
             },
-            complete: function () {
+            complete: function complete() {
                 // $('.ajaxlaodmodal').modal('hide');
                 $('.bouncing-loader').hide();
                 $('.TeamImage').show();
@@ -46,7 +48,7 @@ let BoxScore = new Vue({
         $('.Hselectitem').addClass("SelectClass");
     },
     methods: {
-        selectBoxItem: function (event) {
+        selectBoxItem: function selectBoxItem(event) {
             console.log(event.toElement.classList.value);
             // $('.'+event.toElement.classList.value).toggleClass( "newClass" );
             if (event.toElement.classList.value == 'Hselectitem') {
@@ -61,16 +63,16 @@ let BoxScore = new Vue({
                 $('.Vtable').show(500);
             }
         },
-        selectBox: function (event) {
+        selectBox: function selectBox(event) {
             $('.Box').show(500);
             $('.Score').hide();
         },
-        selectScore: function (event) {
+        selectScore: function selectScore(event) {
             $('.Box').hide();
             $('.Score').show(500);
         },
-        image_css: function (Logo) {
-            return { 'background-image': `url(${Logo})` };
+        image_css: function image_css(Logo) {
+            return { 'background-image': 'url(' + Logo + ')' };
         }
     },
     computed: {
