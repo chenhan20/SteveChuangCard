@@ -1,22 +1,22 @@
 /*jshint esversion: 6 */
 let BoxScore = new Vue({
     el: '.BoxScore',
-    data:{object:{TeamImageData:{AwayImage:'',HomeImage:''}}},
-    mounted:function(){
+    data: { object: { TeamImageData: { AwayImage: '', HomeImage: '' } } },
+    mounted: function () {
         console.log(GameId);
         console.log(GameDate);
         console.log(HtriCode);
         console.log(VtriCode);
-        self=this;
+        self = this;
         // const GameId=$('.GameId').text();
         // const HtriCode=$('.HtriCode').text();
         // const VtriCode=$('.VtriCode').text();
         $.ajax({
             type: "POST",
             url: "/SteveCard/Demo02/BoxScore/",
-            data : {'GameId':GameId,GameDate:GameDate,'HtriCode':HtriCode,'VtriCode':VtriCode},
+            data: { 'GameId': GameId, GameDate: GameDate, 'HtriCode': HtriCode, 'VtriCode': VtriCode },
             // dataType : 'JSON',
-            success: function(Returndata) {
+            success: function (Returndata) {
                 self.object = Returndata;
                 // setTimeout(function(){
                 //     $('.odometerAway').html(Returndata.PointData.AwayPoint);
@@ -25,56 +25,52 @@ let BoxScore = new Vue({
                 //     $('.odometerHome').html(Returndata.PointData.HomePoint);
                 //   }, 1000);
             },
-            error: function(Returndata) {
-                self.object={Error:'Error'};
+            error: function (Returndata) {
+                self.object = { Error: 'Error' };
             },
-            beforeSend:function(){
+            beforeSend: function () {
                 // $('.ajaxlaodmodal').modal('show');
                 $('.bouncing-loader').show();
                 $('.TeamImage').hide();
-                
-
             },
-            complete:function(){
+            complete: function () {
                 // $('.ajaxlaodmodal').modal('hide');
                 $('.bouncing-loader').hide();
                 $('.TeamImage').show();
-
-
             }
         });
         $('.Box').show(500);
         $('.Score').hide();
         $('.Htable').show(500);
         $('.Vtable').hide();
-        $('.Hselectitem').addClass( "SelectClass" );
-    },   
-     methods:{
-        selectBoxItem:function(event){
+        $('.Hselectitem').addClass("SelectClass");
+    },
+    methods: {
+        selectBoxItem: function (event) {
             console.log(event.toElement.classList.value);
             // $('.'+event.toElement.classList.value).toggleClass( "newClass" );
-            if(event.toElement.classList.value=='Hselectitem'){
-                $('.Hselectitem').addClass( "SelectClass" );
-                $('.Vselectitem').removeClass( "SelectClass" );
+            if (event.toElement.classList.value == 'Hselectitem') {
+                $('.Hselectitem').addClass("SelectClass");
+                $('.Vselectitem').removeClass("SelectClass");
                 $('.Htable').show(500);
                 $('.Vtable').hide();
-            }else{
-                $('.Hselectitem').removeClass( "SelectClass" );
-                $('.Vselectitem').addClass( "SelectClass" );
+            } else {
+                $('.Hselectitem').removeClass("SelectClass");
+                $('.Vselectitem').addClass("SelectClass");
                 $('.Htable').hide();
-                $('.Vtable').show(500);            
+                $('.Vtable').show(500);
             }
         },
-        selectBox:function(event){
+        selectBox: function (event) {
             $('.Box').show(500);
             $('.Score').hide();
         },
-        selectScore:function(event){
+        selectScore: function (event) {
             $('.Box').hide();
             $('.Score').show(500);
         },
-        image_css:function(Logo){
-            return {'background-image': `url(${Logo})`};
+        image_css: function (Logo) {
+            return { 'background-image': `url(${Logo})` };
         }
     },
     computed: {
@@ -84,4 +80,3 @@ let BoxScore = new Vue({
         // }
     }
 });
-

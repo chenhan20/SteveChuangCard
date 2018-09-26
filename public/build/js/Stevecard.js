@@ -1,40 +1,38 @@
-  /*jshint esversion: 6 */
-  //bootstrap hover text setting
-  $(document).ready(function(){
-    $('[data-toggle="tooltip"]').tooltip();   
+/*jshint esversion: 6 */
+//bootstrap hover text setting
+$(document).ready(function () {
+    $('[data-toggle="tooltip"]').tooltip();
 });
 
-$(".gotop").click(function(){
+$(".gotop").click(function () {
     jQuery("html,body").animate({
-        scrollTop:0
-    },1000);
+        scrollTop: 0
+    }, 1000);
 });
-$(window).scroll(function() {
-    if ( $(this).scrollTop() > 300){
+$(window).scroll(function () {
+    if ($(this).scrollTop() > 300) {
         // $('.gotop').fadeIn("fast");
         $('.gotop').addClass('is-visible');
     } else {
         // $('.gotop').stop().fadeOut("fast");
     }
 });
-$('.goright').click(function(){
+$('.goright').click(function () {
     alert('goright');
 });
-$('.goleft').click(function(){
+$('.goleft').click(function () {
     alert('goleft');
 });
 
-
 //email按鈕(複製功能)
-$( ".Copyemail" ).click(function() {
-    let email='a0911558945@gmail.com';
+$(".Copyemail").click(function () {
+    let email = 'a0911558945@gmail.com';
     copy(email);
     $('.copyemailmodal').modal('show');
 });
 
-
 //信件按鈕(發送訊息功能)
-$( ".Sendemail" ).click(function() {
+$(".Sendemail").click(function () {
     $('.sendemailmodal').modal('show');
 });
 
@@ -46,15 +44,14 @@ function copy(s) {
     $('body').append('<textarea id="clip_area"></textarea>');
 
     var clip_area = $('#clip_area');
-      
+
     clip_area.text(s);
     clip_area.select();
-  
-    document.execCommand('copy');
-      
-    clip_area.remove();
-  }
 
+    document.execCommand('copy');
+
+    clip_area.remove();
+}
 
 /** 
  * Ajax
@@ -63,23 +60,22 @@ function PostData() {
     $.ajax({
         type: "POST",
         url: "/SteveCard/sendmail",
-        data : $(".sendmailForm").serialize(),
+        data: $(".sendmailForm").serialize(),
         // dataType : 'json',
-        success: function(msg) {
+        success: function (msg) {
             alert(msg);
-            if(msg=='success'){
+            if (msg == 'success') {
                 $('.sendemailmodal').modal('hide');
                 $('.sucessmailmodal').modal('show');
-            }else{
+            } else {
                 $('.sendemailmodal').modal('hide');
                 $('.errormailmodal').modal('show');
             }
         },
-        error: function(msg) {
+        error: function (msg) {
             $('.sendemailmodal').modal('hide');
             $('.errormailmodal').modal('show');
         }
     });
     return false;
 }
-
