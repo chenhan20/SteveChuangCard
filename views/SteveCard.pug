@@ -10,31 +10,35 @@ block content
   .container 
     h1 SteveChuang JOB CV 
     .row
-      .col-10.col-xl
-        img.image_1.rounded-circle(src='/images/Steve/IMG_01.JPG')
+      .col-sm-6.col-offset-sm-.text-center
+        img.img02(src='https://instagram.ftpe6-1.fna.fbcdn.net/vp/968eb00c5b9ee5a4564ef6ec5e482130/5C4356C0/t51.2885-15/sh0.08/e35/s640x640/31198366_199261554195145_1017919747506831360_n.jpg')
+      //- .col-10.col-xl
+      //-   img.image_1.rounded-circle(src='/images/Steve/IMG_01.JPG')
       .col
-        h3 SteveChuang
+        .text-center
+          h3 SteveChuang
         a.col-12.Sendemail(href='#',data-toggle="tooltip" ,data-placement="left",title='發信給我')
           i.icon.fas.fa-envelope(style='font-size:30px')
         a.Copyemail(href='#',data-toggle="tooltip" ,data-placement="top",title='複製信箱') a0911558945@gmail.com 
         a ｜ Taipei ｜
         br
-        a(href='https://www.facebook.com/profile.php?id=100000189117019',data-toggle="tooltip" ,data-placement="bottom",target="_blank",title='Facebook')
-          i.icon.fab.fa-facebook-square(style='font-size:30px')
-        a(href='https://www.instagram.com/chenhan20/',data-toggle="tooltip" ,data-placement="bottom",target="_blank",title='Instagram')
-          i.icon.fab.fa-instagram(style='font-size:30px')
-        a(href='https://www.linkedin.com/in/%E6%89%BF%E7%BF%B0-%E8%8E%8A-4159b7139/',data-toggle="tooltip" ,data-placement="bottom",target="_blank",title='Linkedin')
-          i.icon.fab.fa-linkedin(style='font-size:30px')
-        a(href='https://github.com/chenhan20',data-toggle="tooltip" ,data-placement="bottom",target="_blank",title='Github')
-          i.icon.fab.fa-github-alt(style='font-size:30px')
-        br
+        .text-left
+          a(href='https://www.facebook.com/profile.php?id=100000189117019',data-toggle="tooltip" ,data-placement="bottom",target="_blank",title='Facebook')
+            i.icon.fab.fa-facebook-square(style='font-size:40px')
+          a(href='https://www.instagram.com/chenhan20/',data-toggle="tooltip" ,data-placement="bottom",target="_blank",title='Instagram')
+            i.icon.fab.fa-instagram(style='font-size:40px')
+          a(href='https://www.linkedin.com/in/%E6%89%BF%E7%BF%B0-%E8%8E%8A-4159b7139/',data-toggle="tooltip" ,data-placement="bottom",target="_blank",title='Linkedin')
+            i.icon.fab.fa-linkedin(style='font-size:40px')
+          a(href='https://github.com/chenhan20',data-toggle="tooltip" ,data-placement="bottom",target="_blank",title='Github')
+            i.icon.fab.fa-github-alt(style='font-size:40px')
         a 此為個人網站範例(使用bootstrap4、nodejs、PUG)
         hr
-        a ＂WEB designer 菜鳥＂
+        div.text-center 
+          a FULL Stack WEB designer 菜鳥
         br
-        a 我是Steve-莊承翰，2016年畢業於致理科大資管系，
-        br
-        a 目前任職於瑪亞資訊擔任軟體工程師擅長網頁撰寫與後端開發。
+        div.text-center.col-12
+          a 我是Steve-莊承翰，2016年畢業於致理科大資管系，目前任職於緯創軟體擔任軟體工程師擅長網頁撰寫與後端開發
+            |對網頁目前有一定的熱忱所以在下班之餘習慣開發一些自己喜愛的東西，目標是用有興趣的事物當作工作。
     .container 
       .col-sm-6.col-xs-12
         hr
@@ -49,10 +53,14 @@ block content
       .col-sm-6.col-xs-12
         hr
         h2 下班之餘接觸技能
-        h4 網頁前端—Bootstrap、VueJs、jquery
-        h4 網頁後端—Nodejs、pug
-        h4 打包—Gulp(babel、sass)
-        h4 版本控制—(svn、git)
+        h4 網頁前端
+        h4 Bootstrap、VueJs、jquery
+        h4 網頁後端
+        h4 Nodejs、PUG
+        h4 打包
+        h4 Gulp(babel、sass)
+        h4 版本控制
+        h4 (svn、git)
     .container.row3.row_experience
       .col
         hr
@@ -107,21 +115,20 @@ block content
             a 資料庫基本觀念要看懂可能有幾百行的PL/SQL並了解裡面排名
             a 、計量等公式，並將他套用到程式裡對當時只有在上課學過
             a mysql的我是一大挑戰。
-    .container.row3
-      .col-sm-6
-        img.img02(src='/images/Steve/IMG_02.JPG')
-      .col-sm-4
-        h2 作品
-        a.Demo(href='/SteveCard/Demo02') NBA比賽資訊(大致完成)
-        a.Demo(href='/SteveCard/Demo03') 聊天室(完成)
-        a.Demo(href='/SteveCard/Demo04') 車廠首頁展示練習(spa)
-        a.Demo(href='/SteveCard/Demo01') 撲克牌Demo(未完成)
-        a.Demo(href='/SteveCard/Steve01') 頁面練習(前端個人化網頁美化)
-        //- a.Demo(href='SteveCard/Demo01') Demo(空)
-        //- a.Demo(href='SteveCard/Demo01') Demo(空)
-        //- a.Demo(href='SteveCard/Demo01') Demo(空)
-        //- a.Demo(href='SteveCard/Demo01') Demo(空)
-      //- .col
+    .container
+      .row3
+        .col-sm-4
+          h2 作品
+          a.Demo(href='/SteveCard/Demo02') NBA比賽資訊(大致完成)
+          a.Demo(href='/SteveCard/Demo03') 聊天室(完成)
+          a.Demo(href='/SteveCard/Demo04') 車廠首頁展示練習(spa)
+          a.Demo(href='/SteveCard/Demo01') 撲克牌Demo(未完成)
+          a.Demo(href='/SteveCard/Steve01') 頁面練習(前端個人化網頁美化)
+          //- a.Demo(href='SteveCard/Demo01') Demo(空)
+          //- a.Demo(href='SteveCard/Demo01') Demo(空)
+          //- a.Demo(href='SteveCard/Demo01') Demo(空)
+          //- a.Demo(href='SteveCard/Demo01') Demo(空)
+        //- .col
     script(src='/js/Stevecard.js')
 
   
