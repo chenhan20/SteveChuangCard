@@ -70,7 +70,7 @@ hr{
 }
 .RowDate{
     margin-bottom: 10px;
-    margin-top: 10px;
+    margin-top: 3%;
 }
 .icon{
     margin-left: 5px;
@@ -91,6 +91,7 @@ hr{
 .Demo{
     color: #323237;
     border: 2px solid #323237;
+    margin: 1%;
     line-height: 40px;
     border-radius: 30px;
     display: inline-block;

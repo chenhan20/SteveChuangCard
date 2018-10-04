@@ -10,7 +10,7 @@ block content
   .container 
     h1 SteveChuang JOB CV 
     .row
-      .col-10.col-xl.offset-2
+      .col-10.col-xl
         img.image_1.rounded-circle(src='/images/Steve/IMG_01.JPG')
       .col
         h3 SteveChuang
@@ -36,23 +36,35 @@ block content
         br
         a 目前任職於瑪亞資訊擔任軟體工程師擅長網頁撰寫與後端開發。
     .container 
-      .col-sm-6
+      .col-sm-6.col-xs-12
         hr
-        h2 主要工作技能
-        h4 JAVA
-        h5 (Struts2、Spring、hibernate、SpringMVC)
-      .col-sm-6
+        h2 主要工作技能(較精通)
+        h3 後端
+        h4 Java(Struts2、Spring、hibernate、SpringMVC、JPA)
+        h3 前端
+        h4 javascript(jQuery)
+        h4 Bootsrap
+        h3 DB
+        h4 Oracle
+      .col-sm-6.col-xs-12
         hr
-        h2 接觸技能
+        h2 下班之餘接觸技能
         h4 網頁前端—Bootstrap、VueJs、jquery
-        h4 網頁後端—Node.js、pug
-        h4 打包—Gulp
+        h4 網頁後端—Nodejs、pug
+        h4 打包—Gulp(babel、sass)
         h4 版本控制—(svn、git)
-        h4 DataBase—(Oracle PL/SQL)
-        h4 C#
     .container.row3.row_experience
       .col
+        hr
         h2 經歷
+        .row.RowDate
+          .date.col-sm-3.h4 誠品後台開發案 
+            h5 2018/05~Now 
+          .col-sm-8
+            a 開發誠品後台系統(關貿合作)
+              | 全端開發 後端使用(Java) - 前端使用(jQuery、Bootstrap、js)
+              | 從靜態頁面撰寫到專案開發、專案Sit、Uat都有經歷，這次的專案讓我學到了許多各個階段
+              | 該處理的事情
         .row.RowDate
           .date.col-sm-3.h4 POS維運專案 
             h5 2017/11~2018/04 
@@ -96,6 +108,8 @@ block content
             a 、計量等公式，並將他套用到程式裡對當時只有在上課學過
             a mysql的我是一大挑戰。
     .container.row3
+      .col-sm-6
+        img.img02(src='/images/Steve/IMG_02.JPG')
       .col-sm-4
         h2 作品
         a.Demo(href='/SteveCard/Demo02') NBA比賽資訊(大致完成)
@@ -103,8 +117,6 @@ block content
         a.Demo(href='/SteveCard/Demo04') 車廠首頁展示練習(spa)
         a.Demo(href='/SteveCard/Demo01') 撲克牌Demo(未完成)
         a.Demo(href='/SteveCard/Steve01') 頁面練習(前端個人化網頁美化)
-      .col-sm-6
-        img.img02(src='/images/Steve/IMG_02.JPG')
         //- a.Demo(href='SteveCard/Demo01') Demo(空)
         //- a.Demo(href='SteveCard/Demo01') Demo(空)
         //- a.Demo(href='SteveCard/Demo01') Demo(空)
