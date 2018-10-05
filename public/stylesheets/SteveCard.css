@@ -1,9 +1,7 @@
 body{
-height: 300vh;
-/* background: linear-gradient(to bottom, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%), radial-gradient(at top center, rgba(255,255,255,0.40) 0%, rgba(0,0,0,0.40) 120%) #989898; 
- background-blend-mode: multiply,multiply; */
- background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
-  padding:0;
+    height: 300vh;
+    background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+     padding:0;
 }
 h1{
     color:#E8E8E8;
@@ -13,9 +11,6 @@ h1{
     letter-spacing: 0.4px;
     font-family: "Raleway", sans-serif;
 }
-/* .p-2{
-    border-style:outset;
-} */
 
 .container{
     display: flex;
@@ -51,7 +46,6 @@ h1{
 a ,h5,h4,h3{
     font-family: Raleway;
     font-weight: 500;
-    /* line-height: 0px; */
     letter-spacing: 4.5px;
 }
 hr{
@@ -80,9 +74,6 @@ hr{
     color: black;
 
 }
-/* .icon:hover{
-    
-} */
 
 .row_experience{
     margin: auto;
@@ -97,7 +88,6 @@ hr{
     line-height: 40px;
     border-radius: 30px;
     display: inline-block;
-    /* font-family: "graphik-bki", "PingFangTC-Semibold", "Noto Sans Bold"; */
     font-size: 14px;
     letter-spacing: 2px;
     -webkit-transition: 0.3s;
@@ -128,7 +118,6 @@ hr{
     background-color: #323237;
     color: #fff;
     text-decoration:none;
-    /* cursor: pointer; */
 }
 
 
