@@ -37,40 +37,58 @@ h1
   max-height: 100%
   clip-path: circle(40% at 50% 50%)
   -webkit-clip-path: circle(40% at 50% 50%)
-  transition: All 0.5s ease-in-out
-  -webkit-transition: All 0.5s ease-in-out
-  -moz-transition: All 0.5s ease-in-out
-  -o-transition: All 0.5s ease-in-out
   @include pc-width
-    z-index: 100
     position: absolute
-    padding: 30px 
+    transition: All 0.5s ease-in-out
+    -webkit-transition: All 0.5s ease-in-out
+    -moz-transition: All 0.5s ease-in-out
+    -o-transition: All 0.5s ease-in-out
+    z-index: 100
     left: 25%
+    padding: 30px 
 // .img02:hover
 //   transform: rotate(360deg)
 //   -webkit-transform: rotate(360deg)
 //   -moz-transform: rotate(360deg)
 //   -o-transform: rotate(360deg)
 //   -ms-transform: rotate(360deg)
+@include phone-width
+  .SteveImage img:nth-child(1)
+    margin-top: 30px
+    clip-path: circle(40% at 50% 40%)
+    -webkit-clip-path: circle(40% at 50% 40%)
+  .SteveImage img:nth-child(2)
+    display: none
+  .SteveImage img:nth-child(3)
+    display: none
+  .SteveImage img:nth-child(4)
+    display: none
+  .SteveImage img:nth-child(5)
+    display: none
+  .SteveImage img:nth-child(6)
+    display: none
+  .SteveImage img:nth-child(7)
+    display: none
 
-.SteveImage:hover img:nth-child(1)
-  transform: translate(300px,100px) rotate(30deg)
-  opacity: 0.9
-.SteveImage:hover img:nth-child(2)
-  transform: translate(-300px,100px) rotate(-30deg)
-  opacity: 0.9
-.SteveImage:hover img:nth-child(3)
-  transform: translate(500px,300px) rotate(60deg)
-  opacity: 0.7
-.SteveImage:hover img:nth-child(4)
-  transform: translate(-500px,300px) rotate(-60deg)
-  opacity: 0.7
-.SteveImage:hover img:nth-child(5)
-  transform: translate(150px,330px)  rotate(90deg)
-  opacity: 0.7
-.SteveImage:hover img:nth-child(6)
-  transform: translate(-150px,330px)  rotate(-90deg)
-  opacity: 0.7
+@include pc-width
+  .SteveImage:hover img:nth-child(1)
+    transform: translate(300px,100px) rotate(30deg)
+    opacity: 0.9
+  .SteveImage:hover img:nth-child(2)
+    transform: translate(-300px,100px) rotate(-30deg)
+    opacity: 0.9
+  .SteveImage:hover img:nth-child(3)
+    transform: translate(500px,300px) rotate(60deg)
+    opacity: 0.7
+  .SteveImage:hover img:nth-child(4)
+    transform: translate(-500px,300px) rotate(-60deg)
+    opacity: 0.7
+  .SteveImage:hover img:nth-child(5)
+    transform: translate(150px,330px)  rotate(90deg)
+    opacity: 0.7
+  .SteveImage:hover img:nth-child(6)
+    transform: translate(-150px,330px)  rotate(-90deg)
+    opacity: 0.7
 
 a, h5, h4, h3
   font-family: Raleway
