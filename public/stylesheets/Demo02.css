@@ -1,7 +1,4 @@
 
-/* button{
-    margin-top: 10px;
-} */
 .Nba{
     /* border-right:1px black solid; */
     float:left;
@@ -14,15 +11,10 @@
 }
 h4,a{
     font-family: Raleway;
-    /* font-size: 18px; */
     font-weight: 300;
     line-height: 40px;
     letter-spacing: 4.5px;
     color: #3f4e64;
-    /* vertical-align: baseline;
-    text-transform: uppercase;
-    -webkit-margin-before: 0;
-    -webkit-margin-after: 0; */
 }
 .team-img{
     width: 50px;
@@ -30,24 +22,14 @@ h4,a{
 }
 .hScore , .vScore{
     text-align:right;
-    /* font-size: 50px */
 
 }
 .Game{
-    /* box-shadow: 0 2px 0 0 rgba(230,230,230,0.5);
-    transition: box-shadow .5s ease;
-    background-color: #fff;
-    position: relative; */
     cursor: pointer;
 }
-/* .iconDate{
-
-} */
 .NBAdate{
     display: inline;
 }
-
-
 .TeamLogo{
     width:40px;
     height:40px;

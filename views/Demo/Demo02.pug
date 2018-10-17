@@ -16,32 +16,45 @@ block content
             i.icon.fas.fa-angle-right(style='font-size:30px')
           h4  共有 {{object.length}} 場比賽  
           h4(v-if="object.length==0") No games on this date.
-          h4(v-else-if="object[0]!=null") Playoffs
+          //- h4(v-else-if="object[0]!=null") Playoffs
           h4(v-else) Regular season
-        li.Nba.col-sm-12.col-xl-5(v-for='value in object') 
-          h3(v-if="value.status=='1'") 尚未開打  
-          h3(v-else-if="value.status=='2'") Live  
-          h3(v-else) 已結束 
+        .Nba.col-sm-12.col-xl-5(v-for='value in object') 
+   
           .Game(v-on:click='GameDetail')
             .gameId(v-show="false") {{value.gameId}}
+            .hTeamtriCode(v-show="false") {{value.hTeam.triCode}}
             .row
-              .hTeamtriCode(v-show="false") {{value.hTeam.triCode}}
-              //- img.team-img.col-2(v-bind:src="value.hTeam.logo")
-              .TeamLogo.col-1(:style="bg_css(value.hTeam.logo)")
-              a.hTeam.col-9  {{value.hTeam.name}}
-              a.no.col-1(v-if="value.status=='1' || value.status=='2'") 
-              a.win.col-1(v-else-if='value.hTeam.win') W 
-              a.lose.col-1(v-else) L
-              a.hScore.col-1  {{value.hTeam.score=="" ? 0 :value.hTeam.score}}
+              .col-sm-2
+                .TeamLogo(:style="bg_css(value.hTeam.logo)")
+              .col-sm-2.text-right
+                h2.hScore.point  {{value.hTeam.score=="" ? 0 :value.hTeam.score}}
+              .col-sm-4.text-center
+                h3.GameText(v-if="value.status=='1'") 尚未開打  
+                h3.GameText(v-else-if="value.status=='2'") Live  
+                h3.GameText(v-else) 已結束
+              .col-sm-2.text-left
+                h2.vScore.point  {{value.vTeam.score=="" ? 0 :value.vTeam.score}}
+              .col-sm-2
+                .TeamLogo(:style="bg_css(value.vTeam.logo)") 
             .row
-              .vTeamtriCode(v-show="false") {{value.vTeam.triCode}}
-              //- img.team-img.col-2(v-bind:src="value.vTeam.logo")
-              .TeamLogo.col-1(:style="bg_css(value.vTeam.logo)") 
-              a.vTeam.col-9 {{value.vTeam.name}} 
-              a.no.col-1(v-if="value.status=='1' || value.status=='2'")
-              a.win.col-1(v-else-if='value.vTeam.win') W
-              a.lose.col-1(v-else) L
-              a.vScore.col-1  {{value.vTeam.score=="" ? 0 :value.vTeam.score}}
+              .col-sm-2.text-center
+                h4.hTeam {{value.hTeam.name}}
+              .col-sm-2.text-right
+                h3.no(v-if="value.status=='1' || value.status=='2'") 
+                h3.win(v-else-if='value.hTeam.win') WIN 
+                h3.lose(v-else) LOSE
+              .col-sm-2.offset-sm-4.text-left
+                h3.no(v-if="value.status=='1' || value.status=='2'")
+                h3.win(v-else-if='value.vTeam.win') WIN
+                h3.lose(v-else) LOSE
+              .col-sm-2.text-center
+                h4.vTeam.TeamName {{value.vTeam.name}} 
+
+
+ 
+            .vTeamtriCode(v-show="false") {{value.vTeam.triCode}}
+            //- img.team-img.col-2(v-bind:src="value.vTeam.logo")
+
       .bouncing-loader
         div
         div
@@ -50,5 +63,6 @@ block content
       
 
     script(src='/js/Demo02.js')
-    link(rel='stylesheet', href='/stylesheets/Demo02.css')
+    link(rel='stylesheet', href='/build/css/Demo02.css')
+
 
