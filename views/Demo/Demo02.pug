@@ -7,8 +7,8 @@ block footer
 block content
     h1 Demo02 NBA Score
     .container-fluid
-      ul.Demo02-2
-        .iconDate.col-ms-12.col-xl-4
+      .Demo02-2
+        .iconDate.col-ms-12.col-xl-12.text-center
           a(href='#',data-toggle="tooltip" ,title='Previous Day',data-placement="bottom",v-on:click='LessDate')
             i.icon.fas.fa-angle-left(style='font-size:30px')  
           h4.NBAdate {{Date.yyyy}}年{{Date.mm}}月{{Date.dd}}
@@ -18,36 +18,35 @@ block content
           h4(v-if="object.length==0") No games on this date.
           //- h4(v-else-if="object[0]!=null") Playoffs
           h4(v-else) Regular season
-        .Nba.col-sm-12.col-xl-5(v-for='value in object') 
-   
+        .Nba.col-xs-12.col-xl-6(v-for='value in object') 
           .Game(v-on:click='GameDetail')
             .gameId(v-show="false") {{value.gameId}}
             .hTeamtriCode(v-show="false") {{value.hTeam.triCode}}
             .row
-              .col-sm-2
+              .col-2.col-xs-2
                 .TeamLogo(:style="bg_css(value.hTeam.logo)")
-              .col-sm-2.text-right
+              .col-2.text-right
                 h2.hScore.point  {{value.hTeam.score=="" ? 0 :value.hTeam.score}}
-              .col-sm-4.text-center
-                h3.GameText(v-if="value.status=='1'") 尚未開打  
+              .col-4.text-center
+                h3.GameText(v-if="value.status=='1'") 未開打  
                 h3.GameText(v-else-if="value.status=='2'") Live  
-                h3.GameText(v-else) 已結束
-              .col-sm-2.text-left
+                h3.GameText(v-else) 終場
+              .col-2.text-left
                 h2.vScore.point  {{value.vTeam.score=="" ? 0 :value.vTeam.score}}
-              .col-sm-2
+              .col-2.text-right
                 .TeamLogo(:style="bg_css(value.vTeam.logo)") 
             .row
-              .col-sm-2.text-center
+              .col.Team-text.align-self-start.text-center
                 h4.hTeam {{value.hTeam.name}}
-              .col-sm-2.text-right
+              .col-4.col-lg-2.Team-text.d-none.d-sm-block
                 h3.no(v-if="value.status=='1' || value.status=='2'") 
                 h3.win(v-else-if='value.hTeam.win') WIN 
                 h3.lose(v-else) LOSE
-              .col-sm-2.offset-sm-4.text-left
+              .col-4.col-lg-2.Team-text.offset-lg-4.d-none.d-sm-block
                 h3.no(v-if="value.status=='1' || value.status=='2'")
                 h3.win(v-else-if='value.vTeam.win') WIN
                 h3.lose(v-else) LOSE
-              .col-sm-2.text-center
+              .col.Team-text.align-self-end.text-center
                 h4.vTeam.TeamName {{value.vTeam.name}} 
 
 

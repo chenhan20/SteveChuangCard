@@ -1,16 +1,10 @@
 
 h4,a{
     font-family: Raleway;
-    /* font-size: 18px; */
     font-weight: 300;
     line-height: 40px;
     letter-spacing: 4.5px;
     color: #3f4e64;
-    /* vertical-align: baseline;
-    text-transform: uppercase;
-    -webkit-margin-before: 0;
-    -webkit-margin-after: 0; */
-}
 .teamName{
     font-weight: 100;
 
