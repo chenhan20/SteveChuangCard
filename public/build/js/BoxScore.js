@@ -1,24 +1,22 @@
-'use strict';
-
 /*jshint esversion: 6 */
-var BoxScore = new Vue({
+let BoxScore = new Vue({
     el: '.BoxScore',
-    data: { object: { TeamImageData: { AwayImage: '', HomeImage: '' } } },
-    mounted: function mounted() {
+    data:{object:{TeamImageData:{AwayImage:'',HomeImage:''}}},
+    mounted:function(){
         console.log(GameId);
         console.log(GameDate);
         console.log(HtriCode);
         console.log(VtriCode);
-        self = this;
+        self=this;
         // const GameId=$('.GameId').text();
         // const HtriCode=$('.HtriCode').text();
         // const VtriCode=$('.VtriCode').text();
         $.ajax({
             type: "POST",
             url: "/SteveCard/Demo02/BoxScore/",
-            data: { 'GameId': GameId, GameDate: GameDate, 'HtriCode': HtriCode, 'VtriCode': VtriCode },
+            data : {'GameId':GameId,GameDate:GameDate,'HtriCode':HtriCode,'VtriCode':VtriCode},
             // dataType : 'JSON',
-            success: function success(Returndata) {
+            success: function(Returndata) {
                 self.object = Returndata;
                 // setTimeout(function(){
                 //     $('.odometerAway').html(Returndata.PointData.AwayPoint);
@@ -27,52 +25,56 @@ var BoxScore = new Vue({
                 //     $('.odometerHome').html(Returndata.PointData.HomePoint);
                 //   }, 1000);
             },
-            error: function error(Returndata) {
-                self.object = { Error: 'Error' };
+            error: function(Returndata) {
+                self.object={Error:'Error'};
             },
-            beforeSend: function beforeSend() {
+            beforeSend:function(){
                 // $('.ajaxlaodmodal').modal('show');
                 $('.bouncing-loader').show();
                 $('.TeamImage').hide();
+                
+
             },
-            complete: function complete() {
+            complete:function(){
                 // $('.ajaxlaodmodal').modal('hide');
                 $('.bouncing-loader').hide();
                 $('.TeamImage').show();
+
+
             }
         });
         $('.Box').show(500);
         $('.Score').hide();
         $('.Htable').show(500);
         $('.Vtable').hide();
-        $('.Hselectitem').addClass("SelectClass");
-    },
-    methods: {
-        selectBoxItem: function selectBoxItem(event) {
+        $('.Hselectitem').addClass( "SelectClass" );
+    },   
+     methods:{
+        selectBoxItem:function(event){
             console.log(event.toElement.classList.value);
             // $('.'+event.toElement.classList.value).toggleClass( "newClass" );
-            if (event.toElement.classList.value == 'Hselectitem') {
-                $('.Hselectitem').addClass("SelectClass");
-                $('.Vselectitem').removeClass("SelectClass");
+            if(event.toElement.classList.value=='Hselectitem'){
+                $('.Hselectitem').addClass( "SelectClass" );
+                $('.Vselectitem').removeClass( "SelectClass" );
                 $('.Htable').show(500);
                 $('.Vtable').hide();
-            } else {
-                $('.Hselectitem').removeClass("SelectClass");
-                $('.Vselectitem').addClass("SelectClass");
+            }else{
+                $('.Hselectitem').removeClass( "SelectClass" );
+                $('.Vselectitem').addClass( "SelectClass" );
                 $('.Htable').hide();
-                $('.Vtable').show(500);
+                $('.Vtable').show(500);            
             }
         },
-        selectBox: function selectBox(event) {
+        selectBox:function(event){
             $('.Box').show(500);
             $('.Score').hide();
         },
-        selectScore: function selectScore(event) {
+        selectScore:function(event){
             $('.Box').hide();
             $('.Score').show(500);
         },
-        image_css: function image_css(Logo) {
-            return { 'background-image': 'url(' + Logo + ')' };
+        image_css:function(Logo){
+            return {'background-image': `url(${Logo})`};
         }
     },
     computed: {
@@ -82,3 +84,4 @@ var BoxScore = new Vue({
         // }
     }
 });
+

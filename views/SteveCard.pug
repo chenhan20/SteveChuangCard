@@ -7,7 +7,7 @@ block append footer
 block content
   style.cp-pen-styles.
     @import url("https://fonts.googleapis.com/css?family=Raleway:300,400");
-  .container 
+  .container.steveCV 
     h1 SteveChuang JOB CV 
     .row
       .col-sm-6.text-center.SteveImage
@@ -64,30 +64,37 @@ block content
         h4 版本控制
         h4 (svn、git)
     .container.row3.row_experience
+      .yearContainer
+        //- p (2Year)
       .col
         hr
+        .totalYear
         h2 經歷
-        .row.RowDate
+        .row.RowDate.CARELINE {{PROJECT.CARELINE.YearText}}
+          .col-sm-1.yearText 
           .date.col-sm-3.h4 英國凱萊後台開發案 
             h5 2018/12~Now 
           .col-sm-8
             a 開發英國凱萊保險公司後台系統
               | 開發後台系統
-        .row.RowDate
+        .row.RowDate.WISTRON
+          .col-sm-1.yearText
           .date.col-sm-3.h4 誠品後台開發案 
             h5 2018/05~2018/12 
           .col-sm-8
             a 開發誠品後台系統(關貿合作)
               | 全端開發 後端使用(Java) - 前端使用(jQuery、Bootstrap、javascript)
-              | 從靜態頁面撰寫到專案開發、專案Sit、Uat都有經歷，這次的專案讓我學到了從專案初期
+              | 從靜態頁面撰寫到專案開發、專案SIT、UAT都有經歷，這次的專案讓我學到了從專案初期
               | 靜態頁面撰寫、需求訪談、程式底層撰寫
-        .row.RowDate
+        .row.RowDate.MARYA_TWM_MAINTAIN
+          .col-sm-1.yearText
           .date.col-sm-3.h4 POS維運專案 
             h5 2017/11~2018/04 
           .col-sm-8
             a 維運Pos系統與開發新功能，重大開發專案為:
               | 與悠遊卡公司Ftp對接傳遞檔案、統一立即儲值專案(傳遞xml並改寫原先儲值專案)
-        .row.RowDate
+        .row.RowDate.MARYA_TWM_STRATUS
+          .col-sm-1.yearText
           .date.col-sm-3.h4 Struts下架專案 
             h5 2017/07~2017/11 
           .col-sm-8
@@ -96,17 +103,20 @@ block content
             a 此專案讓我對servlet有更深入的了解，並在主管指導下
             a 第一次做了系統分析(分析新的與舊的優劣)與規劃修改時程表
             a 讓我了解到SA職位也不是出一張嘴就能做得很好的。
-        .row.RowDate
+        .row.RowDate.MARYA_TWM_MAINTAIN
+          .col-sm-1.yearText
           .date.col-sm-3.h4 POS系統維運專案
             h5 2017/02~2017/06
           .col-sm-8
             a 回到POS系統(Struts-Spring-hibernated框架，搭配前端Extjs)
             a 重大專案:POS銷售富邦唯信支付增加付款別、新增倉別(客訴倉、…)
-        .row.RowDate
+        .row.RowDate.ARMY_ONLINE
+          .col-sm-1.yearText
           .date.col-sm-3.h4 國軍ONLINE
             h5 2017/10~2017/01
           a.col-sm-8 當兵
-        .row.RowDate
+        .row.RowDate.MARYA_TWM_ADD_NUM
+          .col-sm-1.yearText
           .date.col-sm-3.h4 POS店點擴碼專案
             h5 2016/04~2017/10
           .col-sm-8
@@ -114,7 +124,8 @@ block content
             a 當時專案為需要新增三碼的店點，故有些程式碼需要修正
             a 例如:substring-只抓兩碼，與做壓力測試(使用JUnit)
             a 與撰寫測試報告，算是對Java有一個基礎的了解。
-        .row.RowDate
+        .row.RowDate.MARYA_TWM_MONEY_COMMISSION
+          .col-sm-1.yearText
           .date.col-sm-3.h4 佣金系統維運專案
             h5 2015/07~2016/04
           .col-sm-8
@@ -137,7 +148,7 @@ block content
           //- a.Demo(href='SteveCard/Demo01') Demo(空)
           //- a.Demo(href='SteveCard/Demo01') Demo(空)
         //- .col
-    script(src='/js/Stevecard.js')
+    script(src='/build/js/Stevecard.js')
 
   
 
