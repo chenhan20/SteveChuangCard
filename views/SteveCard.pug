@@ -71,14 +71,14 @@ block content
         .totalYear
         h2 經歷
         .row.RowDate.CARELINE 
-          .col-sm-1.yearText {{PROJECT.CARELINE.yearText}}
+          .col-sm-1.yearText {{ PROJECT.CARELINE.startDate , PROJECT.CARELINE.endDate | calculationDayFilter }} 
           .date.col-sm-3.h4 {{PROJECT.CARELINE.friendlyname}}
             h5 {{ PROJECT.CARELINE.startDate , PROJECT.CARELINE.endDate | dateFilter }} 
           .col-sm-8
             a 開發英國凱萊保險公司後台系統
               | 開發後台系統
         .row.RowDate.WISTRON
-          .col-sm-1.yearText {{PROJECT.WISTRON.yearText}}
+          .col-sm-1.yearText {{ PROJECT.WISTRON.startDate , PROJECT.WISTRON.endDate | calculationDayFilter }} 
           .date.col-sm-3.h4 {{PROJECT.WISTRON.friendlyname}}
             h5 {{ PROJECT.WISTRON.startDate , PROJECT.WISTRON.endDate | dateFilter }} 
           .col-sm-8
@@ -87,14 +87,14 @@ block content
               | 從靜態頁面撰寫到專案開發、專案SIT、UAT都有經歷，這次的專案讓我學到了從專案初期
               | 靜態頁面撰寫、需求訪談、程式底層撰寫
         .row.RowDate.MARYA_TWM_MAINTAIN_2
-          .col-sm-1.yearText {{PROJECT.MARYA_TWM_MAINTAIN_2.yearText}}
+          .col-sm-1.yearText {{ PROJECT.MARYA_TWM_MAINTAIN_2.startDate , PROJECT.MARYA_TWM_MAINTAIN_2.endDate | calculationDayFilter }} 
           .date.col-sm-3.h4 {{PROJECT.MARYA_TWM_MAINTAIN_2.friendlyname}}
             h5 {{ PROJECT.MARYA_TWM_MAINTAIN_2.startDate , PROJECT.MARYA_TWM_MAINTAIN_2.endDate | dateFilter }} 
           .col-sm-8
             a 維運Pos系統與開發新功能，重大開發專案為:
               | 與悠遊卡公司Ftp對接傳遞檔案、統一立即儲值專案(傳遞xml並改寫原先儲值專案)
         .row.RowDate.MARYA_TWM_STRATUS
-          .col-sm-1.yearText  {{PROJECT.MARYA_TWM_STRATUS.yearText}}
+          .col-sm-1.yearText {{ PROJECT.MARYA_TWM_STRATUS.startDate , PROJECT.MARYA_TWM_STRATUS.endDate | calculationDayFilter }} 
           .date.col-sm-3.h4 {{PROJECT.MARYA_TWM_STRATUS.friendlyname}}
             h5 {{ PROJECT.MARYA_TWM_STRATUS.startDate , PROJECT.MARYA_TWM_STRATUS.endDate | dateFilter }} 
           .col-sm-8
@@ -104,19 +104,19 @@ block content
             a 第一次做了系統分析(分析新的與舊的優劣)與規劃修改時程表
             a 讓我了解到SA職位也不是出一張嘴就能做得很好的。
         .row.RowDate.MARYA_TWM_MAINTAIN_1
-          .col-sm-1.yearText {{PROJECT.MARYA_TWM_MAINTAIN_1.yearText}}
+          .col-sm-1.yearText {{ PROJECT.MARYA_TWM_MAINTAIN_1.startDate , PROJECT.MARYA_TWM_MAINTAIN_1.endDate | calculationDayFilter }} 
           .date.col-sm-3.h4 {{PROJECT.MARYA_TWM_MAINTAIN_1.friendlyname}}
             h5 {{ PROJECT.MARYA_TWM_MAINTAIN_1.startDate , PROJECT.MARYA_TWM_MAINTAIN_1.endDate | dateFilter }} 
           .col-sm-8
             a 回到POS系統(Struts-Spring-hibernated框架，搭配前端Extjs)
             a 重大專案:POS銷售富邦唯信支付增加付款別、新增倉別(客訴倉、…)
         .row.RowDate.ARMY_ONLINE
-          .col-sm-1.yearText {{PROJECT.ARMY_ONLINE.yearText}}
+          .col-sm-1.yearText {{ PROJECT.ARMY_ONLINE.startDate , PROJECT.ARMY_ONLINE.endDate | calculationDayFilter }} 
           .date.col-sm-3.h4 {{PROJECT.ARMY_ONLINE.friendlyname}}
             h5 {{ PROJECT.ARMY_ONLINE.startDate , PROJECT.ARMY_ONLINE.endDate | dateFilter }} 
           a.col-sm-8 當兵
         .row.RowDate.MARYA_TWM_ADD_NUM
-          .col-sm-1.yearText {{PROJECT.MARYA_TWM_ADD_NUM.yearText}}
+          .col-sm-1.yearText {{ PROJECT.MARYA_TWM_ADD_NUM.startDate , PROJECT.MARYA_TWM_ADD_NUM.endDate | calculationDayFilter }} 
           .date.col-sm-3.h4 {{PROJECT.MARYA_TWM_ADD_NUM.friendlyname}}
             h5 {{ PROJECT.MARYA_TWM_ADD_NUM.startDate , PROJECT.MARYA_TWM_ADD_NUM.endDate | dateFilter }} 
           .col-sm-8
@@ -125,7 +125,7 @@ block content
             a 例如:substring-只抓兩碼，與做壓力測試(使用JUnit)
             a 與撰寫測試報告，算是對Java有一個基礎的了解。
         .row.RowDate.MARYA_TWM_MONEY_COMMISSION
-          .col-sm-1.yearText {{PROJECT.MARYA_TWM_MONEY_COMMISSION.yearText}}
+          .col-sm-1.yearText {{ PROJECT.MARYA_TWM_MONEY_COMMISSION.startDate , PROJECT.MARYA_TWM_MONEY_COMMISSION.endDate | calculationDayFilter }} 
           .date.col-sm-3.h4 {{PROJECT.MARYA_TWM_MONEY_COMMISSION.friendlyname}}
             h5 {{ PROJECT.MARYA_TWM_MONEY_COMMISSION.startDate , PROJECT.MARYA_TWM_MONEY_COMMISSION.endDate | dateFilter }} 
           .col-sm-8

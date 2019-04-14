@@ -2,80 +2,39 @@
   //bootstrap hover text setting
 
   $(function () {
-      const PROJECT = {
-          'CARELINE': {
-              name: 'CARELINE',
-              friendlyname: '英國凱萊後台開發案',
-              startDate: '2018/12/17',
-              endDate: '',
-              YearText: ''
-          },
-          'WISTRON': {
-              name: 'WISTRON',
-              friendlyname: '緯創軟體(誠品開發案)',
-              startDate: '2018/05/01',
-              endDate: '2018/12/14',
-              YearText: ''
-          },
-          'MARYA_TWM_MAINTAIN_2': {
-              name: 'MARYA_TWM_MAINTAIN_2',
-              friendlyname: 'POS維運專案',
-              startDate: '2017/11/01',
-              endDate: '2018/04/31',
-              YearText: ''
-          },
-          'MARYA_TWM_STRATUS': {
-              name: 'MARYA_TWM_STRATUS',
-              friendlyname: 'Struts下架專案',
-              startDate: '2017/07/01',
-              endDate: '2017/10/31',
-              YearText: ''
-          },
-          'MARYA_TWM_MAINTAIN_1': {
-              name: 'MARYA_TWM_MAINTAIN_1',
-              friendlyname: 'POS系統維運專案',
-              startDate: '2017/02/01',
-              endDate: '2017/06/31',
-              YearText: ''
-          },
-          'ARMY_ONLINE': {
-              name: 'ARMY_ONLINE',
-              friendlyname: '國軍ONLINE',
-              startDate: '2016/10/01',
-              endDate: '2017/02/01',
-              YearText: ''
-          },
-          'MARYA_TWM_ADD_NUM': {
-              name: 'MARYA_TWM_ADD_NUM',
-              friendlyname: 'POS店點擴碼專案',
-              startDate: '2016/04/01',
-              endDate: '2016/10/01',
-              YearText: ''
-          },
-          'MARYA_TWM_MONEY_COMMISSION': {
-              name: 'MARYA_TWM_MONEY_COMMISSION',
-              friendlyname: '佣金系統維運專案',
-              startDate: '2015/07/01',
-              endDate: '2016/04/01',
-              YearText: ''
-          },
-      };
-      data = {
-          PROJECT: PROJECT
-      };
 
 
+      let keepPorjectData = {};
       let steveCV = new Vue({
           el: '.steveCV',
-          data: data,
+          data: {
+              PROJECT: keepPorjectData
+          },
+          mounted: function () {
+              var self = this;
+              $.ajax({
+                  type: "POST",
+                  url: "/SteveCard/initData",
+                  data: {},
+                  // dataType : 'JSON',
+                  success: function (data) {
+                      self.PROJECT = data.PROJECT;
+                  }
+              });
+          },
           method: {},
           filters: {
               dateFilter: function (startDate, endDate) {
                   endDate = endDate == '' ? "Now" : endDate.substring(0, 7);
                   return startDate.substring(0, 7) + "~" + endDate;
+              },
+              calculationDayFilter: function (start, end) {
+                  let startDate = new Date(start);
+                  let endDate = end == '' ? new Date() : new Date(end);
+                  let diffDay = Math.round((endDate.getTime() - startDate.getTime()) / (1000*60*60*24));
+                  return diffDay + 'Day';
               }
-          },
-          mounted: function () {}
+          }
       });
 
 
