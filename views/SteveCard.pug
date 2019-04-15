@@ -49,7 +49,7 @@ block content
         h4 Java(Struts2、Spring、hibernate、SpringMVC、JPA)
         h3 前端
         h4 javascript(jQuery)
-        h4 Bootsrap
+        h4 Bootstrap
         h3 DB
         h4 Oracle
       .col-sm-6.col-xs-12
@@ -64,76 +64,58 @@ block content
         h4 版本控制
         h4 (svn、git)
     .container.row3.row_experience
-      .yearContainer
-        //- p (2Year)
       .col
         hr
         .totalYear
         h2 經歷
         .row.RowDate.CARELINE 
           .col-sm-1.yearText {{ PROJECT.CARELINE.startDate , PROJECT.CARELINE.endDate | calculationDayFilter }} 
-          .date.col-sm-3.h4 {{PROJECT.CARELINE.friendlyname}}
+          .date.col-sm-3 {{PROJECT.CARELINE.friendlyname}}
             h5 {{ PROJECT.CARELINE.startDate , PROJECT.CARELINE.endDate | dateFilter }} 
           .col-sm-8
-            a 開發英國凱萊保險公司後台系統
-              | 開發後台系統
+            a {{PROJECT.CARELINE.contentText}}
         .row.RowDate.WISTRON
           .col-sm-1.yearText {{ PROJECT.WISTRON.startDate , PROJECT.WISTRON.endDate | calculationDayFilter }} 
-          .date.col-sm-3.h4 {{PROJECT.WISTRON.friendlyname}}
+          .date.col-sm-3 {{PROJECT.WISTRON.friendlyname}}
             h5 {{ PROJECT.WISTRON.startDate , PROJECT.WISTRON.endDate | dateFilter }} 
           .col-sm-8
-            a 開發誠品後台系統(關貿合作)
-              | 全端開發 後端使用(Java) - 前端使用(jQuery、Bootstrap、javascript)
-              | 從靜態頁面撰寫到專案開發、專案SIT、UAT都有經歷，這次的專案讓我學到了從專案初期
-              | 靜態頁面撰寫、需求訪談、程式底層撰寫
+            a {{PROJECT.WISTRON.contentText}}
         .row.RowDate.MARYA_TWM_MAINTAIN_2
           .col-sm-1.yearText {{ PROJECT.MARYA_TWM_MAINTAIN_2.startDate , PROJECT.MARYA_TWM_MAINTAIN_2.endDate | calculationDayFilter }} 
-          .date.col-sm-3.h4 {{PROJECT.MARYA_TWM_MAINTAIN_2.friendlyname}}
+          .date.col-sm-3 {{PROJECT.MARYA_TWM_MAINTAIN_2.friendlyname}}
             h5 {{ PROJECT.MARYA_TWM_MAINTAIN_2.startDate , PROJECT.MARYA_TWM_MAINTAIN_2.endDate | dateFilter }} 
           .col-sm-8
-            a 維運Pos系統與開發新功能，重大開發專案為:
-              | 與悠遊卡公司Ftp對接傳遞檔案、統一立即儲值專案(傳遞xml並改寫原先儲值專案)
+            a {{PROJECT.MARYA_TWM_MAINTAIN_2.contentText}}
         .row.RowDate.MARYA_TWM_STRATUS
           .col-sm-1.yearText {{ PROJECT.MARYA_TWM_STRATUS.startDate , PROJECT.MARYA_TWM_STRATUS.endDate | calculationDayFilter }} 
-          .date.col-sm-3.h4 {{PROJECT.MARYA_TWM_STRATUS.friendlyname}}
+          .date.col-sm-3 {{PROJECT.MARYA_TWM_STRATUS.friendlyname}}
             h5 {{ PROJECT.MARYA_TWM_STRATUS.startDate , PROJECT.MARYA_TWM_STRATUS.endDate | dateFilter }} 
           .col-sm-8
-            a Struts下架轉換SpringMVC、配合悠遊卡FTP上傳下載
-            a 因應Struts經常出現漏洞，故協助轉換為SpringMVC框架
-            a 此專案讓我對servlet有更深入的了解，並在主管指導下
-            a 第一次做了系統分析(分析新的與舊的優劣)與規劃修改時程表
-            a 讓我了解到SA職位也不是出一張嘴就能做得很好的。
+            a {{PROJECT.MARYA_TWM_STRATUS.contentText}}
         .row.RowDate.MARYA_TWM_MAINTAIN_1
           .col-sm-1.yearText {{ PROJECT.MARYA_TWM_MAINTAIN_1.startDate , PROJECT.MARYA_TWM_MAINTAIN_1.endDate | calculationDayFilter }} 
-          .date.col-sm-3.h4 {{PROJECT.MARYA_TWM_MAINTAIN_1.friendlyname}}
+          .date.col-sm-3 {{PROJECT.MARYA_TWM_MAINTAIN_1.friendlyname}}
             h5 {{ PROJECT.MARYA_TWM_MAINTAIN_1.startDate , PROJECT.MARYA_TWM_MAINTAIN_1.endDate | dateFilter }} 
           .col-sm-8
-            a 回到POS系統(Struts-Spring-hibernated框架，搭配前端Extjs)
-            a 重大專案:POS銷售富邦唯信支付增加付款別、新增倉別(客訴倉、…)
+            a {{PROJECT.MARYA_TWM_MAINTAIN_1.contentText}}
         .row.RowDate.ARMY_ONLINE
           .col-sm-1.yearText {{ PROJECT.ARMY_ONLINE.startDate , PROJECT.ARMY_ONLINE.endDate | calculationDayFilter }} 
-          .date.col-sm-3.h4 {{PROJECT.ARMY_ONLINE.friendlyname}}
+          .date.col-sm-3 {{PROJECT.ARMY_ONLINE.friendlyname}}
             h5 {{ PROJECT.ARMY_ONLINE.startDate , PROJECT.ARMY_ONLINE.endDate | dateFilter }} 
-          a.col-sm-8 當兵
+          .col-sm-8
+            a {{PROJECT.ARMY_ONLINE.contentText}}
         .row.RowDate.MARYA_TWM_ADD_NUM
           .col-sm-1.yearText {{ PROJECT.MARYA_TWM_ADD_NUM.startDate , PROJECT.MARYA_TWM_ADD_NUM.endDate | calculationDayFilter }} 
-          .date.col-sm-3.h4 {{PROJECT.MARYA_TWM_ADD_NUM.friendlyname}}
+          .date.col-sm-3 {{PROJECT.MARYA_TWM_ADD_NUM.friendlyname}}
             h5 {{ PROJECT.MARYA_TWM_ADD_NUM.startDate , PROJECT.MARYA_TWM_ADD_NUM.endDate | dateFilter }} 
           .col-sm-8
-            a 轉換到POS系統-使用Java語言
-            a 當時專案為需要新增三碼的店點，故有些程式碼需要修正
-            a 例如:substring-只抓兩碼，與做壓力測試(使用JUnit)
-            a 與撰寫測試報告，算是對Java有一個基礎的了解。
+            a {{PROJECT.MARYA_TWM_ADD_NUM.contentText}}
         .row.RowDate.MARYA_TWM_MONEY_COMMISSION
           .col-sm-1.yearText {{ PROJECT.MARYA_TWM_MONEY_COMMISSION.startDate , PROJECT.MARYA_TWM_MONEY_COMMISSION.endDate | calculationDayFilter }} 
-          .date.col-sm-3.h4 {{PROJECT.MARYA_TWM_MONEY_COMMISSION.friendlyname}}
+          .date.col-sm-3 {{PROJECT.MARYA_TWM_MONEY_COMMISSION.friendlyname}}
             h5 {{ PROJECT.MARYA_TWM_MONEY_COMMISSION.startDate , PROJECT.MARYA_TWM_MONEY_COMMISSION.endDate | dateFilter }} 
           .col-sm-8
-            a 開始於瑪亞資訊實習，駐點某電信業龍頭的佣金Team
-            a 當時專案是使用C#與Oracle資料庫，了解各種PL/SQL語法與
-            a 資料庫基本觀念要看懂可能有幾百行的PL/SQL並了解裡面排名
-            a 、計量等公式，並將他套用到程式裡對當時只有在上課學過
-            a mysql的我是一大挑戰。
+            a {{PROJECT.MARYA_TWM_MONEY_COMMISSION.contentText}}
     .container
       .row3
         .col-sm-4

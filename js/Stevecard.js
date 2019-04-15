@@ -32,7 +32,9 @@
                   let startDate = new Date(start);
                   let endDate = end == '' ? new Date() : new Date(end);
                   let diffDay = Math.round((endDate.getTime() - startDate.getTime()) / (1000*60*60*24));
-                  return diffDay + 'Day';
+                  let month = Math.round(diffDay / 30);
+                  let day = diffDay % 30;
+                  return ` ${month} Month ${day} Days`;
               }
           }
       });
