@@ -115,7 +115,7 @@
         startDate: '2018/12/17',
         endDate: '',
         contentText: `英國凱萊保險公司開發後台系統
-                    (機車險API串接(泰安)、旅平險(Portal)後台、寵物險(Portal)後台)`
+                    機車險API串接(泰安)、旅平險(Portal)後台、寵物險(Portal)後台`
       },
       'WISTRON': {
         name: 'WISTRON',
@@ -126,7 +126,8 @@
                     全端開發 後端使用(Java) - 前端使用(jQuery、Bootstrap、javascript)
                     從靜態頁面撰寫到專案開發、專案SIT、UAT都有經歷，
                     這次的專案讓我學到了從專案初期
-                    靜態頁面撰寫、需求訪談、程式底層撰寫`
+                    靜態頁面撰寫、需求訪談、程式底層撰寫`,
+        isWork: true
       },
       'MARYA_TWM_MAINTAIN_2': {
         name: 'MARYA_TWM_MAINTAIN_2',
@@ -134,7 +135,8 @@
         startDate: '2017/11/01',
         endDate: '2018/04/31',
         contentText: `維運Pos系統與開發新功能，重大開發專案為:
-                    與悠遊卡公司Ftp對接傳遞檔案、統一立即儲值專案(傳遞xml並改寫原先儲值專案)`
+                    與悠遊卡公司Ftp對接傳遞檔案、統一立即儲值專案(傳遞xml並改寫原先儲值專案)`,
+        isWork: true
       },
       'MARYA_TWM_STRATUS': {
         name: 'MARYA_TWM_STRATUS',
@@ -145,7 +147,8 @@
                     因應Struts經常出現漏洞，故協助轉換為SpringMVC框架
                     此專案讓我對servlet有更深入的了解，並在主管指導下
                     第一次做了系統分析(分析新的與舊的優劣)與規劃修改時程表
-                    讓我了解到SA職位也不是出一張嘴就能做得很好的。`
+                    讓我了解到SA職位也不是出一張嘴就能做得很好的。`,
+        isWork: true
       },
       'MARYA_TWM_MAINTAIN_1': {
         name: 'MARYA_TWM_MAINTAIN_1',
@@ -153,14 +156,16 @@
         startDate: '2017/02/01',
         endDate: '2017/06/31',
         contentText: `回到POS系統(Struts-Spring-hibernated框架，搭配前端Extjs)
-                    重大專案:POS銷售富邦唯信支付增加付款別、新增倉別(客訴倉、…)`
+                    重大專案:POS銷售富邦唯信支付增加付款別、新增倉別(客訴倉、…)`,
+        isWork: true
       },
       'ARMY_ONLINE': {
         name: 'ARMY_ONLINE',
         friendlyname: '國軍ONLINE',
         startDate: '2016/10/01',
         endDate: '2017/02/01',
-        contentText: `當兵`
+        contentText: `當兵`,
+        isWork: false
       },
       'MARYA_TWM_ADD_NUM': {
         name: 'MARYA_TWM_ADD_NUM',
@@ -170,7 +175,8 @@
         contentText: `轉換到POS系統-使用Java語言
                     當時專案為需要新增三碼的店點，故有些程式碼需要修正
                     例如:substring-只抓兩碼，與做壓力測試(使用JUnit)
-                    與撰寫測試報告，算是對Java有一個基礎的了解。`
+                    與撰寫測試報告，算是對Java有一個基礎的了解。`,
+        isWork: true
       },
       'MARYA_TWM_MONEY_COMMISSION': {
         name: 'MARYA_TWM_MONEY_COMMISSION',
@@ -181,7 +187,8 @@
                     當時專案是使用C#與Oracle資料庫，了解各種PL/SQL語法與
                     資料庫基本觀念要看懂可能有幾百行的PL/SQL並了解裡面排名
                     、計量等公式，並將他套用到程式裡對當時只有在上課學過
-                    mysql的我是一大挑戰。`
+                    mysql的我是一大挑戰。`,
+        isWork: true
       },
     };
     let data = {

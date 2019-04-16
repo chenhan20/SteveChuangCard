@@ -8,7 +8,8 @@
       let steveCV = new Vue({
           el: '.steveCV',
           data: {
-              PROJECT: keepPorjectData
+              PROJECT: keepPorjectData,
+              totalSeniority: ''
           },
           mounted: function () {
               var self = this;
@@ -19,6 +20,15 @@
                   // dataType : 'JSON',
                   success: function (data) {
                       self.PROJECT = data.PROJECT;
+                      let total = 0;
+                      $.each(data.PROJECT, function (index, project) {
+                          if (project.isWork) {
+                              let diffDay = diffDayFunc(project.startDate, project.endDate);
+                              total += diffDay;
+                          }
+                      });
+
+                      self.totalSeniority = Math.round(total / 365 * 100) / 100 +'Year';
                   }
               });
           },
@@ -29,9 +39,7 @@
                   return startDate.substring(0, 7) + "~" + endDate;
               },
               calculationDayFilter: function (start, end) {
-                  let startDate = new Date(start);
-                  let endDate = end == '' ? new Date() : new Date(end);
-                  let diffDay = Math.round((endDate.getTime() - startDate.getTime()) / (1000*60*60*24));
+                  let diffDay = diffDayFunc(start, end);
                   let month = Math.round(diffDay / 30);
                   let day = diffDay % 30;
                   return ` ${month} Month ${day} Days`;
@@ -39,7 +47,11 @@
           }
       });
 
-
+      let diffDayFunc = (start, end) => {
+          let startDate = new Date(start);
+          let endDate = end == '' ? new Date() : new Date(end);
+          return Math.round((endDate.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24));
+      };
 
 
 
