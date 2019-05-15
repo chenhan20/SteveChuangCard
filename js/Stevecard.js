@@ -27,7 +27,6 @@
                               total += diffDay;
                           }
                       });
-
                       self.totalSeniority = Math.round(total / 365 * 100) / 100 +'Year';
                   }
               });
