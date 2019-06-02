@@ -124,6 +124,17 @@ hr
   margin-bottom: 10px
   margin-top: 3%
 
+.serve
+  .serveText
+    padding-top: 10px
+  .serveLogo
+    width: 80%
+
+.logo-img
+  position: absolute
+  left: -10%
+  width: 35%
+
 .btn_icon
   display: inline-block
   width: 80px
@@ -218,18 +229,18 @@ hr
   @include phone-width
     padding: 2% 10% 2% 10%
   .email
-     transition: 0.2s linear
+    transition: 0.3s linear
   &:hover .email
-    transform: scale(1.8)
-    color: #f1f1f1
+    color: black
   &::before
     content: ""
     position: absolute
     width: 700px
-    height: 200px
+    height: 250px
     left: -140%
     top: 90%
     background: #3498db
+    transform: rotate(45deg)
   &:hover::before
     animation: moveemail 0.7s 1
     left: 0%
