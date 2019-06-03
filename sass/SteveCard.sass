@@ -11,9 +11,15 @@ $phones-media: 480px
     @content
 
 body
-  height: 300vh
-  background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%)
-  padding: 0
+  @include phone-width
+    height: 600vh
+    background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%)
+    padding: 0
+  @include pc-width
+    height: 300vh
+    background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%)
+    padding: 0
+
 
 h1
   color: #E8E8E8
@@ -110,6 +116,7 @@ hr
 
 .date
   border-right: #979797 3px solid
+  border-left: #979797 3px solid
   font-size: 1.4rem
   text-align: center
 
@@ -131,28 +138,32 @@ hr
     width: 80%
 
 .logo-img
-  position: absolute
-  left: -15%
-  width: 40%
-  .logo-careline
+  @include phone-width
+    display: none
+  @include pc-width
     position: absolute
     left: -10%
-    width: 40%
-  .logo-wistron
-    position: absolute
-    left: -10%
-    width: 40%
-    padding-top: 15px
-  .logo-marya
-    position: absolute
-    left: -10%
-    width: 40%
-    padding-top: 25px
-  .logo-army
-    position: absolute
-    left: -10%
-    width: 40%
-    padding-top: 25px
+    width: 20%
+    .logo-careline
+      position: absolute
+      // left: -10%
+      width: 40%
+      padding-top: 10%
+    .logo-wistron
+      position: absolute
+      // left: -10%
+      width: 40%
+      padding-top: 15%
+    .logo-marya
+      position: absolute
+      // left: -10%
+      width: 40%
+      padding-top: 15%
+    .logo-army
+      position: absolute
+      // left: -10%
+      width: 40%
+      padding-top: 15%
 
 .btn_icon
   display: inline-block
