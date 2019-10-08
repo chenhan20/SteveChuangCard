@@ -11,9 +11,15 @@ $phones-media: 480px
     @content
 
 body
-  height: 300vh
-  background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%)
-  padding: 0
+  @include phone-width
+    height: 600vh
+    background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%)
+    padding: 0
+  @include pc-width
+    height: 300vh
+    background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%)
+    padding: 0
+
 
 h1
   color: #E8E8E8
@@ -110,6 +116,7 @@ hr
 
 .date
   border-right: #979797 3px solid
+  border-left: #979797 3px solid
   font-size: 1.4rem
   text-align: center
 
@@ -123,6 +130,40 @@ hr
 .RowDate
   margin-bottom: 10px
   margin-top: 3%
+
+.serve
+  .serveText
+    padding-top: 10px
+  .serveLogo
+    width: 80%
+
+.logo-img
+  @include phone-width
+    display: none
+  @include pc-width
+    position: absolute
+    left: -10%
+    width: 20%
+    .logo-careline
+      position: absolute
+      // left: -10%
+      width: 40%
+      padding-top: 10%
+    .logo-wistron
+      position: absolute
+      // left: -10%
+      width: 40%
+      padding-top: 15%
+    .logo-marya
+      position: absolute
+      // left: -10%
+      width: 40%
+      padding-top: 15%
+    .logo-army
+      position: absolute
+      // left: -10%
+      width: 40%
+      padding-top: 15%
 
 .btn_icon
   display: inline-block
@@ -218,18 +259,18 @@ hr
   @include phone-width
     padding: 2% 10% 2% 10%
   .email
-     transition: 0.2s linear
+    transition: 0.3s linear
   &:hover .email
-    transform: scale(1.8)
-    color: #f1f1f1
+    color: black
   &::before
     content: ""
     position: absolute
     width: 700px
-    height: 200px
+    height: 250px
     left: -140%
     top: 90%
     background: #3498db
+    transform: rotate(45deg)
   &:hover::before
     animation: moveemail 0.7s 1
     left: 0%

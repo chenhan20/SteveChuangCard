@@ -27,8 +27,7 @@
                               total += diffDay;
                           }
                       });
-
-                      self.totalSeniority = Math.round(total / 365 * 100) / 100 +'Year';
+                      self.totalSeniority = Math.round(total / 365 * 100) / 100 + 'Year';
                   }
               });
           },
@@ -38,11 +37,15 @@
                   endDate = endDate == '' ? "Now" : endDate.substring(0, 7);
                   return startDate.substring(0, 7) + "~" + endDate;
               },
-              calculationDayFilter: function (start, end) {
+              calculationMonthDayFilter: function (start, end) {
                   let diffDay = diffDayFunc(start, end);
                   let month = Math.round(diffDay / 30);
                   let day = diffDay % 30;
                   return ` ${month} Month ${day} Days`;
+              },
+              calculationDayFilter: function (start, end) {
+                let diffDay = diffDayFunc(start, end);
+                return `${diffDay}`;
               }
           }
       });
