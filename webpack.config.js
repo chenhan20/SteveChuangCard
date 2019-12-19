@@ -11,7 +11,8 @@ module.exports = {
         "Demo04": "./sass/Demo04.sass",
         "Demo05": "./sass/Demo05.sass",
         "BoxScore": "./sass/BoxScore.sass",
-        "Steve01": "./sass/Steve01.sass"
+        "Steve01": "./sass/Steve01.sass",
+        "stock01": "./sass/stock01.sass"
     },
     module: {
         rules: [{
