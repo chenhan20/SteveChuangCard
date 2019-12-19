@@ -1,0 +1,20 @@
+  /**
+    flex 無法配合position去固定位置 會跑版，解決方法為使用disaplay flex 
+      參考資料:https://stackoverflow.com/questions/29036231/how-can-i-have-a-position-fixed-behaviour-for-a-flexbox-sized-element
+  **/
+  
+$pc-media: 960px
+$phones-media: 480px
+//電腦
+@mixin pc-width() 
+  @media all and (min-width: $pc-media) 
+    @content
+//手機
+@mixin phone-width() 
+  @media all and (max-width: $phones-media) 
+    @content
+
+body
+  background: #FFFFFF
+        
+

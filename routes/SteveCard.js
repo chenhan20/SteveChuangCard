@@ -52,6 +52,12 @@
       title: 'Steve01'
     });
   });
+  /* GET Steve01 */
+  router.get('/stock01', function (req, res, next) {
+    res.render('./stock/stock01', {
+      title: 'stock01'
+    });
+  });
 
   /* POST Demo02 */
   /* jshint ignore:start */
