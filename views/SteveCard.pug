@@ -70,7 +70,7 @@ block content
           .col-6.serveText
             h2 目前任職於
             h2 凱萊擔任後端工程師
-            h2 已經{{ PROJECT.CARELINE.startDate , PROJECT.CARELINE.endDate | calculationDayFilter }}天囉~希望可以維持很久呢!
+            h2 已經{{ PROJECT.CARELINE.startDate , PROJECT.CARELINE.endDate | calculationDayFilter }}天囉~希望可以維持很久:)
           .col-6
             a(href="https://www.careline.com.tw/" target="_blank")
               img.serveLogo(src='/images/logo/careline_logoText.png')
@@ -88,7 +88,7 @@ block content
             h5 {{ PROJECT.CARELINE.startDate , PROJECT.CARELINE.endDate | dateFilter }} 
             .yearText {{ PROJECT.CARELINE.startDate , PROJECT.CARELINE.endDate | calculationMonthDayFilter }} 
           .col-sm-8
-            a {{PROJECT.CARELINE.contentText}}
+            a {{PROJECT.CARELINE.contentText | contentTextFilter }}}
         .row.RowDate.WISTRON
           .logo-img
             a(href="https://www.wistronits.com/tw/" target="_blank")
@@ -154,7 +154,7 @@ block content
             a {{PROJECT.MARYA_TWM_MONEY_COMMISSION.contentText}}
     .container
       .row3
-        .col-sm-4
+        .col-sm-12
           h2 小作品
           a.Demo(href='/SteveCard/Demo02') NBA比賽資訊(大致完成)
           a.Demo(href='/SteveCard/Demo03') 聊天室(完成)

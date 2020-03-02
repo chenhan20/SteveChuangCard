@@ -37,6 +37,11 @@
                   endDate = endDate == '' ? "Now" : endDate.substring(0, 7);
                   return startDate.substring(0, 7) + "~" + endDate;
               },
+              contentTextFilter: function (contentText) {
+                  debugger;
+                contentText = contentText.Replace("●","<br> ●");
+                  return contentText;
+              },
               calculationMonthDayFilter: function (start, end) {
                   let diffDay = diffDayFunc(start, end);
                   let month = Math.round(diffDay / 30);
