@@ -88,7 +88,10 @@ block content
             h5 {{ PROJECT.CARELINE.startDate , PROJECT.CARELINE.endDate | dateFilter }} 
             .yearText {{ PROJECT.CARELINE.startDate , PROJECT.CARELINE.endDate | calculationMonthDayFilter }} 
           .col-sm-8
-            a {{PROJECT.CARELINE.contentText | contentTextFilter }}}
+            a {{PROJECT.CARELINE.contentText | contentTextFilter }}
+            li.projectLi(v-for="project in PROJECT.CARELINE.projectList") {{project}}
+              //- {{project[0]}}
+            //- a {{PROJECT.CARELINE.projectList}}
         .row.RowDate.WISTRON
           .logo-img
             a(href="https://www.wistronits.com/tw/" target="_blank")
@@ -98,6 +101,7 @@ block content
             .yearText {{ PROJECT.WISTRON.startDate , PROJECT.WISTRON.endDate | calculationMonthDayFilter }} 
           .col-sm-8
             a {{PROJECT.WISTRON.contentText}}
+            li.projectLi(v-for="project in PROJECT.WISTRON.projectList") {{project}}
         .row.RowDate.MARYA_TWM_MAINTAIN_2
           .logo-img
             a(href="http://www.marya.com.tw/index.html?Home" target="_blank")
@@ -107,6 +111,7 @@ block content
             .yearText {{ PROJECT.MARYA_TWM_MAINTAIN_2.startDate , PROJECT.MARYA_TWM_MAINTAIN_2.endDate | calculationMonthDayFilter }} 
           .col-sm-8
             a {{PROJECT.MARYA_TWM_MAINTAIN_2.contentText}}
+            li.projectLi(v-for="project in PROJECT.MARYA_TWM_MAINTAIN_2.projectList") {{project}}
         .row.RowDate.MARYA_TWM_STRATUS
           .logo-img
             a(href="http://www.marya.com.tw/index.html?Home" target="_blank")
@@ -116,6 +121,7 @@ block content
             .yearText {{ PROJECT.MARYA_TWM_STRATUS.startDate , PROJECT.MARYA_TWM_STRATUS.endDate | calculationMonthDayFilter }} 
           .col-sm-8
             a {{PROJECT.MARYA_TWM_STRATUS.contentText}}
+            li.projectLi(v-for="project in PROJECT.MARYA_TWM_STRATUS.projectList") {{project}}
         .row.RowDate.MARYA_TWM_MAINTAIN_1
           .logo-img
             a(href="http://www.marya.com.tw/index.html?Home" target="_blank")
@@ -125,6 +131,7 @@ block content
             .yearText {{ PROJECT.MARYA_TWM_MAINTAIN_1.startDate , PROJECT.MARYA_TWM_MAINTAIN_1.endDate | calculationMonthDayFilter }} 
           .col-sm-8
             a {{PROJECT.MARYA_TWM_MAINTAIN_1.contentText}}
+            li.projectLi(v-for="project in PROJECT.MARYA_TWM_MAINTAIN_1.projectList") {{project}}
         .row.RowDate.ARMY_ONLINE
           .logo-img
             a(href="https://army.mnd.gov.tw/Pages/TroopList.aspx" target="_blank")
@@ -134,6 +141,7 @@ block content
             .yearText {{ PROJECT.ARMY_ONLINE.startDate , PROJECT.ARMY_ONLINE.endDate | calculationMonthDayFilter }} 
           .col-sm-8
             a {{PROJECT.ARMY_ONLINE.contentText}}
+            li.projectLi(v-for="project in PROJECT.ARMY_ONLINE.projectList") {{project}}
         .row.RowDate.MARYA_TWM_ADD_NUM
           .logo-img
             a(href="http://www.marya.com.tw/index.html?Home" target="_blank")
@@ -143,6 +151,7 @@ block content
             .yearText {{ PROJECT.MARYA_TWM_ADD_NUM.startDate , PROJECT.MARYA_TWM_ADD_NUM.endDate | calculationMonthDayFilter }} 
           .col-sm-8
             a {{PROJECT.MARYA_TWM_ADD_NUM.contentText}}
+            li.projectLi(v-for="project in PROJECT.MARYA_TWM_ADD_NUM.projectList") {{project}}
         .row.RowDate.MARYA_TWM_MONEY_COMMISSION
           .logo-img
             a(href="http://www.marya.com.tw/index.html?Home" target="_blank")
@@ -152,6 +161,7 @@ block content
             .yearText {{ PROJECT.MARYA_TWM_MONEY_COMMISSION.startDate , PROJECT.MARYA_TWM_MONEY_COMMISSION.endDate | calculationMonthDayFilter }} 
           .col-sm-8
             a {{PROJECT.MARYA_TWM_MONEY_COMMISSION.contentText}}
+            li.projectLi(v-for="project in PROJECT.MARYA_TWM_MONEY_COMMISSION.projectList") {{project}}
     .container
       .row3
         .col-sm-12

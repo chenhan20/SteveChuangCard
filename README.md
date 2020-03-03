@@ -60,8 +60,8 @@
 馬刺 SA  
 尼克 NY  
 
-
-
+3. 在css內要使用before偽元素製作li圖示時(font-awesome 5)
+   css也要載入，若只用html tag好像載入js就可以使用了 所以之前漏掉
 
 ## 使用技術
 

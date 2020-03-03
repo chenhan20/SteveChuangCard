@@ -120,12 +120,8 @@
         friendlyname: '英國凱萊後台開發案',
         startDate: '2018/12/17',
         endDate: '',
-        contentText: `英國凱萊保險公司開發後台系統
-                    機車險API串接(泰安)
-                    、旅平險(Portal)後台
-                    、寵物險(Portal)後台
-                    、機車、寵物險種線下單
-                    等等...`,
+        contentText: `英國凱萊保險公司開發後台系統`,
+        projectList: ['機車險API串接(泰安)','旅平險(Portal)後台','寵物險(Portal)後台','機車險線下單','寵物險線下單'],
         isWork: true
       },
       'WISTRON': {
@@ -136,8 +132,8 @@
         contentText: `開發誠品後台系統(關貿合作)
                     全端開發 後端使用(Java) - 前端使用(jQuery、Bootstrap、javascript)
                     從靜態頁面撰寫到專案開發、專案SIT、UAT都有經歷，
-                    這次的專案讓我學到了從專案初期
-                    靜態頁面撰寫、需求訪談、程式底層撰寫`,
+                    這次的專案讓我學到了從專案初期`,
+        projectList: ['靜態頁面撰寫','需求訪談','程式底層撰寫'],
         isWork: true
       },
       'MARYA_TWM_MAINTAIN_2': {
@@ -145,8 +141,8 @@
         friendlyname: 'POS維運專案',
         startDate: '2017/11/01',
         endDate: '2018/04/31',
-        contentText: `維運Pos系統與開發新功能，重大開發專案為:
-                    與悠遊卡公司Ftp對接傳遞檔案、統一立即儲值專案(傳遞xml並改寫原先儲值專案)`,
+        contentText: `維運Pos系統與開發新功能，重大開發專案為:`,
+        projectList: ['悠遊卡公司Ftp對接傳遞檔案','統一立即儲值專案(傳遞xml並改寫原先儲值專案)'],
         isWork: true
       },
       'MARYA_TWM_STRATUS': {
@@ -155,10 +151,11 @@
         startDate: '2017/07/01',
         endDate: '2017/10/31',
         contentText: `Struts下架轉換SpringMVC、配合悠遊卡FTP上傳下載
-                    因應Struts經常出現漏洞，故協助轉換為SpringMVC框架
-                    此專案讓我對servlet有更深入的了解，並在主管指導下
-                    第一次做了系統分析(分析新的與舊的優劣)與規劃修改時程表
-                    讓我了解到SA職位也不是出一張嘴就能做得很好的。`,
+        因應Struts經常出現漏洞，故協助轉換為SpringMVC框架
+        此專案讓我對servlet有更深入的了解，並在主管指導下
+        第一次做了系統分析(分析新的與舊的優劣)與規劃修改時程表
+        讓我了解到SA職位也不是出一張嘴就能做得很好的。`,
+        projectList: [],
         isWork: true
       },
       'MARYA_TWM_MAINTAIN_1': {
@@ -166,8 +163,8 @@
         friendlyname: 'POS系統維運專案',
         startDate: '2017/02/01',
         endDate: '2017/06/31',
-        contentText: `回到POS系統(Struts-Spring-hibernated框架，搭配前端Extjs)
-                    重大專案:POS銷售富邦唯信支付增加付款別、新增倉別(客訴倉、…)`,
+        contentText: `回到POS系統(Struts-Spring-hibernated框架，搭配前端Extjs)`,
+        projectList: ['POS銷售富邦唯信支付增加付款別','新增倉別(客訴倉、退貨倉…)'],
         isWork: true
       },
       'ARMY_ONLINE': {
@@ -176,6 +173,7 @@
         startDate: '2016/10/01',
         endDate: '2017/02/01',
         contentText: `當兵`,
+        projectList: ['早點名','親愛精誠','睡覺'],
         isWork: false
       },
       'MARYA_TWM_ADD_NUM': {
@@ -184,9 +182,10 @@
         startDate: '2016/04/01',
         endDate: '2016/10/01',
         contentText: `轉換到POS系統-使用Java語言
-                    當時專案為需要新增三碼的店點，故有些程式碼需要修正
-                    例如:substring-只抓兩碼，與做壓力測試(使用JUnit)
-                    與撰寫測試報告，算是對Java有一個基礎的了解。`,
+        當時專案為需要新增三碼的店點，故有些程式碼需要修正
+        例如:substring-只抓兩碼，與做壓力測試(使用JUnit)
+        與撰寫測試報告，算是對Java有一個基礎的了解。`,
+        projectList: [],
         isWork: true
       },
       'MARYA_TWM_MONEY_COMMISSION': {
@@ -195,10 +194,11 @@
         startDate: '2015/07/01',
         endDate: '2016/04/01',
         contentText: `開始於瑪亞資訊實習，駐點某電信業龍頭的佣金Team
-                    當時專案是使用C#與Oracle資料庫，了解各種PL/SQL語法與
-                    資料庫基本觀念要看懂可能有幾百行的PL/SQL並了解裡面排名
-                    、計量等公式，並將他套用到程式裡對當時只有在上課學過
-                    mysql的我是一大挑戰。`,
+          當時專案是使用C#與Oracle資料庫，了解各種PL/SQL語法與
+          資料庫基本觀念要看懂可能有幾百行的PL/SQL並了解裡面排名
+          、計量等公式，並將他套用到程式裡對當時只有在上課學過
+          mysql的我是一大挑戰。`,
+        projectList: [],
         isWork: true
       },
     };
@@ -207,11 +207,11 @@
     }
     res.send(data);
   });
-
-
+  
+  
   /* jshint ignore:end */
-
-
+  
+  
   //寄送mail功能
   router.post('/sendmail', function (req, res, next) {
     let YourName = req.body.YourName;
