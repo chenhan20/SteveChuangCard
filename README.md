@@ -17,7 +17,8 @@
     "postinstall": "node_modules/.bin/bower install"
 ```
 - 要使用**Node.js7**以上的版本 否則async await語法不支援 會有錯誤
-- 使用gulp套件
+- ~~使用gulp套件~~(因版本問題造成gulp壞了懶得修理直接換成webpack)
+- 使用webpack打包sass、~~js檔(尚未完成)~~
 
 ***	  
 
