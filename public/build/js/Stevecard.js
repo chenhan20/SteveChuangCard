@@ -31,7 +31,18 @@
                 }
             });
         },
-        method: {},
+        methods: {
+            //email按鈕(複製功能)
+            copyEmail: function(event){
+                let email = 'a0911558945@gmail.com';
+                copy(email);
+                $('.copyemailmodal').modal('show');
+            },
+            //信件按鈕(發送訊息功能)
+            sendEmail: function(event){
+                $('.sendemailmodal').modal('show');
+            }
+        },
         filters: {
             dateFilter: function (startDate, endDate) {
                 endDate = endDate == '' ? "Now" : endDate.substring(0, 7);
@@ -83,20 +94,6 @@
     });
     $('.goleft').click(function () {
         alert('goleft');
-    });
-
-
-    //email按鈕(複製功能)
-    $(".Copyemail").click(function () {
-        let email = 'a0911558945@gmail.com';
-        copy(email);
-        $('.copyemailmodal').modal('show');
-    });
-
-
-    //信件按鈕(發送訊息功能)
-    $(".Sendemail").click(function () {
-        $('.sendemailmodal').modal('show');
     });
 
     /**

@@ -11,12 +11,11 @@ $phones-media: 480px
     @content
 
 body
+  height: 100%
   @include phone-width
-    height: 600vh
     background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%)
     padding: 0
   @include pc-width
-    height: 100%
     background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%)
     padding: 0
 
@@ -250,7 +249,7 @@ hr
     color: #fff
     text-decoration: none
 
-.Copyemail
+.copyemail
   background-color: #DCDCDC
   border-radius: 30px
   box-shadow: 0 5px 15px -5px #00000070
@@ -282,6 +281,7 @@ hr
     background: #3498db
     transform: rotate(45deg)
   &:hover::before
+    transform: rotate(0deg);
     animation: moveemail 0.7s 1
     left: 0%
     top: 0%

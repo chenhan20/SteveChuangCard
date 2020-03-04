@@ -23,10 +23,10 @@ block content
           h3 Taiwan - Taipei   
           h3 SteveChuang 
           h4 FULL Stack WEB designer Junior
-        .Copyemail(href='#',data-toggle="tooltip" ,data-placement="top",title='複製信箱')
+        .copyemail(v-on:click='copyEmail', href='#',data-toggle="tooltip" ,data-placement="top",title='複製信箱')
           a.email a0911558945@gmail.com 
         .text-left
-          a.btn_icon.Sendemail(href='#',data-toggle="tooltip" ,data-placement="bottom",title='發信給我')
+          a.btn_icon.sendemail(v-on:click='sendEmail', href='#',data-toggle="tooltip" ,data-placement="bottom",title='發信給我')
             i.icon.far.fa-envelope
           a.btn_icon(href='https://www.facebook.com/profile.php?id=100000189117019',data-toggle="tooltip" ,data-placement="bottom",target="_blank",title='Facebook')
             i.icon.fab.fa-facebook-f

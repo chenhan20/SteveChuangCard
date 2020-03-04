@@ -38,9 +38,7 @@
                   return startDate.substring(0, 7) + "~" + endDate;
               },
               contentTextFilter: function (contentText) {
-                  debugger;
-                contentText = contentText.Replace("●","<br> ●");
-                  return contentText;
+            return contentText;
               },
               calculationMonthDayFilter: function (start, end) {
                   let diffDay = diffDayFunc(start, end);
