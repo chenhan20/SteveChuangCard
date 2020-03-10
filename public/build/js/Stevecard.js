@@ -1,8 +1,7 @@
   /*jshint esversion: 6 */
   //bootstrap hover text setting
 
-  $(function () {
-
+{
 
     let keepPorjectData = {};
     let steveCV = new Vue({
@@ -124,7 +123,6 @@
             data: $(".sendmailForm").serialize(),
             // dataType : 'json',
             success: function (msg) {
-                alert(msg);
                 if (msg == 'success') {
                     $('.sendemailmodal').modal('hide');
                     $('.sucessmailmodal').modal('show');
@@ -140,4 +138,4 @@
         });
         return false;
     }
-});
+}
