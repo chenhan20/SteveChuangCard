@@ -33,7 +33,6 @@ h1
   flex-wrap: wrap
   flex-direction: row
   justify-content: center
-  padding: 0 0px
 
 .img02
   width: auto
@@ -150,29 +149,14 @@ hr
   @include phone-width
     display: none
   @include pc-width
-    position: absolute
-    left: -10%
-    width: 20%
     .logo-careline
-      position: absolute
-      // left: -10%
-      width: 40%
-      padding-top: 10%
+      width: 80%
     .logo-wistron
-      position: absolute
-      // left: -10%
-      width: 40%
-      padding-top: 15%
+      width: 80%
     .logo-marya
-      position: absolute
-      // left: -10%
-      width: 40%
-      padding-top: 15%
+      width: 80%
     .logo-army
-      position: absolute
-      // left: -10%
-      width: 40%
-      padding-top: 15%
+      width: 80%
 
 .btn_icon
   display: inline-block
@@ -253,7 +237,6 @@ hr
   background-color: #DCDCDC
   border-radius: 30px
   box-shadow: 0 5px 15px -5px #00000070
-  display: inline-block
   font-size: 20px
   letter-spacing: 1px
   -webkit-transition: 0.5s
@@ -266,7 +249,8 @@ hr
   position: relative
   text-align: center
   @include phone-width
-    padding: 2% 10% 2% 10%
+    padding: 2% 0% 2% 0%
+    font-size: 16px;
   .email
     transition: 0.3s linear
   &:hover .email

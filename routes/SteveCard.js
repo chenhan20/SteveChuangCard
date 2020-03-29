@@ -37,7 +37,7 @@
   /* GET Demo02 */
   router.get('/Demo02', function (req, res, next) {
     res.render('./Demo/Demo02', {
-      title: 'Demo02'
+      title: 'Demo02',
     });
   });
   /* GET Demo05 */
