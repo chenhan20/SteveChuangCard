@@ -6,7 +6,8 @@ block append CV_Nav
 block append footer
 block content
   style.cp-pen-styles.
-    @import url("https://fonts.googleapis.com/css?family=Raleway:300,400");
+    @import url("https://fonts.googleapis.com/css?family=Raleway:300,400&family=Manrope");
+    @import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap");
   .container.steveCV 
     h1 SteveChuang JOB CV 
     .row
@@ -18,14 +19,15 @@ block content
         img.img02(src='/images/Steve/steveImage.jpg')
         img.img02(src='/images/Steve/steveImage.jpg')
         img.img02(src='/images/Steve/steveImage.jpg')
-      .col-sm-6
+      .col-sm-6.col-12
         .text-center
           h3 Taiwan - Taipei   
           h3 SteveChuang 
           h4 FULL Stack WEB designer Junior
         .copyemail(v-on:click='copyEmail', href='#',data-toggle="tooltip" ,data-placement="top",title='複製信箱')
           a.email a0911558945@gmail.com 
-        .text-left
+          //- i.icon.far.fa-envelope
+        .text-center
           a.btn_icon.sendemail(v-on:click='sendEmail', href='#',data-toggle="tooltip" ,data-placement="bottom",title='發信給我')
             i.icon.far.fa-envelope
           a.btn_icon(href='https://www.facebook.com/profile.php?id=100000189117019',data-toggle="tooltip" ,data-placement="bottom",target="_blank",title='Facebook')
@@ -36,49 +38,52 @@ block content
             i.icon.fab.fa-linkedin-in
           a.btn_icon(href='https://github.com/chenhan20',data-toggle="tooltip" ,data-placement="bottom",target="_blank",title='Github')
             i.icon.fab.fa-github
-        a 此為個人網站範例(使用bootstrap4、nodejs、PUG)
+        .text-center
+          a 此為個人網站範例(使用bootstrap4、nodejs、PUG、webpack)
         hr
         div.text-center.col-12
           a 我是Steve-莊承翰，2016年畢業於致理科大資管系，目前任職於英國凱萊擔任後端工程師擅長網頁撰寫與後端開發
             |對網頁目前有一定的熱忱所以在下班之餘習慣開發一些自己喜愛的東西，目標是用有興趣的事物當作工作。
-    .container 
+    .container.skill
       .col-sm-6.col-xs-12
         hr
-        h2 主要工作技能(較精通)
+        h2 主要工作技能
         h3 後端
         h4 Java(Struts2、Spring、hibernate、SpringMVC、JPA)
         h3 前端
-        h4 javascript(jQuery)
+        h4 javascript ES6、jQuery
         h4 Bootstrap
-        h3 DB
+        h3 DataBase
         h4 Oracle、mysql
       .col-sm-6.col-xs-12
         hr
         h2 下班之餘接觸技能
         h4 網頁前端
-        h4 Bootstrap、VueJs、jquery
+        h4 Bootstrap、jquery
+        h4 vuejs、vuex、nuxt、vuetify
         h4 網頁後端
         h4 Nodejs、PUG
         h4 打包
-        h4 Gulp(babel、sass)
+        h4 Gulp(babel、sass)、webpack
         h4 版本控制
         h4 (svn、git)
     .container.row3.row_experience
       .col
         hr
         .serve.row
-          .col-6.serveText
+          .col-12.col-xl-6.serveText
             h2 目前任職於
             h2 凱萊擔任後端工程師
-            h2 已經{{ PROJECT.CARELINE.startDate , PROJECT.CARELINE.endDate | calculationDayFilter }}天囉~希望可以維持很久:)
-          .col-6
+            h2 已經{{ PROJECT.CARELINE.startDate , PROJECT.CARELINE.endDate | calculationDayFilter }}天囉~希望可以維持很久
+              i.fas.fa-smile-wink
+          .col-12.col-xl-6
             a(href="https://www.careline.com.tw/" target="_blank")
               img.serveLogo(src='/images/logo/careline_logoText.png')
         hr
         .row
-          .col-4
+          .col-12.col-xl-3
             h2 經歷 
-          .col-8
+          .col-12.col-xl-3
             h2 年資:{{totalSeniority}}
         .row.RowDate.CARELINE 
           .date.col-sm-3 {{PROJECT.CARELINE.friendlyname}}
@@ -90,8 +95,6 @@ block content
           .col-sm-8
             a {{PROJECT.CARELINE.contentText | contentTextFilter }}
             li.projectLi(v-for="project in PROJECT.CARELINE.projectList") {{project}}
-              //- {{project[0]}}
-            //- a {{PROJECT.CARELINE.projectList}}
         .row.RowDate.WISTRON
           .date.col-sm-3 {{PROJECT.WISTRON.friendlyname}}
             h5 {{ PROJECT.WISTRON.startDate , PROJECT.WISTRON.endDate | dateFilter }} 
@@ -166,16 +169,13 @@ block content
       .row3
         .col-sm-12
           h2 小作品
-          a.Demo(href='/SteveCard/Demo02') NBA比賽資訊(大致完成)
-          a.Demo(href='/SteveCard/Demo03') 聊天室(完成)
-          a.Demo(href='/SteveCard/Demo04') 車廠首頁展示練習(spa)
-          a.Demo(href='/SteveCard/Demo01') 撲克牌Demo(未完成)
-          a.Demo(href='/SteveCard/Steve01') 頁面練習(前端個人化網頁美化)
-          a.Demo(href='/SteveCard/stock01') 股票資訊練習
-          //- a.Demo(href='SteveCard/Demo01') Demo(空)
-          //- a.Demo(href='SteveCard/Demo01') Demo(空)
-          //- a.Demo(href='SteveCard/Demo01') Demo(空)
-        //- .col
+          a.Demo(href='/SteveCard/Demo02' target="_blank") NBA比賽資訊(大致完成)
+          a.Demo(href='/SteveCard/Demo03' target="_blank") 聊天室(完成)
+          a.Demo(href='/SteveCard/Demo04' target="_blank") 車廠首頁展示練習(spa)
+          a.Demo(href='/SteveCard/Demo01' target="_blank") 撲克牌Demo(未完成)
+          a.Demo(href='/SteveCard/Steve01'  target="_blank") 頁面練習(前端個人化網頁美化)
+          a.Demo(href='https://chenhan20.github.io/linkTree/linkTreeIndex.html' target="_blank") LinkTree
+          a.Demo(href='/SteveCard/stock01'  target="_blank") 股票資訊練習
     script(src='/build/js/Stevecard.js')
 
   

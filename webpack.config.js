@@ -31,5 +31,6 @@ module.exports = {
             // [name] 為上方進入點設定的 "名稱"
             filename: "../public/build/css/[name].css"
         })
-    ]
+    ],
+    watch: false
 }
