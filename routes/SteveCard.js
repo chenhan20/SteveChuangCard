@@ -121,7 +121,7 @@
         startDate: '2018/12/17',
         endDate: '',
         contentText: `英國凱萊保險公司開發後台系統`,
-        projectList: ['機車險API串接(泰安)','旅平險(Portal)後台','寵物險(Portal)後台','機車險線下單','寵物險線下單'],
+        projectList: ['機車險API串接(泰安)','旅平險(Portal)後台相關功能','寵物險(Portal)後台相關功能','機車險線下單相關功能','寵物險線下單相關功能'],
         isWork: true
       },
       'WISTRON': {
