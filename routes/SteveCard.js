@@ -122,6 +122,7 @@
         endDate: '',
         contentText: `英國凱萊保險公司開發後台系統`,
         projectList: ['機車險API串接(泰安)','旅平險(Portal)後台相關功能','寵物險(Portal)後台相關功能','機車險線下單相關功能','寵物險線下單相關功能'],
+        skillList: ['java','javascript','jquery','mysql','CI(jenkins)','版控:git'],
         isWork: true
       },
       'WISTRON': {
@@ -134,6 +135,7 @@
                     從靜態頁面撰寫到專案開發、專案SIT、UAT都有經歷，
                     這次的專案讓我學到了從專案初期`,
         projectList: ['靜態頁面撰寫','需求訪談','程式底層撰寫'],
+        skillList: ['java','javascript','jquery','mysql','版控:svn'],
         isWork: true
       },
       'MARYA_TWM_MAINTAIN_2': {
@@ -143,6 +145,7 @@
         endDate: '2018/04/31',
         contentText: `維運Pos系統與開發新功能，重大開發專案為:`,
         projectList: ['悠遊卡公司Ftp對接傳遞檔案','統一立即儲值專案(傳遞xml並改寫原先儲值專案)'],
+        skillList: ['java','javascript','jquery','mysql','版控:svn'],
         isWork: true
       },
       'MARYA_TWM_STRATUS': {
@@ -156,6 +159,7 @@
         第一次做了系統分析(分析新的與舊的優劣)與規劃修改時程表
         讓我了解到SA職位也不是出一張嘴就能做得很好的。`,
         projectList: [],
+        skillList: ['java','javascript','jquery','mysql','版控:svn'],
         isWork: true
       },
       'MARYA_TWM_MAINTAIN_1': {
@@ -165,6 +169,7 @@
         endDate: '2017/06/31',
         contentText: `回到POS系統(Struts-Spring-hibernated框架，搭配前端Extjs)`,
         projectList: ['POS銷售富邦唯信支付增加付款別','新增倉別(客訴倉、退貨倉…)'],
+        skillList: ['java','javascript','jquery','mysql','版控:svn'],
         isWork: true
       },
       'ARMY_ONLINE': {
@@ -174,6 +179,7 @@
         endDate: '2017/02/01',
         contentText: `當兵`,
         projectList: ['早點名','親愛精誠','睡覺'],
+        skillList: ['java','javascript','jquery','mysql','版控:svn'],
         isWork: false
       },
       'MARYA_TWM_ADD_NUM': {
@@ -186,6 +192,7 @@
         例如:substring-只抓兩碼，與做壓力測試(使用JUnit)
         與撰寫測試報告，算是對Java有一個基礎的了解。`,
         projectList: [],
+        skillList: ['java','javascript','jquery','mysql','版控:svn'],
         isWork: true
       },
       'MARYA_TWM_MONEY_COMMISSION': {
@@ -199,6 +206,7 @@
           、計量等公式，並將他套用到程式裡對當時只有在上課學過
           mysql的我是一大挑戰。`,
         projectList: [],
+        skillList: ['java','javascript','jquery','mysql','版控:svn'],
         isWork: true
       },
     };
