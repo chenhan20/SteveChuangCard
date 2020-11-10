@@ -9,19 +9,20 @@
 * 準備node_modules`npm install`
 * 準備bower`bower install`
 
-
 ***
 ## 注意事項
-- 推到heroku上的話需再package.json的scripts加入(因為要讓heroku安裝bower.json內依賴的東西)
+
+-推到heroku上的話需再package.json的scripts加入(因為要讓heroku安裝bower.json內依賴的東西)
+
 ```javascript
     "postinstall": "node_modules/.bin/bower install"
 ```
-- 要使用**Node.js7**以上的版本 否則async await語法不支援 會有錯誤
-- ~~使用gulp套件~~(因版本問題造成gulp壞了懶得修理直接換成webpack)
-- 使用webpack打包sass、~~js檔(尚未完成)~~
 
-***	  
+-要使用**Node.js7**以上的版本 否則async await語法不支援 會有錯誤
+-~~使用gulp套件~~(因版本問題造成gulp壞了懶得修理直接換成webpack)
+-使用webpack打包sass、~~js檔(尚未完成)~~
 
+***
 
 ## NBA爬蟲練習
 
