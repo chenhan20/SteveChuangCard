@@ -18,7 +18,7 @@
     "jshint": "^2.10.2",
     "morgan": "^1.9.1",
     "nodemailer": "^4.6.4",
-    "pug": "^2.0.4",
+    "pug": "^3.0.1",
     "puppeteer": "^1.20.0",
     "request": "^2.85.0",
     "serve-favicon": "~2.4.5",
